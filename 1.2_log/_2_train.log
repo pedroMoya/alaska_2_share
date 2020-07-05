@@ -1,0 +1,7 @@
+
+05.Jul 2020 17:15:00 error at loading model hyperparameters
+[Errno 2] No such file or directory: './0.1_hyperparameters/model_hyperparameters.json'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 94, in train
+    with open(''.join([local_script_settings['hyperparameters_path'], 'model_hyperparameters.json'])) \
+FileNotFoundError: [Errno 2] No such file or directory: './0.1_hyperparameters/model_hyperparameters.json'

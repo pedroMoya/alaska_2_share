@@ -78,7 +78,8 @@ class customized_loss(losses.Loss):
 
 
 def train():
-    # load model hyparameters
+    print('\n~train_model module~')
+    # load model hyperparameters
     try:
         with open('./settings.json') as local_r_json_file:
             local_script_settings = json.loads(local_r_json_file.read())

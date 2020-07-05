@@ -1,0 +1,284 @@
+2020-07-05 17:09:27,689 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'False'
+ 'training_done': 'False'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 17:09:27,693 INFO _1_prepare_data _prepare_data module start
+2020-07-05 17:10:18,858 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'False'
+ 'training_done': 'False'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 17:10:18,858 INFO _1_prepare_data _prepare_data module start
+2020-07-05 17:15:00,386 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'False'
+ 'training_done': 'False'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 17:15:00,386 INFO _1_prepare_data _prepare_data module start
+2020-07-05 17:15:00,744 INFO _1_prepare_data 
+05.Jul 2020 17:15:00 successful saved cleaned data and metadata
+2020-07-05 17:15:00,744 INFO _1_prepare_data 
+05.Jul 2020 17:15:00 settings modified and saved
+2020-07-05 17:15:00,744 INFO _2_train 
+05.Jul 2020 17:15:00 error at loading model hyperparameters
+2020-07-05 17:15:00,744 ERROR _2_train [Errno 2] No such file or directory: './0.1_hyperparameters/model_hyperparameters.json'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 94, in train
+    with open(''.join([local_script_settings['hyperparameters_path'], 'model_hyperparameters.json'])) \
+FileNotFoundError: [Errno 2] No such file or directory: './0.1_hyperparameters/model_hyperparameters.json'
+local variable 'model_hyperparameters' referenced before assignment
+Traceback (most recent call last):
+  File "C:/carpeta_p_pycharm/alaska_2_share/_0_main.py", line 68, in <module>
+    training = _2_train.train()
+  File ".\_2_train.py", line 113, in train
+    ''.join(['\n', str(model_hyperparameters).replace(',', '\n')]))
+UnboundLocalError: local variable 'model_hyperparameters' referenced before assignment
+2020-07-05 17:15:00,744 ERROR __main__ local variable 'model_hyperparameters' referenced before assignment
+Traceback (most recent call last):
+  File "C:/carpeta_p_pycharm/alaska_2_share/_0_main.py", line 68, in <module>
+    training = _2_train.train()
+  File ".\_2_train.py", line 113, in train
+    ''.join(['\n', str(model_hyperparameters).replace(',', '\n')]))
+UnboundLocalError: local variable 'model_hyperparameters' referenced before assignment
+2020-07-05 17:15:00,744 INFO root 
+main program ended
+
+2020-07-05 17:15:49,597 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'False'
+ 'training_done': 'False'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 17:15:49,597 INFO _1_prepare_data _prepare_data module start
+2020-07-05 17:15:49,972 INFO _1_prepare_data 
+05.Jul 2020 17:15:49 raw datasets already cleaned
+2020-07-05 17:15:49,972 INFO _3_predict 
+05.Jul 2020 17:15:49 predict module error
+2020-07-05 17:15:49,972 ERROR _3_predict ./2_RAW_DATA_DIR/sample_submission.csv not found.
+Traceback (most recent call last):
+  File ".\_3_predict.py", line 116, in predict
+    submission_template = np.genfromtxt(''.join([local_script_settings['raw_data_path'], 'sample_submission.csv']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\npyio.py", line 1749, in genfromtxt
+    fid = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 195, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 535, in open
+    raise IOError("%s not found." % path)
+OSError: ./2_RAW_DATA_DIR/sample_submission.csv not found.
+2020-07-05 17:15:49,972 INFO root 
+main program ended
+
+2020-07-05 17:17:48,954 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'False'
+ 'training_done': 'False'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 17:17:48,954 INFO _1_prepare_data _prepare_data module start
+2020-07-05 17:17:49,313 INFO _1_prepare_data 
+05.Jul 2020 17:17:49 raw datasets already cleaned
+2020-07-05 17:17:49,329 INFO _3_predict 
+05.Jul 2020 17:17:49 predict module error
+2020-07-05 17:17:49,329 ERROR _3_predict ./2_RAW_DATA_DIR/sample_submission.csv not found.
+Traceback (most recent call last):
+  File ".\_3_predict.py", line 116, in predict
+    submission_template = np.genfromtxt(''.join([local_script_settings['raw_data_path'], 'sample_submission.csv']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\npyio.py", line 1749, in genfromtxt
+    fid = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 195, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 535, in open
+    raise IOError("%s not found." % path)
+OSError: ./2_RAW_DATA_DIR/sample_submission.csv not found.
+2020-07-05 17:17:49,329 INFO root 
+main program ended
+
+2020-07-05 17:18:41,600 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'False'
+ 'training_done': 'False'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 17:18:41,600 INFO _1_prepare_data _prepare_data module start
+2020-07-05 17:18:41,974 INFO _1_prepare_data 
+05.Jul 2020 17:18:41 raw datasets already cleaned
+2020-07-05 17:18:41,974 INFO _3_predict 
+05.Jul 2020 17:18:41 predict module error
+2020-07-05 17:18:41,974 ERROR _3_predict ./2_RAW_DATA_DIR/sample_submission.csv not found.
+Traceback (most recent call last):
+  File ".\_3_predict.py", line 116, in predict
+    submission_template = np.genfromtxt(''.join([local_script_settings['raw_data_path'], 'sample_submission.csv']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\npyio.py", line 1749, in genfromtxt
+    fid = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 195, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 535, in open
+    raise IOError("%s not found." % path)
+OSError: ./2_RAW_DATA_DIR/sample_submission.csv not found.
+2020-07-05 17:18:41,974 INFO root 
+main program ended
+

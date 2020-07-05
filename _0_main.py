@@ -61,6 +61,7 @@ except Exception as ee1:
 
 # main code
 if __name__ == '__main__':
+    print('\n~main_program launching~')
     for cycle in range(script_settings['optimization_iterations']):
         preparing, training, predicting, evaluating = [False] * 4
         try:

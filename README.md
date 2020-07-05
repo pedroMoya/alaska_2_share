@@ -101,7 +101,9 @@ Remote development/test/production environment:
 Version Control System
     
     local Git
-    cloud repository Github
+    
+    cloud repository Github 
+    https://github.com/pedroMoya/alaska_2_share
 
 
 License 

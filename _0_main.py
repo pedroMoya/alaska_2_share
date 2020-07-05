@@ -65,9 +65,8 @@ if __name__ == '__main__':
         preparing, training, predicting, evaluating = [False] * 4
         try:
             preparing = _1_prepare_data.prepare()
-            kb.clear_session()
             training = _2_train.train()
-            # predicting = _3_predict.predict()
+            predicting = _3_predict.predict()
             evaluating = _4_evaluation.evaluate()
             print('\n~~end of process~~')
         except Exception as ee1:

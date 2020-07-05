@@ -5,3 +5,15 @@ Traceback (most recent call last):
   File ".\_2_train.py", line 94, in train
     with open(''.join([local_script_settings['hyperparameters_path'], 'model_hyperparameters.json'])) \
 FileNotFoundError: [Errno 2] No such file or directory: './0.1_hyperparameters/model_hyperparameters.json'
+
+05.Jul 2020 17:27:06 correct model training, correct saving of model and weights
+
+05.Jul 2020 17:27:06 settings modified and saved
+
+05.Jul 2020 17:27:44 correct model training, correct saving of model and weights
+
+05.Jul 2020 17:27:44 settings modified and saved
+
+05.Jul 2020 17:29:10 correct model training, correct saving of model and weights
+
+05.Jul 2020 17:29:10 settings modified and saved

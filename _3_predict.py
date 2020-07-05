@@ -116,11 +116,15 @@ def predict():
         submission_template = np.genfromtxt(''.join([local_script_settings['raw_data_path'], 'sample_submission.csv']),
                                             delimiter=',', dtype=None, encoding=None)
 
-        # pd.DataFrame(submission).to_csv(''.join([local_script_settings['submission_path'], 'submission.csv']),
-        #                                 index=False, header=None)
-        # np.savetxt(''.join([local_script_settings['others_outputs_path'],
-        #                     'point_forecast_ss_and_or_nn_models_applied_.csv']),
-        #            all_forecasts, fmt='%10.15f', delimiter=',', newline='\n')
+        # fill with predictions
+
+
+        # save submission
+        pd.DataFrame(submission).to_csv(''.join([local_script_settings['submission_path'], 'submission.csv']),
+                                        index=False, header=None)
+        np.savetxt(''.join([local_script_settings['others_outputs_path'],
+                            'point_forecast_ss_and_or_nn_models_applied_.csv']),
+                   all_forecasts, fmt='%10.15f', delimiter=',', newline='\n')
         print('predictions saved, submission file built and stored')
         print("predictions subprocess ended successfully")
         logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),

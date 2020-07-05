@@ -37,3 +37,44 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 535, in open
     raise IOError("%s not found." % path)
 OSError: ./2_RAW_DATA_DIR/sample_submission.csv not found.
+
+05.Jul 2020 17:25:38 predict module error
+./2_RAW_DATA_DIR/sample_submission.csv not found.
+Traceback (most recent call last):
+  File ".\_3_predict.py", line 116, in predict
+    submission_template = np.genfromtxt(''.join([local_script_settings['raw_data_path'], 'sample_submission.csv']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\npyio.py", line 1749, in genfromtxt
+    fid = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 195, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 535, in open
+    raise IOError("%s not found." % path)
+OSError: ./2_RAW_DATA_DIR/sample_submission.csv not found.
+
+05.Jul 2020 17:27:06 predict module error
+./2_RAW_DATA_DIR/sample_submission.csv not found.
+Traceback (most recent call last):
+  File ".\_3_predict.py", line 116, in predict
+    submission_template = np.genfromtxt(''.join([local_script_settings['raw_data_path'], 'sample_submission.csv']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\npyio.py", line 1749, in genfromtxt
+    fid = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 195, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 535, in open
+    raise IOError("%s not found." % path)
+OSError: ./2_RAW_DATA_DIR/sample_submission.csv not found.
+
+05.Jul 2020 17:27:44 predict module error
+./2_RAW_DATA_DIR/sample_submission.csv not found.
+Traceback (most recent call last):
+  File ".\_3_predict.py", line 116, in predict
+    submission_template = np.genfromtxt(''.join([local_script_settings['raw_data_path'], 'sample_submission.csv']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\npyio.py", line 1749, in genfromtxt
+    fid = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 195, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\lib\_datasource.py", line 535, in open
+    raise IOError("%s not found." % path)
+OSError: ./2_RAW_DATA_DIR/sample_submission.csv not found.
+
+05.Jul 2020 17:29:10 correct prediction process

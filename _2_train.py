@@ -97,7 +97,7 @@ def train():
             model_hyperparameters = json.loads(local_r_json_file.read())
             local_r_json_file.close()
 
-        if local_script_settings['data_cleaning_done'] == 'True':
+        if local_script_settings['data_cleaning_done'] == 'False':
             print('data was not cleaning')
             print('first prepare_data module have to run')
             return False
@@ -146,8 +146,8 @@ def train():
                                'organic_settings.json']), 'w', encoding='utf-8') as local_wr_json_file:
                 json.dump(local_script_settings, local_wr_json_file, ensure_ascii=False, indent=2)
                 local_wr_json_file.close()
-                metaheuristic_train = tuning_metaheuristic()
-                metaheuristic_hyperparameters = metaheuristic_train.stochastic_brain(local_script_settings)
+                # metaheuristic_train = tuning_metaheuristic()
+                # metaheuristic_hyperparameters = metaheuristic_train.stochastic_brain(local_script_settings)
         logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
                              ' settings modified and saved']))
     except Exception as e1:

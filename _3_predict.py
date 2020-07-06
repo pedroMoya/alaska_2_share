@@ -120,13 +120,13 @@ def predict():
 
 
         # save submission
-        pd.DataFrame(submission).to_csv(''.join([local_script_settings['submission_path'], 'submission.csv']),
-                                        index=False, header=None)
-        np.savetxt(''.join([local_script_settings['others_outputs_path'],
-                            'point_forecast_ss_and_or_nn_models_applied_.csv']),
-                   all_forecasts, fmt='%10.15f', delimiter=',', newline='\n')
+        # pd.DataFrame(submission).to_csv(''.join([local_script_settings['submission_path'], 'submission.csv']),
+        #                                 index=False, header=None)
+        # np.savetxt(''.join([local_script_settings['others_outputs_path'],
+        #                     'point_forecast_ss_and_or_nn_models_applied_.csv']),
+        #            all_forecasts, fmt='%10.15f', delimiter=',', newline='\n')
         print('predictions saved, submission file built and stored')
-        print("predictions subprocess ended successfully")
+        print("predictions process ended successfully")
         logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
                              ' correct prediction process']))
     except Exception as e1:

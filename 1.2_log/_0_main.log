@@ -515,3 +515,278 @@ current models hyperparameters settings:
 2020-07-05 17:29:10,470 INFO root 
 main program ended
 
+2020-07-05 18:16:33,722 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'True'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 18:16:33,724 INFO _1_prepare_data _prepare_data module start
+2020-07-05 18:16:34,493 INFO _1_prepare_data 
+05.Jul 2020 18:16:34 raw datasets already cleaned
+2020-07-05 18:16:34,493 INFO _1_prepare_data 
+05.Jul 2020 18:16:34 cleaning raw datasets
+2020-07-05 18:16:34,493 INFO _1_prepare_data 
+05.Jul 2020 18:16:34 successful saved cleaned data and metadata
+2020-07-05 18:16:34,494 INFO _1_prepare_data 
+05.Jul 2020 18:16:34 settings modified and saved
+2020-07-05 18:16:34,495 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{}
+2020-07-05 18:16:34,495 INFO _2_train 
+05.Jul 2020 18:16:34 correct model training, correct saving of model and weights
+2020-07-05 18:16:34,496 INFO _2_train 
+05.Jul 2020 18:16:34 settings modified and saved
+2020-07-05 18:16:34,497 INFO _3_predict 
+05.Jul 2020 18:16:34 correct prediction process
+2020-07-05 18:16:34,497 INFO root 
+main program ended
+
+2020-07-05 18:16:51,127 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'True'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 18:16:51,128 INFO _1_prepare_data _prepare_data module start
+2020-07-05 18:16:51,559 INFO _1_prepare_data 
+05.Jul 2020 18:16:51 raw datasets already cleaned
+2020-07-05 18:16:51,559 INFO _1_prepare_data 
+05.Jul 2020 18:16:51 cleaning raw datasets
+2020-07-05 18:16:51,560 INFO _1_prepare_data 
+05.Jul 2020 18:16:51 successful saved cleaned data and metadata
+2020-07-05 18:16:51,560 INFO _1_prepare_data 
+05.Jul 2020 18:16:51 settings modified and saved
+2020-07-05 18:16:51,561 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{}
+2020-07-05 18:16:51,561 INFO _2_train 
+05.Jul 2020 18:16:51 correct model training, correct saving of model and weights
+2020-07-05 18:16:51,562 INFO _2_train 
+05.Jul 2020 18:16:51 settings modified and saved
+2020-07-05 18:16:51,563 INFO _3_predict 
+05.Jul 2020 18:16:51 correct prediction process
+2020-07-05 18:16:51,563 INFO root 
+main program ended
+
+2020-07-05 18:17:15,238 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'True'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 18:17:15,240 INFO _1_prepare_data _prepare_data module start
+2020-07-05 18:17:15,697 INFO _1_prepare_data 
+05.Jul 2020 18:17:15 raw datasets already cleaned
+2020-07-05 18:17:15,697 INFO _1_prepare_data 
+05.Jul 2020 18:17:15 cleaning raw datasets
+2020-07-05 18:17:15,697 INFO _1_prepare_data 
+05.Jul 2020 18:17:15 successful saved cleaned data and metadata
+2020-07-05 18:17:15,697 INFO _1_prepare_data 
+05.Jul 2020 18:17:15 settings modified and saved
+2020-07-05 18:17:15,698 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{}
+2020-07-05 18:17:15,698 INFO _2_train 
+05.Jul 2020 18:17:15 correct model training, correct saving of model and weights
+2020-07-05 18:17:15,699 INFO _2_train 
+05.Jul 2020 18:17:15 settings modified and saved
+2020-07-05 18:17:15,700 INFO _3_predict 
+05.Jul 2020 18:17:15 correct prediction process
+2020-07-05 18:17:15,700 INFO root 
+main program ended
+
+2020-07-05 18:18:04,274 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'True'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 18:18:04,276 INFO _1_prepare_data _prepare_data module start
+2020-07-05 18:18:04,730 INFO _1_prepare_data 
+05.Jul 2020 18:18:04 raw datasets already cleaned
+2020-07-05 18:18:04,730 INFO _1_prepare_data 
+05.Jul 2020 18:18:04 cleaning raw datasets
+2020-07-05 18:18:04,730 INFO _1_prepare_data 
+05.Jul 2020 18:18:04 successful saved cleaned data and metadata
+2020-07-05 18:18:04,731 INFO _1_prepare_data 
+05.Jul 2020 18:18:04 settings modified and saved
+2020-07-05 18:18:04,731 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{}
+2020-07-05 18:18:04,731 INFO _2_train 
+05.Jul 2020 18:18:04 correct model training, correct saving of model and weights
+2020-07-05 18:18:04,732 INFO _2_train 
+05.Jul 2020 18:18:04 settings modified and saved
+2020-07-05 18:18:04,733 INFO _3_predict 
+05.Jul 2020 18:18:04 correct prediction process
+2020-07-05 18:18:04,733 INFO root 
+main program ended
+
+2020-07-05 18:18:38,971 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'True'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'}
+2020-07-05 18:18:38,973 INFO _1_prepare_data _prepare_data module start
+2020-07-05 18:18:39,436 INFO _1_prepare_data 
+05.Jul 2020 18:18:39 raw datasets already cleaned
+2020-07-05 18:18:39,436 INFO _1_prepare_data 
+05.Jul 2020 18:18:39 cleaning raw datasets
+2020-07-05 18:18:39,436 INFO _1_prepare_data 
+05.Jul 2020 18:18:39 successful saved cleaned data and metadata
+2020-07-05 18:18:39,436 INFO _1_prepare_data 
+05.Jul 2020 18:18:39 settings modified and saved
+2020-07-05 18:18:39,437 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{}
+2020-07-05 18:18:39,437 INFO _2_train 
+05.Jul 2020 18:18:39 correct model training, correct saving of model and weights
+2020-07-05 18:18:39,438 INFO _2_train 
+05.Jul 2020 18:18:39 settings modified and saved
+2020-07-05 18:18:39,439 INFO _3_predict 
+05.Jul 2020 18:18:39 correct prediction process
+2020-07-05 18:18:39,439 INFO root 
+main program ended
+

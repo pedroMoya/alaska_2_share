@@ -1,5 +1,5 @@
-for Kaggle ALASKA 2 code competition
-Sharing scripts, preprocessing, models, training, submit
+for Kaggle ALASKA 2 image Steganalysis code competition
+Sharing scripts, pre-processing, models, training, submit
 
 
 Local development/test/production environment:

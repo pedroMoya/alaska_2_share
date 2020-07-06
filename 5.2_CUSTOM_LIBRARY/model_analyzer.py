@@ -38,14 +38,14 @@ logger.addHandler(logHandler)
 
 class model_structure:
 
-    def analize(self, local_model_name, local_settings):
+    def analize(self, local_model_name, local_a_settings):
         try:
             # loading model (h5 format)
             print('trying to open model file (assuming h5 format)')
-            local_model = models.load_model(''.join([local_settings['models_path'], local_model_name]))
+            local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
             # saving architecture in JSON format
             local_model_json = local_model.to_json()
-            with open(''.join([local_settings['models_path'], local_model_name,
+            with open(''.join([local_a_settings['models_path'], local_model_name,
                                '_analyzed_.json']), 'w') as json_file:
                 json_file.write(local_model_json)
                 json_file.close()
@@ -60,7 +60,7 @@ class model_structure:
                 prev_layer = layer(prev_layer)
             functional_model = models.Model([input_layer], [prev_layer])
             # plotting (exporting to png) the model
-            plot_path = ''.join([local_settings['models_path'], local_model_name, '_model.png'])
+            plot_path = ''.join([local_a_settings['models_path'], local_model_name, '_model.png'])
             # model_to_dot(functional_model, show_shapes=True, show_layer_names=True, rankdir='TB',
             #     expand_nested=True, dpi=96, subgraph=True)
             plot_model(functional_model, to_file=plot_path, show_shapes=True, show_layer_names=True,
@@ -68,7 +68,7 @@ class model_structure:
             plot_model(functional_model, to_file=''.join([plot_path, '.pdf']), show_shapes=True, show_layer_names=True,
                        rankdir='TB', expand_nested=True)
         except Exception as e1:
-            print('Error reading or saving model')
+            print('Error reading or saving model structure to pdf or png')
             print(e1)
             return False
         return True

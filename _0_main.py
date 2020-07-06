@@ -1,6 +1,5 @@
 # main program
-
-# libraries
+# import libraries
 try:
     import json
     import logging
@@ -74,7 +73,7 @@ if __name__ == '__main__':
             print('Error in the main program')
             print(ee1)
             logger.error(str(ee1), exc_info=True)
-        print('subprocess', "success?")
+        print('subprocess report', "success?")
         print('preparing: ', preparing)
         print('training: ', training)
         print('predicting: ', predicting)

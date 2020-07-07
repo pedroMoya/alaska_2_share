@@ -83,3 +83,90 @@ _prepare_data module start
 05.Jul 2020 18:18:39 successful saved cleaned data and metadata
 
 05.Jul 2020 18:18:39 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 10:48:52 raw datasets already cleaned
+_prepare_data module start
+
+07.Jul 2020 10:54:33 data pre-processing error
+sequence item 0: expected str instance, list found
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 74, in prepare
+    image_loc = ','.join([images_method_0, images_method_1, images_method_2, images_method_3])
+TypeError: sequence item 0: expected str instance, list found
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+
+07.Jul 2020 10:59:54 data pre-processing error
+sequence item 0: expected str instance, list found
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 74, in prepare
+    image_loc = ','.join([images_method_0, images_method_1, images_method_2, images_method_3])
+TypeError: sequence item 0: expected str instance, list found
+_prepare_data module start
+
+07.Jul 2020 11:02:32 data pre-processing error
+local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+_prepare_data module start
+
+07.Jul 2020 11:04:17 data pre-processing error
+local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+_prepare_data module start
+
+07.Jul 2020 11:06:18 data pre-processing error
+local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+_prepare_data module start
+
+07.Jul 2020 11:07:44 data pre-processing error
+local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+_prepare_data module start
+
+07.Jul 2020 11:11:52 data pre-processing error
+local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+
+07.Jul 2020 13:56:31 data pre-processing error
+'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 86, in prepare
+    images_loc = images_loc.split(',')
+AttributeError: 'list' object has no attribute 'split'
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start
+_prepare_data module start

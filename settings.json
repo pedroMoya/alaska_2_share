@@ -8,7 +8,8 @@
   "control": "handler",
   "model_analyzer": "True",
   "repeat_data_cleaning": "False",
-  "data_cleaning_done": "True",
+  "disaggregation_done": "False",
+  "data_cleaning_done": "False",
   "repeat_training": "True",
   "training_done": "True",
   "root_path": "./",
@@ -28,5 +29,9 @@
   "submission_path": "./8_SUBMISSION_DIR/",
   "models_evaluation_path": "./9.1_MODELS_EVALUATION/",
   "others_outputs_path": "./9.2_OTHERS_OUTPUTS/",
-  "others_inputs_path": "./9.3_OTHERS_INPUTS/"
+  "others_inputs_path": "./9.3_OTHERS_INPUTS/",
+  "method_0_folder": "Cover/",
+  "method_1_folder": "JMiPOD/",
+  "method_2_folder": "JUNIWARD/",
+  "method_3_folder": "UERD/"
 }

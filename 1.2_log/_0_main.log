@@ -790,3 +790,1290 @@ current models hyperparameters settings:
 2020-07-05 18:18:39,439 INFO root 
 main program ended
 
+2020-07-07 10:48:51,476 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 10:48:51,479 INFO _1_prepare_data _prepare_data module start
+2020-07-07 10:48:52,317 INFO _1_prepare_data 
+07.Jul 2020 10:48:52 raw datasets already cleaned
+2020-07-07 10:48:52,318 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{'current_model_name': '_4_layers_CNN_'
+ 'model_type': '_4_layers_CNN_customized_'
+ 'units_layer_1': 64
+ 'input_shape_y': 512
+ 'input_shape_x': 512
+ 'nof_channels': 3
+ 'activation_1': 'relu'
+ 'regularizers_l1_l2_1': 'True'
+ 'l1_1': 0.001
+ 'l2_1': 0.001
+ 'kernel_size_y_1': 4
+ 'kernel_size_x_1': 4
+ 'stride_y_1': 1
+ 'stride_x_1': 1
+ 'pool_size_y_1': 4
+ 'pool_size_x_1': 4
+ 'dropout_layer_1': 0.1
+ 'units_layer_2': 64
+ 'activation_2': 'relu'
+ 'regularizers_l1_l2_2': 'True'
+ 'l1_2': 0.001
+ 'l2_2': 0.001
+ 'kernel_size_y_2': 4
+ 'kernel_size_x_2': 4
+ 'pool_size_y_2': 2
+ 'pool_size_x_2': 2
+ 'dropout_layer_2': 0.1
+ 'units_layer_3': 32
+ 'activation_3': 'relu'
+ 'regularizers_l1_l2_3': 'True'
+ 'l1_3': 0.001
+ 'l2_3': 0.001
+ 'kernel_size_y_3': 3
+ 'kernel_size_x_3': 3
+ 'pool_size_y_3': 2
+ 'pool_size_x_3': 2
+ 'dropout_layer_3': 0.1
+ 'units_layer_4': 32
+ 'activation_4': 'relu'
+ 'regularizers_l1_l2_4': 'True'
+ 'l1_4': 0.001
+ 'l2_4': 0.001
+ 'kernel_size_y_4': 3
+ 'kernel_size_x_4': 3
+ 'pool_size_y_4': 2
+ 'pool_size_x_4': 2
+ 'dropout_layer_4': 0.1
+ 'flatten_layer_4': 'True'
+ 'units_dense_layer_4': 8192
+ 'activation_dense_layer_4': 'sigmoid'
+ 'regularizers_l1_l2_dense_4': 'True'
+ 'l1_dense_4': 0.001
+ 'l2_dense_4': 0.001
+ 'dropout_dense_layer_4': 0.1
+ 'units_final_layer': 6
+ 'activation_final_layer': 'softmax'
+ 'optimizer': 'adam'
+ 'learning_rate': 0.00175
+ 'loss_1': 'categorical_crossentropy'
+ 'loss_2': 'None'
+ 'loss_3': 'None'
+ 'metrics1': 'auc_roc'
+ 'metrics2': 'categorical_accuracy'
+ 'epochs': 500
+ 'batch_size': 32
+ 'early_stopping_patience': 4
+ 'ReduceLROnPlateau_factor': 0.25
+ 'ReduceLROnPlateau_patience': 5
+ 'ReduceLROnPlateau_min_lr': 0.001
+ 'workers': 6
+ 'validation_split': 0.1
+ 'training_set_folder': './3_CLEAN_DATA_DIR/'}
+2020-07-07 10:48:52,318 INFO _2_train 
+07.Jul 2020 10:48:52 model training error
+2020-07-07 10:48:52,319 ERROR _2_train name 'image_normalizer' is not defined
+Traceback (most recent call last):
+  File ".\_2_train.py", line 145, in train
+    normalizer = image_normalizer()
+NameError: name 'image_normalizer' is not defined
+2020-07-07 10:48:52,343 INFO _3_predict 
+07.Jul 2020 10:48:52 correct prediction process
+2020-07-07 10:48:52,343 INFO root 
+main program ended
+
+2020-07-07 10:54:32,947 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 10:54:32,948 INFO _1_prepare_data _prepare_data module start
+2020-07-07 10:54:33,319 INFO _1_prepare_data 
+07.Jul 2020 10:54:33 data pre-processing error
+2020-07-07 10:54:33,319 ERROR _1_prepare_data sequence item 0: expected str instance, list found
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 74, in prepare
+    image_loc = ','.join(images_method_0 + images_method_1 + images_method_2 + images_method_3)
+TypeError: sequence item 0: expected str instance, list found
+2020-07-07 10:54:33,343 INFO _3_predict 
+07.Jul 2020 10:54:33 correct prediction process
+2020-07-07 10:54:33,344 INFO root 
+main program ended
+
+2020-07-07 10:56:37,315 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 10:56:37,316 INFO _1_prepare_data _prepare_data module start
+2020-07-07 10:59:34,918 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover'
+ 'method_1_folder': 'JMiPOD'
+ 'method_2_folder': 'JUNIWARD'
+ 'method_3_folder': 'UERD'}
+2020-07-07 10:59:34,919 INFO _1_prepare_data _prepare_data module start
+2020-07-07 10:59:54,191 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover'
+ 'method_1_folder': 'JMiPOD'
+ 'method_2_folder': 'JUNIWARD'
+ 'method_3_folder': 'UERD'}
+2020-07-07 10:59:54,192 INFO _1_prepare_data _prepare_data module start
+2020-07-07 10:59:54,569 INFO _1_prepare_data 
+07.Jul 2020 10:59:54 data pre-processing error
+2020-07-07 10:59:54,569 ERROR _1_prepare_data sequence item 0: expected str instance, list found
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 74, in prepare
+    image_loc = ','.join([images_method_0, images_method_1, images_method_2, images_method_3])
+TypeError: sequence item 0: expected str instance, list found
+2020-07-07 10:59:54,593 INFO _3_predict 
+07.Jul 2020 10:59:54 correct prediction process
+2020-07-07 10:59:54,594 INFO root 
+main program ended
+
+2020-07-07 11:02:32,286 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover'
+ 'method_1_folder': 'JMiPOD'
+ 'method_2_folder': 'JUNIWARD'
+ 'method_3_folder': 'UERD'}
+2020-07-07 11:02:32,290 INFO _1_prepare_data _prepare_data module start
+2020-07-07 11:02:32,690 INFO _1_prepare_data 
+07.Jul 2020 11:02:32 data pre-processing error
+2020-07-07 11:02:32,690 ERROR _1_prepare_data local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+2020-07-07 11:02:32,715 INFO _3_predict 
+07.Jul 2020 11:02:32 correct prediction process
+2020-07-07 11:02:32,715 INFO root 
+main program ended
+
+2020-07-07 11:04:17,475 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover'
+ 'method_1_folder': 'JMiPOD'
+ 'method_2_folder': 'JUNIWARD'
+ 'method_3_folder': 'UERD'}
+2020-07-07 11:04:17,477 INFO _1_prepare_data _prepare_data module start
+2020-07-07 11:04:17,847 INFO _1_prepare_data 
+07.Jul 2020 11:04:17 data pre-processing error
+2020-07-07 11:04:17,847 ERROR _1_prepare_data local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+2020-07-07 11:04:17,872 INFO _3_predict 
+07.Jul 2020 11:04:17 correct prediction process
+2020-07-07 11:04:17,872 INFO root 
+main program ended
+
+2020-07-07 11:06:17,713 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 11:06:17,714 INFO _1_prepare_data _prepare_data module start
+2020-07-07 11:06:18,077 INFO _1_prepare_data 
+07.Jul 2020 11:06:18 data pre-processing error
+2020-07-07 11:06:18,078 ERROR _1_prepare_data local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+2020-07-07 11:06:18,102 INFO _3_predict 
+07.Jul 2020 11:06:18 correct prediction process
+2020-07-07 11:06:18,102 INFO root 
+main program ended
+
+2020-07-07 11:07:43,492 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 11:07:43,495 INFO _1_prepare_data _prepare_data module start
+2020-07-07 11:07:44,298 INFO _1_prepare_data 
+07.Jul 2020 11:07:44 data pre-processing error
+2020-07-07 11:07:44,299 ERROR _1_prepare_data local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+2020-07-07 11:07:44,327 INFO _3_predict 
+07.Jul 2020 11:07:44 correct prediction process
+2020-07-07 11:07:44,327 INFO root 
+main program ended
+
+2020-07-07 11:11:51,360 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 11:11:51,363 INFO _1_prepare_data _prepare_data module start
+2020-07-07 11:11:52,136 INFO _1_prepare_data 
+07.Jul 2020 11:11:52 data pre-processing error
+2020-07-07 11:11:52,136 ERROR _1_prepare_data local variable 'images_loc' referenced before assignment
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 82, in prepare
+    nof_images = len(images_loc)
+UnboundLocalError: local variable 'images_loc' referenced before assignment
+2020-07-07 11:11:52,164 INFO _3_predict 
+07.Jul 2020 11:11:52 correct prediction process
+2020-07-07 11:11:52,164 INFO root 
+main program ended
+
+2020-07-07 11:12:30,074 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 11:12:30,077 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:22:46,781 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:22:46,784 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:25:23,620 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:25:23,635 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:28:52,129 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:28:52,132 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:32:19,870 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:32:19,885 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:35:20,307 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:35:20,307 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:42:15,608 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:42:15,611 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:46:40,577 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:46:40,580 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:47:22,946 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:47:22,949 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:47:40,493 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:47:40,495 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:54:18,750 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:54:18,753 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:55:50,600 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:55:50,601 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:56:20,198 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:56:20,201 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:56:31,225 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:56:31,227 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:56:31,675 INFO _1_prepare_data 
+07.Jul 2020 13:56:31 data pre-processing error
+2020-07-07 13:56:31,675 ERROR _1_prepare_data 'list' object has no attribute 'split'
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 86, in prepare
+    images_loc = images_loc.split(',')
+AttributeError: 'list' object has no attribute 'split'
+2020-07-07 13:56:31,705 INFO _3_predict 
+07.Jul 2020 13:56:31 correct prediction process
+2020-07-07 13:56:31,706 INFO root 
+main program ended
+
+2020-07-07 13:57:20,572 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:57:20,576 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:57:53,005 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:57:53,006 INFO _1_prepare_data _prepare_data module start
+2020-07-07 13:58:03,905 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 13:58:03,906 INFO _1_prepare_data _prepare_data module start
+2020-07-07 14:01:25,756 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 14:01:25,759 INFO _1_prepare_data _prepare_data module start
+2020-07-07 14:01:37,141 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 14:01:37,142 INFO _1_prepare_data _prepare_data module start

@@ -28,6 +28,8 @@ try:
     with open('./settings.json') as local_json_file:
         local_settings = json.loads(local_json_file.read())
         local_json_file.close()
+
+    # import custom libraries
     sys.path.insert(1, local_settings['custom_library_path'])
     from custom_model_builder import model_classifier_
     from custom_normalizer import image_normalizer

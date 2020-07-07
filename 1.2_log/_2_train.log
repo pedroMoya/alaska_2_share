@@ -37,3 +37,10 @@ FileNotFoundError: [Errno 2] No such file or directory: './0.1_hyperparameters/m
 05.Jul 2020 18:18:39 correct model training, correct saving of model and weights
 
 05.Jul 2020 18:18:39 settings modified and saved
+
+07.Jul 2020 10:48:52 model training error
+name 'image_normalizer' is not defined
+Traceback (most recent call last):
+  File ".\_2_train.py", line 145, in train
+    normalizer = image_normalizer()
+NameError: name 'image_normalizer' is not defined

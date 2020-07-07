@@ -36,7 +36,7 @@ logger.addHandler(logHandler)
 
 # load custom libraries
 sys.path.insert(1, local_submodule_settings['custom_library_path'])
-from customized_metrics import auc_roc
+from customized_metrics import customized_metrics
 from model_analyzer import model_structure
 
 # class definitions
@@ -111,7 +111,7 @@ class model_classifier_:
             metric2 = local_hyperparameters['metrics2']
             union_settings_metrics = [metric1, metric2]
             if 'auc_roc' in union_settings_metrics:
-                metrics_list.append(auc_roc())
+                metrics_list.append(customized_metrics.auc_roc())
             if 'categorical_accuracy' in union_settings_metrics:
                 metrics_list.append(metrics.CategoricalAccuracy())
             if local_hyperparameters['regularizers_l1_l2_1'] == 'True':

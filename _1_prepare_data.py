@@ -56,12 +56,16 @@ def prepare():
         # open raw_data
 
         # data general_mean based - scaling
-
-        print('data scaling done')
+        # this step is automatically done in train by ImageDataGenerator
+        print('data scaling was correctly prepared')
 
         # data normalization based in moving window
+        # this step is included as a pre-processing_function in ImageDataGenerator
+        print('data normalization was prepared as a pre-processing_function')
 
-        print('data normalization done')
+        # data aggregation
+
+        print('data aggregation was done')
 
         # save clean data source for subsequent training
         # np.save(''.join([local_script_settings['train_data_path'], 'x_train_source']),

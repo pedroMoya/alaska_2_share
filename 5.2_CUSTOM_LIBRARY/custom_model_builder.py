@@ -44,7 +44,7 @@ from model_analyzer import model_structure
 
 class model_classifier_:
 
-    def build(self, local_model_name, local_settings, local_hyperparameters):
+    def build_and_compile(self, local_model_name, local_settings, local_hyperparameters):
         try:
             # keras session/random seed reset/fix
             kb.clear_session()
@@ -90,9 +90,6 @@ class model_classifier_:
             pool_size_x_4 = local_hyperparameters['pool_size_x_4']
             optimizer_function = local_hyperparameters['optimizer']
             optimizer_learning_rate = local_hyperparameters['learning_rate']
-            epochs = int(local_hyperparameters['epochs'])
-            batch_size = int(local_hyperparameters['batch_size'])
-            workers = int(local_hyperparameters['workers'])
             if optimizer_function == 'adam':
                 optimizer_function = optimizers.Adam(optimizer_learning_rate)
                 optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
@@ -196,14 +193,14 @@ class model_classifier_:
 
             # save_model
             classifier_json = classifier_.to_json()
-            with open(''.join([local_settings['models_path'], 'custom_classifier_.json']), 'w') \
+            with open(''.join([local_settings['models_path'], local_model_name, '_custom_classifier_.json']), 'w') \
                     as json_file:
                 json_file.write(classifier_json)
                 json_file.close()
-            classifier_.save(''.join([local_settings['models_path'], 'custom_classifier_.h5']))
+            classifier_.save(''.join([local_settings['models_path'], local_model_name, '_custom_classifier_.h5']))
             print('model architecture saved')
 
-            # output png and pdf with model
+            # output png and pdf with model, additionally saves a json file model_name_analyzed.json
             model_architecture = model_structure()
             model_architecture_review = model_architecture.analize('custom_classifier_.h5', local_settings)
 

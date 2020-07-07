@@ -1,6 +1,6 @@
 {
-"current_model_name": "_CNN_",
-  "model_type": "_4_layers_CNN_",
+  "current_model_name": "_4_layers_CNN_",
+  "model_type": "_4_layers_CNN_customized_",
   "units_layer_1": 64,
   "input_shape_y": 512,
   "input_shape_x": 512,
@@ -65,5 +65,10 @@
   "epochs": 500,
   "batch_size": 32,
   "early_stopping_patience": 4,
-  "workers": 6
+  "ReduceLROnPlateau_factor": 0.25,
+  "ReduceLROnPlateau_patience": 5,
+  "ReduceLROnPlateau_min_lr": 0.001,
+  "workers": 6,
+  "validation_split": 0.1,
+  "training_set_folder": "./3_CLEAN_DATA_DIR/"
 }

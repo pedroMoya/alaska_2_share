@@ -16,10 +16,8 @@ try:
     tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
     tf.keras.backend.set_floatx('float32')
     from tensorflow.keras import layers, models
-    from tensorflow.keras.experimental import PeepholeLSTMCell
-    from tensorflow.keras.layers import TimeDistributed
-    from tensorflow.keras.layers import RepeatVector
     from tensorflow.keras import backend as kb
+    from tensorflow.keras import preprocessing
     from tensorflow.keras import regularizers
     from tensorflow.keras import optimizers
     from tensorflow.keras import losses
@@ -31,6 +29,8 @@ try:
         local_settings = json.loads(local_json_file.read())
         local_json_file.close()
     sys.path.insert(1, local_settings['custom_library_path'])
+    from custom_model_builder import model_classifier_
+    from custom_normalizer import image_normalizer
 
 except Exception as ee1:
     print('Error importing libraries or opening settings (train module)')
@@ -128,9 +128,61 @@ def train():
         else:
             print('model training start')
 
-        # load raw_data and cleaned_data
+        # model training hyperparameters
+        input_shape_y = model_hyperparameters['input_shape_y']
+        input_shape_x = model_hyperparameters['input_shape_x']
+        epochs = model_hyperparameters['epochs']
+        batch_size = model_hyperparameters['batch_size']
+        workers = model_hyperparameters['workers']
+        validation_split = model_hyperparameters['validation_split']
+        early_stopping_patience = model_hyperparameters['early_stopping_patience']
+        reduce_lr_on_plateau_factor = model_hyperparameters['ReduceLROnPlateau_factor']
+        reduce_lr_on_plateau_patience = model_hyperparameters['ReduceLROnPlateau_patience']
+        reduce_lr_on_plateau_min_lr = model_hyperparameters['ReduceLROnPlateau_min_lr']
+        training_set_folder = model_hyperparameters['training_set_folder']
 
-        # build and train model
+        # load raw_data and cleaned_data
+        normalizer = image_normalizer()
+        train_datagen = preprocessing.image.ImageDataGenerator(rescale=1. / 255,
+                                                               preprocessing_function=normalizer.normalize(),
+                                                               validation_split=validation_split)
+        train_generator = train_datagen.flow_from_directory(training_set_folder,
+                                                            target_size=(input_shape_y, input_shape_x),
+                                                            batch_size=batch_size,
+                                                            class_mode='categorical',
+                                                            subset='training')
+        validation_generator = train_datagen.flow_from_directory(training_set_folder,
+                                                                 target_size=(input_shape_y, input_shape_x),
+                                                                 batch_size=batch_size,
+                                                                 class_mode='categorical',
+                                                                 subset='validation')
+
+        # build and compile model
+        model_name = model_hyperparameters['current_model_name']
+        classifier_constructor = model_classifier_()
+        classifier = classifier_constructor.build_and_compile(model_name, local_script_settings, model_hyperparameters)
+
+        # define callbacks, checkpoints namepaths
+        model_weights = ''.join([local_settings['checkpoints_path'],
+                                 'check_point_', model_name, "_loss_-{loss:.4f}-.hdf5"])
+        callback1 = cb.EarlyStopping(monitor='loss', patience=early_stopping_patience)
+        callback2 = cb.ModelCheckpoint(model_weights, monitor='loss', verbose=1,
+                                       save_best_only=True, mode='min')
+        callback3 = cb.ReduceLROnPlateau(factor=reduce_lr_on_plateau_factor, patience=reduce_lr_on_plateau_patience,
+                                         min_lr=reduce_lr_on_plateau_min_lr)
+        callbacks = [callback1, callback2, callback3]
+
+        # training model
+        model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+                                             steps_per_epoch=train_generator.samples // batch_size,
+                                             callbacks=callbacks, shuffle=True, workers=workers,
+                                             validation_data=validation_generator,
+                                             validation_steps=validation_generator.samples // batch_size)
+
+        # save weights (model was saved previously at model build and compile in h5 and json formats)
+        date = datetime.date.today()
+        classifier.save_weights(''.join([local_script_settings['models_path'], model_name, '_', str(date),
+                                         '_weights.h5']))
 
         # closing train module
         print('full training module ended')

@@ -195,3 +195,12 @@ _prepare_data module start
 07.Jul 2020 20:10:51 raw datasets already cleaned
 
 07.Jul 2020 20:10:51 cleaning raw datasets
+
+07.Jul 2020 20:24:53 data pre-processing error
+[Errno 2] No such file or directory: './4_TRAIN_DATA_PATH/method_0_compression_1/73164.jpg'
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 119, in prepare
+    shutil.copyfile(image_path, train_data_path_filename)
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 261, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: './4_TRAIN_DATA_PATH/method_0_compression_1/73164.jpg'

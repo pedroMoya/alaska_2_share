@@ -2690,3 +2690,99 @@ current settings:
 07.Jul 2020 20:10:51 raw datasets already cleaned
 2020-07-07 20:10:51,037 INFO _1_prepare_data 
 07.Jul 2020 20:10:51 cleaning raw datasets
+2020-07-07 20:24:53,327 INFO _1_prepare_data 
+07.Jul 2020 20:24:53 data pre-processing error
+2020-07-07 20:24:53,327 ERROR _1_prepare_data [Errno 2] No such file or directory: './4_TRAIN_DATA_PATH/method_0_compression_1/73164.jpg'
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 119, in prepare
+    shutil.copyfile(image_path, train_data_path_filename)
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 261, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: './4_TRAIN_DATA_PATH/method_0_compression_1/73164.jpg'
+2020-07-07 20:24:53,375 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{'current_model_name': '_4_layers_CNN_'
+ 'model_type': '_4_layers_CNN_customized_'
+ 'units_layer_1': 64
+ 'input_shape_y': 512
+ 'input_shape_x': 512
+ 'nof_channels': 3
+ 'activation_1': 'relu'
+ 'regularizers_l1_l2_1': 'True'
+ 'l1_1': 0.001
+ 'l2_1': 0.001
+ 'kernel_size_y_1': 4
+ 'kernel_size_x_1': 4
+ 'stride_y_1': 1
+ 'stride_x_1': 1
+ 'pool_size_y_1': 4
+ 'pool_size_x_1': 4
+ 'dropout_layer_1': 0.1
+ 'units_layer_2': 64
+ 'activation_2': 'relu'
+ 'regularizers_l1_l2_2': 'True'
+ 'l1_2': 0.001
+ 'l2_2': 0.001
+ 'kernel_size_y_2': 4
+ 'kernel_size_x_2': 4
+ 'pool_size_y_2': 2
+ 'pool_size_x_2': 2
+ 'dropout_layer_2': 0.1
+ 'units_layer_3': 32
+ 'activation_3': 'relu'
+ 'regularizers_l1_l2_3': 'True'
+ 'l1_3': 0.001
+ 'l2_3': 0.001
+ 'kernel_size_y_3': 3
+ 'kernel_size_x_3': 3
+ 'pool_size_y_3': 2
+ 'pool_size_x_3': 2
+ 'dropout_layer_3': 0.1
+ 'units_layer_4': 32
+ 'activation_4': 'relu'
+ 'regularizers_l1_l2_4': 'True'
+ 'l1_4': 0.001
+ 'l2_4': 0.001
+ 'kernel_size_y_4': 3
+ 'kernel_size_x_4': 3
+ 'pool_size_y_4': 2
+ 'pool_size_x_4': 2
+ 'dropout_layer_4': 0.1
+ 'flatten_layer_4': 'True'
+ 'units_dense_layer_4': 8192
+ 'activation_dense_layer_4': 'sigmoid'
+ 'regularizers_l1_l2_dense_4': 'True'
+ 'l1_dense_4': 0.001
+ 'l2_dense_4': 0.001
+ 'dropout_dense_layer_4': 0.1
+ 'units_final_layer': 6
+ 'activation_final_layer': 'softmax'
+ 'optimizer': 'adam'
+ 'learning_rate': 0.00175
+ 'loss_1': 'categorical_crossentropy'
+ 'loss_2': 'None'
+ 'loss_3': 'None'
+ 'metrics1': 'auc_roc'
+ 'metrics2': 'categorical_accuracy'
+ 'epochs': 500
+ 'batch_size': 32
+ 'early_stopping_patience': 4
+ 'ReduceLROnPlateau_factor': 0.25
+ 'ReduceLROnPlateau_patience': 5
+ 'ReduceLROnPlateau_min_lr': 0.001
+ 'workers': 6
+ 'validation_split': 0.1
+ 'training_set_folder': './3_CLEAN_DATA_DIR/'}
+2020-07-07 20:24:53,375 INFO _2_train 
+07.Jul 2020 20:24:53 model training error
+2020-07-07 20:24:53,376 ERROR _2_train normalize() missing 1 required positional argument: 'local_image'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image'
+2020-07-07 20:24:53,400 INFO _3_predict 
+07.Jul 2020 20:24:53 correct prediction process
+2020-07-07 20:24:53,400 INFO root 
+main program ended
+

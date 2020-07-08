@@ -115,7 +115,7 @@ def prepare():
                 quality_factor_detected = quality_factor_instance.detect(image_path)
                 filename = image_path.split('/')[-1]
                 train_data_path_filename = ''.join([train_data_path, quality_factor_detected, '/', filename])
-                # storing the file in the correct folder
+                # storing the file in the correspondent folder
                 shutil.copyfile(image_path, train_data_path_filename)
             with open('./settings.json', 'w', encoding='utf-8') as local_wr_json_file:
                 local_script_settings['disaggregation_done'] = "True"

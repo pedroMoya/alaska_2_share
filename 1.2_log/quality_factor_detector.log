@@ -1,0 +1,50 @@
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed

@@ -44,3 +44,31 @@ Traceback (most recent call last):
   File ".\_2_train.py", line 145, in train
     normalizer = image_normalizer()
 NameError: name 'image_normalizer' is not defined
+
+07.Jul 2020 20:02:37 model training error
+normalize() missing 1 required positional argument: 'local_image'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image'
+
+07.Jul 2020 20:04:43 model training error
+normalize() missing 1 required positional argument: 'local_image'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image'
+
+07.Jul 2020 20:05:33 model training error
+normalize() missing 1 required positional argument: 'local_image'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image'
+
+07.Jul 2020 20:09:47 model training error
+normalize() missing 1 required positional argument: 'local_image'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image'

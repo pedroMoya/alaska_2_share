@@ -2077,3 +2077,616 @@ current settings:
  'method_2_folder': 'JUNIWARD/'
  'method_3_folder': 'UERD/'}
 2020-07-07 14:01:37,142 INFO _1_prepare_data _prepare_data module start
+2020-07-07 20:02:36,844 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'disaggregation_done': 'False'
+ 'data_cleaning_done': 'False'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 20:02:36,851 INFO _1_prepare_data _prepare_data module start
+2020-07-07 20:02:37,774 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,786 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,796 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,809 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,812 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,827 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,842 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,852 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,863 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,873 ERROR quality_factor_detector too many indices for array: array is 1-dimensional, but 2 were indexed
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\quality_factor_detector.py", line 39, in detect
+    if quant_tables[0][0, 0] == 2:
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+2020-07-07 20:02:37,876 INFO _1_prepare_data 
+07.Jul 2020 20:02:37 settings modified and saved
+2020-07-07 20:02:37,884 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{'current_model_name': '_4_layers_CNN_'
+ 'model_type': '_4_layers_CNN_customized_'
+ 'units_layer_1': 64
+ 'input_shape_y': 512
+ 'input_shape_x': 512
+ 'nof_channels': 3
+ 'activation_1': 'relu'
+ 'regularizers_l1_l2_1': 'True'
+ 'l1_1': 0.001
+ 'l2_1': 0.001
+ 'kernel_size_y_1': 4
+ 'kernel_size_x_1': 4
+ 'stride_y_1': 1
+ 'stride_x_1': 1
+ 'pool_size_y_1': 4
+ 'pool_size_x_1': 4
+ 'dropout_layer_1': 0.1
+ 'units_layer_2': 64
+ 'activation_2': 'relu'
+ 'regularizers_l1_l2_2': 'True'
+ 'l1_2': 0.001
+ 'l2_2': 0.001
+ 'kernel_size_y_2': 4
+ 'kernel_size_x_2': 4
+ 'pool_size_y_2': 2
+ 'pool_size_x_2': 2
+ 'dropout_layer_2': 0.1
+ 'units_layer_3': 32
+ 'activation_3': 'relu'
+ 'regularizers_l1_l2_3': 'True'
+ 'l1_3': 0.001
+ 'l2_3': 0.001
+ 'kernel_size_y_3': 3
+ 'kernel_size_x_3': 3
+ 'pool_size_y_3': 2
+ 'pool_size_x_3': 2
+ 'dropout_layer_3': 0.1
+ 'units_layer_4': 32
+ 'activation_4': 'relu'
+ 'regularizers_l1_l2_4': 'True'
+ 'l1_4': 0.001
+ 'l2_4': 0.001
+ 'kernel_size_y_4': 3
+ 'kernel_size_x_4': 3
+ 'pool_size_y_4': 2
+ 'pool_size_x_4': 2
+ 'dropout_layer_4': 0.1
+ 'flatten_layer_4': 'True'
+ 'units_dense_layer_4': 8192
+ 'activation_dense_layer_4': 'sigmoid'
+ 'regularizers_l1_l2_dense_4': 'True'
+ 'l1_dense_4': 0.001
+ 'l2_dense_4': 0.001
+ 'dropout_dense_layer_4': 0.1
+ 'units_final_layer': 6
+ 'activation_final_layer': 'softmax'
+ 'optimizer': 'adam'
+ 'learning_rate': 0.00175
+ 'loss_1': 'categorical_crossentropy'
+ 'loss_2': 'None'
+ 'loss_3': 'None'
+ 'metrics1': 'auc_roc'
+ 'metrics2': 'categorical_accuracy'
+ 'epochs': 500
+ 'batch_size': 32
+ 'early_stopping_patience': 4
+ 'ReduceLROnPlateau_factor': 0.25
+ 'ReduceLROnPlateau_patience': 5
+ 'ReduceLROnPlateau_min_lr': 0.001
+ 'workers': 6
+ 'validation_split': 0.1
+ 'training_set_folder': './3_CLEAN_DATA_DIR/'}
+2020-07-07 20:02:37,884 INFO _2_train 
+07.Jul 2020 20:02:37 model training error
+2020-07-07 20:02:37,884 ERROR _2_train normalize() missing 1 required positional argument: 'local_image'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image'
+2020-07-07 20:02:37,909 INFO _3_predict 
+07.Jul 2020 20:02:37 correct prediction process
+2020-07-07 20:02:37,909 INFO root 
+main program ended
+
+2020-07-07 20:04:42,654 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'False'
+ 'disaggregation_done': 'True'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 20:04:42,654 INFO _1_prepare_data _prepare_data module start
+2020-07-07 20:04:43,013 INFO _1_prepare_data 
+07.Jul 2020 20:04:43 raw datasets already cleaned
+2020-07-07 20:04:43,013 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{'current_model_name': '_4_layers_CNN_'
+ 'model_type': '_4_layers_CNN_customized_'
+ 'units_layer_1': 64
+ 'input_shape_y': 512
+ 'input_shape_x': 512
+ 'nof_channels': 3
+ 'activation_1': 'relu'
+ 'regularizers_l1_l2_1': 'True'
+ 'l1_1': 0.001
+ 'l2_1': 0.001
+ 'kernel_size_y_1': 4
+ 'kernel_size_x_1': 4
+ 'stride_y_1': 1
+ 'stride_x_1': 1
+ 'pool_size_y_1': 4
+ 'pool_size_x_1': 4
+ 'dropout_layer_1': 0.1
+ 'units_layer_2': 64
+ 'activation_2': 'relu'
+ 'regularizers_l1_l2_2': 'True'
+ 'l1_2': 0.001
+ 'l2_2': 0.001
+ 'kernel_size_y_2': 4
+ 'kernel_size_x_2': 4
+ 'pool_size_y_2': 2
+ 'pool_size_x_2': 2
+ 'dropout_layer_2': 0.1
+ 'units_layer_3': 32
+ 'activation_3': 'relu'
+ 'regularizers_l1_l2_3': 'True'
+ 'l1_3': 0.001
+ 'l2_3': 0.001
+ 'kernel_size_y_3': 3
+ 'kernel_size_x_3': 3
+ 'pool_size_y_3': 2
+ 'pool_size_x_3': 2
+ 'dropout_layer_3': 0.1
+ 'units_layer_4': 32
+ 'activation_4': 'relu'
+ 'regularizers_l1_l2_4': 'True'
+ 'l1_4': 0.001
+ 'l2_4': 0.001
+ 'kernel_size_y_4': 3
+ 'kernel_size_x_4': 3
+ 'pool_size_y_4': 2
+ 'pool_size_x_4': 2
+ 'dropout_layer_4': 0.1
+ 'flatten_layer_4': 'True'
+ 'units_dense_layer_4': 8192
+ 'activation_dense_layer_4': 'sigmoid'
+ 'regularizers_l1_l2_dense_4': 'True'
+ 'l1_dense_4': 0.001
+ 'l2_dense_4': 0.001
+ 'dropout_dense_layer_4': 0.1
+ 'units_final_layer': 6
+ 'activation_final_layer': 'softmax'
+ 'optimizer': 'adam'
+ 'learning_rate': 0.00175
+ 'loss_1': 'categorical_crossentropy'
+ 'loss_2': 'None'
+ 'loss_3': 'None'
+ 'metrics1': 'auc_roc'
+ 'metrics2': 'categorical_accuracy'
+ 'epochs': 500
+ 'batch_size': 32
+ 'early_stopping_patience': 4
+ 'ReduceLROnPlateau_factor': 0.25
+ 'ReduceLROnPlateau_patience': 5
+ 'ReduceLROnPlateau_min_lr': 0.001
+ 'workers': 6
+ 'validation_split': 0.1
+ 'training_set_folder': './3_CLEAN_DATA_DIR/'}
+2020-07-07 20:04:43,013 INFO _2_train 
+07.Jul 2020 20:04:43 model training error
+2020-07-07 20:04:43,013 ERROR _2_train normalize() missing 1 required positional argument: 'local_image'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image'
+2020-07-07 20:04:43,044 INFO _3_predict 
+07.Jul 2020 20:04:43 correct prediction process
+2020-07-07 20:04:43,044 INFO root 
+main program ended
+
+2020-07-07 20:05:32,898 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'True'
+ 'disaggregation_done': 'False'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 20:05:32,898 INFO _1_prepare_data _prepare_data module start
+2020-07-07 20:05:33,271 INFO _1_prepare_data 
+07.Jul 2020 20:05:33 raw datasets already cleaned
+2020-07-07 20:05:33,271 INFO _1_prepare_data 
+07.Jul 2020 20:05:33 cleaning raw datasets
+2020-07-07 20:05:33,427 INFO _1_prepare_data 
+07.Jul 2020 20:05:33 settings modified and saved
+2020-07-07 20:05:33,427 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{'current_model_name': '_4_layers_CNN_'
+ 'model_type': '_4_layers_CNN_customized_'
+ 'units_layer_1': 64
+ 'input_shape_y': 512
+ 'input_shape_x': 512
+ 'nof_channels': 3
+ 'activation_1': 'relu'
+ 'regularizers_l1_l2_1': 'True'
+ 'l1_1': 0.001
+ 'l2_1': 0.001
+ 'kernel_size_y_1': 4
+ 'kernel_size_x_1': 4
+ 'stride_y_1': 1
+ 'stride_x_1': 1
+ 'pool_size_y_1': 4
+ 'pool_size_x_1': 4
+ 'dropout_layer_1': 0.1
+ 'units_layer_2': 64
+ 'activation_2': 'relu'
+ 'regularizers_l1_l2_2': 'True'
+ 'l1_2': 0.001
+ 'l2_2': 0.001
+ 'kernel_size_y_2': 4
+ 'kernel_size_x_2': 4
+ 'pool_size_y_2': 2
+ 'pool_size_x_2': 2
+ 'dropout_layer_2': 0.1
+ 'units_layer_3': 32
+ 'activation_3': 'relu'
+ 'regularizers_l1_l2_3': 'True'
+ 'l1_3': 0.001
+ 'l2_3': 0.001
+ 'kernel_size_y_3': 3
+ 'kernel_size_x_3': 3
+ 'pool_size_y_3': 2
+ 'pool_size_x_3': 2
+ 'dropout_layer_3': 0.1
+ 'units_layer_4': 32
+ 'activation_4': 'relu'
+ 'regularizers_l1_l2_4': 'True'
+ 'l1_4': 0.001
+ 'l2_4': 0.001
+ 'kernel_size_y_4': 3
+ 'kernel_size_x_4': 3
+ 'pool_size_y_4': 2
+ 'pool_size_x_4': 2
+ 'dropout_layer_4': 0.1
+ 'flatten_layer_4': 'True'
+ 'units_dense_layer_4': 8192
+ 'activation_dense_layer_4': 'sigmoid'
+ 'regularizers_l1_l2_dense_4': 'True'
+ 'l1_dense_4': 0.001
+ 'l2_dense_4': 0.001
+ 'dropout_dense_layer_4': 0.1
+ 'units_final_layer': 6
+ 'activation_final_layer': 'softmax'
+ 'optimizer': 'adam'
+ 'learning_rate': 0.00175
+ 'loss_1': 'categorical_crossentropy'
+ 'loss_2': 'None'
+ 'loss_3': 'None'
+ 'metrics1': 'auc_roc'
+ 'metrics2': 'categorical_accuracy'
+ 'epochs': 500
+ 'batch_size': 32
+ 'early_stopping_patience': 4
+ 'ReduceLROnPlateau_factor': 0.25
+ 'ReduceLROnPlateau_patience': 5
+ 'ReduceLROnPlateau_min_lr': 0.001
+ 'workers': 6
+ 'validation_split': 0.1
+ 'training_set_folder': './3_CLEAN_DATA_DIR/'}
+2020-07-07 20:05:33,427 INFO _2_train 
+07.Jul 2020 20:05:33 model training error
+2020-07-07 20:05:33,427 ERROR _2_train normalize() missing 1 required positional argument: 'local_image'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image'
+2020-07-07 20:05:33,458 INFO _3_predict 
+07.Jul 2020 20:05:33 correct prediction process
+2020-07-07 20:05:33,458 INFO root 
+main program ended
+
+2020-07-07 20:09:47,447 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'True'
+ 'disaggregation_done': 'False'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 20:09:47,447 INFO _1_prepare_data _prepare_data module start
+2020-07-07 20:09:47,806 INFO _1_prepare_data 
+07.Jul 2020 20:09:47 raw datasets already cleaned
+2020-07-07 20:09:47,806 INFO _1_prepare_data 
+07.Jul 2020 20:09:47 cleaning raw datasets
+2020-07-07 20:09:47,962 INFO _1_prepare_data 
+07.Jul 2020 20:09:47 settings modified and saved
+2020-07-07 20:09:47,978 INFO root 
+executing train module program..
+current models hyperparameters settings:
+{'current_model_name': '_4_layers_CNN_'
+ 'model_type': '_4_layers_CNN_customized_'
+ 'units_layer_1': 64
+ 'input_shape_y': 512
+ 'input_shape_x': 512
+ 'nof_channels': 3
+ 'activation_1': 'relu'
+ 'regularizers_l1_l2_1': 'True'
+ 'l1_1': 0.001
+ 'l2_1': 0.001
+ 'kernel_size_y_1': 4
+ 'kernel_size_x_1': 4
+ 'stride_y_1': 1
+ 'stride_x_1': 1
+ 'pool_size_y_1': 4
+ 'pool_size_x_1': 4
+ 'dropout_layer_1': 0.1
+ 'units_layer_2': 64
+ 'activation_2': 'relu'
+ 'regularizers_l1_l2_2': 'True'
+ 'l1_2': 0.001
+ 'l2_2': 0.001
+ 'kernel_size_y_2': 4
+ 'kernel_size_x_2': 4
+ 'pool_size_y_2': 2
+ 'pool_size_x_2': 2
+ 'dropout_layer_2': 0.1
+ 'units_layer_3': 32
+ 'activation_3': 'relu'
+ 'regularizers_l1_l2_3': 'True'
+ 'l1_3': 0.001
+ 'l2_3': 0.001
+ 'kernel_size_y_3': 3
+ 'kernel_size_x_3': 3
+ 'pool_size_y_3': 2
+ 'pool_size_x_3': 2
+ 'dropout_layer_3': 0.1
+ 'units_layer_4': 32
+ 'activation_4': 'relu'
+ 'regularizers_l1_l2_4': 'True'
+ 'l1_4': 0.001
+ 'l2_4': 0.001
+ 'kernel_size_y_4': 3
+ 'kernel_size_x_4': 3
+ 'pool_size_y_4': 2
+ 'pool_size_x_4': 2
+ 'dropout_layer_4': 0.1
+ 'flatten_layer_4': 'True'
+ 'units_dense_layer_4': 8192
+ 'activation_dense_layer_4': 'sigmoid'
+ 'regularizers_l1_l2_dense_4': 'True'
+ 'l1_dense_4': 0.001
+ 'l2_dense_4': 0.001
+ 'dropout_dense_layer_4': 0.1
+ 'units_final_layer': 6
+ 'activation_final_layer': 'softmax'
+ 'optimizer': 'adam'
+ 'learning_rate': 0.00175
+ 'loss_1': 'categorical_crossentropy'
+ 'loss_2': 'None'
+ 'loss_3': 'None'
+ 'metrics1': 'auc_roc'
+ 'metrics2': 'categorical_accuracy'
+ 'epochs': 500
+ 'batch_size': 32
+ 'early_stopping_patience': 4
+ 'ReduceLROnPlateau_factor': 0.25
+ 'ReduceLROnPlateau_patience': 5
+ 'ReduceLROnPlateau_min_lr': 0.001
+ 'workers': 6
+ 'validation_split': 0.1
+ 'training_set_folder': './3_CLEAN_DATA_DIR/'}
+2020-07-07 20:09:47,978 INFO _2_train 
+07.Jul 2020 20:09:47 model training error
+2020-07-07 20:09:47,978 ERROR _2_train normalize() missing 1 required positional argument: 'local_image'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image'
+2020-07-07 20:09:47,994 INFO _3_predict 
+07.Jul 2020 20:09:47 correct prediction process
+2020-07-07 20:09:47,994 INFO root 
+main program ended
+
+2020-07-07 20:10:50,654 INFO root 
+Starting main program..
+current settings:
+{'comment': 'organic_settings overwrite settings.json'
+ 'metaheuristic_optimization': 'False'
+ 'optimization_iterations': 1
+ 'version': '0.1'
+ 'mode': 'test'
+ 'machine': 'local'
+ 'control': 'handler'
+ 'model_analyzer': 'True'
+ 'repeat_data_cleaning': 'True'
+ 'disaggregation_done': 'False'
+ 'data_cleaning_done': 'True'
+ 'repeat_training': 'True'
+ 'training_done': 'True'
+ 'root_path': './'
+ 'metaheuristics_path': './0.0_metaheuristics/'
+ 'hyperparameters_path': './0.1_hyperparameters/'
+ 'configuration_path': './1.0_configuration/'
+ 'documentation_path': './1.1_documentation/'
+ 'log_path': './1.2_log/'
+ 'raw_data_path': './2_RAW_DATA_DIR/'
+ 'clean_data_path': './3_CLEAN_DATA_DIR/'
+ 'train_data_path': './4_TRAIN_DATA_PATH/'
+ 'models_path': './5.0_MODELS_DIR/'
+ 'benchmarks_path': './5.1_STATE_OF_ART_BENCHMARKS/'
+ 'custom_library_path': './5.2_CUSTOM_LIBRARY/'
+ 'checkpoints_path': './6_CHECKPOINTS_DIR/'
+ 'test_data_path': './7_TEST_DATA_PATH/'
+ 'submission_path': './8_SUBMISSION_DIR/'
+ 'models_evaluation_path': './9.1_MODELS_EVALUATION/'
+ 'others_outputs_path': './9.2_OTHERS_OUTPUTS/'
+ 'others_inputs_path': './9.3_OTHERS_INPUTS/'
+ 'method_0_folder': 'Cover/'
+ 'method_1_folder': 'JMiPOD/'
+ 'method_2_folder': 'JUNIWARD/'
+ 'method_3_folder': 'UERD/'}
+2020-07-07 20:10:50,662 INFO _1_prepare_data _prepare_data module start
+2020-07-07 20:10:51,037 INFO _1_prepare_data 
+07.Jul 2020 20:10:51 raw datasets already cleaned
+2020-07-07 20:10:51,037 INFO _1_prepare_data 
+07.Jul 2020 20:10:51 cleaning raw datasets

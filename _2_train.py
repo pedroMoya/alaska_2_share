@@ -9,6 +9,8 @@ try:
     import logging.handlers as handlers
     import json
     import datetime
+    import PIL
+    import cv2
     import numpy as np
     import pandas as pd
     import tensorflow as tf
@@ -32,7 +34,7 @@ try:
     # import custom libraries
     sys.path.insert(1, local_settings['custom_library_path'])
     from custom_model_builder import model_classifier_
-    from custom_normalizer import image_normalizer
+    # from custom_normalizer import image_normalizer
 
 except Exception as ee1:
     print('Error importing libraries or opening settings (train module)')
@@ -41,7 +43,7 @@ except Exception as ee1:
 # log setup
 current_script_name = os.path.basename(__file__).split('.')[0]
 log_path_filename = ''.join([local_settings['log_path'], current_script_name, '.log'])
-logging.basicConfig(filename=log_path_filename, level=logging.DEBUG,
+logging.basicConfig(filename=log_path_filename, level=logging.INFO,
                     format='%(asctime)s %(levelname)s %(name)s %(message)s')
 logger = logging.getLogger(__name__)
 logHandler = handlers.RotatingFileHandler(log_path_filename, maxBytes=10485760, backupCount=5)
@@ -77,6 +79,20 @@ class customized_loss(losses.Loss):
 
 
 # functions definitions
+
+
+def image_normalizer(local_image):
+    local_max = np.amax(local_image, axis=(0, 1))
+    local_min = np.amin(local_image, axis=(0, 1))
+    local_denom_diff = np.add(local_max, -local_min)
+    local_denom_diff[local_denom_diff == 0] = 1.
+    local_min[local_denom_diff == 1] = 0.
+    local_num_diff = np.add(local_image, -local_min)
+    local_image = np.divide(local_num_diff, local_denom_diff)
+    # local_image = np.array(local_image)
+    # ycbcr_image = cv2.cvtColor(local_image.astype(np.uint8), cv2.COLOR_RGB2YCR_CB)
+    # PIL.Image.fromarray(ycbcr_image)
+    return local_image
 
 
 def train():
@@ -141,12 +157,12 @@ def train():
         reduce_lr_on_plateau_factor = model_hyperparameters['ReduceLROnPlateau_factor']
         reduce_lr_on_plateau_patience = model_hyperparameters['ReduceLROnPlateau_patience']
         reduce_lr_on_plateau_min_lr = model_hyperparameters['ReduceLROnPlateau_min_lr']
+        validation_freq = model_hyperparameters['validation_freq']
         training_set_folder = model_hyperparameters['training_set_folder']
 
         # load raw_data and cleaned_data
-        normalizer = image_normalizer()
         train_datagen = preprocessing.image.ImageDataGenerator(rescale=1. / 255,
-                                                               preprocessing_function=normalizer.normalize(),
+                                                               preprocessing_function=image_normalizer,
                                                                validation_split=validation_split)
         train_generator = train_datagen.flow_from_directory(training_set_folder,
                                                             target_size=(input_shape_y, input_shape_x),
@@ -159,7 +175,7 @@ def train():
                                                                  class_mode='categorical',
                                                                  subset='validation')
 
-        # build and compile model
+        # build, compile and save model
         model_name = model_hyperparameters['current_model_name']
         classifier_constructor = model_classifier_()
         classifier = classifier_constructor.build_and_compile(model_name, local_script_settings, model_hyperparameters)
@@ -170,7 +186,8 @@ def train():
         callback1 = cb.EarlyStopping(monitor='loss', patience=early_stopping_patience)
         callback2 = cb.ModelCheckpoint(model_weights, monitor='loss', verbose=1,
                                        save_best_only=True, mode='min')
-        callback3 = cb.ReduceLROnPlateau(factor=reduce_lr_on_plateau_factor, patience=reduce_lr_on_plateau_patience,
+        callback3 = cb.ReduceLROnPlateau(monitor='loss', factor=reduce_lr_on_plateau_factor,
+                                         patience=reduce_lr_on_plateau_patience,
                                          min_lr=reduce_lr_on_plateau_min_lr)
         callbacks = [callback1, callback2, callback3]
 
@@ -179,6 +196,7 @@ def train():
                                              steps_per_epoch=train_generator.samples // batch_size,
                                              callbacks=callbacks, shuffle=True, workers=workers,
                                              validation_data=validation_generator,
+                                             validation_freq=validation_freq,
                                              validation_steps=validation_generator.samples // batch_size)
 
         # save weights (model was saved previously at model build and compile in h5 and json formats)

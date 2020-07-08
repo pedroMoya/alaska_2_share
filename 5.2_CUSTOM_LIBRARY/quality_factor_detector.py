@@ -15,7 +15,7 @@ with open('./settings.json') as local_json_file:
 # log setup
 current_script_name = os.path.basename(__file__).split('.')[0]
 log_path_filename = ''.join([local_submodule_settings['log_path'], current_script_name, '.log'])
-logging.basicConfig(filename=log_path_filename, level=logging.DEBUG,
+logging.basicConfig(filename=log_path_filename, level=logging.ERROR,
                     format='%(asctime)s %(levelname)s %(name)s %(message)s')
 logger = logging.getLogger(__name__)
 logHandler = handlers.RotatingFileHandler(log_path_filename, maxBytes=10485760, backupCount=5)

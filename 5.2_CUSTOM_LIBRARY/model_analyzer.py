@@ -29,7 +29,7 @@ with open('./settings.json') as local_json_file:
 # log setup
 current_script_name = os.path.basename(__file__).split('.')[0]
 log_path_filename = ''.join([local_submodule_settings['log_path'], current_script_name, '.log'])
-logging.basicConfig(filename=log_path_filename, level=logging.DEBUG,
+logging.basicConfig(filename=log_path_filename, level=logging.INFO,
                     format='%(asctime)s %(levelname)s %(name)s %(message)s')
 logger = logging.getLogger(__name__)
 logHandler = handlers.RotatingFileHandler(log_path_filename, maxBytes=10485760, backupCount=5)
@@ -38,7 +38,7 @@ logger.addHandler(logHandler)
 
 class model_structure:
 
-    def analize(self, local_model_name, local_a_settings):
+    def analize(self, local_model_name, local_a_settings, local_a_hyperparameters):
         try:
             # loading model (h5 format)
             print('trying to open model file (assuming h5 format)')
@@ -52,9 +52,10 @@ class model_structure:
             # changing for subclassing to functional model
             local_model_json = json.loads(local_model_json)
             local_batch_size = None
-            local_time_step_days = local_model_json['config']['build_input_shape'][1]
-            local_features = local_model_json['config']['build_input_shape'][2]
-            input_layer = layers.Input(batch_shape=(local_batch_size, local_time_step_days, local_features))
+            local_y_input = local_model_json['config']['build_input_shape'][1]
+            local_x_input = local_model_json['config']['build_input_shape'][2]
+            local_nof_channels = local_a_hyperparameters['nof_channels']
+            input_layer = layers.Input(batch_shape=(local_batch_size, local_y_input, local_x_input, local_nof_channels))
             prev_layer = input_layer
             for layer in local_model.layers:
                 prev_layer = layer(prev_layer)
@@ -70,5 +71,6 @@ class model_structure:
         except Exception as e1:
             print('Error reading or saving model structure to pdf or png')
             print(e1)
+            logger.error(str(e1), exc_info=True)
             return False
         return True

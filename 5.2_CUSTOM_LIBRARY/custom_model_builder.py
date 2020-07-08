@@ -28,7 +28,7 @@ with open('./settings.json') as local_json_file:
 # log setup
 current_script_name = os.path.basename(__file__).split('.')[0]
 log_path_filename = ''.join([local_submodule_settings['log_path'], current_script_name, '.log'])
-logging.basicConfig(filename=log_path_filename, level=logging.DEBUG,
+logging.basicConfig(filename=log_path_filename, level=logging.INFO,
                     format='%(asctime)s %(levelname)s %(name)s %(message)s')
 logger = logging.getLogger(__name__)
 logHandler = handlers.RotatingFileHandler(log_path_filename, maxBytes=10485760, backupCount=5)
@@ -36,7 +36,7 @@ logger.addHandler(logHandler)
 
 # load custom libraries
 sys.path.insert(1, local_submodule_settings['custom_library_path'])
-from customized_metrics import customized_metrics
+from customized_metrics import customized_metrics_auc_roc
 from model_analyzer import model_structure
 
 # class definitions
@@ -72,6 +72,8 @@ class model_classifier_:
             input_shape_y = local_hyperparameters['input_shape_y']
             input_shape_x = local_hyperparameters['input_shape_x']
             nof_channels = local_hyperparameters['nof_channels']
+            stride_y_1 = local_hyperparameters['stride_y_1']
+            stride_x_1 = local_hyperparameters['stride_x_1']
             kernel_size_y_1 = local_hyperparameters['kernel_size_y_1']
             kernel_size_x_1 = local_hyperparameters['kernel_size_x_1']
             kernel_size_y_2 = local_hyperparameters['kernel_size_y_2']
@@ -111,7 +113,7 @@ class model_classifier_:
             metric2 = local_hyperparameters['metrics2']
             union_settings_metrics = [metric1, metric2]
             if 'auc_roc' in union_settings_metrics:
-                metrics_list.append(customized_metrics.auc_roc())
+                metrics_list.append(metrics.AUC())
             if 'categorical_accuracy' in union_settings_metrics:
                 metrics_list.append(metrics.CategoricalAccuracy())
             if local_hyperparameters['regularizers_l1_l2_1'] == 'True':
@@ -147,10 +149,11 @@ class model_classifier_:
 
             # building model
             classifier_ = tf.keras.models.Sequential()
+            # input layer
+            classifier_.add(tf.keras.Input(shape=(input_shape_y, input_shape_x, nof_channels)))
             # first layer
             classifier_.add(layers.Conv2D(units_layer_1, kernel_size=(kernel_size_y_1, kernel_size_x_1),
-                                          stride=(),
-                                          input_shape=(input_shape_y, input_shape_x, nof_channels),
+                                          strides=(stride_y_1, stride_x_1),
                                           activity_regularizer=activation_regularizer_1,
                                           activation=activation_1))
             classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_1, pool_size_x_1)))
@@ -179,17 +182,18 @@ class model_classifier_:
             # Flattening
             classifier_.add(layers.Flatten())
             # Full connection
-            classifier_.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4),
-                            activity_regularizer_dense_layer_4=activation_regularizer_dense_layer_4)
+            classifier_.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4,
+                            activity_regularizer=activation_regularizer_dense_layer_4))
             classifier_.add(layers.Dropout(dropout_dense_layer_4))
             classifier_.add(layers.Dense(units_final_layer, activation=activation_final_layer))
 
-            # Compile model
+            # build and Compile model
+            classifier_.build(input_shape=(0, input_shape_y, input_shape_x, nof_channels))
             classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
 
             # Summary and metrics
             classifier_.summary()
-            print('metrics: ', classifier_.metrics)
+            print('metrics: ', classifier_.metrics_names)
 
             # save_model
             classifier_json = classifier_.to_json()
@@ -201,8 +205,10 @@ class model_classifier_:
             print('model architecture saved')
 
             # output png and pdf with model, additionally saves a json file model_name_analyzed.json
-            model_architecture = model_structure()
-            model_architecture_review = model_architecture.analize('custom_classifier_.h5', local_settings)
+            if local_settings['model_analyzer'] == 'True':
+                model_architecture = model_structure()
+                model_architecture_review = model_architecture.analize('_4_layers_CNN__custom_classifier_.h5',
+                                                                       local_settings, local_hyperparameters)
 
         except Exception as e:
             print('error in build or compile of customized model')

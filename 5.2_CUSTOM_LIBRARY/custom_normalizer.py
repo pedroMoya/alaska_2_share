@@ -4,7 +4,7 @@ import numpy as np
 
 class image_normalizer:
 
-    def normalize(self, local_image):
+    def call(self, local_image):
         local_max = np.amax(local_image, axis=(0, 1))
         local_min = np.amin(local_image, axis=(0, 1))
         local_denom_diff = np.add(local_max, -local_min)

@@ -204,3 +204,459 @@ Traceback (most recent call last):
   File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 261, in copyfile
     with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
 FileNotFoundError: [Errno 2] No such file or directory: './4_TRAIN_DATA_PATH/method_0_compression_1/73164.jpg'
+_prepare_data module start
+
+07.Jul 2020 20:30:43 raw datasets already cleaned
+
+07.Jul 2020 20:30:43 cleaning raw datasets
+
+07.Jul 2020 21:32:20 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 21:37:54 raw datasets already cleaned
+
+07.Jul 2020 21:37:54 cleaning raw datasets
+
+07.Jul 2020 21:37:54 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 21:45:00 raw datasets already cleaned
+
+07.Jul 2020 21:45:00 cleaning raw datasets
+
+07.Jul 2020 21:45:00 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 21:48:10 raw datasets already cleaned
+
+07.Jul 2020 21:48:10 cleaning raw datasets
+
+07.Jul 2020 21:48:10 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 21:53:01 raw datasets already cleaned
+
+07.Jul 2020 21:53:01 cleaning raw datasets
+
+07.Jul 2020 21:53:01 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 21:53:22 raw datasets already cleaned
+
+07.Jul 2020 21:53:22 cleaning raw datasets
+
+07.Jul 2020 21:53:22 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 21:55:48 raw datasets already cleaned
+
+07.Jul 2020 21:55:48 cleaning raw datasets
+
+07.Jul 2020 21:55:48 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 21:57:21 raw datasets already cleaned
+
+07.Jul 2020 21:57:21 cleaning raw datasets
+
+07.Jul 2020 21:57:21 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 21:58:23 raw datasets already cleaned
+
+07.Jul 2020 21:58:23 cleaning raw datasets
+
+07.Jul 2020 21:58:23 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:09:54 raw datasets already cleaned
+
+07.Jul 2020 22:09:54 cleaning raw datasets
+
+07.Jul 2020 22:09:54 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:11:34 raw datasets already cleaned
+
+07.Jul 2020 22:11:34 cleaning raw datasets
+
+07.Jul 2020 22:11:34 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:14:57 raw datasets already cleaned
+
+07.Jul 2020 22:14:57 cleaning raw datasets
+
+07.Jul 2020 22:14:57 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:18:45 raw datasets already cleaned
+
+07.Jul 2020 22:18:45 cleaning raw datasets
+
+07.Jul 2020 22:18:45 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:25:54 raw datasets already cleaned
+
+07.Jul 2020 22:25:54 cleaning raw datasets
+
+07.Jul 2020 22:25:54 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:27:21 raw datasets already cleaned
+
+07.Jul 2020 22:27:21 cleaning raw datasets
+
+07.Jul 2020 22:27:21 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:30:19 raw datasets already cleaned
+
+07.Jul 2020 22:30:19 cleaning raw datasets
+
+07.Jul 2020 22:30:19 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:33:13 raw datasets already cleaned
+
+07.Jul 2020 22:33:13 cleaning raw datasets
+
+07.Jul 2020 22:33:13 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:35:32 raw datasets already cleaned
+
+07.Jul 2020 22:35:32 cleaning raw datasets
+
+07.Jul 2020 22:35:32 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:36:21 raw datasets already cleaned
+
+07.Jul 2020 22:36:21 cleaning raw datasets
+
+07.Jul 2020 22:36:21 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:43:28 raw datasets already cleaned
+
+07.Jul 2020 22:43:28 cleaning raw datasets
+
+07.Jul 2020 22:43:28 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 22:49:42 raw datasets already cleaned
+
+07.Jul 2020 22:49:42 cleaning raw datasets
+
+07.Jul 2020 22:49:42 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:31:14 raw datasets already cleaned
+
+07.Jul 2020 23:31:14 cleaning raw datasets
+
+07.Jul 2020 23:31:14 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:33:23 raw datasets already cleaned
+
+07.Jul 2020 23:33:23 cleaning raw datasets
+
+07.Jul 2020 23:33:23 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:37:16 raw datasets already cleaned
+
+07.Jul 2020 23:37:16 cleaning raw datasets
+
+07.Jul 2020 23:37:16 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:39:56 raw datasets already cleaned
+
+07.Jul 2020 23:39:56 cleaning raw datasets
+
+07.Jul 2020 23:39:56 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:41:21 raw datasets already cleaned
+
+07.Jul 2020 23:41:21 cleaning raw datasets
+
+07.Jul 2020 23:41:21 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:44:00 raw datasets already cleaned
+
+07.Jul 2020 23:44:00 cleaning raw datasets
+
+07.Jul 2020 23:44:00 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:47:59 raw datasets already cleaned
+
+07.Jul 2020 23:47:59 cleaning raw datasets
+
+07.Jul 2020 23:47:59 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:50:06 raw datasets already cleaned
+
+07.Jul 2020 23:50:06 cleaning raw datasets
+
+07.Jul 2020 23:50:06 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:52:23 raw datasets already cleaned
+
+07.Jul 2020 23:52:23 cleaning raw datasets
+
+07.Jul 2020 23:52:23 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:55:16 raw datasets already cleaned
+
+07.Jul 2020 23:55:16 cleaning raw datasets
+
+07.Jul 2020 23:55:16 settings modified and saved
+_prepare_data module start
+
+07.Jul 2020 23:58:07 raw datasets already cleaned
+
+07.Jul 2020 23:58:07 cleaning raw datasets
+
+07.Jul 2020 23:58:07 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 00:04:43 raw datasets already cleaned
+
+08.Jul 2020 00:04:43 cleaning raw datasets
+
+08.Jul 2020 00:04:43 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 06:40:01 raw datasets already cleaned
+
+08.Jul 2020 06:40:01 cleaning raw datasets
+
+08.Jul 2020 06:40:02 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 06:42:29 raw datasets already cleaned
+
+08.Jul 2020 06:42:29 cleaning raw datasets
+
+08.Jul 2020 06:42:29 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 06:45:11 raw datasets already cleaned
+
+08.Jul 2020 06:45:11 cleaning raw datasets
+
+08.Jul 2020 06:45:11 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 06:46:45 raw datasets already cleaned
+
+08.Jul 2020 06:46:45 cleaning raw datasets
+
+08.Jul 2020 06:46:45 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 07:23:21 raw datasets already cleaned
+
+08.Jul 2020 07:23:21 cleaning raw datasets
+
+08.Jul 2020 07:23:21 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 07:25:54 raw datasets already cleaned
+
+08.Jul 2020 07:25:54 cleaning raw datasets
+
+08.Jul 2020 07:25:54 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 07:30:43 raw datasets already cleaned
+
+08.Jul 2020 07:30:43 cleaning raw datasets
+
+08.Jul 2020 07:30:43 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 07:33:47 raw datasets already cleaned
+
+08.Jul 2020 07:33:47 cleaning raw datasets
+
+08.Jul 2020 07:33:47 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 07:35:04 raw datasets already cleaned
+
+08.Jul 2020 07:35:04 cleaning raw datasets
+
+08.Jul 2020 07:35:04 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 07:35:38 raw datasets already cleaned
+
+08.Jul 2020 07:35:38 cleaning raw datasets
+
+08.Jul 2020 07:35:38 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 07:36:33 raw datasets already cleaned
+
+08.Jul 2020 07:36:33 cleaning raw datasets
+
+08.Jul 2020 07:36:33 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 07:37:27 raw datasets already cleaned
+
+08.Jul 2020 07:37:27 cleaning raw datasets
+
+08.Jul 2020 07:37:27 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 07:39:03 raw datasets already cleaned
+
+08.Jul 2020 07:39:03 cleaning raw datasets
+
+08.Jul 2020 07:39:03 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 10:03:45 raw datasets already cleaned
+
+08.Jul 2020 10:03:45 cleaning raw datasets
+
+08.Jul 2020 10:03:45 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:12:50 raw datasets already cleaned
+
+08.Jul 2020 13:12:50 cleaning raw datasets
+
+08.Jul 2020 13:12:50 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:25:05 raw datasets already cleaned
+
+08.Jul 2020 13:25:05 cleaning raw datasets
+
+08.Jul 2020 13:25:05 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:26:10 raw datasets already cleaned
+
+08.Jul 2020 13:26:10 cleaning raw datasets
+
+08.Jul 2020 13:26:10 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:26:40 raw datasets already cleaned
+
+08.Jul 2020 13:26:40 cleaning raw datasets
+
+08.Jul 2020 13:26:40 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:27:13 raw datasets already cleaned
+
+08.Jul 2020 13:27:13 cleaning raw datasets
+
+08.Jul 2020 13:27:13 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:29:31 raw datasets already cleaned
+
+08.Jul 2020 13:29:31 cleaning raw datasets
+
+08.Jul 2020 13:29:31 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:31:29 raw datasets already cleaned
+
+08.Jul 2020 13:31:29 cleaning raw datasets
+
+08.Jul 2020 13:31:29 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:33:18 raw datasets already cleaned
+
+08.Jul 2020 13:33:18 cleaning raw datasets
+
+08.Jul 2020 13:33:18 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:34:08 raw datasets already cleaned
+
+08.Jul 2020 13:34:08 cleaning raw datasets
+
+08.Jul 2020 13:34:08 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:35:09 raw datasets already cleaned
+
+08.Jul 2020 13:35:09 cleaning raw datasets
+
+08.Jul 2020 13:35:09 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:36:18 raw datasets already cleaned
+
+08.Jul 2020 13:36:18 cleaning raw datasets
+
+08.Jul 2020 13:36:18 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 13:38:30 raw datasets already cleaned
+
+08.Jul 2020 13:38:30 cleaning raw datasets
+
+08.Jul 2020 13:38:30 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 14:40:13 raw datasets already cleaned
+
+08.Jul 2020 14:40:13 cleaning raw datasets
+
+08.Jul 2020 14:40:13 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 14:41:36 raw datasets already cleaned
+
+08.Jul 2020 14:41:36 cleaning raw datasets
+
+08.Jul 2020 14:41:36 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 14:42:48 raw datasets already cleaned
+
+08.Jul 2020 14:42:48 cleaning raw datasets
+
+08.Jul 2020 14:42:48 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 14:44:15 raw datasets already cleaned
+
+08.Jul 2020 14:44:15 cleaning raw datasets
+
+08.Jul 2020 14:44:15 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 15:51:24 raw datasets already cleaned
+
+08.Jul 2020 15:51:24 cleaning raw datasets
+
+08.Jul 2020 15:51:24 settings modified and saved
+_prepare_data module start
+
+08.Jul 2020 16:00:36 raw datasets already cleaned
+
+08.Jul 2020 16:00:36 cleaning raw datasets
+
+08.Jul 2020 16:00:36 settings modified and saved
+_prepare_data module start

@@ -2,6 +2,8 @@
 import os
 import sys
 import shutil
+import random
+import itertools as it
 import logging
 import logging.handlers as handlers
 import json
@@ -24,19 +26,56 @@ logger.addHandler(logHandler)
 
 # keras session/random seed reset/fix
 np.random.seed(1)
+random.seed(42)
 tf.random.set_seed(2)
 
+# functions definitions
 
+
+def erase_previous_images(local_folder):
+    for local_filename in os.listdir(local_folder):
+        local_file_path = os.path.join(local_folder, local_filename)
+        try:
+            if os.path.isfile(local_file_path) or os.path.islink(local_file_path):
+                os.unlink(local_file_path)
+        except Exception as e:
+            print('Failed at deleting file ', local_file_path)
+            print(e)
+            return False
+    print('previous images deleted from evaluation folder ')
+    return True
+
+# classes definitions
 class select_evaluation_images:
 
-    def select_images(self, local_settings):
+    def select_images(self, local_settings, local_model_evaluation_folder):
         try:
+            local_nof_methods = local_settings['nof_methods']
+            local_nof_quality_factors = local_settings['nof_quality_factors']
+            nof_samples_by_group = local_settings['nof_evaluation_samples_by_group']
             if local_settings['repeat_select_images_for_evaluation'] == "False":
                 print('settings indicates maintain the evaluation dataset')
                 return True
             # clean files previously selected
-
-
+            rng = np.random.default_rng()
+            for method, compression in it.product(range(local_nof_methods), range(local_nof_quality_factors)):
+                # clean files previously selected
+                local_dest_subfolder = ''.join([local_model_evaluation_folder, 'method_', str(method), '_compression_',
+                                                str(compression), '/'])
+                erase_previous_images(local_dest_subfolder)
+                # select randomly
+                local_src_subfolder = ''.join([local_settings['train_data_path'], 'method_', str(method),
+                                               '_compression_', str(compression), '/'])
+                nof_samples = 0
+                while nof_samples < nof_samples_by_group:
+                    file_selected = random.choice([image_file for image_file in os.listdir(local_src_subfolder)
+                                                   if os.path.isfile(os.path.join(local_src_subfolder, image_file))])
+                    file_selected_path = ''.join([local_dest_subfolder, file_selected])
+                    if not os.path.isfile(file_selected_path):
+                        shutil.copyfile(''.join([local_src_subfolder, file_selected]), ''.join([local_dest_subfolder,
+                                                                                               file_selected]))
+                        nof_samples += 1
+            print('select_evaluation_images submodule had finished')
         except Exception as e1:
             print('Error at select_evaluation_images submodule')
             print(e1)

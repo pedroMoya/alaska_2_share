@@ -67,23 +67,25 @@ def evaluate():
 
         # open model and weights
         current_model_name = model_hyperparameters['current_model_name']
-        classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name]))
+        classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+                                                '_custom_classifier_.h5']))
         weights_file_name = local_script_settings['weights_loaded_in evaluation']
         if weights_file_name == 'from_today':
             print('model loaded and by default the currents weights saved today will be loaded')
             date = datetime.date.today()
-            classifier.loads_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
-                                              '_weights.h5']))
+            classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+                                             '_weights.h5']))
         else:
             print('model loaded and by setting this weights will be loaded:', weights_file_name)
-            classifier.loads_weights(''.join([local_script_settings['models_path'], weights_file_name]))
+            classifier.load_weights(''.join([local_script_settings['models_path'], weights_file_name]))
 
         # define from scratch random evaluation folder
         model_evaluation_folder = ''.join([local_script_settings['models_evaluation_path'], 'images_for_evaluation/'])
         create_evaluation_folder = select_evaluation_images()
-        create_evaluation_folder_review = create_evaluation_folder.select_images(local_script_settings)
+        create_evaluation_folder_review = create_evaluation_folder.select_images(local_script_settings,
+                                                                                 model_evaluation_folder)
         if create_evaluation_folder_review:
-            print('new randomly selected images for evaluation generated successfully')
+            print('new or maintained randomly selected images for evaluation subprocess ended successfully')
         else:
             print('error at generating folder with images for evaluation')
             logger.info('error at folder_for_evaluation generation')
@@ -91,6 +93,9 @@ def evaluate():
 
         # Outcomes: accuracy - confusion_matrix
         try:
+            nof_methods = local_script_settings['nof_methods']
+            nof_quality_factors = local_script_settings['nof_quality_factors']
+            nof_evaluation_samples_by_group = local_script_settings['nof_evaluation_samples_by_group']
             batch_size = model_hyperparameters['batch_size']
             input_shape_y = model_hyperparameters['input_shape_y']
             input_shape_x = model_hyperparameters['input_shape_x']
@@ -101,23 +106,38 @@ def evaluate():
                                                         batch_size=batch_size,
                                                         class_mode='categorical')
             y_predictions = np.array(classifier.predict(test_set))
-            print('Confusion Matrix')
-            print(confusion_matrix(test_set.classes, y_predictions))
+            print('Confusion Matrix for all categories')
+            print(confusion_matrix(test_set.classes, y_predictions.argmax(axis=1)))
             print('Classification Report')
             target_names = ['method_0_compression_0', 'method_0_compression_1', 'method_0_compression_2',
                             'method_1_compression_0', 'method_1_compression_1', 'method_1_compression_2',
                             'method_2_compression_0', 'method_2_compression_1', 'method_2_compression_2',
                             'method_3_compression_0', 'method_3_compression_1', 'method_3_compression_2']
-            print(classification_report(test_set.classes, y_predictions, target_names=target_names))
-            print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
-            print(classifier.metrics_names)
-            print(classifier.evaluate(test_set, verbose=0))
+            print(classification_report(test_set.classes, y_predictions.argmax(axis=1), target_names=target_names))
+            print(classifier.evaluate(test_set, verbose=0, return_dict=True))
             print("log_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes), y_predictions, eps=1e-15))
+            print('number of classes:', test_set.num_classes)
+            confusion_matrix_tf = tf.math.confusion_matrix(labels=test_set.classes,
+                                                           predictions=y_predictions.argmax(axis=1))
+            print(confusion_matrix_tf)
+
+            # calculating if stenographic method was used or not 0: no_hidden_message 1: hidden_message
+            print('\nadjusting evaluation to ~no-hidden or hidden message in image~ binary classification')
+            print('Confusion Matrix for binary classification')
+            hidden_message_prob = np.sum(y_predictions[:, nof_methods: nof_methods * nof_quality_factors - 1], axis=1)
+            no_hidden_message_prob = np.round(np.add(1., -hidden_message_prob))
+            labels = np.zeros(shape=hidden_message_prob.shape, dtype=np.dtype('int32'))
+            labels[nof_evaluation_samples_by_group * nof_methods:] = 1
+            confusion_matrix_tf_binary = tf.math.confusion_matrix(labels=labels, predictions=no_hidden_message_prob)
+            print(confusion_matrix_tf_binary, '\n')
+            print(confusion_matrix(labels, no_hidden_message_prob), '\n')
+            target_names = ['no_hidden_message', 'hidden_message']
+            print(classification_report(labels, no_hidden_message_prob, target_names=target_names))
+            print('\n AUC_ROC score:', roc_auc_score(labels, no_hidden_message_prob))
         except Exception as e:
             print('Error at making predictions or with model evaluation from sci-kit learn or tf confusion_matrix')
             print(e)
             logger.error(str(e), exc_info=True)
-
         # finalizing this module
         print('model evaluation subprocess ended successfully')
     except Exception as e1:

@@ -1,0 +1,489 @@
+
+08.Jul 2020 18:16:39 evaluator module error
+SavedModel file does not exist at: ./5.0_MODELS_DIR/_4_layers_CNN_/{saved_model.pbtxt|saved_model.pb}
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 70, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 189, in load_model
+    loader_impl.parse_saved_model(filepath)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\saved_model\loader_impl.py", line 110, in parse_saved_model
+    raise IOError("SavedModel file does not exist at: %s/{%s|%s}" %
+OSError: SavedModel file does not exist at: ./5.0_MODELS_DIR/_4_layers_CNN_/{saved_model.pbtxt|saved_model.pb}
+
+08.Jul 2020 18:19:57 evaluator module error
+'Sequential' object has no attribute 'loads_weights'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 76, in evaluate
+    classifier.loads_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+AttributeError: 'Sequential' object has no attribute 'loads_weights'
+
+08.Jul 2020 18:20:53 evaluator module error
+'Sequential' object has no attribute 'loads_weights'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 76, in evaluate
+    classifier.loads_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+AttributeError: 'Sequential' object has no attribute 'loads_weights'
+error at folder_for_evaluation generation
+error at folder_for_evaluation generation
+error at folder_for_evaluation generation
+Classification metrics can't handle a mix of multiclass and continuous-multioutput targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of multiclass and continuous-multioutput targets
+Classification metrics can't handle a mix of multiclass and continuous-multioutput targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    print(classification_report(test_set.classes, y_predictions, target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1929, in classification_report
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of multiclass and continuous-multioutput targets
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 116, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 116, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 116, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+confusion_matrix() got an unexpected keyword argument 'target_names'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions,
+TypeError: confusion_matrix() got an unexpected keyword argument 'target_names'
+confusion_matrix() got an unexpected keyword argument 'target_names'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions,
+TypeError: confusion_matrix() got an unexpected keyword argument 'target_names'
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Can't convert non-rectangular Python sequence to Tensor.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    print(tf.math.confusion_matrix(labels=(test_set.classes, target_names), predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 155, in confusion_matrix
+    ops.convert_to_tensor(labels, name='labels'),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1341, in convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 321, in _constant_tensor_conversion_function
+    return constant(v, dtype=dtype, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 261, in constant
+    return _constant_impl(value, dtype, shape, name, verify_shape=False,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 270, in _constant_impl
+    t = convert_to_eager_tensor(value, ctx, dtype)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 96, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+ValueError: Can't convert non-rectangular Python sequence to Tensor.
+error at folder_for_evaluation generation
+Shape (900, 2, 12) must have rank 2
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 930, in merge_with
+    self.assert_same_rank(other)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 984, in assert_same_rank
+    raise ValueError("Shapes %s and %s must have the same rank" %
+ValueError: Shapes (900, 2, 12) and (None, None) must have the same rank
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1015, in with_rank
+    return self.merge_with(unknown_shape(rank=rank))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 936, in merge_with
+    raise ValueError("Shapes %s and %s are not compatible" % (self, other))
+ValueError: Shapes (900, 2, 12) and (None, None) are not compatible
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 119, in evaluate
+    print(tf.math.confusion_matrix(labels=tf.keras.utils.to_categorical(test_set.classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 195, in confusion_matrix
+    cm_sparse = sparse_tensor.SparseTensor(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\sparse_tensor.py", line 174, in __init__
+    indices_shape = indices.shape.with_rank(2)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1017, in with_rank
+    raise ValueError("Shape %s must have rank %d" % (self, rank))
+ValueError: Shape (900, 2, 12) must have rank 2
+Shape (900, 2, 12) must have rank 2
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 930, in merge_with
+    self.assert_same_rank(other)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 984, in assert_same_rank
+    raise ValueError("Shapes %s and %s must have the same rank" %
+ValueError: Shapes (900, 2, 12) and (None, None) must have the same rank
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1015, in with_rank
+    return self.merge_with(unknown_shape(rank=rank))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 936, in merge_with
+    raise ValueError("Shapes %s and %s are not compatible" % (self, other))
+ValueError: Shapes (900, 2, 12) and (None, None) are not compatible
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 119, in evaluate
+    print(tf.math.confusion_matrix(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 195, in confusion_matrix
+    cm_sparse = sparse_tensor.SparseTensor(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\sparse_tensor.py", line 174, in __init__
+    indices_shape = indices.shape.with_rank(2)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1017, in with_rank
+    raise ValueError("Shape %s must have rank %d" % (self, rank))
+ValueError: Shape (900, 2, 12) must have rank 2
+Shape (900, 2, 12) must have rank 2
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 930, in merge_with
+    self.assert_same_rank(other)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 984, in assert_same_rank
+    raise ValueError("Shapes %s and %s must have the same rank" %
+ValueError: Shapes (900, 2, 12) and (None, None) must have the same rank
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1015, in with_rank
+    return self.merge_with(unknown_shape(rank=rank))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 936, in merge_with
+    raise ValueError("Shapes %s and %s are not compatible" % (self, other))
+ValueError: Shapes (900, 2, 12) and (None, None) are not compatible
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 119, in evaluate
+    print(tf.math.confusion_matrix(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 195, in confusion_matrix
+    cm_sparse = sparse_tensor.SparseTensor(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\sparse_tensor.py", line 174, in __init__
+    indices_shape = indices.shape.with_rank(2)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1017, in with_rank
+    raise ValueError("Shape %s must have rank %d" % (self, rank))
+ValueError: Shape (900, 2, 12) must have rank 2
+Shape (900, 2, 12) must have rank 2
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 930, in merge_with
+    self.assert_same_rank(other)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 984, in assert_same_rank
+    raise ValueError("Shapes %s and %s must have the same rank" %
+ValueError: Shapes (900, 2, 12) and (None, None) must have the same rank
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1015, in with_rank
+    return self.merge_with(unknown_shape(rank=rank))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 936, in merge_with
+    raise ValueError("Shapes %s and %s are not compatible" % (self, other))
+ValueError: Shapes (900, 2, 12) and (None, None) are not compatible
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 120, in evaluate
+    print(tf.math.confusion_matrix(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 195, in confusion_matrix
+    cm_sparse = sparse_tensor.SparseTensor(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\sparse_tensor.py", line 174, in __init__
+    indices_shape = indices.shape.with_rank(2)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1017, in with_rank
+    raise ValueError("Shape %s must have rank %d" % (self, rank))
+ValueError: Shape (900, 2, 12) must have rank 2
+Shape (900, 2, 12) must have rank 2
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 930, in merge_with
+    self.assert_same_rank(other)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 984, in assert_same_rank
+    raise ValueError("Shapes %s and %s must have the same rank" %
+ValueError: Shapes (900, 2, 12) and (None, None) must have the same rank
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1015, in with_rank
+    return self.merge_with(unknown_shape(rank=rank))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 936, in merge_with
+    raise ValueError("Shapes %s and %s are not compatible" % (self, other))
+ValueError: Shapes (900, 2, 12) and (None, None) are not compatible
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 120, in evaluate
+    print(tf.math.confusion_matrix(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 195, in confusion_matrix
+    cm_sparse = sparse_tensor.SparseTensor(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\sparse_tensor.py", line 174, in __init__
+    indices_shape = indices.shape.with_rank(2)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1017, in with_rank
+    raise ValueError("Shape %s must have rank %d" % (self, rank))
+ValueError: Shape (900, 2, 12) must have rank 2
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 119, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.classes, predictions=y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12] [Op:Pack] name: stack
+Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12,12] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 119, in evaluate
+    print(tf.math.confusion_matrix(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 192, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 180, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1342, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6337, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [900] != values[1].shape = [900,12,12] [Op:Pack] name: stack
+int() argument must be a string, a bytes-like object or a number, not 'dict'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 120, in evaluate
+    labels=tf.keras.utils.to_categorical(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\np_utils.py", line 49, in to_categorical
+    y = np.array(y, dtype='int')
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'dict'
+Attempt to convert a value ({'method_0_compression_0': 0, 'method_0_compression_1': 1, 'method_0_compression_2': 2, 'method_1_compression_0': 3, 'method_1_compression_1': 4, 'method_1_compression_2': 5, 'method_2_compression_0': 6, 'method_2_compression_1': 7, 'method_2_compression_2': 8, 'method_3_compression_0': 9, 'method_3_compression_1': 10, 'method_3_compression_2': 11}) with an unsupported type (<class 'dict'>) to a Tensor.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 119, in evaluate
+    print(tf.math.confusion_matrix(labels=test_set.class_indices, predictions=y_predictions.argmax(axis=1)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 155, in confusion_matrix
+    ops.convert_to_tensor(labels, name='labels'),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1341, in convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 321, in _constant_tensor_conversion_function
+    return constant(v, dtype=dtype, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 261, in constant
+    return _constant_impl(value, dtype, shape, name, verify_shape=False,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 270, in _constant_impl
+    t = convert_to_eager_tensor(value, ctx, dtype)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 96, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+ValueError: Attempt to convert a value ({'method_0_compression_0': 0, 'method_0_compression_1': 1, 'method_0_compression_2': 2, 'method_1_compression_0': 3, 'method_1_compression_1': 4, 'method_1_compression_2': 5, 'method_2_compression_0': 6, 'method_2_compression_1': 7, 'method_2_compression_2': 8, 'method_3_compression_0': 9, 'method_3_compression_1': 10, 'method_3_compression_2': 11}) with an unsupported type (<class 'dict'>) to a Tensor.
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 132, in evaluate
+    print(confusion_matrix(labels, hidden_message_prob))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 132, in evaluate
+    print(confusion_matrix(labels, hidden_message_prob))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 132, in evaluate
+    print(confusion_matrix(labels, no_hidden_message_prob))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 133, in evaluate
+    print(confusion_matrix(labels, no_hidden_message_prob))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 135, in evaluate
+    print(classification_report(labels, hidden_message_prob, target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1929, in classification_report
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 135, in evaluate
+    print(classification_report(labels, hidden_message_prob))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1929, in classification_report
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets

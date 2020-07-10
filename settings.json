@@ -2,7 +2,7 @@
   "comment": "organic_settings overwrite settings.json",
   "metaheuristic_optimization": "False",
   "optimization_iterations": 1,
-  "version": "0.1",
+  "version": "0.2",
   "mode": "test",
   "machine": "local",
   "control": "handler",
@@ -37,6 +37,6 @@
   "weights_loaded_in evaluation": "from_today",
   "repeat_select_images_for_evaluation": "False",
   "nof_methods": 4,
-  "nof_quality_factors": 3,
+  "nof_quality_factors": 1,
   "nof_evaluation_samples_by_group": 75
 }

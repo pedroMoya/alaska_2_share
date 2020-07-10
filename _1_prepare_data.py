@@ -22,6 +22,7 @@ with open('./settings.json') as local_json_file:
 # import custom libraries
 sys.path.insert(1, local_script_settings['custom_library_path'])
 from quality_factor_detector import quality_factor
+from matched_data_creator import matched_data_builder
 
 if local_script_settings['metaheuristic_optimization'] == "True":
     with open(''.join([local_script_settings['metaheuristics_path'],
@@ -135,6 +136,15 @@ def prepare():
         # data normalization based in moving window
         # this step is included as a pre-processing_function in ImageDataGenerator
         print('data normalization was prepared as a pre-processing_function')
+
+        # creating data structures for correctness in classification
+        # matched_data_builder_instance = matched_data_builder()
+        # matched_data_builder_review = matched_data_builder_instance.create_dataset()
+        # if matched_data_builder_review:
+        #     print('matched_images dataset submodule completed with success')
+        # else:
+        #     print('error at matched_images dataset submodule')
+        #     return False
 
         # save clean data source for subsequent training
         # np.save(''.join([local_script_settings['train_data_path'], 'x_train_source']),

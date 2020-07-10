@@ -58,14 +58,13 @@ class select_evaluation_images:
                 return True
             # clean files previously selected
             rng = np.random.default_rng()
-            for method, compression in it.product(range(local_nof_methods), range(local_nof_quality_factors)):
+            for method in range(local_nof_methods):
                 # clean files previously selected
-                local_dest_subfolder = ''.join([local_model_evaluation_folder, 'method_', str(method), '_compression_',
-                                                str(compression), '/'])
+                local_dest_subfolder = ''.join([local_model_evaluation_folder, 'method_', str(method), '/'])
+                print('erasing files in folder of method ', method)
                 erase_previous_images(local_dest_subfolder)
                 # select randomly
-                local_src_subfolder = ''.join([local_settings['train_data_path'], 'method_', str(method),
-                                               '_compression_', str(compression), '/'])
+                local_src_subfolder = ''.join([local_settings['train_data_path'], 'method_', str(method), '/'])
                 nof_samples = 0
                 while nof_samples < nof_samples_by_group:
                     file_selected = random.choice([image_file for image_file in os.listdir(local_src_subfolder)

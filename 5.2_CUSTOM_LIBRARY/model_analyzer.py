@@ -68,6 +68,7 @@ class model_structure:
                        rankdir='TB', expand_nested=True, dpi=216)
             plot_model(functional_model, to_file=''.join([plot_path, '.pdf']), show_shapes=True, show_layer_names=True,
                        rankdir='TB', expand_nested=True)
+            print('model analyzer ended with success, model saved in json, pdf and png formats\n')
         except Exception as e1:
             print('Error reading or saving model structure to pdf or png')
             print(e1)

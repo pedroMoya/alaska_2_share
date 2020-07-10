@@ -54,6 +54,17 @@ tf.random.set_seed(2)
 # functions definitions
 
 
+def image_normalizer(local_image):
+    local_max = np.amax(local_image, axis=(0, 1))
+    local_min = np.amin(local_image, axis=(0, 1))
+    local_denom_diff = np.add(local_max, -local_min)
+    local_denom_diff[local_denom_diff == 0] = 1
+    local_min[local_denom_diff == 1] = 0.
+    local_num_diff = np.add(local_image, -local_min)
+    local_image = np.divide(local_num_diff, local_denom_diff)
+    return local_image
+
+
 def evaluate():
     try:
         # evaluate current model, store and display results
@@ -99,20 +110,22 @@ def evaluate():
             batch_size = model_hyperparameters['batch_size']
             input_shape_y = model_hyperparameters['input_shape_y']
             input_shape_x = model_hyperparameters['input_shape_x']
-            test_datagen = preprocessing.image.ImageDataGenerator(rescale=1. / 255)
+            test_datagen = preprocessing.image.ImageDataGenerator(rescale=1. / 255,
+                                                                  preprocessing_function=image_normalizer)
             test_set = test_datagen.flow_from_directory(model_evaluation_folder,
-                                                        shuffle=False,
+                                                        shuffle=True,
                                                         target_size=(input_shape_y, input_shape_x),
                                                         batch_size=batch_size,
                                                         class_mode='categorical')
             y_predictions = np.array(classifier.predict(test_set))
+            print(y_predictions)
             print('Confusion Matrix for all categories')
             print(confusion_matrix(test_set.classes, y_predictions.argmax(axis=1)))
             print('Classification Report')
-            target_names = ['method_0_compression_0', 'method_0_compression_1', 'method_0_compression_2',
-                            'method_1_compression_0', 'method_1_compression_1', 'method_1_compression_2',
-                            'method_2_compression_0', 'method_2_compression_1', 'method_2_compression_2',
-                            'method_3_compression_0', 'method_3_compression_1', 'method_3_compression_2']
+            target_names = ['method_0',
+                            'method_1',
+                            'method_2',
+                            'method_3']
             print(classification_report(test_set.classes, y_predictions.argmax(axis=1), target_names=target_names))
             print(classifier.evaluate(test_set, verbose=0, return_dict=True))
             print("log_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes), y_predictions, eps=1e-15))
@@ -124,10 +137,12 @@ def evaluate():
             # calculating if stenographic method was used or not 0: no_hidden_message 1: hidden_message
             print('\nadjusting evaluation to ~no-hidden or hidden message in image~ binary classification')
             print('Confusion Matrix for binary classification')
-            hidden_message_prob = np.sum(y_predictions[:, nof_methods: nof_methods * nof_quality_factors - 1], axis=1)
+            hidden_message_prob = np.sum(y_predictions[:, nof_quality_factors: nof_methods * nof_quality_factors - 1],
+                                         axis=1)
             no_hidden_message_prob = np.round(np.add(1., -hidden_message_prob))
             labels = np.zeros(shape=hidden_message_prob.shape, dtype=np.dtype('int32'))
-            labels[nof_evaluation_samples_by_group * nof_methods:] = 1
+            labels[nof_evaluation_samples_by_group * nof_quality_factors:] = 1
+            print(labels)
             confusion_matrix_tf_binary = tf.math.confusion_matrix(labels=labels, predictions=no_hidden_message_prob)
             print(confusion_matrix_tf_binary, '\n')
             print(confusion_matrix(labels, no_hidden_message_prob), '\n')

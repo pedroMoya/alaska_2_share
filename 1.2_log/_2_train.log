@@ -1108,3 +1108,1067 @@ ValueError: in user code:
 08.Jul 2020 16:00:16 correct model training, correct saving of model and weights
 
 08.Jul 2020 16:00:16 settings modified and saved
+
+09.Jul 2020 08:02:22 model training error
+Cannot cast ufunc 'multiply' output from dtype('float64') to dtype('uint8') with casting rule 'same_kind'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 195, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 802, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1100, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 901, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 772, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 912, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 710, in standardize
+    x *= self.rescale
+numpy.core._exceptions.UFuncTypeError: Cannot cast ufunc 'multiply' output from dtype('float64') to dtype('uint8') with casting rule 'same_kind'
+
+09.Jul 2020 08:14:04 model training error
+NumPy boolean array indexing assignment cannot assign 3 input values to the 0 output values where the mask is true
+Traceback (most recent call last):
+  File ".\_2_train.py", line 195, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 802, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1100, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 901, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 772, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 912, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 88, in image_normalizer
+    local_denom_diff[local_denom_diff == 0] = local_max
+ValueError: NumPy boolean array indexing assignment cannot assign 3 input values to the 0 output values where the mask is true
+
+09.Jul 2020 08:15:44 model training error
+operands could not be broadcast together with shapes (0,) (3,) 
+Traceback (most recent call last):
+  File ".\_2_train.py", line 195, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 802, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1100, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 901, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 772, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 912, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 88, in image_normalizer
+    local_denom_diff[local_denom_diff == 0] = np.add(local_denom_diff[local_denom_diff == 0], local_max)
+ValueError: operands could not be broadcast together with shapes (0,) (3,) 
+
+09.Jul 2020 09:08:19 correct model training, correct saving of model and weights
+
+09.Jul 2020 09:08:19 settings modified and saved
+
+09.Jul 2020 09:43:02 correct model training, correct saving of model and weights
+
+09.Jul 2020 09:43:02 settings modified and saved
+
+09.Jul 2020 09:46:00 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 195, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+09.Jul 2020 09:48:17 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 195, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+09.Jul 2020 11:25:54 model training error
+2 root error(s) found.
+  (0) Invalid argument:  logits and labels must have the same first dimension, got logits shape [16,12] and labels shape [192]
+	 [[node sparse_categorical_crossentropy/SparseSoftmaxCrossEntropyWithLogits/SparseSoftmaxCrossEntropyWithLogits (defined at .\_2_train.py:195) ]]
+	 [[assert_less_equal/Assert/AssertGuard/else/_81/Assert/data_1/_57]]
+  (1) Invalid argument:  logits and labels must have the same first dimension, got logits shape [16,12] and labels shape [192]
+	 [[node sparse_categorical_crossentropy/SparseSoftmaxCrossEntropyWithLogits/SparseSoftmaxCrossEntropyWithLogits (defined at .\_2_train.py:195) ]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_3364]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 195, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 644, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2420, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1661, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1745, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 593, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 2 root error(s) found.
+  (0) Invalid argument:  logits and labels must have the same first dimension, got logits shape [16,12] and labels shape [192]
+	 [[node sparse_categorical_crossentropy/SparseSoftmaxCrossEntropyWithLogits/SparseSoftmaxCrossEntropyWithLogits (defined at .\_2_train.py:195) ]]
+	 [[assert_less_equal/Assert/AssertGuard/else/_81/Assert/data_1/_57]]
+  (1) Invalid argument:  logits and labels must have the same first dimension, got logits shape [16,12] and labels shape [192]
+	 [[node sparse_categorical_crossentropy/SparseSoftmaxCrossEntropyWithLogits/SparseSoftmaxCrossEntropyWithLogits (defined at .\_2_train.py:195) ]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_3364]
+
+Function call stack:
+train_function -> train_function
+
+
+09.Jul 2020 11:30:41 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+Traceback (most recent call last):
+  File ".\_2_train.py", line 195, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 627, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 505, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2446, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2777, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2657, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 981, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 441, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 968, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+
+
+09.Jul 2020 11:37:49 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+Traceback (most recent call last):
+  File ".\_2_train.py", line 195, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 627, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 505, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2446, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2777, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2657, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 981, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 441, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 968, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+
+
+09.Jul 2020 12:31:12 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:532 train_step  **
+        loss = self.compiled_loss(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:205 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:143 __call__
+        losses = self.call(y_true, y_pred)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:246 call
+        return self.fn(y_true, y_pred, **self._fn_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:1527 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py:4561 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 12) are incompatible
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 627, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 505, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2446, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2777, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2657, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 981, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 441, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 968, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:532 train_step  **
+        loss = self.compiled_loss(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:205 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:143 __call__
+        losses = self.call(y_true, y_pred)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:246 call
+        return self.fn(y_true, y_pred, **self._fn_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:1527 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py:4561 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 12) are incompatible
+
+
+09.Jul 2020 12:38:20 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 627, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 505, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2446, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2777, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2657, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 981, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 441, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 968, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+
+
+09.Jul 2020 12:57:25 correct model training, correct saving of model and weights
+
+09.Jul 2020 12:57:25 settings modified and saved
+
+09.Jul 2020 13:06:03 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+Traceback (most recent call last):
+  File ".\_2_train.py", line 197, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 627, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 505, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2446, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2777, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2657, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 981, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 441, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 968, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+
+
+09.Jul 2020 13:17:00 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+Traceback (most recent call last):
+  File ".\_2_train.py", line 197, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 627, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 505, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2446, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2777, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2657, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 981, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 441, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 968, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:543 train_step  **
+        self.compiled_metrics.update_state(y, y_pred, sample_weight)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:411 update_state
+        metric_obj.update_state(y_t, y_p)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:90 decorated
+        update_op = update_state_fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py:2067 update_state
+        return metrics_utils.update_confusion_matrix_variables(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\metrics_utils.py:351 update_confusion_matrix_variables
+        y_pred.shape.assert_is_compatible_with(y_true.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 12) and (None, 1) are incompatible
+
+
+09.Jul 2020 13:24:49 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:532 train_step  **
+        loss = self.compiled_loss(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:205 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:143 __call__
+        losses = self.call(y_true, y_pred)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:246 call
+        return self.fn(y_true, y_pred, **self._fn_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:1527 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py:4561 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 12) are incompatible
+Traceback (most recent call last):
+  File ".\_2_train.py", line 197, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 627, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 505, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2446, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2777, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2657, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 981, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 441, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 968, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:532 train_step  **
+        loss = self.compiled_loss(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:205 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:143 __call__
+        losses = self.call(y_true, y_pred)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:246 call
+        return self.fn(y_true, y_pred, **self._fn_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:1527 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py:4561 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 12) are incompatible
+
+
+09.Jul 2020 13:35:21 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:532 train_step  **
+        loss = self.compiled_loss(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:205 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:143 __call__
+        losses = self.call(y_true, y_pred)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:246 call
+        return self.fn(y_true, y_pred, **self._fn_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:1527 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py:4561 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 12) are incompatible
+Traceback (most recent call last):
+  File ".\_2_train.py", line 197, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 627, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 505, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2446, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2777, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2657, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 981, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 441, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 968, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:532 train_step  **
+        loss = self.compiled_loss(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:205 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:143 __call__
+        losses = self.call(y_true, y_pred)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:246 call
+        return self.fn(y_true, y_pred, **self._fn_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:1527 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py:4561 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, 1) and (None, 12) are incompatible
+
+
+09.Jul 2020 13:46:04 model training error
+2 root error(s) found.
+  (0) Invalid argument:  logits and labels must have the same first dimension, got logits shape [128,12] and labels shape [1536]
+	 [[node sparse_categorical_crossentropy/SparseSoftmaxCrossEntropyWithLogits/SparseSoftmaxCrossEntropyWithLogits (defined at .\_2_train.py:197) ]]
+	 [[assert_less_equal/Assert/AssertGuard/else/_81/Assert/data_0/_55]]
+  (1) Invalid argument:  logits and labels must have the same first dimension, got logits shape [128,12] and labels shape [1536]
+	 [[node sparse_categorical_crossentropy/SparseSoftmaxCrossEntropyWithLogits/SparseSoftmaxCrossEntropyWithLogits (defined at .\_2_train.py:197) ]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_3411]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 197, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 644, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2420, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1661, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1745, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 593, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 2 root error(s) found.
+  (0) Invalid argument:  logits and labels must have the same first dimension, got logits shape [128,12] and labels shape [1536]
+	 [[node sparse_categorical_crossentropy/SparseSoftmaxCrossEntropyWithLogits/SparseSoftmaxCrossEntropyWithLogits (defined at .\_2_train.py:197) ]]
+	 [[assert_less_equal/Assert/AssertGuard/else/_81/Assert/data_0/_55]]
+  (1) Invalid argument:  logits and labels must have the same first dimension, got logits shape [128,12] and labels shape [1536]
+	 [[node sparse_categorical_crossentropy/SparseSoftmaxCrossEntropyWithLogits/SparseSoftmaxCrossEntropyWithLogits (defined at .\_2_train.py:197) ]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_3411]
+
+Function call stack:
+train_function -> train_function
+
+
+09.Jul 2020 14:56:08 correct model training, correct saving of model and weights
+
+09.Jul 2020 14:56:08 settings modified and saved
+
+09.Jul 2020 15:52:35 model training error
+Invalid class_mode: raw; expected one of: {'sparse', None, 'categorical', 'binary', 'input'}
+Traceback (most recent call last):
+  File ".\_2_train.py", line 167, in train
+    train_generator = train_datagen.flow_from_directory(training_set_folder,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 526, in flow_from_directory
+    return DirectoryIterator(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\directory_iterator.py", line 106, in __init__
+    raise ValueError('Invalid class_mode: {}; expected one of: {}'
+ValueError: Invalid class_mode: raw; expected one of: {'sparse', None, 'categorical', 'binary', 'input'}
+
+09.Jul 2020 15:54:44 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:532 train_step  **
+        loss = self.compiled_loss(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:205 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:143 __call__
+        losses = self.call(y_true, y_pred)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:246 call
+        return self.fn(y_true, y_pred, **self._fn_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:1527 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py:4561 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, None, None, None) and (None, 12) are incompatible
+Traceback (most recent call last):
+  File ".\_2_train.py", line 197, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 627, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 505, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2446, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2777, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2657, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 981, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 441, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 968, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:571 train_function  *
+        outputs = self.distribute_strategy.run(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:951 run  **
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2290 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2649 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:532 train_step  **
+        loss = self.compiled_loss(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\compile_utils.py:205 __call__
+        loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:143 __call__
+        losses = self.call(y_true, y_pred)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:246 call
+        return self.fn(y_true, y_pred, **self._fn_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py:1527 categorical_crossentropy
+        return K.categorical_crossentropy(y_true, y_pred, from_logits=from_logits)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py:4561 categorical_crossentropy
+        target.shape.assert_is_compatible_with(output.shape)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py:1117 assert_is_compatible_with
+        raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+
+    ValueError: Shapes (None, None, None, None) and (None, 12) are incompatible
+
+
+09.Jul 2020 16:38:11 model training error
+Cannot handle this data type: (1, 1, 3), <f4
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\PIL\Image.py", line 2749, in fromarray
+    mode, rawmode = _fromarray_typemap[typekey]
+KeyError: ((1, 1, 3), '<f4')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File ".\_2_train.py", line 199, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 802, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1100, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 901, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 772, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 912, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 94, in image_normalizer
+    local_image = PIL.Image.fromarray(ycbcr_image)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\PIL\Image.py", line 2751, in fromarray
+    raise TypeError("Cannot handle this data type: %s, %s" % typekey) from e
+TypeError: Cannot handle this data type: (1, 1, 3), <f4
+
+09.Jul 2020 16:42:03 model training error
+'Image' object has no attribute 'shape'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 199, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 802, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1100, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 901, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 772, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 912, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 96, in image_normalizer
+    print(local_image.shape)
+AttributeError: 'Image' object has no attribute 'shape'
+
+09.Jul 2020 16:43:19 model training error
+'Image' object has no attribute 'shape'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 200, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 802, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1100, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 901, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 772, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 912, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 97, in image_normalizer
+    print(local_image.shape)
+AttributeError: 'Image' object has no attribute 'shape'
+
+09.Jul 2020 18:02:03 correct model training, correct saving of model and weights
+
+09.Jul 2020 18:02:03 settings modified and saved
+
+09.Jul 2020 23:00:02 model training error
+2 root error(s) found.
+  (0) Invalid argument:  logits and labels must be broadcastable: logits_size=[32,12] labels_size=[32,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:201) ]]
+	 [[assert_greater_equal/Assert/AssertGuard/pivot_f/_73/_37]]
+  (1) Invalid argument:  logits and labels must be broadcastable: logits_size=[32,12] labels_size=[32,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:201) ]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_3463]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 201, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 66, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 848, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 580, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 644, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2420, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1661, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1745, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 593, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 2 root error(s) found.
+  (0) Invalid argument:  logits and labels must be broadcastable: logits_size=[32,12] labels_size=[32,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:201) ]]
+	 [[assert_greater_equal/Assert/AssertGuard/pivot_f/_73/_37]]
+  (1) Invalid argument:  logits and labels must be broadcastable: logits_size=[32,12] labels_size=[32,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:201) ]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_3463]
+
+Function call stack:
+train_function -> train_function
+
+
+09.Jul 2020 23:11:24 correct model training, correct saving of model and weights
+
+09.Jul 2020 23:11:24 settings modified and saved
+
+10.Jul 2020 00:23:37 correct model training, correct saving of model and weights
+
+10.Jul 2020 00:23:37 settings modified and saved
+
+10.Jul 2020 01:07:43 correct model training, correct saving of model and weights
+
+10.Jul 2020 01:07:43 settings modified and saved

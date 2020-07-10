@@ -207,3 +207,13 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1657, in _create_c_op
     raise ValueError(str(e))
 ValueError: Negative dimension size caused by subtracting 3 from 2 for '{{node conv2d_3/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout_2/Identity, conv2d_3/Conv2D/ReadVariableOp)' with input shapes: [?,2,2,32], [3,3,32,32].
+categorical_crossentropy() missing 2 required positional arguments: 'y_true' and 'y_pred'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 108, in build_and_compile
+    losses_list.append(losses.categorical_crossentropy())
+TypeError: categorical_crossentropy() missing 2 required positional arguments: 'y_true' and 'y_pred'
+categorical_hinge() missing 2 required positional arguments: 'y_true' and 'y_pred'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 110, in build_and_compile
+    losses_list.append(losses.categorical_hinge())
+TypeError: categorical_hinge() missing 2 required positional arguments: 'y_true' and 'y_pred'

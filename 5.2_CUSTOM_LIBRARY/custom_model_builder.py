@@ -106,6 +106,10 @@ class model_classifier_:
             union_settings_losses = [loss_1, loss_2, loss_3]
             if 'categorical_crossentropy' in union_settings_losses:
                 losses_list.append(losses.CategoricalCrossentropy())
+            if 'categorical_hinge' in union_settings_losses:
+                losses_list.append(losses.CategoricalHinge())
+            if 'sparse_categorical_crossentropy' in union_settings_losses:
+                losses_list.append(losses.SparseCategoricalCrossentropy())
             # if 'customized_loss_function' in union_settings_losses:
             #     losses_list.append(customized_loss())
             metrics_list = []
@@ -116,6 +120,8 @@ class model_classifier_:
                 metrics_list.append(metrics.AUC())
             if 'categorical_accuracy' in union_settings_metrics:
                 metrics_list.append(metrics.CategoricalAccuracy())
+            if 'sparse_categorical_accuracy' in union_settings_metrics:
+                metrics_list.append(metrics.SparseCategoricalAccuracy())
             if local_hyperparameters['regularizers_l1_l2_1'] == 'True':
                 l1_1 = local_hyperparameters['l1_1']
                 l2_1 = local_hyperparameters['l2_1']
@@ -193,7 +199,6 @@ class model_classifier_:
 
             # Summary and metrics
             classifier_.summary()
-            print('metrics: ', classifier_.metrics_names)
 
             # save_model
             classifier_json = classifier_.to_json()

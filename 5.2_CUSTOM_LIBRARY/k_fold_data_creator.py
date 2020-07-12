@@ -1,4 +1,4 @@
-# match the images and creates evaluation folders (stored in 3_CLEAN_DATA_DIR)
+# match the same images and creates evaluation folders with K_FOLD_group (stored in 4_TRAIN_DATA_PATH)
 import os
 import sys
 import shutil
@@ -34,19 +34,15 @@ tf.random.set_seed(2)
 
 
 # classes definitions
-class matched_data_builder:
+class k_fold_builder:
 
-    def create_dataset(self):
+    def assign(self, local_id, local_nof_groups):
         try:
-            # stack so we can split on the same quartet of images
-            # (idea inspired from the work of Radu Enucă
-            #  https://medium.com/datadriveninvestor/dual-input-cnn-with-keras-1e6d458cd979)
-            x_train_comp = np.stack((x_train_method_0, x_train_method_1, x_train_method_2, x_train_method_3), axis=4)
-            x_train, x_test, y_train, y_test = train_test_split(x_train_comp, labels, test_size=0.3, random_state=666)
-            print('matched_images dataset creation submodule had finished')
+            # if more complex disaggregation will be need, here there are the submodule
+            local_group = np.remainder(local_id, local_nof_groups)
         except Exception as e1:
-            print('Error at matched_images dataset creation submodule')
+            print('Error at matched_images K_fold_group dataset creation submodule')
             print(e1)
             logger.error(str(e1), exc_info=True)
             return False
-        return True
+        return local_group

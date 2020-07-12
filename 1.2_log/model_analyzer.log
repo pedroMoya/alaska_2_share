@@ -7,3 +7,679 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\input_spec.py", line 176, in assert_input_compatibility
     raise ValueError('Input ' + str(input_index) + ' of layer ' +
 ValueError: Input 0 of layer conv2d is incompatible with the layer: expected ndim=4, found ndim=3. Full shape received: [None, 512, 512]
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 45, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 57, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+'type' object is not iterable
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 57, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 181, in load_model
+    with generic_utils.CustomObjectScope(custom_objects or {}):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 78, in __enter__
+    _GLOBAL_CUSTOM_OBJECTS.update(objects)
+TypeError: 'type' object is not iterable
+'customized_loss' object is not iterable
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 57, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 181, in load_model
+    with generic_utils.CustomObjectScope(custom_objects or {}):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 78, in __enter__
+    _GLOBAL_CUSTOM_OBJECTS.update(objects)
+TypeError: 'customized_loss' object is not iterable
+cannot convert dictionary update sequence element #0 to a sequence
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 57, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 181, in load_model
+    with generic_utils.CustomObjectScope(custom_objects or {}):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 78, in __enter__
+    _GLOBAL_CUSTOM_OBJECTS.update(objects)
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+cannot convert dictionary update sequence element #0 to a sequence
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 55, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 181, in load_model
+    with generic_utils.CustomObjectScope(custom_objects or {}):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 78, in __enter__
+    _GLOBAL_CUSTOM_OBJECTS.update(objects)
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+dictionary update sequence element #0 has length 1; 2 is required
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 55, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 181, in load_model
+    with generic_utils.CustomObjectScope(custom_objects or {}):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 78, in __enter__
+    _GLOBAL_CUSTOM_OBJECTS.update(objects)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+'build_input_shape'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 72, in analize
+    local_y_input = local_model_json['config']['build_input_shape'][1]
+KeyError: 'build_input_shape'
+SavedModel file does not exist at: ./5.0_MODELS_DIR/./5.0_MODELS_DIR/_4_layers_CNN__EfficientNetB2_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 186, in load_model
+    loader_impl.parse_saved_model(filepath)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\saved_model\loader_impl.py", line 110, in parse_saved_model
+    raise IOError("SavedModel file does not exist at: %s/{%s|%s}" %
+OSError: SavedModel file does not exist at: ./5.0_MODELS_DIR/./5.0_MODELS_DIR/_4_layers_CNN__EfficientNetB2_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 78, in analize
+    prev_layer = layer(prev_layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 122, in call
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 78, in analize
+    prev_layer = layer(prev_layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 122, in call
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 77, in analize
+    prev_layer = layer(prev_layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 122, in call
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+Attempt to convert a value (<tensorflow.python.keras.engine.input_layer.InputLayer object at 0x000001B01DC9EE80>) with an unsupported type (<class 'tensorflow.python.keras.engine.input_layer.InputLayer'>) to a Tensor.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 80, in analize
+    prev_layer = layer(prev_layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 986, in __call__
+    outputs = call_fn(inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\preprocessing\image_preprocessing.py", line 329, in call
+    return math_ops.cast(inputs, dtype) * scale + offset
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\math_ops.py", line 923, in cast
+    x = ops.convert_to_tensor(x, name="x")
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1525, in convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 339, in _constant_tensor_conversion_function
+    return constant(v, dtype=dtype, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 264, in constant
+    return _constant_impl(value, dtype, shape, name, verify_shape=False,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 276, in _constant_impl
+    return _constant_eager_impl(ctx, value, dtype, shape, verify_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 301, in _constant_eager_impl
+    t = convert_to_eager_tensor(value, ctx, dtype)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 98, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+ValueError: Attempt to convert a value (<tensorflow.python.keras.engine.input_layer.InputLayer object at 0x000001B01DC9EE80>) with an unsupported type (<class 'tensorflow.python.keras.engine.input_layer.InputLayer'>) to a Tensor.
+'InputLayer' object is not iterable
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 78, in analize
+    prev_layer = layers.Input(input_layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\input_layer.py", line 311, in Input
+    input_layer = InputLayer(**input_layer_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\input_layer.py", line 150, in __init__
+    batch_input_shape = (batch_size,) + tuple(input_shape)
+TypeError: 'InputLayer' object is not iterable
+Error converting shape to a TensorShape: Dimension value must be integer or None or have an __index__ method, got value '<tensorflow.python.keras.engine.input_layer.InputLayer object at 0x000002B84EF8FC40>' with type '<class 'tensorflow.python.keras.engine.input_layer.InputLayer'>'.
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 211, in make_shape
+    shape = tensor_shape.as_shape(v)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1235, in as_shape
+    return TensorShape(shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 756, in __init__
+    self._dims = [Dimension(d) for d in dims]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 756, in <listcomp>
+    self._dims = [Dimension(d) for d in dims]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 201, in __init__
+    six.raise_from(
+  File "<string>", line 3, in raise_from
+TypeError: Dimension value must be integer or None or have an __index__ method, got value '<tensorflow.python.keras.engine.input_layer.InputLayer object at 0x000002B84EF8FC40>' with type '<class 'tensorflow.python.keras.engine.input_layer.InputLayer'>'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 77, in analize
+    prev_layer = layers.Input(local_model.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\input_layer.py", line 311, in Input
+    input_layer = InputLayer(**input_layer_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\input_layer.py", line 155, in __init__
+    input_tensor = backend.placeholder(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 1227, in placeholder
+    x = array_ops.placeholder(dtype, shape=shape, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 3121, in placeholder
+    return gen_array_ops.placeholder(dtype=dtype, shape=shape, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6808, in placeholder
+    shape = _execute.make_shape(shape, "shape")
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 213, in make_shape
+    raise TypeError("Error converting %s to a TensorShape: %s." % (arg_name, e))
+TypeError: Error converting shape to a TensorShape: Dimension value must be integer or None or have an __index__ method, got value '<tensorflow.python.keras.engine.input_layer.InputLayer object at 0x000002B84EF8FC40>' with type '<class 'tensorflow.python.keras.engine.input_layer.InputLayer'>'.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 77, in analize
+    prev_layer = layer(prev_layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 122, in call
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 194, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 217, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 258, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1849, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 346, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 194, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 217, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 258, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1849, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 346, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 194, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 217, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 258, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1849, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 346, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 194, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 217, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 258, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1849, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 346, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 194, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 217, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 258, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1849, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 346, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 194, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 217, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 258, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1849, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 346, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 194, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 217, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 258, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1849, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 346, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 194, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 217, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 258, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1849, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 346, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 61, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 194, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 217, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 265, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 258, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1849, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 346, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss

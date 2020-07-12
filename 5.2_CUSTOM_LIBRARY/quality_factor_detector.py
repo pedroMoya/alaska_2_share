@@ -30,23 +30,20 @@ sys.path.insert(1, local_submodule_settings['custom_library_path'])
 class quality_factor:
 
     def detect(self, local_img_path):
+        local_quality_factor = 'other'
         try:
             # analyze
             jpeg = jio.read(local_img_path)
             quant_tables = jpeg.quant_tables
             print(local_img_path.split('/')[-1])
-            local_quality_factor = '2'
             if quant_tables[0][0, 0] == 2:
-                print('Quality Factor is 95')
+                local_quality_factor = '2'
             elif quant_tables[0][0, 0] == 3:
-                print('Quality Factor is 90')
                 local_quality_factor = '1'
             elif quant_tables[0][0, 0] == 8:
-                print('Quality Factor is 75')
                 local_quality_factor = '0'
             else:
                 print('error at estimating quality factor')
-                local_quality_factor = 'other'
         except Exception as e:
             print('controlled error in quality_factor submodule')
             print(e)

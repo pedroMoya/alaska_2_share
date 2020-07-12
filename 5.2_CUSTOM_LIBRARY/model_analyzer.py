@@ -35,6 +35,33 @@ logger = logging.getLogger(__name__)
 logHandler = handlers.RotatingFileHandler(log_path_filename, maxBytes=10485760, backupCount=5)
 logger.addHandler(logHandler)
 
+# function definitions
+
+
+class customized_loss(losses.Loss):
+    @tf.function
+    def call(self, local_true, local_pred):
+        return tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+
+
+class customized_loss3(losses.Loss):
+    @tf.function
+    def call(self, local_true, local_pred):
+        return tf.math.add(1., -metrics.categorical_accuracy(local_true, local_pred))
+
+
+class customized_loss2(losses.Loss):
+    @tf.function
+    def call(self, local_true, local_pred):
+        local_true = tf.convert_to_tensor(local_true, dtype=tf.float32)
+        local_pred = tf.convert_to_tensor(local_pred, dtype=tf.float32)
+        factor_difference = tf.reduce_mean(tf.abs(tf.add(local_pred, -local_true)))
+        factor_true = tf.reduce_mean(tf.add(tf.convert_to_tensor(1., dtype=tf.float32), local_true))
+        return tf.math.multiply_no_nan(factor_difference, factor_true)
+
+
+# classes definitions
+
 
 class model_structure:
 
@@ -42,7 +69,9 @@ class model_structure:
         try:
             # loading model (h5 format)
             print('trying to open model file (assuming h5 format)')
-            local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]))
+            custom_obj = {'customized_loss': customized_loss}
+            local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+                                            custom_objects=custom_obj)
             # saving architecture in JSON format
             local_model_json = local_model.to_json()
             with open(''.join([local_a_settings['models_path'], local_model_name,
@@ -52,23 +81,34 @@ class model_structure:
             # changing for subclassing to functional model
             local_model_json = json.loads(local_model_json)
             local_batch_size = None
-            local_y_input = local_model_json['config']['build_input_shape'][1]
-            local_x_input = local_model_json['config']['build_input_shape'][2]
+            local_y_input = local_a_hyperparameters['input_shape_y']
+            local_x_input = local_a_hyperparameters['input_shape_x']
             local_nof_channels = local_a_hyperparameters['nof_channels']
-            input_layer = layers.Input(batch_shape=(local_batch_size, local_y_input, local_x_input, local_nof_channels))
-            prev_layer = input_layer
-            for layer in local_model.layers:
-                prev_layer = layer(prev_layer)
-            functional_model = models.Model([input_layer], [prev_layer])
-            # plotting (exporting to png) the model
-            plot_path = ''.join([local_a_settings['models_path'], local_model_name, '_model.png'])
-            # model_to_dot(functional_model, show_shapes=True, show_layer_names=True, rankdir='TB',
-            #     expand_nested=True, dpi=96, subgraph=True)
-            plot_model(functional_model, to_file=plot_path, show_shapes=True, show_layer_names=True,
-                       rankdir='TB', expand_nested=True, dpi=216)
-            plot_model(functional_model, to_file=''.join([plot_path, '.pdf']), show_shapes=True, show_layer_names=True,
-                       rankdir='TB', expand_nested=True)
-            print('model analyzer ended with success, model saved in json, pdf and png formats\n')
+            if local_a_settings['use_efficientNetB2'] == 'False':
+                input_layer = layers.Input(batch_shape=(local_batch_size, local_y_input, local_x_input,
+                                                        local_nof_channels))
+                prev_layer = input_layer
+                for layer in local_model.layers:
+                    prev_layer = layer(prev_layer)
+                functional_model = models.Model([input_layer], [prev_layer])
+                # plotting (exporting to png) the model
+                plot_path = ''.join([local_a_settings['models_path'], local_model_name, '_model.png'])
+                # model_to_dot(functional_model, show_shapes=True, show_layer_names=True, rankdir='TB',
+                #     expand_nested=True, dpi=96, subgraph=True)
+                plot_model(functional_model, to_file=plot_path, show_shapes=True, show_layer_names=True,
+                           rankdir='TB', expand_nested=True, dpi=216)
+                plot_model(functional_model, to_file=''.join([plot_path, '.pdf']), show_shapes=True,
+                           show_layer_names=True,
+                           rankdir='TB', expand_nested=True)
+                print('model analyzer ended with success, model saved in json, pdf and png formats\n')
+            elif local_a_settings['use_efficientNetB2'] == 'True':
+                from contextlib import redirect_stdout
+                with open(''.join([local_a_settings['models_path'], 'EfficientNetB2_summary.txt']), 'w') as f:
+                    with redirect_stdout(f):
+                        local_model.summary()
+                    f.close()
+                print('model analyzer ended with success, model EfficientNetB2 saved in json and txt formats\n')
+                return True
         except Exception as e1:
             print('Error reading or saving model structure to pdf or png')
             print(e1)

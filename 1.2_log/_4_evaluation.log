@@ -908,3 +908,1473 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 223, in _binary_roc_auc_score
     raise ValueError("Only one class present in y_true. ROC AUC score "
 ValueError: Only one class present in y_true. ROC AUC score is not defined in that case.
+Number of classes, 2, does not match size of target_names, 1. Try specifying the labels parameter
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 128, in evaluate
+    print(classification_report(test_set.classes, y_predictions, target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1950, in classification_report
+    raise ValueError(
+ValueError: Number of classes, 2, does not match size of target_names, 1. Try specifying the labels parameter
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 124, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+
+10.Jul 2020 10:12:01 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:12:58 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:13:58 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:15:01 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:16:31 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:17:47 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:21:47 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:22:37 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:23:21 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:25:46 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:27:36 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:32:42 evaluator module error
+Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 10:48:57 evaluator module error
+You are trying to load a weight file containing 6 layers into a model with 3 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 682, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 6 layers into a model with 3 layers.
+
+10.Jul 2020 10:49:51 evaluator module error
+You are trying to load a weight file containing 6 layers into a model with 4 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 87, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 682, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 6 layers into a model with 4 layers.
+
+10.Jul 2020 19:03:41 evaluator module error
+Shapes (4, 4, 1, 4) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 91, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 4) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 19:05:12 evaluator module error
+Shapes (4, 4, 1, 4) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 91, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 4) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 22:32:46 evaluator module error
+Shapes (4, 4, 1, 4) and (2, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 91, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 707, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3384, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 846, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1117, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 4) and (2, 3, 4, 4) are incompatible
+
+10.Jul 2020 22:58:21 evaluator module error
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 85, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+
+10.Jul 2020 22:59:52 evaluator module error
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 85, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+
+10.Jul 2020 23:01:44 evaluator module error
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 85, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+
+10.Jul 2020 23:09:28 evaluator module error
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 85, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+
+10.Jul 2020 23:10:55 evaluator module error
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 85, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+
+10.Jul 2020 23:11:55 evaluator module error
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 85, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+
+10.Jul 2020 23:17:38 evaluator module error
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 85, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+
+10.Jul 2020 23:36:58 evaluator module error
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 85, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+
+10.Jul 2020 23:49:27 evaluator module error
+Unknown loss function: customized_loss
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 85, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 184, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 193, in load_model_from_hdf5
+    model.compile(**saving_utils.compile_args_from_training_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 215, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in _deserialize_nested_config
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 262, in <listcomp>
+    return [_deserialize_nested_config(deserialize_fn, obj) for obj in config]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\saving_utils.py", line 255, in _deserialize_nested_config
+    return deserialize_fn(config)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\losses.py", line 1831, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 361, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 321, in class_and_config_for_serialized_keras_object
+    raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
+ValueError: Unknown loss function: customized_loss
+
+11.Jul 2020 00:14:55 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 102, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1259, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Jul 2020 00:19:46 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 102, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1259, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Jul 2020 00:41:25 evaluator module error
+'list' object has no attribute 'trainable'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 98, in evaluate
+    classifier.layers[:].trainable = False
+AttributeError: 'list' object has no attribute 'trainable'
+
+11.Jul 2020 00:42:19 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 103, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1259, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Jul 2020 00:44:03 evaluator module error
+You are trying to load a weight file containing 6 layers into a model with 3 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], weights_file_name]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1266, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 682, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 6 layers into a model with 3 layers.
+
+11.Jul 2020 00:49:26 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 104, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1259, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Jul 2020 00:50:01 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 105, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1259, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Jul 2020 01:16:09 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 104, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 250, in load_weights
+    return super(Model, self).load_weights(filepath, by_name, skip_mismatch)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\network.py", line 1259, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_4_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+error at folder_for_evaluation generation
+error at folder_for_evaluation generation
+Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 140, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 142, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 142, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    print(classification_report(test_set.classes, y_predictions, target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1929, in classification_report
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+y_true and y_pred contain different number of classes 16, 2. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 148, in evaluate
+    print("log_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2226, in log_loss
+    raise ValueError("y_true and y_pred contain different number of "
+ValueError: y_true and y_pred contain different number of classes 16, 2. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]
+y_true and y_pred contain different number of classes 16, 2. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 148, in evaluate
+    print("log_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2226, in log_loss
+    raise ValueError("y_true and y_pred contain different number of "
+ValueError: y_true and y_pred contain different number of classes 16, 2. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]
+Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    print(classification_report(test_set.classes, y_predictions, target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1929, in classification_report
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of multiclass and multilabel-indicator targets
+y_true and y_pred contain different number of classes 16, 2. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 148, in evaluate
+    print("log_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2226, in log_loss
+    raise ValueError("y_true and y_pred contain different number of "
+ValueError: y_true and y_pred contain different number of classes 16, 2. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]
+`predictions` contains negative values
+Condition x >= 0 did not hold element-wise:
+x (shape=(1200,) dtype=int64) = 
+['-6', '-6', '-6', '...']
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 164, in evaluate
+    confusion_matrix_tf_binary = tf.math.confusion_matrix(labels=labels, predictions=no_hidden_message_prob)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 167, in confusion_matrix
+    [check_ops.assert_non_negative(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\check_ops.py", line 560, in assert_non_negative
+    return assert_less_equal(zero, x, data=data, summarize=summarize)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\check_ops.py", line 923, in assert_less_equal
+    return _binary_assert('<=', 'assert_less_equal', math_ops.less_equal,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\check_ops.py", line 352, in _binary_assert
+    raise errors.InvalidArgumentError(
+tensorflow.python.framework.errors_impl.InvalidArgumentError: `predictions` contains negative values
+Condition x >= 0 did not hold element-wise:
+x (shape=(1200,) dtype=int64) = 
+['-6', '-6', '-6', '...']
+`predictions` contains negative values
+Condition x >= 0 did not hold element-wise:
+x (shape=(1200,) dtype=int64) = 
+['-6', '-6', '-6', '...']
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 165, in evaluate
+    confusion_matrix_tf_binary = tf.math.confusion_matrix(labels=labels, predictions=no_hidden_message_prob)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 167, in confusion_matrix
+    [check_ops.assert_non_negative(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\check_ops.py", line 560, in assert_non_negative
+    return assert_less_equal(zero, x, data=data, summarize=summarize)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\check_ops.py", line 923, in assert_less_equal
+    return _binary_assert('<=', 'assert_less_equal', math_ops.less_equal,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\check_ops.py", line 352, in _binary_assert
+    raise errors.InvalidArgumentError(
+tensorflow.python.framework.errors_impl.InvalidArgumentError: `predictions` contains negative values
+Condition x >= 0 did not hold element-wise:
+x (shape=(1200,) dtype=int64) = 
+['-6', '-6', '-6', '...']
+`predictions` contains negative values
+Condition x >= 0 did not hold element-wise:
+x (shape=(1200,) dtype=int64) = 
+['-6', '-6', '-6', '...']
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 165, in evaluate
+    confusion_matrix_tf_binary = tf.math.confusion_matrix(labels=labels, predictions=no_hidden_message_prob)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 169, in confusion_matrix
+    [check_ops.assert_non_negative(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\check_ops.py", line 568, in assert_non_negative
+    return assert_less_equal(zero, x, data=data, summarize=summarize)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\check_ops.py", line 946, in assert_less_equal
+    return _binary_assert('<=', 'assert_less_equal', math_ops.less_equal,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\check_ops.py", line 353, in _binary_assert
+    raise errors.InvalidArgumentError(
+tensorflow.python.framework.errors_impl.InvalidArgumentError: `predictions` contains negative values
+Condition x >= 0 did not hold element-wise:
+x (shape=(1200,) dtype=int64) = 
+['-6', '-6', '-6', '...']
+
+11.Jul 2020 19:01:10 evaluator module error
+Shapes (4, 4, 3, 32) and (16, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 111, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 3, 32) and (16, 3, 4, 4) are incompatible
+
+11.Jul 2020 20:54:13 evaluator module error
+Shapes (4, 4, 3, 32) and (4, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 111, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 3, 32) and (4, 3, 4, 4) are incompatible
+
+11.Jul 2020 20:56:16 evaluator module error
+Shapes (4, 4, 3, 32) and (4, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 111, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 3, 32) and (4, 3, 4, 4) are incompatible
+
+11.Jul 2020 20:57:42 evaluator module error
+Shapes (4, 4, 3, 32) and (4, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 111, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 3, 32) and (4, 3, 4, 4) are incompatible
+
+11.Jul 2020 21:09:53 evaluator module error
+Shapes (4, 4, 1, 32) and (4, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 109, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 32) and (4, 3, 4, 4) are incompatible
+
+11.Jul 2020 21:47:15 evaluator module error
+Shapes (4, 4, 1, 16) and (4, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 16) and (4, 3, 4, 4) are incompatible
+
+11.Jul 2020 21:47:52 evaluator module error
+Shapes (4, 4, 1, 16) and (4, 3, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 16) and (4, 3, 4, 4) are incompatible
+Number of classes, 16, does not match size of target_names, 8. Try specifying the labels parameter
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 156, in evaluate
+    print(classification_report(test_set.classes, y_predictions.argmax(axis=1), target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1950, in classification_report
+    raise ValueError(
+ValueError: Number of classes, 16, does not match size of target_names, 8. Try specifying the labels parameter
+ Incompatible shapes: [64,8] vs. [64,16]
+	 [[{{node customized_loss/PartitionedCall/Add}}]] [Op:__inference_test_function_1632]
+
+Function call stack:
+test_function
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 157, in evaluate
+    print(classifier.evaluate(test_set, verbose=0, return_dict=True))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1383, in evaluate
+    tmp_logs = test_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 852, in _call
+    return self._concrete_stateful_fn._filtered_call(canon_args, canon_kwds)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError:  Incompatible shapes: [64,8] vs. [64,16]
+	 [[{{node customized_loss/PartitionedCall/Add}}]] [Op:__inference_test_function_1632]
+
+Function call stack:
+test_function
+
+y_true and y_pred contain different number of classes 8, 16. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [0 1 2 3 4 5 6 7]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 158, in evaluate
+    print("log_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2226, in log_loss
+    raise ValueError("y_true and y_pred contain different number of "
+ValueError: y_true and y_pred contain different number of classes 8, 16. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [0 1 2 3 4 5 6 7]
+
+11.Jul 2020 23:13:20 evaluator module error
+Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+
+11.Jul 2020 23:14:06 evaluator module error
+Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+
+11.Jul 2020 23:15:13 evaluator module error
+Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+
+11.Jul 2020 23:16:19 evaluator module error
+Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+
+11.Jul 2020 23:17:58 evaluator module error
+Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 8) and (16, 1, 4, 4) are incompatible
+
+11.Jul 2020 23:32:33 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 116, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Jul 2020 23:34:21 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 116, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Jul 2020 23:36:00 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 116, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Jul 2020 23:56:28 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 116, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Jul 2020 23:57:09 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 116, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_5_layers_CNN__2020-07-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+error at folder_for_evaluation generation
+error at folder_for_evaluation generation
+
+12.Jul 2020 07:48:30 evaluator module error
+Shapes (8, 128) and (8, 8) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 114, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (8, 128) and (8, 8) are incompatible
+
+12.Jul 2020 08:00:50 evaluator module error
+Shapes (4, 4, 3, 32) and (32, 1, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 115, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 3, 32) and (32, 1, 4, 4) are incompatible
+Number of classes, 2, does not match size of target_names, 1. Try specifying the labels parameter
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 155, in evaluate
+    print(classification_report(test_set.classes, y_predictions.argmax(axis=1), target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1950, in classification_report
+    raise ValueError(
+ValueError: Number of classes, 2, does not match size of target_names, 1. Try specifying the labels parameter
+
+12.Jul 2020 09:09:54 evaluator module error
+Shapes (128, 10000) and (128, 512) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (128, 10000) and (128, 512) are incompatible
+
+12.Jul 2020 09:13:00 evaluator module error
+Shapes (128, 10000) and (128, 512) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (128, 10000) and (128, 512) are incompatible
+
+12.Jul 2020 11:21:31 evaluator module error
+You are trying to load a weight file containing 6 layers into a model with 3 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 6 layers into a model with 3 layers.
+
+12.Jul 2020 11:21:56 evaluator module error
+You are trying to load a weight file containing 6 layers into a model with 3 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 117, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 6 layers into a model with 3 layers.
+
+12.Jul 2020 12:44:13 evaluator module error
+Node 'training/Adam/gradients/gradients/loss/dense_1_loss/PartitionedCall_grad/PartitionedCall': Connecting to invalid output 1 of source node loss/dense_1_loss/PartitionedCall which has 1 outputs.
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\client\session.py", line 1365, in _do_call
+    return fn(*args)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\client\session.py", line 1348, in _run_fn
+    self._extend_graph()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\client\session.py", line 1388, in _extend_graph
+    tf_session.ExtendSession(self._session)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Node 'training/Adam/gradients/gradients/loss/dense_1_loss/PartitionedCall_grad/PartitionedCall': Connecting to invalid output 1 of source node loss/dense_1_loss/PartitionedCall which has 1 outputs.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 105, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 182, in load_model_from_hdf5
+    load_weights_from_hdf5_group(f['model_weights'], model.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3605, in batch_set_value
+    get_session().run(assign_ops, feed_dict=feed_dict)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 630, in get_session
+    _initialize_variables(session)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 1055, in _initialize_variables
+    is_initialized = session.run(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\client\session.py", line 957, in run
+    result = self._run(None, fetches, feed_dict, options_ptr,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\client\session.py", line 1180, in _run
+    results = self._do_run(handle, final_targets, final_fetches,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\client\session.py", line 1358, in _do_run
+    return self._do_call(_run_fn, feeds, fetches, targets, options,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\client\session.py", line 1384, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Node 'training/Adam/gradients/gradients/loss/dense_1_loss/PartitionedCall_grad/PartitionedCall': Connecting to invalid output 1 of source node loss/dense_1_loss/PartitionedCall which has 1 outputs.
+Only one class present in y_true. ROC AUC score is not defined in that case.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 179, in evaluate
+    print('\n AUC_ROC score:', roc_auc_score(labels, no_hidden_message_prob))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 390, in roc_auc_score
+    return _average_binary_score(partial(_binary_roc_auc_score,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_base.py", line 77, in _average_binary_score
+    return binary_metric(y_true, y_score, sample_weight=sample_weight)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 223, in _binary_roc_auc_score
+    raise ValueError("Only one class present in y_true. ROC AUC score "
+ValueError: Only one class present in y_true. ROC AUC score is not defined in that case.
+y should be a 1d array, got an array of shape (200, 2) instead.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 184, in evaluate
+    print('\n AUC_ROC score:', roc_auc_score(labels, y_predictions_raw))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 390, in roc_auc_score
+    return _average_binary_score(partial(_binary_roc_auc_score,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_base.py", line 77, in _average_binary_score
+    return binary_metric(y_true, y_score, sample_weight=sample_weight)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 226, in _binary_roc_auc_score
+    fpr, tpr, _ = roc_curve(y_true, y_score,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 775, in roc_curve
+    fps, tps, thresholds = _binary_clf_curve(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 543, in _binary_clf_curve
+    y_score = column_or_1d(y_score)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 846, in column_or_1d
+    raise ValueError(
+ValueError: y should be a 1d array, got an array of shape (200, 2) instead.
+y should be a 1d array, got an array of shape (200, 2) instead.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 184, in evaluate
+    print('\n AUC_ROC score:', roc_auc_score(labels, y_predictions_raw))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 390, in roc_auc_score
+    return _average_binary_score(partial(_binary_roc_auc_score,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_base.py", line 77, in _average_binary_score
+    return binary_metric(y_true, y_score, sample_weight=sample_weight)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 226, in _binary_roc_auc_score
+    fpr, tpr, _ = roc_curve(y_true, y_score,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 775, in roc_curve
+    fps, tps, thresholds = _binary_clf_curve(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 543, in _binary_clf_curve
+    y_score = column_or_1d(y_score)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 846, in column_or_1d
+    raise ValueError(
+ValueError: y should be a 1d array, got an array of shape (200, 2) instead.
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 158, in evaluate
+    print(classification_report(test_set.classes, y_predictions_raw[:, 1], target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1929, in classification_report
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 181, in evaluate
+    print(confusion_matrix(labels, hidden_message_prob), '\n')
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 183, in evaluate
+    print(confusion_matrix(labels, hidden_message_prob), '\n')
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+only size-1 arrays can be converted to Python scalars
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 180, in evaluate
+    predictions=int(binary_predictions))
+TypeError: only size-1 arrays can be converted to Python scalars
+only size-1 arrays can be converted to Python scalars
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 180, in evaluate
+    predictions=np.int(binary_predictions))
+TypeError: only size-1 arrays can be converted to Python scalars
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 183, in evaluate
+    print(confusion_matrix(labels, hidden_message_prob), '\n')
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+Classification metrics can't handle a mix of binary and continuous targets
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 185, in evaluate
+    print(classification_report(labels, hidden_message_prob, target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1929, in classification_report
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 90, in _check_targets
+    raise ValueError("Classification metrics can't handle a mix of {0} "
+ValueError: Classification metrics can't handle a mix of binary and continuous targets
+axis 1 is out of bounds for array of dimension 1
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 154, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions.argmax(axis=1)))
+numpy.AxisError: axis 1 is out of bounds for array of dimension 1
+axis 1 is out of bounds for array of dimension 1
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 164, in evaluate
+    predictions=y_predictions.argmax(axis=1))
+numpy.AxisError: axis 1 is out of bounds for array of dimension 1

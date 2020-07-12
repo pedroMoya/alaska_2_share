@@ -49,26 +49,24 @@ logger = logging.getLogger(__name__)
 logHandler = handlers.RotatingFileHandler(log_path_filename, maxBytes=10485760, backupCount=5)
 logger.addHandler(logHandler)
 
-# keras session/random seed reset/fix
-kb.clear_session()
-np.random.seed(11)
-tf.random.set_seed(2)
-
 
 # classes definitions
 
 
-class modified_mape(losses.Loss):
+class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        local_true = tf.cast(local_true, dtype=tf.float32)
-        local_pred = tf.cast(local_pred, dtype=tf.float32)
-        numerator = tf.abs(tf.add(local_pred, -local_true))
-        denominator = tf.add(tf.convert_to_tensor(1., dtype=tf.float32), tf.abs(local_true))
-        return tf.math.divide_no_nan(numerator, denominator)
+        return tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
 
 
-class customized_loss(losses.Loss):
+class customized_loss3(losses.Loss):
+    @tf.function
+    def call(self, local_true, local_pred):
+        return tf.math.add(1., -metrics.categorical_accuracy(local_true, local_pred))
+
+
+
+class customized_loss2(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
         local_true = tf.convert_to_tensor(local_true, dtype=tf.float32)
@@ -81,19 +79,26 @@ class customized_loss(losses.Loss):
 # functions definitions
 
 
-def image_normalizer(local_image):
-    local_max = np.amax(local_image, axis=(0, 1))
-    local_min = np.amin(local_image, axis=(0, 1))
+def image_normalizer(local_image_rgb):
+    # local_y_channel = cv2.cvtColor(local_image_rgb, cv2.COLOR_RGB2YCR_CB)
+    # local_y_channel = local_y_channel[:, :, 0: 1]
+    local_max = np.amax(local_image_rgb, axis=(0, 1))
+    local_min = np.amin(local_image_rgb, axis=(0, 1))
     local_denom_diff = np.add(local_max, -local_min)
     local_denom_diff[local_denom_diff == 0] = 1
-    local_min[local_denom_diff == 1] = 0.
-    local_num_diff = np.add(local_image, -local_min)
-    local_image = np.divide(local_num_diff, local_denom_diff)
-    return local_image
+    local_num_diff = np.add(local_image_rgb, -local_min)
+    return tf.math.divide_no_nan(local_num_diff, local_denom_diff)
 
 
 def train():
     print('\n~train_model module~')
+
+    # keras session/random seed reset/fix
+    kb.clear_session()
+    np.random.seed(11)
+    tf.random.set_seed(2)
+    # tf.compat.v1.disable_eager_execution()
+
     # load model hyperparameters
     try:
         with open('./settings.json') as local_r_json_file:
@@ -144,6 +149,7 @@ def train():
             print('model training start')
 
         # model training hyperparameters
+        nof_groups = local_script_settings['nof_K_fold_groups']
         input_shape_y = model_hyperparameters['input_shape_y']
         input_shape_x = model_hyperparameters['input_shape_x']
         epochs = model_hyperparameters['epochs']
@@ -158,35 +164,44 @@ def train():
         training_set_folder = model_hyperparameters['training_set_folder']
 
         # load raw_data and cleaned_data
-        train_datagen = preprocessing.image.ImageDataGenerator(rescale=1. / 255,
+        training_set_folder_group = ''.join([training_set_folder])
+        train_datagen = preprocessing.image.ImageDataGenerator(rescale=1./255,
+                                                               horizontal_flip=True,
+                                                               vertical_flip=True,
                                                                preprocessing_function=image_normalizer,
                                                                validation_split=validation_split)
-        train_generator = train_datagen.flow_from_directory(training_set_folder,
+        train_generator = train_datagen.flow_from_directory(training_set_folder_group,
                                                             target_size=(input_shape_y, input_shape_x),
                                                             batch_size=batch_size,
                                                             class_mode='categorical',
-                                                            shuffle=False,
+                                                            color_mode='rgb',
+                                                            shuffle=True,
                                                             subset='training')
         print('labels and indices')
         print(train_generator.class_indices)
-        validation_generator = train_datagen.flow_from_directory(training_set_folder,
-                                                                 target_size=(input_shape_y, input_shape_x),
-                                                                 batch_size=batch_size,
-                                                                 class_mode='categorical',
-                                                                 shuffle=False,
-                                                                 subset='validation')
+        validation_datagen = preprocessing.image.ImageDataGenerator(rescale=1./255,
+                                                                    preprocessing_function=image_normalizer,
+                                                                    validation_split=validation_split)
+        validation_generator = validation_datagen.flow_from_directory(training_set_folder_group,
+                                                                      target_size=(input_shape_y, input_shape_x),
+                                                                      batch_size=batch_size,
+                                                                      class_mode='categorical',
+                                                                      color_mode='rgb',
+                                                                      shuffle=True,
+                                                                      subset='validation')
 
         # build, compile and save model
         model_name = model_hyperparameters['current_model_name']
         classifier_constructor = model_classifier_()
-        classifier = classifier_constructor.build_and_compile(model_name, local_script_settings, model_hyperparameters)
+        classifier = classifier_constructor.build_and_compile(model_name, local_script_settings,
+                                                              model_hyperparameters)
 
         # define callbacks, checkpoints namepaths
         model_weights = ''.join([local_settings['checkpoints_path'],
                                  'check_point_', model_name, "_loss_-{loss:.4f}-.hdf5"])
         callback1 = cb.EarlyStopping(monitor='loss', patience=early_stopping_patience)
-        callback2 = cb.ModelCheckpoint(model_weights, monitor='loss', verbose=1,
-                                       save_best_only=True, mode='min')
+        callback2 = [cb.ModelCheckpoint(model_weights, monitor='loss', verbose=1,
+                                       save_best_only=True, mode='min')]
         callback3 = cb.ReduceLROnPlateau(monitor='loss', factor=reduce_lr_on_plateau_factor,
                                          patience=reduce_lr_on_plateau_patience,
                                          min_lr=reduce_lr_on_plateau_min_lr)
@@ -206,7 +221,7 @@ def train():
                                          '_weights.h5']))
 
         # closing train module
-        print('full training module ended')
+        print('full training of each group module ended')
         logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
                              ' correct model training, correct saving of model and weights']))
         local_script_settings['training_done'] = "True"

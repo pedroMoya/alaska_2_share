@@ -51,29 +51,33 @@ class select_evaluation_images:
     def select_images(self, local_settings, local_model_evaluation_folder):
         try:
             local_nof_methods = local_settings['nof_methods']
-            local_nof_quality_factors = local_settings['nof_quality_factors']
+            local_nof_groups = local_settings['nof_K_fold_groups']
             nof_samples_by_group = local_settings['nof_evaluation_samples_by_group']
             if local_settings['repeat_select_images_for_evaluation'] == "False":
                 print('settings indicates maintain the evaluation dataset')
                 return True
             # clean files previously selected
             rng = np.random.default_rng()
-            for method in range(local_nof_methods):
+            for method, group in it.product(range(local_nof_methods), range(local_nof_groups)):
                 # clean files previously selected
-                local_dest_subfolder = ''.join([local_model_evaluation_folder, 'method_', str(method), '/'])
-                print('erasing files in folder of method ', method)
+                local_dest_subfolder = ''.join([local_model_evaluation_folder, 'method_',
+                                                str(method), '_group_', str(group), '/'])
+                print('erasing files in folder of method, group ', method, group)
                 erase_previous_images(local_dest_subfolder)
                 # select randomly
-                local_src_subfolder = ''.join([local_settings['train_data_path'], 'method_', str(method), '/'])
+                local_src_subfolder = ''.join([local_settings['train_data_path'], 'method_',
+                                               str(method),  '_group_', str(group), '/'])
                 nof_samples = 0
                 while nof_samples < nof_samples_by_group:
                     file_selected = random.choice([image_file for image_file in os.listdir(local_src_subfolder)
                                                    if os.path.isfile(os.path.join(local_src_subfolder, image_file))])
                     file_selected_path = ''.join([local_dest_subfolder, file_selected])
                     if not os.path.isfile(file_selected_path):
-                        shutil.copyfile(''.join([local_src_subfolder, file_selected]), ''.join([local_dest_subfolder,
-                                                                                               file_selected]))
+                        evaluation_data_path_filename = ''.join([local_dest_subfolder, file_selected])
+                        os.makedirs(os.path.dirname(evaluation_data_path_filename), exist_ok=True)
+                        shutil.copyfile(''.join([local_src_subfolder, file_selected]), evaluation_data_path_filename)
                         nof_samples += 1
+                print(nof_samples_by_group, ' images for method, group ', method, group, ' were selected randomly')
             print('select_evaluation_images submodule had finished')
         except Exception as e1:
             print('Error at select_evaluation_images submodule')

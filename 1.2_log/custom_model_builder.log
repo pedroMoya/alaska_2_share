@@ -217,3 +217,307 @@ Traceback (most recent call last):
   File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 110, in build_and_compile
     losses_list.append(losses.categorical_hinge())
 TypeError: categorical_hinge() missing 2 required positional arguments: 'y_true' and 'y_pred'
+OOM when allocating tensor with shape[516128,2048] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc [Op:Mul]
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 205, in build_and_compile
+    classifier_.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 456, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 213, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 897, in __call__
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2416, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1158, in build
+    self.kernel = self.add_weight(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 560, in add_weight
+    variable = self._add_variable_with_custom_getter(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 738, in _add_variable_with_custom_getter
+    new_variable = getter(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer_utils.py", line 129, in make_variable
+    return tf_variables.VariableV1(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variables.py", line 259, in __call__
+    return cls._variable_v1_call(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variables.py", line 205, in _variable_v1_call
+    return previous_getter(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variables.py", line 198, in <lambda>
+    previous_getter = lambda **kwargs: default_variable_creator(None, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variable_scope.py", line 2584, in default_variable_creator
+    return resource_variable_ops.ResourceVariable(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variables.py", line 263, in __call__
+    return super(VariableMetaclass, cls).__call__(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 1423, in __init__
+    self._init_from_args(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 1567, in _init_from_args
+    initial_value() if init_from_fn else initial_value,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer_utils.py", line 121, in <lambda>
+    init_val = lambda: initializer(shape, dtype=dtype)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\init_ops_v2.py", line 558, in __call__
+    return self._random_generator.random_uniform(shape, -limit, limit, dtype)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\init_ops_v2.py", line 1067, in random_uniform
+    return op(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\random_ops.py", line 301, in random_uniform
+    result = math_ops.add(result * (maxval - minval), minval, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\math_ops.py", line 984, in binary_op_wrapper
+    return func(x, y, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\math_ops.py", line 1283, in _mul_dispatch
+    return gen_math_ops.mul(x, y, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_math_ops.py", line 6089, in mul
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6653, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape[516128,2048] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc [Op:Mul]
+If using `weights` as `"imagenet"` with `include_top` as true, `classes` should be 1000
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 225, in build_and_compile
+    classifier_ = tf.keras.applications.EfficientNetB2(include_top=True, weights='imagenet',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 579, in EfficientNetB2
+    return EfficientNet(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 279, in EfficientNet
+    raise ValueError('If using `weights` as `"imagenet"` with `include_top`'
+ValueError: If using `weights` as `"imagenet"` with `include_top` as true, `classes` should be 1000
+'metrics_1'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 230, in build_and_compile
+    metrics=local_hyperparameters['metrics_1'])
+KeyError: 'metrics_1'
+name 'kwargs' is not defined
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 188, in build_and_compile
+    depthwise_constraint=None, bias_constraint=None, **kwargs))
+NameError: name 'kwargs' is not defined
+add() got an unexpected keyword argument 'kernel_initializer'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 180, in build_and_compile
+    classifier_.add(layers.Conv2D(units_layer_1, kernel_size=(kernel_size_y_1, kernel_size_x_1),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+TypeError: add() got an unexpected keyword argument 'kernel_initializer'
+add() got an unexpected keyword argument 'kernel_initializer'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 233, in build_and_compile
+    classifier_.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+TypeError: add() got an unexpected keyword argument 'kernel_initializer'
+Negative dimension size caused by subtracting 3 from 2 for '{{node conv2d_3/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout_2/cond/Identity, conv2d_3/Conv2D/ReadVariableOp)' with input shapes: [?,2,2,4], [3,3,4,4].
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1838, in _create_c_op
+    c_op = pywrap_tf_session.TF_FinishOperation(op_desc)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Negative dimension size caused by subtracting 3 from 2 for '{{node conv2d_3/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout_2/cond/Identity, conv2d_3/Conv2D/ReadVariableOp)' with input shapes: [?,2,2,4], [3,3,4,4].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 228, in build_and_compile
+    classifier_.add(layers.Conv2D(units_layer_4,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\convolutional.py", line 251, in call
+    outputs = self._convolution_op(inputs, self.kernel)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 1014, in convolution_v2
+    return convolution_internal(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 1144, in convolution_internal
+    return op(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 2588, in _conv2d_expanded_batch
+    return gen_nn_ops.conv2d(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_nn_ops.py", line 976, in conv2d
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\op_def_library.py", line 742, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 591, in _create_op_internal
+    return super(FuncGraph, self)._create_op_internal(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 3509, in _create_op_internal
+    ret = Operation(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 2000, in __init__
+    self._c_op = _create_c_op(self._graph, node_def, inputs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1841, in _create_c_op
+    raise ValueError(str(e))
+ValueError: Negative dimension size caused by subtracting 3 from 2 for '{{node conv2d_3/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout_2/cond/Identity, conv2d_3/Conv2D/ReadVariableOp)' with input shapes: [?,2,2,4], [3,3,4,4].
+Negative dimension size caused by subtracting 2 from 1 for '{{node average_pooling2d_1/AvgPool}} = AvgPool[T=DT_FLOAT, data_format="NHWC", ksize=[1, 2, 2, 1], padding="VALID", strides=[1, 2, 2, 1]](batch_normalization_5/cond/Identity)' with input shapes: [?,1,1,4].
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1838, in _create_c_op
+    c_op = pywrap_tf_session.TF_FinishOperation(op_desc)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Negative dimension size caused by subtracting 2 from 1 for '{{node average_pooling2d_1/AvgPool}} = AvgPool[T=DT_FLOAT, data_format="NHWC", ksize=[1, 2, 2, 1], padding="VALID", strides=[1, 2, 2, 1]](batch_normalization_5/cond/Identity)' with input shapes: [?,1,1,4].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 236, in build_and_compile
+    classifier_.add(layers.AvgPool2D(pool_size=(pool_size_y_4, pool_size_x_4)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\pooling.py", line 295, in call
+    outputs = self.pool_function(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 4281, in avg_pool
+    return gen_nn_ops.avg_pool(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_nn_ops.py", line 84, in avg_pool
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\op_def_library.py", line 742, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 591, in _create_op_internal
+    return super(FuncGraph, self)._create_op_internal(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 3509, in _create_op_internal
+    ret = Operation(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 2000, in __init__
+    self._c_op = _create_c_op(self._graph, node_def, inputs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1841, in _create_c_op
+    raise ValueError(str(e))
+ValueError: Negative dimension size caused by subtracting 2 from 1 for '{{node average_pooling2d_1/AvgPool}} = AvgPool[T=DT_FLOAT, data_format="NHWC", ksize=[1, 2, 2, 1], padding="VALID", strides=[1, 2, 2, 1]](batch_normalization_5/cond/Identity)' with input shapes: [?,1,1,4].
+Negative dimension size caused by subtracting 2 from 1 for '{{node average_pooling2d_1/AvgPool}} = AvgPool[T=DT_FLOAT, data_format="NHWC", ksize=[1, 2, 2, 1], padding="VALID", strides=[1, 2, 2, 1]](batch_normalization_4/cond/Identity)' with input shapes: [?,1,1,4].
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1838, in _create_c_op
+    c_op = pywrap_tf_session.TF_FinishOperation(op_desc)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Negative dimension size caused by subtracting 2 from 1 for '{{node average_pooling2d_1/AvgPool}} = AvgPool[T=DT_FLOAT, data_format="NHWC", ksize=[1, 2, 2, 1], padding="VALID", strides=[1, 2, 2, 1]](batch_normalization_4/cond/Identity)' with input shapes: [?,1,1,4].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 236, in build_and_compile
+    classifier_.add(layers.AvgPool2D(pool_size=(pool_size_y_4, pool_size_x_4)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\pooling.py", line 295, in call
+    outputs = self.pool_function(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 4281, in avg_pool
+    return gen_nn_ops.avg_pool(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_nn_ops.py", line 84, in avg_pool
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\op_def_library.py", line 742, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 591, in _create_op_internal
+    return super(FuncGraph, self)._create_op_internal(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 3509, in _create_op_internal
+    ret = Operation(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 2000, in __init__
+    self._c_op = _create_c_op(self._graph, node_def, inputs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1841, in _create_c_op
+    raise ValueError(str(e))
+ValueError: Negative dimension size caused by subtracting 2 from 1 for '{{node average_pooling2d_1/AvgPool}} = AvgPool[T=DT_FLOAT, data_format="NHWC", ksize=[1, 2, 2, 1], padding="VALID", strides=[1, 2, 2, 1]](batch_normalization_4/cond/Identity)' with input shapes: [?,1,1,4].
+Negative dimension size caused by subtracting 4 from 3 for '{{node conv2d_1/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout/cond/Identity, conv2d_1/Conv2D/ReadVariableOp)' with input shapes: [?,3,3,16], [4,4,16,8].
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1838, in _create_c_op
+    c_op = pywrap_tf_session.TF_FinishOperation(op_desc)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Negative dimension size caused by subtracting 4 from 3 for '{{node conv2d_1/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout/cond/Identity, conv2d_1/Conv2D/ReadVariableOp)' with input shapes: [?,3,3,16], [4,4,16,8].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 204, in build_and_compile
+    classifier_.add(layers.Conv2D(units_layer_2,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\convolutional.py", line 251, in call
+    outputs = self._convolution_op(inputs, self.kernel)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 1014, in convolution_v2
+    return convolution_internal(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 1144, in convolution_internal
+    return op(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 2588, in _conv2d_expanded_batch
+    return gen_nn_ops.conv2d(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_nn_ops.py", line 976, in conv2d
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\op_def_library.py", line 742, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 591, in _create_op_internal
+    return super(FuncGraph, self)._create_op_internal(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 3509, in _create_op_internal
+    ret = Operation(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 2000, in __init__
+    self._c_op = _create_c_op(self._graph, node_def, inputs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1841, in _create_c_op
+    raise ValueError(str(e))
+ValueError: Negative dimension size caused by subtracting 4 from 3 for '{{node conv2d_1/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout/cond/Identity, conv2d_1/Conv2D/ReadVariableOp)' with input shapes: [?,3,3,16], [4,4,16,8].
+Negative dimension size caused by subtracting 3 from 1 for '{{node conv2d_3/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout_2/cond/Identity, conv2d_3/Conv2D/ReadVariableOp)' with input shapes: [?,1,1,4], [3,3,4,4].
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1838, in _create_c_op
+    c_op = pywrap_tf_session.TF_FinishOperation(op_desc)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Negative dimension size caused by subtracting 3 from 1 for '{{node conv2d_3/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout_2/cond/Identity, conv2d_3/Conv2D/ReadVariableOp)' with input shapes: [?,1,1,4], [3,3,4,4].
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 226, in build_and_compile
+    classifier_.add(layers.Conv2D(units_layer_4,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\convolutional.py", line 251, in call
+    outputs = self._convolution_op(inputs, self.kernel)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 1014, in convolution_v2
+    return convolution_internal(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 1144, in convolution_internal
+    return op(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\nn_ops.py", line 2588, in _conv2d_expanded_batch
+    return gen_nn_ops.conv2d(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_nn_ops.py", line 976, in conv2d
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\op_def_library.py", line 742, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 591, in _create_op_internal
+    return super(FuncGraph, self)._create_op_internal(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 3509, in _create_op_internal
+    ret = Operation(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 2000, in __init__
+    self._c_op = _create_c_op(self._graph, node_def, inputs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1841, in _create_c_op
+    raise ValueError(str(e))
+ValueError: Negative dimension size caused by subtracting 3 from 1 for '{{node conv2d_3/Conv2D}} = Conv2D[T=DT_FLOAT, data_format="NHWC", dilations=[1, 1, 1, 1], explicit_paddings=[], padding="VALID", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true](dropout_2/cond/Identity, conv2d_3/Conv2D/ReadVariableOp)' with input shapes: [?,1,1,4], [3,3,4,4].
+Unknown activation function: Relu
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 186, in build_and_compile
+    classifier_.add(layers.Conv2D(units_layer_1, kernel_size=(kernel_size_y_1, kernel_size_x_1),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\convolutional.py", line 665, in __init__
+    activation=activations.get(activation),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\activations.py", line 529, in get
+    return deserialize(identifier)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\activations.py", line 488, in deserialize
+    return deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 377, in deserialize_keras_object
+    raise ValueError(
+ValueError: Unknown activation function: Relu

@@ -35,7 +35,7 @@ class quality_factor:
             # analyze
             jpeg = jio.read(local_img_path)
             quant_tables = jpeg.quant_tables
-            print(local_img_path.split('/')[-1])
+            # print(local_img_path.split('/')[-1])
             if quant_tables[0][0, 0] == 2:
                 local_quality_factor = '2'
             elif quant_tables[0][0, 0] == 3:

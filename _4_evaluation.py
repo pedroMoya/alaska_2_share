@@ -27,6 +27,7 @@ try:
         local_json_file.close()
     sys.path.insert(1, local_script_settings['custom_library_path'])
     from create_evaluation_folders import select_evaluation_images
+    from custom_normalizer import custom_image_normalizer
 
     physical_devices = tf.config.list_physical_devices('GPU')
     tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
@@ -78,14 +79,8 @@ class customized_loss2(losses.Loss):
 
 
 def image_normalizer(local_image_rgb):
-    # local_y_channel = cv2.cvtColor(local_image_rgb, cv2.COLOR_RGB2YCR_CB)
-    # local_y_channel = local_y_channel[:, :, 0: 1]
-    local_max = np.amax(local_image_rgb, axis=(0, 1))
-    local_min = np.amin(local_image_rgb, axis=(0, 1))
-    local_denom_diff = np.add(local_max, -local_min)
-    local_denom_diff[local_denom_diff == 0] = 1
-    local_num_diff = np.add(local_image_rgb, -local_min)
-    return tf.math.divide_no_nan(local_num_diff, local_denom_diff)
+    custom_image_normalizer_instance = custom_image_normalizer()
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
 
 
 def evaluate():
@@ -142,18 +137,20 @@ def evaluate():
             test_datagen = preprocessing.image.ImageDataGenerator(rescale=1./255,
                                                                   preprocessing_function=image_normalizer)
             test_set = test_datagen.flow_from_directory(model_evaluation_folder,
-                                                        shuffle=False,
+                                                        shuffle=True,
                                                         target_size=(input_shape_y, input_shape_x),
                                                         batch_size=batch_size,
-                                                        color_mode='rgb',
+                                                        color_mode='grayscale',
                                                         class_mode='categorical')
             y_predictions_raw = classifier.predict(test_set)
             y_predictions = y_predictions_raw.argmax(axis=1)
             print('Confusion Matrix for all categories')
             print(confusion_matrix(test_set.classes, y_predictions))
             print('Classification Report')
-            target_names = ['cat',
-                            'dog']
+            target_names = ['method_0_group_0', 'method_0_group_1', 'method_0_group_2', 'method_0_group_3',
+                            'method_1_group_0', 'method_1_group_1', 'method_1_group_2', 'method_1_group_3',
+                            'method_2_group_0', 'method_2_group_1', 'method_2_group_2', 'method_2_group_3',
+                            'method_3_group_0', 'method_3_group_1', 'method_3_group_2', 'method_3_group_3']
             print(classification_report(test_set.classes, y_predictions, target_names=target_names))
             print('\nevaluation of classifier by tf.keras.models.evaluate:')
             print(classifier.evaluate(x=test_set, verbose=0, return_dict=True))

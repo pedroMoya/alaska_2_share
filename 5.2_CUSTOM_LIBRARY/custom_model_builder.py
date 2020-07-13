@@ -39,7 +39,6 @@ sys.path.insert(1, local_submodule_settings['custom_library_path'])
 from customized_metrics import customized_metrics_auc_roc
 from model_analyzer import model_structure
 
-
 # class definitions
 
 
@@ -119,7 +118,7 @@ class model_classifier_:
                 optimizer_learning_rate = local_hyperparameters['learning_rate']
                 if optimizer_function == 'adam':
                     optimizer_function = optimizers.Adam(optimizer_learning_rate)
-                    # optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
+                    optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
                 elif optimizer_function == 'ftrl':
                     optimizer_function = optimizers.Ftrl(optimizer_learning_rate)
                 elif optimizer_function == 'sgd':
@@ -187,15 +186,18 @@ class model_classifier_:
                                               input_shape=(input_shape_y, input_shape_x, nof_channels),
                                               strides=(stride_y_1, stride_x_1),
                                               activity_regularizer=activation_regularizer_1,
-                                              activation=activation_1))
+                                              activation=activation_1,
+                                              kernel_initializer=tf.keras.initializers.VarianceScaling(
+                                                  scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_1, pool_size_x_1)))
                 classifier_.add(layers.Dropout(dropout_layer_1))
                 # second layer
-                classifier_.add(layers.Conv2D(units_layer_2,
-                                              kernel_size=(kernel_size_y_2, kernel_size_x_2),
+                classifier_.add(layers.Conv2D(units_layer_2, kernel_size=(kernel_size_y_2, kernel_size_x_2),
                                               activity_regularizer=activation_regularizer_2,
-                                              activation=activation_2))
+                                              activation=activation_2,
+                                              kernel_initializer=tf.keras.initializers.VarianceScaling(
+                                                  scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_2, pool_size_x_2)))
                 classifier_.add(layers.Dropout(dropout_layer_2))
@@ -203,7 +205,9 @@ class model_classifier_:
                 classifier_.add(layers.Conv2D(units_layer_3,
                                               kernel_size=(kernel_size_y_3, kernel_size_x_3),
                                               activity_regularizer=activation_regularizer_3,
-                                              activation=activation_3))
+                                              activation=activation_3,
+                                              kernel_initializer=tf.keras.initializers.VarianceScaling(
+                                                  scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_3, pool_size_x_3)))
                 classifier_.add(layers.Dropout(dropout_layer_3))
@@ -211,17 +215,25 @@ class model_classifier_:
                 classifier_.add(layers.Conv2D(units_layer_4,
                                               kernel_size=(kernel_size_y_4, kernel_size_x_4),
                                               activity_regularizer=activation_regularizer_4,
-                                              activation=activation_4))
+                                              activation=activation_4,
+                                              kernel_initializer=tf.keras.initializers.VarianceScaling(
+                                                  scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
-                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_4, pool_size_x_4)))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
+                classifier_.add(layers.GlobalAveragePooling2D())
+                # classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_4, pool_size_x_4)))
                 classifier_.add(layers.Dropout(dropout_layer_4))
                 # Flattening
                 classifier_.add(layers.Flatten())
-                # Full connection
-                classifier_.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4,
-                                             activity_regularizer=activation_regularizer_dense_layer_4))
-                classifier_.add(layers.Dropout(dropout_dense_layer_4))
-                classifier_.add(layers.Dense(units_final_layer, activation=activation_final_layer))
+                # Full connection and final layer
+                # classifier_.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4,
+                #                              activity_regularizer=activation_regularizer_dense_layer_4,
+                #                              kernel_initializer=tf.keras.initializers.VarianceScaling(
+                #                                  scale=0.333333333, mode='fan_out', distribution='uniform')))
+                # classifier_.add(layers.Dropout(dropout_dense_layer_4))
+                classifier_.add(layers.Dense(units_final_layer, activation=activation_final_layer,
+                                kernel_initializer=tf.keras.initializers.VarianceScaling(
+                                    scale=0.333333333, mode='fan_out', distribution='uniform')))
                 # Compile model
                 classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
 
@@ -249,6 +261,8 @@ class model_classifier_:
                 json_file.close()
             classifier_.save(''.join([local_settings['models_path'], local_model_name, str(type_of_model),
                                       '_classifier_.h5']))
+            classifier_.save(''.join([local_settings['models_path'], local_model_name, str(type_of_model),
+                                      '/']), save_format='tf')
             print('model architecture saved')
 
             # output png and pdf with model, additionally saves a json file model_name_analyzed.json

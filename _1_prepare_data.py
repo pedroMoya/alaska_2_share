@@ -164,13 +164,14 @@ def prepare():
 
         # data normalization based in moving window
         # this step is included as a pre-processing_function in ImageDataGenerator
-        print('data normalization was also prepared as a pre-processing_function')
+        print('data normalization was also prepared as a pre-processing_function (on the fly)')
 
         # save clean metadata source for use in subsequent training
         if local_script_settings['disaggregation_done'] == "False":
             training_metadata_df = pd.DataFrame(training_metadata)
+            column_names = ['id_number', 'method', 'quality_factor', 'group', 'filename', 'filepath']
             training_metadata_df.to_csv(''.join([local_script_settings['clean_data_path'],
-                                                 'training_metadata.csv']), index=False, header=None)
+                                                 'training_metadata.csv']), index=False, header=column_names)
             np.save(''.join([local_script_settings['clean_data_path'], 'training_metadata_np']),
                     training_metadata)
             np.savetxt(''.join([local_script_settings['clean_data_path'], 'training_metadata_np_to.csv']),

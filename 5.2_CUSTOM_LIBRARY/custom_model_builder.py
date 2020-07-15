@@ -197,7 +197,7 @@ class model_classifier_:
                                               activation=activation_1,
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                classifier_.add(layers.BatchNormalization(axis=-1))
+                # classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_1, pool_size_x_1)))
                 classifier_.add(layers.Dropout(dropout_layer_1))
@@ -209,7 +209,7 @@ class model_classifier_:
                                               activation=activation_1,
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                classifier_.add(layers.BatchNormalization(axis=-1))
+                # classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_1, pool_size_x_1)))
                 classifier_.add(layers.Dropout(dropout_layer_1))
@@ -219,7 +219,7 @@ class model_classifier_:
                                               activation=activation_2,
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                classifier_.add(layers.BatchNormalization(axis=-1))
+                # classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_2, pool_size_x_2)))
                 classifier_.add(layers.Dropout(dropout_layer_2))
@@ -229,7 +229,7 @@ class model_classifier_:
                                               activation=activation_2,
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                classifier_.add(layers.BatchNormalization(axis=-1))
+                # classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_2, pool_size_x_2)))
                 classifier_.add(layers.Dropout(dropout_layer_2))
@@ -240,7 +240,7 @@ class model_classifier_:
                                               activation=activation_3,
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                classifier_.add(layers.BatchNormalization(axis=-1))
+                # classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_3, pool_size_x_3)))
                 classifier_.add(layers.Dropout(dropout_layer_3))
@@ -251,7 +251,7 @@ class model_classifier_:
                                               activation=activation_3,
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                classifier_.add(layers.BatchNormalization(axis=-1))
+                # classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_3, pool_size_x_3)))
                 classifier_.add(layers.Dropout(dropout_layer_3))
@@ -262,7 +262,7 @@ class model_classifier_:
                                               activation=activation_4,
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                classifier_.add(layers.BatchNormalization(axis=-1))
+                # classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_4, pool_size_x_4)))
                 classifier_.add(layers.Dropout(dropout_layer_4))
@@ -286,7 +286,7 @@ class model_classifier_:
                                                                    input_tensor=None, input_shape=None,
                                                                    pooling=None, classes=1000,
                                                                    classifier_activation='softmax')
-                classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
+                # classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
                 date = datetime.date.today()
                 classifier_.save_weights(''.join([local_settings['models_path'], type_of_model, '_imagenet_', str(date),
                                                  '_weights.h5']))

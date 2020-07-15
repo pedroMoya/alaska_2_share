@@ -44,5 +44,6 @@
   "use_efficientNetB2": "True",
   "custom_model_evaluation_set_not_trainable": "True",
   "alternative_training_generator": "False",
-  "alternative_training": "True"
+  "alternative_training": "True",
+  "alternative_evaluation": "True"
 }

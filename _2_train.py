@@ -53,29 +53,6 @@ logger.addHandler(logHandler)
 # classes definitions
 
 
-class customized_loss(losses.Loss):
-    @tf.function
-    def call(self, local_true, local_pred):
-        return tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
-
-
-class customized_loss3(losses.Loss):
-    @tf.function
-    def call(self, local_true, local_pred):
-        return tf.math.add(1., -metrics.categorical_accuracy(local_true, local_pred))
-
-
-
-class customized_loss2(losses.Loss):
-    @tf.function
-    def call(self, local_true, local_pred):
-        local_true = tf.convert_to_tensor(local_true, dtype=tf.float32)
-        local_pred = tf.convert_to_tensor(local_pred, dtype=tf.float32)
-        factor_difference = tf.reduce_mean(tf.abs(tf.add(local_pred, -local_true)))
-        factor_true = tf.reduce_mean(tf.add(tf.convert_to_tensor(1., dtype=tf.float32), local_true))
-        return tf.math.multiply_no_nan(factor_difference, factor_true)
-
-
 # functions definitions
 
 
@@ -172,18 +149,25 @@ def train():
         print('labels and indices')
         print(train_generator.class_indices)
         validation_generator = train_datagen.flow_from_directory(training_set_folder_group,
-                                                                      target_size=(input_shape_y, input_shape_x),
-                                                                      batch_size=batch_size,
-                                                                      class_mode='categorical',
-                                                                      color_mode='grayscale',
-                                                                      shuffle=False,
-                                                                      subset='validation')
+                                                                 target_size=(input_shape_y, input_shape_x),
+                                                                 batch_size=batch_size,
+                                                                 class_mode='categorical',
+                                                                 color_mode='grayscale',
+                                                                 shuffle=False,
+                                                                 subset='validation')
 
         # build, compile and save model
         model_name = model_hyperparameters['current_model_name']
         classifier_constructor = model_classifier_()
         classifier = classifier_constructor.build_and_compile(model_name, local_script_settings,
                                                               model_hyperparameters)
+        if isinstance(classifier, int):
+            print('build and compile not return a model (may be a correct behavior if alternative training is set)')
+            if local_script_settings['alternative_training'] == 'True':
+                return True
+            else:
+                print('error, please review consistency of settings and code if necessary')
+                return False
 
         # define callbacks, checkpoints namepaths
         model_weights = ''.join([local_settings['checkpoints_path'],

@@ -37,17 +37,20 @@ logger.addHandler(logHandler)
 
 # function definitions
 
-
 class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        return tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        softmax_diff = tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        return softmax_diff
 
 
-class customized_loss3(losses.Loss):
+class customized_loss_auc_roc(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        return tf.math.add(1., -metrics.categorical_accuracy(local_true, local_pred))
+        local_true = tf.convert_to_tensor(local_true, dtype=tf.float32)
+        local_pred = tf.convert_to_tensor(local_pred, dtype=tf.float32)
+        local_auc_roc = tf.math.add(tf.math.add(1., metrics.AUC(local_true, local_pred)))
+        return local_auc_roc
 
 
 class customized_loss2(losses.Loss):
@@ -69,7 +72,7 @@ class model_structure:
         try:
             # loading model (h5 format)
             print('trying to open model file (assuming h5 format)')
-            custom_obj = {'customized_loss': customized_loss}
+            custom_obj = {'customized_loss': customized_loss, 'customized_loss_auc_roc': customized_loss_auc_roc}
             local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
                                             custom_objects=custom_obj)
             # saving architecture in JSON format

@@ -56,13 +56,19 @@ tf.random.set_seed(2)
 class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        return tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        softmax_diff = tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        return softmax_diff
 
 
-class customized_loss3(losses.Loss):
+class customized_loss_auc_roc(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        return tf.math.add(1., -metrics.categorical_accuracy(local_true, local_pred))
+        tf.compat.v1.enable_eager_execution()
+        local_true = tf.convert_to_tensor(local_true, dtype=tf.float32)
+        local_pred = tf.convert_to_tensor(local_pred, dtype=tf.float32)
+        local_auc_roc = tf.math.add(tf.math.add(1., metrics.AUC(local_true, local_pred)))
+        tf.compat.v1.disable_eager_execution()
+        return local_auc_roc
 
 
 class customized_loss2(losses.Loss):
@@ -96,7 +102,7 @@ def evaluate():
 
         # open model and weights
         current_model_name = model_hyperparameters['current_model_name']
-        custom_obj = {'customized_loss': customized_loss}
+        custom_obj = {'customized_loss': customized_loss, 'customized_loss_auc_roc': customized_loss_auc_roc}
         classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
                                                 '_custom_classifier_.h5']), custom_objects=custom_obj)
         classifier.summary()
@@ -141,7 +147,7 @@ def evaluate():
                                                         target_size=(input_shape_y, input_shape_x),
                                                         batch_size=batch_size,
                                                         color_mode='grayscale',
-                                                        class_mode='categorical')
+                                                        class_mode=None)
             y_predictions_raw = classifier.predict(test_set)
             y_predictions = y_predictions_raw.argmax(axis=1)
             print('Confusion Matrix for all categories')

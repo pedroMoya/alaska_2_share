@@ -1,6 +1,7 @@
 # build CNN model
 import os
 import sys
+import datetime
 import logging
 import logging.handlers as handlers
 import json
@@ -38,20 +39,25 @@ logger.addHandler(logHandler)
 sys.path.insert(1, local_submodule_settings['custom_library_path'])
 from customized_metrics import customized_metrics_auc_roc
 from model_analyzer import model_structure
-
+from custom_alternative_training import alternative_training
+from core_alternative_training import core_alternative_training
 # class definitions
 
 
 class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        return tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        softmax_diff = tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        return softmax_diff
 
 
-class customized_loss3(losses.Loss):
+class customized_loss_auc_roc(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        return tf.math.add(1., -metrics.categorical_accuracy(local_true, local_pred))
+        local_true = tf.convert_to_tensor(local_true, dtype=tf.float32)
+        local_pred = tf.convert_to_tensor(local_pred, dtype=tf.float32)
+        local_auc_roc = tf.math.add(tf.math.add(1., metrics.AUC(local_true, local_pred)))
+        return local_auc_roc
 
 
 class customized_loss2(losses.Loss):
@@ -73,81 +79,83 @@ class model_classifier_:
             np.random.seed(11)
             tf.random.set_seed(2)
 
+            # load hyperparameters
+            units_layer_1 = local_hyperparameters['units_layer_1']
+            units_layer_2 = local_hyperparameters['units_layer_2']
+            units_layer_3 = local_hyperparameters['units_layer_3']
+            units_layer_4 = local_hyperparameters['units_layer_4']
+            units_dense_layer_4 = local_hyperparameters['units_dense_layer_4']
+            units_final_layer = local_hyperparameters['units_final_layer']
+            activation_1 = local_hyperparameters['activation_1']
+            activation_2 = local_hyperparameters['activation_2']
+            activation_3 = local_hyperparameters['activation_3']
+            activation_4 = local_hyperparameters['activation_4']
+            activation_dense_layer_4 = local_hyperparameters['activation_dense_layer_4']
+            activation_final_layer = local_hyperparameters['activation_final_layer']
+            dropout_layer_1 = local_hyperparameters['dropout_layer_1']
+            dropout_layer_2 = local_hyperparameters['dropout_layer_2']
+            dropout_layer_3 = local_hyperparameters['dropout_layer_3']
+            dropout_layer_4 = local_hyperparameters['dropout_layer_4']
+            dropout_dense_layer_4 = local_hyperparameters['dropout_dense_layer_4']
+            input_shape_y = local_hyperparameters['input_shape_y']
+            input_shape_x = local_hyperparameters['input_shape_x']
+            nof_channels = local_hyperparameters['nof_channels']
+            stride_y_1 = local_hyperparameters['stride_y_1']
+            stride_x_1 = local_hyperparameters['stride_x_1']
+            kernel_size_y_1 = local_hyperparameters['kernel_size_y_1']
+            kernel_size_x_1 = local_hyperparameters['kernel_size_x_1']
+            kernel_size_y_2 = local_hyperparameters['kernel_size_y_2']
+            kernel_size_x_2 = local_hyperparameters['kernel_size_x_2']
+            kernel_size_y_3 = local_hyperparameters['kernel_size_y_3']
+            kernel_size_x_3 = local_hyperparameters['kernel_size_x_3']
+            kernel_size_y_4 = local_hyperparameters['kernel_size_y_4']
+            kernel_size_x_4 = local_hyperparameters['kernel_size_x_4']
+            pool_size_y_1 = local_hyperparameters['pool_size_y_1']
+            pool_size_x_1 = local_hyperparameters['pool_size_x_1']
+            pool_size_y_2 = local_hyperparameters['pool_size_y_2']
+            pool_size_x_2 = local_hyperparameters['pool_size_x_2']
+            pool_size_y_3 = local_hyperparameters['pool_size_y_3']
+            pool_size_x_3 = local_hyperparameters['pool_size_x_3']
+            pool_size_y_4 = local_hyperparameters['pool_size_y_4']
+            pool_size_x_4 = local_hyperparameters['pool_size_x_4']
+            optimizer_function = local_hyperparameters['optimizer']
+            optimizer_learning_rate = local_hyperparameters['learning_rate']
+            if optimizer_function == 'adam':
+                optimizer_function = optimizers.Adam(optimizer_learning_rate)
+                optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
+            elif optimizer_function == 'ftrl':
+                optimizer_function = optimizers.Ftrl(optimizer_learning_rate)
+            elif optimizer_function == 'sgd':
+                optimizer_function = optimizers.SGD(optimizer_learning_rate)
+            losses_list = []
+            loss_1 = local_hyperparameters['loss_1']
+            loss_2 = local_hyperparameters['loss_2']
+            loss_3 = local_hyperparameters['loss_3']
+            union_settings_losses = [loss_1, loss_2, loss_3]
+            if 'CategoricalCrossentropy' in union_settings_losses:
+                losses_list.append(losses.CategoricalCrossentropy())
+            if 'CategoricalHinge' in union_settings_losses:
+                losses_list.append(losses.CategoricalHinge())
+            if 'LogCosh' in union_settings_losses:
+                losses_list.append(losses.LogCosh)
+            if 'customized_loss_function' in union_settings_losses:
+                losses_list.append(customized_loss())
+            if 'customized_loss_auc_roc' in union_settings_losses:
+                losses_list.append(customized_loss_auc_roc())
+            metrics_list = []
+            metric1 = local_hyperparameters['metrics1']
+            metric2 = local_hyperparameters['metrics2']
+            union_settings_metrics = [metric1, metric2]
+            if 'auc_roc' in union_settings_metrics:
+                metrics_list.append(metrics.AUC())
+            if 'CategoricalAccuracy' in union_settings_metrics:
+                metrics_list.append(metrics.CategoricalAccuracy())
+            if 'CategoricalHinge' in union_settings_metrics:
+                metrics_list.append(metrics.CategoricalHinge())
+            if 'BinaryAccuracy' in union_settings_metrics:
+                metrics_list.append(metrics.BinaryAccuracy())
             if local_settings['use_efficientNetB2'] == 'False':
                 type_of_model = '_custom'
-                # load hyperparameters
-                units_layer_1 = local_hyperparameters['units_layer_1']
-                units_layer_2 = local_hyperparameters['units_layer_2']
-                units_layer_3 = local_hyperparameters['units_layer_3']
-                units_layer_4 = local_hyperparameters['units_layer_4']
-                units_dense_layer_4 = local_hyperparameters['units_dense_layer_4']
-                units_final_layer = local_hyperparameters['units_final_layer']
-                activation_1 = local_hyperparameters['activation_1']
-                activation_2 = local_hyperparameters['activation_2']
-                activation_3 = local_hyperparameters['activation_3']
-                activation_4 = local_hyperparameters['activation_4']
-                activation_dense_layer_4 = local_hyperparameters['activation_dense_layer_4']
-                activation_final_layer = local_hyperparameters['activation_final_layer']
-                dropout_layer_1 = local_hyperparameters['dropout_layer_1']
-                dropout_layer_2 = local_hyperparameters['dropout_layer_2']
-                dropout_layer_3 = local_hyperparameters['dropout_layer_3']
-                dropout_layer_4 = local_hyperparameters['dropout_layer_4']
-                dropout_dense_layer_4 = local_hyperparameters['dropout_dense_layer_4']
-                input_shape_y = local_hyperparameters['input_shape_y']
-                input_shape_x = local_hyperparameters['input_shape_x']
-                nof_channels = local_hyperparameters['nof_channels']
-                stride_y_1 = local_hyperparameters['stride_y_1']
-                stride_x_1 = local_hyperparameters['stride_x_1']
-                kernel_size_y_1 = local_hyperparameters['kernel_size_y_1']
-                kernel_size_x_1 = local_hyperparameters['kernel_size_x_1']
-                kernel_size_y_2 = local_hyperparameters['kernel_size_y_2']
-                kernel_size_x_2 = local_hyperparameters['kernel_size_x_2']
-                kernel_size_y_3 = local_hyperparameters['kernel_size_y_3']
-                kernel_size_x_3 = local_hyperparameters['kernel_size_x_3']
-                kernel_size_y_4 = local_hyperparameters['kernel_size_y_4']
-                kernel_size_x_4 = local_hyperparameters['kernel_size_x_4']
-                pool_size_y_1 = local_hyperparameters['pool_size_y_1']
-                pool_size_x_1 = local_hyperparameters['pool_size_x_1']
-                pool_size_y_2 = local_hyperparameters['pool_size_y_2']
-                pool_size_x_2 = local_hyperparameters['pool_size_x_2']
-                pool_size_y_3 = local_hyperparameters['pool_size_y_3']
-                pool_size_x_3 = local_hyperparameters['pool_size_x_3']
-                pool_size_y_4 = local_hyperparameters['pool_size_y_4']
-                pool_size_x_4 = local_hyperparameters['pool_size_x_4']
-                optimizer_function = local_hyperparameters['optimizer']
-                optimizer_learning_rate = local_hyperparameters['learning_rate']
-                if optimizer_function == 'adam':
-                    optimizer_function = optimizers.Adam(optimizer_learning_rate)
-                    optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
-                elif optimizer_function == 'ftrl':
-                    optimizer_function = optimizers.Ftrl(optimizer_learning_rate)
-                elif optimizer_function == 'sgd':
-                    optimizer_function = optimizers.SGD(optimizer_learning_rate)
-                losses_list = []
-                loss_1 = local_hyperparameters['loss_1']
-                loss_2 = local_hyperparameters['loss_2']
-                loss_3 = local_hyperparameters['loss_3']
-                union_settings_losses = [loss_1, loss_2, loss_3]
-                if 'CategoricalCrossentropy' in union_settings_losses:
-                    losses_list.append(losses.CategoricalCrossentropy())
-                if 'CategoricalHinge' in union_settings_losses:
-                    losses_list.append(losses.CategoricalHinge())
-                if 'LogCosh' in union_settings_losses:
-                    losses_list.append(losses.LogCosh)
-                if 'customized_loss_function' in union_settings_losses:
-                    losses_list.append(customized_loss())
-                metrics_list = []
-                metric1 = local_hyperparameters['metrics1']
-                metric2 = local_hyperparameters['metrics2']
-                union_settings_metrics = [metric1, metric2]
-                if 'auc_roc' in union_settings_metrics:
-                    metrics_list.append(metrics.AUC())
-                if 'CategoricalAccuracy' in union_settings_metrics:
-                    metrics_list.append(metrics.CategoricalAccuracy())
-                if 'CategoricalHinge' in union_settings_metrics:
-                    metrics_list.append(metrics.CategoricalHinge())
-                if 'BinaryAccuracy' in union_settings_metrics:
-                    metrics_list.append(metrics.BinaryAccuracy())
                 if local_hyperparameters['regularizers_l1_l2_1'] == 'True':
                     l1_1 = local_hyperparameters['l1_1']
                     l2_1 = local_hyperparameters['l2_1']
@@ -190,6 +198,19 @@ class model_classifier_:
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
+                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_1, pool_size_x_1)))
+                classifier_.add(layers.Dropout(dropout_layer_1))
+                # LAYER 1.5
+                classifier_.add(layers.Conv2D(units_layer_1, kernel_size=(kernel_size_y_1, kernel_size_x_1),
+                                              input_shape=(input_shape_y, input_shape_x, nof_channels),
+                                              strides=(stride_y_1, stride_x_1),
+                                              activity_regularizer=activation_regularizer_1,
+                                              activation=activation_1,
+                                              kernel_initializer=tf.keras.initializers.VarianceScaling(
+                                                  scale=2., mode='fan_out', distribution='truncated_normal')))
+                classifier_.add(layers.BatchNormalization(axis=-1))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_1, pool_size_x_1)))
                 classifier_.add(layers.Dropout(dropout_layer_1))
                 # second layer
@@ -199,6 +220,17 @@ class model_classifier_:
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
+                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_2, pool_size_x_2)))
+                classifier_.add(layers.Dropout(dropout_layer_2))
+                # LAYER 2.5
+                classifier_.add(layers.Conv2D(units_layer_2, kernel_size=(kernel_size_y_2, kernel_size_x_2),
+                                              activity_regularizer=activation_regularizer_2,
+                                              activation=activation_2,
+                                              kernel_initializer=tf.keras.initializers.VarianceScaling(
+                                                  scale=2., mode='fan_out', distribution='truncated_normal')))
+                classifier_.add(layers.BatchNormalization(axis=-1))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_2, pool_size_x_2)))
                 classifier_.add(layers.Dropout(dropout_layer_2))
                 # third layer
@@ -209,6 +241,18 @@ class model_classifier_:
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
+                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_3, pool_size_x_3)))
+                classifier_.add(layers.Dropout(dropout_layer_3))
+                # LAYER 3.5
+                classifier_.add(layers.Conv2D(units_layer_3,
+                                              kernel_size=(kernel_size_y_3, kernel_size_x_3),
+                                              activity_regularizer=activation_regularizer_3,
+                                              activation=activation_3,
+                                              kernel_initializer=tf.keras.initializers.VarianceScaling(
+                                                  scale=2., mode='fan_out', distribution='truncated_normal')))
+                classifier_.add(layers.BatchNormalization(axis=-1))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_3, pool_size_x_3)))
                 classifier_.add(layers.Dropout(dropout_layer_3))
                 # fourth layer
@@ -220,17 +264,16 @@ class model_classifier_:
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
-                classifier_.add(layers.GlobalAveragePooling2D())
-                # classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_4, pool_size_x_4)))
+                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_4, pool_size_x_4)))
                 classifier_.add(layers.Dropout(dropout_layer_4))
                 # Flattening
                 classifier_.add(layers.Flatten())
                 # Full connection and final layer
-                # classifier_.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4,
-                #                              activity_regularizer=activation_regularizer_dense_layer_4,
-                #                              kernel_initializer=tf.keras.initializers.VarianceScaling(
-                #                                  scale=0.333333333, mode='fan_out', distribution='uniform')))
-                # classifier_.add(layers.Dropout(dropout_dense_layer_4))
+                classifier_.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4,
+                                             activity_regularizer=activation_regularizer_dense_layer_4,
+                                             kernel_initializer=tf.keras.initializers.VarianceScaling(
+                                                 scale=0.333333333, mode='fan_out', distribution='uniform')))
+                classifier_.add(layers.Dropout(dropout_dense_layer_4))
                 classifier_.add(layers.Dense(units_final_layer, activation=activation_final_layer,
                                 kernel_initializer=tf.keras.initializers.VarianceScaling(
                                     scale=0.333333333, mode='fan_out', distribution='uniform')))
@@ -243,8 +286,33 @@ class model_classifier_:
                                                                    input_tensor=None, input_shape=None,
                                                                    pooling=None, classes=1000,
                                                                    classifier_activation='softmax')
-                classifier_.compile(optimizer=local_hyperparameters['optimizer'], loss=local_hyperparameters['loss_1'],
-                                    metrics=local_hyperparameters['metrics1'])
+                classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
+                date = datetime.date.today()
+                classifier_.save_weights(''.join([local_settings['models_path'], type_of_model, '_imagenet_', str(date),
+                                                 '_weights.h5']))
+                if local_settings['alternative_training_generator'] == 'True':
+                    alternative_training_instance = alternative_training()
+                    alternative_training_review = alternative_training_instance.train_model(classifier_,
+                                                                                            local_hyperparameters,
+                                                                                            local_settings)
+                    if alternative_training_review:
+                        print('success in alternative training (obtain data predictions)')
+                        return True
+                    else:
+                        print('error at alternative training')
+                        return False
+                if local_settings['alternative_training'] == 'True':
+                    my_question = 'meaning_of_existence'
+                    core_alternative_training_computation_instance = core_alternative_training()
+                    core_alternative_training_computation_instance_review = \
+                        core_alternative_training_computation_instance.imagine(my_question, local_settings)
+                    if core_alternative_training_computation_instance_review:
+                        print('success in core brain alternative training (smart processing of data)')
+                        return True
+                    else:
+                        print('error at core brain alternative training')
+                        return False
+
             else:
                 print('model to use is not defined')
                 return False

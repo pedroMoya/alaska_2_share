@@ -2,7 +2,7 @@
   "comment": "organic_settings overwrite settings.json",
   "metaheuristic_optimization": "False",
   "optimization_iterations": 1,
-  "version": "1.1",
+  "version": "1.2",
   "mode": "test",
   "machine": "local",
   "control": "handler",
@@ -41,6 +41,8 @@
   "nof_K_fold_groups": 4,
   "nof_evaluation_samples_by_group": 100,
   "use_quality_factor_for_disaggregation": "False",
-  "use_efficientNetB2": "False",
-  "custom_model_evaluation_set_not_trainable": "True"
+  "use_efficientNetB2": "True",
+  "custom_model_evaluation_set_not_trainable": "True",
+  "alternative_training_generator": "False",
+  "alternative_training": "True"
 }

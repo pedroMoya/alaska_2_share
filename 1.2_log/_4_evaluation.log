@@ -2917,3 +2917,546 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
     raise ValueError('You are trying to load a weight file '
 ValueError: You are trying to load a weight file containing 10 layers into a model with 9 layers.
+
+13.Jul 2020 16:19:08 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 16:54:43 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 16:56:36 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 16:58:18 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:03:02 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:19:43 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:25:25 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 106, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:28:59 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 106, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:32:06 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 106, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:38:05 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 106, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:45:17 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 106, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:46:27 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:50:44 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:51:44 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 17:55:14 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 18:06:31 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 19:08:38 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 107, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 19:13:23 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 112, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 19:17:54 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 112, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 20:26:09 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 112, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 23:20:35 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 7 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 112, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 7 layers.
+
+13.Jul 2020 23:21:28 evaluator module error
+Shapes (4, 4, 32, 32) and (16, 32, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 112, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 32, 32) and (16, 32, 4, 4) are incompatible
+
+13.Jul 2020 23:22:23 evaluator module error
+Shapes (4, 4, 1, 64) and (32, 1, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 112, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 64) and (32, 1, 4, 4) are incompatible
+
+13.Jul 2020 23:25:21 evaluator module error
+Shapes (4, 4, 1, 64) and (32, 1, 4, 4) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 112, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (4, 4, 1, 64) and (32, 1, 4, 4) are incompatible
+
+13.Jul 2020 23:28:08 evaluator module error
+You are trying to load a weight file containing 9 layers into a model with 10 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 112, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 9 layers into a model with 10 layers.
+
+13.Jul 2020 23:32:39 evaluator module error
+SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 105, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 186, in load_model
+    loader_impl.parse_saved_model(filepath)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\saved_model\loader_impl.py", line 110, in parse_saved_model
+    raise IOError("SavedModel file does not exist at: %s/{%s|%s}" %
+OSError: SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+
+13.Jul 2020 23:34:43 evaluator module error
+SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 105, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 186, in load_model
+    loader_impl.parse_saved_model(filepath)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\saved_model\loader_impl.py", line 110, in parse_saved_model
+    raise IOError("SavedModel file does not exist at: %s/{%s|%s}" %
+OSError: SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+
+13.Jul 2020 23:35:28 evaluator module error
+SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 105, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 186, in load_model
+    loader_impl.parse_saved_model(filepath)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\saved_model\loader_impl.py", line 110, in parse_saved_model
+    raise IOError("SavedModel file does not exist at: %s/{%s|%s}" %
+OSError: SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+
+13.Jul 2020 23:36:38 evaluator module error
+SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 105, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 186, in load_model
+    loader_impl.parse_saved_model(filepath)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\saved_model\loader_impl.py", line 110, in parse_saved_model
+    raise IOError("SavedModel file does not exist at: %s/{%s|%s}" %
+OSError: SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+
+13.Jul 2020 23:39:36 evaluator module error
+SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 105, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 186, in load_model
+    loader_impl.parse_saved_model(filepath)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\saved_model\loader_impl.py", line 110, in parse_saved_model
+    raise IOError("SavedModel file does not exist at: %s/{%s|%s}" %
+OSError: SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+
+13.Jul 2020 23:40:12 evaluator module error
+SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 105, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 186, in load_model
+    loader_impl.parse_saved_model(filepath)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\saved_model\loader_impl.py", line 110, in parse_saved_model
+    raise IOError("SavedModel file does not exist at: %s/{%s|%s}" %
+OSError: SavedModel file does not exist at: ./5.0_MODELS_DIR/_7_layers_CNN__custom_classifier_.h5/{saved_model.pbtxt|saved_model.pb}
+
+13.Jul 2020 23:46:39 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+13.Jul 2020 23:48:38 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+13.Jul 2020 23:49:58 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+13.Jul 2020 23:52:45 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+13.Jul 2020 23:54:21 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+13.Jul 2020 23:58:02 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-13_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+14.Jul 2020 00:00:36 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-14_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-14_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+14.Jul 2020 00:25:30 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-14_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-14_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+14.Jul 2020 03:21:46 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-14_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 113, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-14_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+ OOM when allocating tensor with shape[128,14,253,253] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node sequential/conv2d/ActivityRegularizer/Abs (defined at .\_4_evaluation.py:162) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_test_function_2180]
+
+Function call stack:
+test_function
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 162, in evaluate
+    print(classifier.evaluate(x=test_set, verbose=0, return_dict=True))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1383, in evaluate
+    tmp_logs = test_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 852, in _call
+    return self._concrete_stateful_fn._filtered_call(canon_args, canon_kwds)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[128,14,253,253] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node sequential/conv2d/ActivityRegularizer/Abs (defined at .\_4_evaluation.py:162) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_test_function_2180]
+
+Function call stack:
+test_function
+

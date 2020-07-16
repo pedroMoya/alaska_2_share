@@ -47,10 +47,6 @@ logger = logging.getLogger(__name__)
 logHandler = handlers.RotatingFileHandler(log_path_filename, maxBytes=10485760, backupCount=5)
 logger.addHandler(logHandler)
 
-# keras session/random seed reset/fix
-kb.clear_session()
-np.random.seed(11)
-tf.random.set_seed(2)
 
 # classes definitions
 
@@ -92,6 +88,11 @@ def image_normalizer(local_image_rgb):
 
 
 def evaluate():
+    # keras session/random seed reset/fix
+    kb.clear_session()
+    np.random.seed(11)
+    tf.random.set_seed(2)
+
     try:
         # evaluate current model, store and display results
         print('\n~evaluation module~')
@@ -113,19 +114,31 @@ def evaluate():
         else:
             # open model and weights
             current_model_name = model_hyperparameters['current_model_name']
-            custom_obj = {'customized_loss': customized_loss, 'customized_loss_auc_roc': customized_loss_auc_roc}
+            # model_filepath = ''.join([local_script_settings['models_path'], current_model_name,
+            #                          '_custom_classifier_.json'])
+            # with open(model_filepath) as local_file:
+            #     model_json = local_file.read()
+            #     local_file.close()
+            # classifier = models.model_from_json(model_json)
+            custom_obj = {'customized_loss': customized_loss}
             classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
                                                     '_custom_classifier_.h5']), custom_objects=custom_obj)
+
+            # custom_obj = {'customized_loss': customized_loss}
+            # classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+            #                                         '_trained_']), custom_objects=custom_obj)
+
             classifier.summary()
             weights_file_name = local_script_settings['weights_loaded_in evaluation']
             if weights_file_name == 'from_today':
                 print('model loaded and by default the currents weights saved today will be loaded')
                 date = datetime.date.today()
-                classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
-                                                 '_weights.h5']))
+                classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+                                                 str(date), '_weights.h5']))
             else:
                 print('model correctly loaded and by settings this weights will be loaded:', weights_file_name)
                 classifier.load_weights(''.join([local_script_settings['models_path'], weights_file_name]))
+
             if local_script_settings['custom_model_evaluation_set_not_trainable'] == 'True':
                 for layer in classifier.layers:
                     layer.trainable = False
@@ -158,19 +171,20 @@ def evaluate():
                                                             target_size=(input_shape_y, input_shape_x),
                                                             batch_size=batch_size,
                                                             color_mode='rgb',
-                                                            class_mode=None)
+                                                            class_mode='categorical')
                 y_predictions_raw = classifier.predict(test_set)
+                print(y_predictions_raw)
                 y_predictions = y_predictions_raw.argmax(axis=1)
+
                 print('Confusion Matrix for all categories')
                 print(confusion_matrix(test_set.classes, y_predictions))
                 print('Classification Report')
-                target_names = ['method_0_group_0', 'method_0_group_1', 'method_0_group_2', 'method_0_group_3',
-                                'method_1_group_0', 'method_1_group_1', 'method_1_group_2', 'method_1_group_3']
+                target_names = ['method_0_group_0', 'method_1_group_0']
                 print(classification_report(test_set.classes, y_predictions, target_names=target_names))
                 print('\nevaluation of classifier by tf.keras.models.evaluate:')
-                print(classifier.evaluate(x=test_set, verbose=0, return_dict=True))
+                print(classifier.evaluate(x=test_set, verbose=1, return_dict=True))
                 print("\nlog_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
-                                                             y_predictions_raw, eps=1e-15))
+                                                               y_predictions_raw, eps=1e-15))
                 print('number of classes:', test_set.num_classes, '\n')
                 confusion_matrix_tf = tf.math.confusion_matrix(labels=test_set.classes,
                                                                predictions=y_predictions)
@@ -179,7 +193,7 @@ def evaluate():
                 # calculating if stenographic method was used or not 0: no_hidden_message 1: hidden_message
                 print('\nadjusting evaluation to ~no-hidden or hidden message in image~ binary classification')
                 print('Confusion Matrix for binary classification')
-                hidden_message_prob = np.sum(y_predictions_raw[:, nof_methods: nof_methods * nof_K_fold_groups],
+                hidden_message_prob = np.sum(y_predictions_raw[:, nof_K_fold_groups: nof_methods * nof_K_fold_groups],
                                              axis=1)
                 # no_hidden_message_prob = np.round(np.add(1., -hidden_message_prob))
                 print('prob hidden_message:\n', hidden_message_prob, '\n')

@@ -190,11 +190,13 @@ class model_classifier_:
                 # building model
                 classifier_ = tf.keras.models.Sequential()
                 # first layer
+                classifier_.add(layers.Input(shape=(input_shape_y, input_shape_x, nof_channels)))
+                classifier_.add(layers.ZeroPadding2D(padding=((0, 1), (0, 1))))
                 classifier_.add(layers.Conv2D(units_layer_1, kernel_size=(kernel_size_y_1, kernel_size_x_1),
-                                              input_shape=(input_shape_y, input_shape_x, nof_channels),
                                               strides=(stride_y_1, stride_x_1),
                                               activity_regularizer=activation_regularizer_1,
                                               activation=activation_1,
+                                              padding='valid',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
@@ -207,6 +209,7 @@ class model_classifier_:
                                               strides=(stride_y_1, stride_x_1),
                                               activity_regularizer=activation_regularizer_1,
                                               activation=activation_1,
+                                              padding='same',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 # classifier_.add(layers.BatchNormalization(axis=-1))
@@ -217,6 +220,7 @@ class model_classifier_:
                 classifier_.add(layers.Conv2D(units_layer_2, kernel_size=(kernel_size_y_2, kernel_size_x_2),
                                               activity_regularizer=activation_regularizer_2,
                                               activation=activation_2,
+                                              padding='same',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
@@ -224,9 +228,11 @@ class model_classifier_:
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_2, pool_size_x_2)))
                 classifier_.add(layers.Dropout(dropout_layer_2))
                 # LAYER 2.5
+                classifier_.add(layers.ZeroPadding2D(padding=((2, 2), (2, 2))))
                 classifier_.add(layers.Conv2D(units_layer_2, kernel_size=(kernel_size_y_2, kernel_size_x_2),
                                               activity_regularizer=activation_regularizer_2,
                                               activation=activation_2,
+                                              padding='valid',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 # classifier_.add(layers.BatchNormalization(axis=-1))
@@ -238,6 +244,7 @@ class model_classifier_:
                                               kernel_size=(kernel_size_y_3, kernel_size_x_3),
                                               activity_regularizer=activation_regularizer_3,
                                               activation=activation_3,
+                                              padding='same',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
@@ -245,10 +252,12 @@ class model_classifier_:
                 classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_3, pool_size_x_3)))
                 classifier_.add(layers.Dropout(dropout_layer_3))
                 # LAYER 3.5
+                classifier_.add(layers.ZeroPadding2D(padding=((1, 1), (1, 1))))
                 classifier_.add(layers.Conv2D(units_layer_3,
                                               kernel_size=(kernel_size_y_3, kernel_size_x_3),
                                               activity_regularizer=activation_regularizer_3,
                                               activation=activation_3,
+                                              padding='valid',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 # classifier_.add(layers.BatchNormalization(axis=-1))
@@ -260,6 +269,7 @@ class model_classifier_:
                                               kernel_size=(kernel_size_y_4, kernel_size_x_4),
                                               activity_regularizer=activation_regularizer_4,
                                               activation=activation_4,
+                                              padding='same',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))

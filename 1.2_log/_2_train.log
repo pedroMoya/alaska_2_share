@@ -8161,3 +8161,217 @@ Traceback (most recent call last):
   File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 13, in normalize
     local_image_rgb[:, :, 1: 2] = np.bitwise_and(channel_y, -channel_y)
 TypeError: ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+15.Jul 2020 21:50:51 model training error
+ OOM when allocating tensor with shape[128,28,253,253] and type half on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node gradient_tape/sequential/batch_normalization/FusedBatchNormGradV3 (defined at .\_2_train.py:187) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_11388]
+
+Function call stack:
+train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[128,28,253,253] and type half on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node gradient_tape/sequential/batch_normalization/FusedBatchNormGradV3 (defined at .\_2_train.py:187) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_11388]
+
+Function call stack:
+train_function
+
+
+15.Jul 2020 22:22:39 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+15.Jul 2020 22:23:43 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+15.Jul 2020 22:24:40 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 01:04:39 model training error
+only integer scalar arrays can be converted to a scalar index
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 62, in image_normalizer
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 29, in normalize
+    local_image_rgb[:, :, 2: 3] = lsbit(local_image_rgb[:, :, 2: 3])
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 14, in lsbit
+    lines = [int(np.binary_repr(element)[-1:]) for element in array[:, :, :]]
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 14, in <listcomp>
+    lines = [int(np.binary_repr(element)[-1:]) for element in array[:, :, :]]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\core\numeric.py", line 1978, in binary_repr
+    num = operator.index(num)
+TypeError: only integer scalar arrays can be converted to a scalar index
+
+16.Jul 2020 01:09:05 model training error
+'numpy.float32' object cannot be interpreted as an integer
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 62, in image_normalizer
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 26, in normalize
+    local_image_rgb[:, :, 2: 3] = lsbit(local_image_rgb[:, :, 2: 3])
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 15, in lsbit
+    low_bit_array[row, column, channel] = int(np.binary_repr(array[row, column, channel])[-1:])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\core\numeric.py", line 1978, in binary_repr
+    num = operator.index(num)
+TypeError: 'numpy.float32' object cannot be interpreted as an integer
+
+16.Jul 2020 01:10:00 model training error
+'int' object is not subscriptable
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 62, in image_normalizer
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 26, in normalize
+    local_image_rgb[:, :, 2: 3] = lsbit(local_image_rgb[:, :, 2: 3])
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 15, in lsbit
+    low_bit_array[row, column, channel] = int(np.binary_repr(int(array[row, column, channel])[-1:]))
+TypeError: 'int' object is not subscriptable
+
+16.Jul 2020 01:26:05 model training error
+ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 62, in image_normalizer
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 15, in normalize
+    local_image_rgb[:, :, 2: 3] = np.bitwise_and(channel_y, 1)
+TypeError: ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+16.Jul 2020 04:22:41 correct model training, correct saving of model and weights
+
+16.Jul 2020 04:22:41 settings modified and saved
+
+16.Jul 2020 07:54:57 correct model training, correct saving of model and weights
+
+16.Jul 2020 07:54:57 settings modified and saved
+
+16.Jul 2020 08:10:03 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 08:46:03 correct model training, correct saving of model and weights
+
+16.Jul 2020 08:46:03 settings modified and saved
+
+16.Jul 2020 09:21:55 correct model training, correct saving of model and weights
+
+16.Jul 2020 09:21:55 settings modified and saved
+
+16.Jul 2020 12:32:28 correct model training, correct saving of model and weights
+
+16.Jul 2020 12:32:28 settings modified and saved

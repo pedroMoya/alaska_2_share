@@ -139,8 +139,6 @@ def train():
         training_set_folder_group = ''.join([training_set_folder])
         train_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
                                                                preprocessing_function=image_normalizer,
-                                                               horizontal_flip=True,
-                                                               vertical_flip=True,
                                                                validation_split=validation_split)
         train_generator = train_datagen.flow_from_directory(training_set_folder_group,
                                                             target_size=(input_shape_y, input_shape_x),
@@ -175,13 +173,13 @@ def train():
         # define callbacks, checkpoints namepaths
         model_weights = ''.join([local_settings['checkpoints_path'],
                                  'check_point_', model_name, "_loss_-{loss:.4f}-.hdf5"])
-        callback1 = cb.EarlyStopping(monitor='loss', patience=early_stopping_patience)
+        # callback1 = cb.EarlyStopping(monitor='loss', patience=early_stopping_patience)
         callback2 = [cb.ModelCheckpoint(model_weights, monitor='loss', verbose=1,
-                                       save_best_only=True, mode='min')]
-        callback3 = cb.ReduceLROnPlateau(monitor='loss', factor=reduce_lr_on_plateau_factor,
-                                         patience=reduce_lr_on_plateau_patience,
-                                         min_lr=reduce_lr_on_plateau_min_lr)
-        callbacks = [callback1, callback2, callback3]
+                                        save_best_only=True, mode='min')]
+        # callback3 = cb.ReduceLROnPlateau(monitor='loss', factor=reduce_lr_on_plateau_factor,
+        #                                  patience=reduce_lr_on_plateau_patience,
+        #                                  min_lr=reduce_lr_on_plateau_min_lr)
+        callbacks = [callback2]
 
         # training model
         model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
@@ -195,6 +193,9 @@ def train():
         date = datetime.date.today()
         classifier.save_weights(''.join([local_script_settings['models_path'], model_name, '_', str(date),
                                          '_weights.h5']))
+
+        # save in tf (saveModel) format
+        classifier.save(''.join([local_settings['models_path'], model_name, '_trained_/']), save_format='tf')
 
         # closing train module
         print('full training of each group module ended')

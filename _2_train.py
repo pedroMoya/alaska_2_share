@@ -35,6 +35,7 @@ try:
     sys.path.insert(1, local_settings['custom_library_path'])
     from custom_model_builder import model_classifier_
     from custom_normalizer import custom_image_normalizer
+    from lsbyte_custom_normalizer import lsbyte_custom_image_normalizer
 
 except Exception as ee1:
     print('Error importing libraries or opening settings (train module)')
@@ -57,7 +58,7 @@ logger.addHandler(logHandler)
 
 
 def image_normalizer(local_image_rgb):
-    custom_image_normalizer_instance = custom_image_normalizer()
+    custom_image_normalizer_instance = lsbyte_custom_image_normalizer()
     return custom_image_normalizer_instance.normalize(local_image_rgb)
 
 
@@ -136,14 +137,16 @@ def train():
 
         # load raw_data and cleaned_data
         training_set_folder_group = ''.join([training_set_folder])
-        train_datagen = preprocessing.image.ImageDataGenerator(rescale=1./255,
+        train_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
                                                                preprocessing_function=image_normalizer,
+                                                               horizontal_flip=True,
+                                                               vertical_flip=True,
                                                                validation_split=validation_split)
         train_generator = train_datagen.flow_from_directory(training_set_folder_group,
                                                             target_size=(input_shape_y, input_shape_x),
                                                             batch_size=batch_size,
                                                             class_mode='categorical',
-                                                            color_mode='grayscale',
+                                                            color_mode='rgb',
                                                             shuffle=True,
                                                             subset='training')
         print('labels and indices')
@@ -152,7 +155,7 @@ def train():
                                                                  target_size=(input_shape_y, input_shape_x),
                                                                  batch_size=batch_size,
                                                                  class_mode='categorical',
-                                                                 color_mode='grayscale',
+                                                                 color_mode='rgb',
                                                                  shuffle=False,
                                                                  subset='validation')
 

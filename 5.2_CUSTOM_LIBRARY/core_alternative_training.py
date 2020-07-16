@@ -37,7 +37,7 @@ class core_alternative_training():
                 experience_memory = np.load(''.join([local_cat_settings['clean_data_path'], 'experience_memory.npy']),
                                             allow_pickle=True)
                 weights_no_hidden_message = experience_memory[0: 1, 2]
-                weights_hidden_message = np.mean(experience_memory[1: 4, 2], axis=0)
+                weights_hidden_message = np.median(experience_memory[1: 4, 2], axis=(0, 1))
                 np.save(''.join([local_cat_settings['clean_data_path'], 'weights_no_hidden_message']),
                         weights_no_hidden_message)
                 np.save(''.join([local_cat_settings['clean_data_path'], 'weights_hidden_message']),

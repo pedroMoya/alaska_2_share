@@ -28,6 +28,7 @@ try:
     sys.path.insert(1, local_script_settings['custom_library_path'])
     from create_evaluation_folders import select_evaluation_images
     from custom_normalizer import custom_image_normalizer
+    from lsbyte_custom_normalizer import lsbyte_custom_image_normalizer
     from alternative_evaluator import alternative_evaluation
 
     physical_devices = tf.config.list_physical_devices('GPU')
@@ -86,7 +87,7 @@ class customized_loss2(losses.Loss):
 
 
 def image_normalizer(local_image_rgb):
-    custom_image_normalizer_instance = custom_image_normalizer()
+    custom_image_normalizer_instance = lsbyte_custom_image_normalizer()
     return custom_image_normalizer_instance.normalize(local_image_rgb)
 
 
@@ -103,8 +104,8 @@ def evaluate():
 
         if local_script_settings['alternative_training'] == 'True':
             print('as configuration indicate, alternative classifier will be evaluated')
-            alternative_evaluation_instance = alternative_evaluation(local_script_settings)
-            alternative_evaluation_instance_review = alternative_evaluation_instance.run()
+            alternative_evaluation_instance = alternative_evaluation()
+            alternative_evaluation_instance_review = alternative_evaluation_instance.run(local_script_settings)
             if alternative_evaluation_instance_review:
                 print('alternative evaluation was successful')
             else:
@@ -123,7 +124,7 @@ def evaluate():
                 classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
                                                  '_weights.h5']))
             else:
-                print('model correctly loaded and by setting this weights will be loaded:', weights_file_name)
+                print('model correctly loaded and by settings this weights will be loaded:', weights_file_name)
                 classifier.load_weights(''.join([local_script_settings['models_path'], weights_file_name]))
             if local_script_settings['custom_model_evaluation_set_not_trainable'] == 'True':
                 for layer in classifier.layers:
@@ -150,13 +151,13 @@ def evaluate():
                 batch_size = model_hyperparameters['batch_size']
                 input_shape_y = model_hyperparameters['input_shape_y']
                 input_shape_x = model_hyperparameters['input_shape_x']
-                test_datagen = preprocessing.image.ImageDataGenerator(rescale=1./255,
+                test_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
                                                                       preprocessing_function=image_normalizer)
                 test_set = test_datagen.flow_from_directory(model_evaluation_folder,
                                                             shuffle=True,
                                                             target_size=(input_shape_y, input_shape_x),
                                                             batch_size=batch_size,
-                                                            color_mode='grayscale',
+                                                            color_mode='rgb',
                                                             class_mode=None)
                 y_predictions_raw = classifier.predict(test_set)
                 y_predictions = y_predictions_raw.argmax(axis=1)
@@ -164,9 +165,7 @@ def evaluate():
                 print(confusion_matrix(test_set.classes, y_predictions))
                 print('Classification Report')
                 target_names = ['method_0_group_0', 'method_0_group_1', 'method_0_group_2', 'method_0_group_3',
-                                'method_1_group_0', 'method_1_group_1', 'method_1_group_2', 'method_1_group_3',
-                                'method_2_group_0', 'method_2_group_1', 'method_2_group_2', 'method_2_group_3',
-                                'method_3_group_0', 'method_3_group_1', 'method_3_group_2', 'method_3_group_3']
+                                'method_1_group_0', 'method_1_group_1', 'method_1_group_2', 'method_1_group_3']
                 print(classification_report(test_set.classes, y_predictions, target_names=target_names))
                 print('\nevaluation of classifier by tf.keras.models.evaluate:')
                 print(classifier.evaluate(x=test_set, verbose=0, return_dict=True))
@@ -180,7 +179,7 @@ def evaluate():
                 # calculating if stenographic method was used or not 0: no_hidden_message 1: hidden_message
                 print('\nadjusting evaluation to ~no-hidden or hidden message in image~ binary classification')
                 print('Confusion Matrix for binary classification')
-                hidden_message_prob = np.sum(y_predictions_raw[:, nof_K_fold_groups: nof_methods * nof_K_fold_groups],
+                hidden_message_prob = np.sum(y_predictions_raw[:, nof_methods: nof_methods * nof_K_fold_groups],
                                              axis=1)
                 # no_hidden_message_prob = np.round(np.add(1., -hidden_message_prob))
                 print('prob hidden_message:\n', hidden_message_prob, '\n')

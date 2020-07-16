@@ -8082,3 +8082,82 @@ Traceback (most recent call last):
   File ".\_2_train.py", line 177, in train
     model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
 AttributeError: 'bool' object has no attribute 'fit'
+
+15.Jul 2020 18:29:18 model training error
+2 root error(s) found.
+  (0) Invalid argument:  logits and labels must be broadcastable: logits_size=[32,16] labels_size=[32,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:184) ]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_107/_61]]
+  (1) Invalid argument:  logits and labels must be broadcastable: logits_size=[32,16] labels_size=[32,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:184) ]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_8152]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 184, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 2 root error(s) found.
+  (0) Invalid argument:  logits and labels must be broadcastable: logits_size=[32,16] labels_size=[32,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:184) ]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_107/_61]]
+  (1) Invalid argument:  logits and labels must be broadcastable: logits_size=[32,16] labels_size=[32,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:184) ]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_8152]
+
+Function call stack:
+train_function -> train_function
+
+
+15.Jul 2020 19:07:27 correct model training, correct saving of model and weights
+
+15.Jul 2020 19:07:27 settings modified and saved
+
+15.Jul 2020 21:45:12 model training error
+ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+Traceback (most recent call last):
+  File ".\_2_train.py", line 187, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 62, in image_normalizer
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 13, in normalize
+    local_image_rgb[:, :, 1: 2] = np.bitwise_and(channel_y, -channel_y)
+TypeError: ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''

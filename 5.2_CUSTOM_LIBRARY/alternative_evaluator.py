@@ -7,6 +7,7 @@ from logging import handlers
 import numpy as np
 import json
 import pandas as pd
+from PIL import Image
 import tensorflow as tf
 import cv2
 import itertools as it
@@ -31,8 +32,13 @@ class alternative_evaluation():
 
     def run(self, local_aeval_settings):
         try:
+            type_of_model = '_EfficientNetB2'
+            alt_classifier = tf.keras.applications.EfficientNetB2(include_top=True, weights='imagenet',
+                                                                   input_tensor=None, input_shape=None,
+                                                                   pooling=None, classes=1000,
+                                                                   classifier_activation='softmax')
             local_model_evaluation_folder = ''.join([local_aeval_settings['models_evaluation_path'], 
-                                                     'local_images_for_evaluation/'])
+                                                     'images_for_evaluation/'])
             nof_evaluation_samples_by_group = local_aeval_settings['nof_evaluation_samples_by_group']
             nof_methods = local_aeval_settings['nof_methods']
             nof_K_fold_groups = local_aeval_settings['nof_K_fold_groups']
@@ -45,16 +51,15 @@ class alternative_evaluation():
                 files = []
                 if method > 0:
                     ground_truth = 1
-                for file in os.listdir(local_path):
-                    files = fnmatch.fnmatch(file, '*.jpg')
+                files = os.listdir(local_path)
                 for image_file in files:
-                    filepath = ''.join([local_path, image_file])
-                    local_image = cv2.imread(filepath)
-                    local_image = cv2.resize(local_image, (260, 260))
-                    local_image = local_image.reshape(1, local_image.shape[0], local_image.shape[1], local_image.shape[2])
-                    local_prediction = alt_model_classifier_instance.think(local_image)
+                    filepath = os.path.join(local_path, image_file)
+                    local_image = Image.open(filepath)
+                    local_prediction = alt_model_classifier_instance.think(local_image, local_aeval_settings,
+                                                                           alt_classifier)
                     results.append([ground_truth, local_prediction])
             results_df = pd.DataFrame(results)
+            print(np.shape(results_df))
             column_names = ['label', 'pred']
             results_df.to_csv(''.join([local_aeval_settings['models_evaluation_path'],
                                        'alternative_model_evaluation.csv']), index=False, header=column_names)

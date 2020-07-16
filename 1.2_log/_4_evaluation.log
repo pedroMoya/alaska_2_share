@@ -3880,3 +3880,62 @@ Traceback (most recent call last):
   File ".\_4_evaluation.py", line 106, in evaluate
     alternative_evaluation_instance = alternative_evaluation(local_script_settings)
 TypeError: alternative_evaluation() takes no arguments
+
+15.Jul 2020 14:01:00 evaluator module error
+alternative_evaluation() takes no arguments
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 106, in evaluate
+    alternative_evaluation_instance = alternative_evaluation(local_script_settings)
+TypeError: alternative_evaluation() takes no arguments
+
+15.Jul 2020 18:29:18 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-15_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 123, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_', str(date),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__2020-07-15_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+y_true and y_pred contain different number of classes 16, 4. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 173, in evaluate
+    print("\nlog_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2226, in log_loss
+    raise ValueError("y_true and y_pred contain different number of "
+ValueError: y_true and y_pred contain different number of classes 16, 4. Please provide the true labels explicitly through the labels argument. Classes found in y_true: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]
+ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 162, in evaluate
+    y_predictions_raw = classifier.predict(test_set)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 130, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1573, in predict
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_4_evaluation.py", line 91, in image_normalizer
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 13, in normalize
+    local_image_rgb[:, :, 1: 2] = np.bitwise_and(channel_y, -channel_y)
+TypeError: ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''

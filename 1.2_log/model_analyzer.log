@@ -880,3 +880,30 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 377, in deserialize_keras_object
     raise ValueError(
 ValueError: Unknown metric function: auc_roc
+'dict' object has no attribute 'layers'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 108, in analize
+    plot_model(model_json, to_file=''.join([plot_path, '.pdf']), show_shapes=True,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\vis_utils.py", line 324, in plot_model
+    dot = model_to_dot(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\vis_utils.py", line 134, in model_to_dot
+    layers = model.layers
+AttributeError: 'dict' object has no attribute 'layers'
+dictionary update sequence element #0 has length 1; 2 is required
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 108, in analize
+    model_efficientNetB2 = models.load_model(local_a_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 179, in load_model
+    with generic_utils.CustomObjectScope(custom_objects or {}):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 84, in __enter__
+    _GLOBAL_CUSTOM_OBJECTS.update(objects)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+dictionary update sequence element #0 has length 1; 2 is required
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 108, in analize
+    model_efficientNetB2 = models.load_model(local_a_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 179, in load_model
+    with generic_utils.CustomObjectScope(custom_objects or {}):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 84, in __enter__
+    _GLOBAL_CUSTOM_OBJECTS.update(objects)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required

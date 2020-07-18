@@ -8375,3 +8375,744 @@ AttributeError: 'NoneType' object has no attribute 'fit'
 16.Jul 2020 12:32:28 correct model training, correct saving of model and weights
 
 16.Jul 2020 12:32:28 settings modified and saved
+
+16.Jul 2020 13:45:07 model training error
+invalid number of arguments
+Traceback (most recent call last):
+  File ".\_2_train.py", line 185, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 62, in image_normalizer
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
+  File "./5.2_CUSTOM_LIBRARY\lsbyte_custom_normalizer.py", line 15, in normalize
+    local_image_rgb[:, :, 1: 2] = np.divide(np.bitwise_and(channel_y, -channel_y) / 255.)
+ValueError: invalid number of arguments
+
+16.Jul 2020 14:33:16 model training error
+2 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_139/_57]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_11435]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 185, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 2 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_139/_57]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_11435]
+
+Function call stack:
+train_function -> train_function
+
+
+16.Jul 2020 14:45:00 model training error
+2 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_139/_57]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_11435]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 185, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 2 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_139/_57]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_11435]
+
+Function call stack:
+train_function -> train_function
+
+
+16.Jul 2020 14:51:29 model training error
+2 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_139/_57]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_11435]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 185, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 2 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_139/_57]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_11435]
+
+Function call stack:
+train_function -> train_function
+
+
+16.Jul 2020 14:59:42 model training error
+2 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_139/_57]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_11435]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 185, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 2 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[assert_less_equal/Assert/AssertGuard/pivot_f/_139/_57]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential/dense_1/Softmax:0) = ] [[nan nan][nan...]...] [y (Cast_2/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_127/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_11435]
+
+Function call stack:
+train_function -> train_function
+
+
+16.Jul 2020 15:25:12 model training error
+ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+Traceback (most recent call last):
+  File ".\_2_train.py", line 185, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 62, in image_normalizer
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
+  File "./5.2_CUSTOM_LIBRARY\lsbit_custom_normalizer.py", line 14, in normalize
+    channel_y_lsbit = np.bitwise_and(channel_y, 1)
+TypeError: ufunc 'bitwise_and' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+16.Jul 2020 17:10:07 correct model training, correct saving of model and weights
+
+16.Jul 2020 17:10:07 settings modified and saved
+
+16.Jul 2020 18:28:19 correct model training, correct saving of model and weights
+
+16.Jul 2020 18:28:20 settings modified and saved
+
+16.Jul 2020 18:38:27 correct model training, correct saving of model and weights
+
+16.Jul 2020 18:38:27 settings modified and saved
+
+16.Jul 2020 18:44:24 correct model training, correct saving of model and weights
+
+16.Jul 2020 18:44:24 settings modified and saved
+
+16.Jul 2020 18:46:34 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:806 train_function  *
+        return step_function(self, iterator)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:796 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1222 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2761 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3132 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:789 run_step  **
+        outputs = model.train_step(data)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        _minimize(self.distribute_strategy, tape, self.optimizer, loss,
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:2743 _minimize
+        gradients = optimizer._aggregate_gradients(zip(gradients,  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:562 _aggregate_gradients
+        filtered_grads_and_vars = _filter_grads(grads_and_vars)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:1273 _filter_grads
+        raise ValueError("No gradients provided for any variable: %s." %
+
+    ValueError: No gradients provided for any variable: ['stem_conv/kernel:0', 'stem_bn/gamma:0', 'stem_bn/beta:0', 'block1a_dwconv/depthwise_kernel:0', 'block1a_bn/gamma:0', 'block1a_bn/beta:0', 'block1a_se_reduce/kernel:0', 'block1a_se_reduce/bias:0', 'block1a_se_expand/kernel:0', 'block1a_se_expand/bias:0', 'block1a_project_conv/kernel:0', 'block1a_project_bn/gamma:0', 'block1a_project_bn/beta:0', 'block1b_dwconv/depthwise_kernel:0', 'block1b_bn/gamma:0', 'block1b_bn/beta:0', 'block1b_se_reduce/kernel:0', 'block1b_se_reduce/bias:0', 'block1b_se_expand/kernel:0', 'block1b_se_expand/bias:0', 'block1b_project_conv/kernel:0', 'block1b_project_bn/gamma:0', 'block1b_project_bn/beta:0', 'block2a_expand_conv/kernel:0', 'block2a_expand_bn/gamma:0', 'block2a_expand_bn/beta:0', 'block2a_dwconv/depthwise_kernel:0', 'block2a_bn/gamma:0', 'block2a_bn/beta:0', 'block2a_se_reduce/kernel:0', 'block2a_se_reduce/bias:0', 'block2a_se_expand/kernel:0', 'block2a_se_expand/bias:0', 'block2a_project_conv/kernel:0', 'block2a_project_bn/gamma:0', 'block2a_project_bn/beta:0', 'block2b_expand_conv/kernel:0', 'block2b_expand_bn/gamma:0', 'block2b_expand_bn/beta:0', 'block2b_dwconv/depthwise_kernel:0', 'block2b_bn/gamma:0', 'block2b_bn/beta:0', 'block2b_se_reduce/kernel:0', 'block2b_se_reduce/bias:0', 'block2b_se_expand/kernel:0', 'block2b_se_expand/bias:0', 'block2b_project_conv/kernel:0', 'block2b_project_bn/gamma:0', 'block2b_project_bn/beta:0', 'block2c_expand_conv/kernel:0', 'block2c_expand_bn/gamma:0', 'block2c_expand_bn/beta:0', 'block2c_dwconv/depthwise_kernel:0', 'block2c_bn/gamma:0', 'block2c_bn/beta:0', 'block2c_se_reduce/kernel:0', 'block2c_se_reduce/bias:0', 'block2c_se_expand/kernel:0', 'block2c_se_expand/bias:0', 'block2c_project_conv/kernel:0', 'block2c_project_bn/gamma:0', 'block2c_project_bn/beta:0', 'block3a_expand_conv/kernel:0', 'block3a_expand_bn/gamma:0', 'block3a_expand_bn/beta:0', 'block3a_dwconv/depthwise_kernel:0', 'block3a_bn/gamma:0', 'block3a_bn/beta:0', 'block3a_se_reduce/kernel:0', 'block3a_se_reduce/bias:0', 'block3a_se_expand/kernel:0', 'block3a_se_expand/bias:0', 'block3a_project_conv/kernel:0', 'block3a_project_bn/gamma:0', 'block3a_project_bn/beta:0', 'block3b_expand_conv/kernel:0', 'block3b_expand_bn/gamma:0', 'block3b_expand_bn/beta:0', 'block3b_dwconv/depthwise_kernel:0', 'block3b_bn/gamma:0', 'block3b_bn/beta:0', 'block3b_se_reduce/kernel:0', 'block3b_se_reduce/bias:0', 'block3b_se_expand/kernel:0', 'block3b_se_expand/bias:0', 'block3b_project_conv/kernel:0', 'block3b_project_bn/gamma:0', 'block3b_project_bn/beta:0', 'block3c_expand_conv/kernel:0', 'block3c_expand_bn/gamma:0', 'block3c_expand_bn/beta:0', 'block3c_dwconv/depthwise_kernel:0', 'block3c_bn/gamma:0', 'block3c_bn/beta:0', 'block3c_se_reduce/kernel:0', 'block3c_se_reduce/bias:0', 'block3c_se_expand/kernel:0', 'block3c_se_expand/bias:0', 'block3c_project_conv/kernel:0', 'block3c_project_bn/gamma:0', 'block3c_project_bn/beta:0', 'block4a_expand_conv/kernel:0', 'block4a_expand_bn/gamma:0', 'block4a_expand_bn/beta:0', 'block4a_dwconv/depthwise_kernel:0', 'block4a_bn/gamma:0', 'block4a_bn/beta:0', 'block4a_se_reduce/kernel:0', 'block4a_se_reduce/bias:0', 'block4a_se_expand/kernel:0', 'block4a_se_expand/bias:0', 'block4a_project_conv/kernel:0', 'block4a_project_bn/gamma:0', 'block4a_project_bn/beta:0', 'block4b_expand_conv/kernel:0', 'block4b_expand_bn/gamma:0', 'block4b_expand_bn/beta:0', 'block4b_dwconv/depthwise_kernel:0', 'block4b_bn/gamma:0', 'block4b_bn/beta:0', 'block4b_se_reduce/kernel:0', 'block4b_se_reduce/bias:0', 'block4b_se_expand/kernel:0', 'block4b_se_expand/bias:0', 'block4b_project_conv/kernel:0', 'block4b_project_bn/gamma:0', 'block4b_project_bn/beta:0', 'block4c_expand_conv/kernel:0', 'block4c_expand_bn/gamma:0', 'block4c_expand_bn/beta:0', 'block4c_dwconv/depthwise_kernel:0', 'block4c_bn/gamma:0', 'block4c_bn/beta:0', 'block4c_se_reduce/kernel:0', 'block4c_se_reduce/bias:0', 'block4c_se_expand/kernel:0', 'block4c_se_expand/bias:0', 'block4c_project_conv/kernel:0', 'block4c_project_bn/gamma:0', 'block4c_project_bn/beta:0', 'block4d_expand_conv/kernel:0', 'block4d_expand_bn/gamma:0', 'block4d_expand_bn/beta:0', 'block4d_dwconv/depthwise_kernel:0', 'block4d_bn/gamma:0', 'block4d_bn/beta:0', 'block4d_se_reduce/kernel:0', 'block4d_se_reduce/bias:0', 'block4d_se_expand/kernel:0', 'block4d_se_expand/bias:0', 'block4d_project_conv/kernel:0', 'block4d_project_bn/gamma:0', 'block4d_project_bn/beta:0', 'block5a_expand_conv/kernel:0', 'block5a_expand_bn/gamma:0', 'block5a_expand_bn/beta:0', 'block5a_dwconv/depthwise_kernel:0', 'block5a_bn/gamma:0', 'block5a_bn/beta:0', 'block5a_se_reduce/kernel:0', 'block5a_se_reduce/bias:0', 'block5a_se_expand/kernel:0', 'block5a_se_expand/bias:0', 'block5a_project_conv/kernel:0', 'block5a_project_bn/gamma:0', 'block5a_project_bn/beta:0', 'block5b_expand_conv/kernel:0', 'block5b_expand_bn/gamma:0', 'block5b_expand_bn/beta:0', 'block5b_dwconv/depthwise_kernel:0', 'block5b_bn/gamma:0', 'block5b_bn/beta:0', 'block5b_se_reduce/kernel:0', 'block5b_se_reduce/bias:0', 'block5b_se_expand/kernel:0', 'block5b_se_expand/bias:0', 'block5b_project_conv/kernel:0', 'block5b_project_bn/gamma:0', 'block5b_project_bn/beta:0', 'block5c_expand_conv/kernel:0', 'block5c_expand_bn/gamma:0', 'block5c_expand_bn/beta:0', 'block5c_dwconv/depthwise_kernel:0', 'block5c_bn/gamma:0', 'block5c_bn/beta:0', 'block5c_se_reduce/kernel:0', 'block5c_se_reduce/bias:0', 'block5c_se_expand/kernel:0', 'block5c_se_expand/bias:0', 'block5c_project_conv/kernel:0', 'block5c_project_bn/gamma:0', 'block5c_project_bn/beta:0', 'block5d_expand_conv/kernel:0', 'block5d_expand_bn/gamma:0', 'block5d_expand_bn/beta:0', 'block5d_dwconv/depthwise_kernel:0', 'block5d_bn/gamma:0', 'block5d_bn/beta:0', 'block5d_se_reduce/kernel:0', 'block5d_se_reduce/bias:0', 'block5d_se_expand/kernel:0', 'block5d_se_expand/bias:0', 'block5d_project_conv/kernel:0', 'block5d_project_bn/gamma:0', 'block5d_project_bn/beta:0', 'block6a_expand_conv/kernel:0', 'block6a_expand_bn/gamma:0', 'block6a_expand_bn/beta:0', 'block6a_dwconv/depthwise_kernel:0', 'block6a_bn/gamma:0', 'block6a_bn/beta:0', 'block6a_se_reduce/kernel:0', 'block6a_se_reduce/bias:0', 'block6a_se_expand/kernel:0', 'block6a_se_expand/bias:0', 'block6a_project_conv/kernel:0', 'block6a_project_bn/gamma:0', 'block6a_project_bn/beta:0', 'block6b_expand_conv/kernel:0', 'block6b_expand_bn/gamma:0', 'block6b_expand_bn/beta:0', 'block6b_dwconv/depthwise_kernel:0', 'block6b_bn/gamma:0', 'block6b_bn/beta:0', 'block6b_se_reduce/kernel:0', 'block6b_se_reduce/bias:0', 'block6b_se_expand/kernel:0', 'block6b_se_expand/bias:0', 'block6b_project_conv/kernel:0', 'block6b_project_bn/gamma:0', 'block6b_project_bn/beta:0', 'block6c_expand_conv/kernel:0', 'block6c_expand_bn/gamma:0', 'block6c_expand_bn/beta:0', 'block6c_dwconv/depthwise_kernel:0', 'block6c_bn/gamma:0', 'block6c_bn/beta:0', 'block6c_se_reduce/kernel:0', 'block6c_se_reduce/bias:0', 'block6c_se_expand/kernel:0', 'block6c_se_expand/bias:0', 'block6c_project_conv/kernel:0', 'block6c_project_bn/gamma:0', 'block6c_project_bn/beta:0', 'block6d_expand_conv/kernel:0', 'block6d_expand_bn/gamma:0', 'block6d_expand_bn/beta:0', 'block6d_dwconv/depthwise_kernel:0', 'block6d_bn/gamma:0', 'block6d_bn/beta:0', 'block6d_se_reduce/kernel:0', 'block6d_se_reduce/bias:0', 'block6d_se_expand/kernel:0', 'block6d_se_expand/bias:0', 'block6d_project_conv/kernel:0', 'block6d_project_bn/gamma:0', 'block6d_project_bn/beta:0', 'block6e_expand_conv/kernel:0', 'block6e_expand_bn/gamma:0', 'block6e_expand_bn/beta:0', 'block6e_dwconv/depthwise_kernel:0', 'block6e_bn/gamma:0', 'block6e_bn/beta:0', 'block6e_se_reduce/kernel:0', 'block6e_se_reduce/bias:0', 'block6e_se_expand/kernel:0', 'block6e_se_expand/bias:0', 'block6e_project_conv/kernel:0', 'block6e_project_bn/gamma:0', 'block6e_project_bn/beta:0', 'block7a_expand_conv/kernel:0', 'block7a_expand_bn/gamma:0', 'block7a_expand_bn/beta:0', 'block7a_dwconv/depthwise_kernel:0', 'block7a_bn/gamma:0', 'block7a_bn/beta:0', 'block7a_se_reduce/kernel:0', 'block7a_se_reduce/bias:0', 'block7a_se_expand/kernel:0', 'block7a_se_expand/bias:0', 'block7a_project_conv/kernel:0', 'block7a_project_bn/gamma:0', 'block7a_project_bn/beta:0', 'block7b_expand_conv/kernel:0', 'block7b_expand_bn/gamma:0', 'block7b_expand_bn/beta:0', 'block7b_dwconv/depthwise_kernel:0', 'block7b_bn/gamma:0', 'block7b_bn/beta:0', 'block7b_se_reduce/kernel:0', 'block7b_se_reduce/bias:0', 'block7b_se_expand/kernel:0', 'block7b_se_expand/bias:0', 'block7b_project_conv/kernel:0', 'block7b_project_bn/gamma:0', 'block7b_project_bn/beta:0', 'top_conv/kernel:0', 'top_bn/gamma:0', 'top_bn/beta:0', 'predictions/kernel:0', 'predictions/bias:0'].
+Traceback (most recent call last):
+  File ".\_2_train.py", line 188, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 829, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 702, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2883, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 3240, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 3092, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 986, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 606, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 973, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:806 train_function  *
+        return step_function(self, iterator)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:796 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1222 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2761 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3132 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:789 run_step  **
+        outputs = model.train_step(data)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        _minimize(self.distribute_strategy, tape, self.optimizer, loss,
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:2743 _minimize
+        gradients = optimizer._aggregate_gradients(zip(gradients,  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:562 _aggregate_gradients
+        filtered_grads_and_vars = _filter_grads(grads_and_vars)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:1273 _filter_grads
+        raise ValueError("No gradients provided for any variable: %s." %
+
+    ValueError: No gradients provided for any variable: ['stem_conv/kernel:0', 'stem_bn/gamma:0', 'stem_bn/beta:0', 'block1a_dwconv/depthwise_kernel:0', 'block1a_bn/gamma:0', 'block1a_bn/beta:0', 'block1a_se_reduce/kernel:0', 'block1a_se_reduce/bias:0', 'block1a_se_expand/kernel:0', 'block1a_se_expand/bias:0', 'block1a_project_conv/kernel:0', 'block1a_project_bn/gamma:0', 'block1a_project_bn/beta:0', 'block1b_dwconv/depthwise_kernel:0', 'block1b_bn/gamma:0', 'block1b_bn/beta:0', 'block1b_se_reduce/kernel:0', 'block1b_se_reduce/bias:0', 'block1b_se_expand/kernel:0', 'block1b_se_expand/bias:0', 'block1b_project_conv/kernel:0', 'block1b_project_bn/gamma:0', 'block1b_project_bn/beta:0', 'block2a_expand_conv/kernel:0', 'block2a_expand_bn/gamma:0', 'block2a_expand_bn/beta:0', 'block2a_dwconv/depthwise_kernel:0', 'block2a_bn/gamma:0', 'block2a_bn/beta:0', 'block2a_se_reduce/kernel:0', 'block2a_se_reduce/bias:0', 'block2a_se_expand/kernel:0', 'block2a_se_expand/bias:0', 'block2a_project_conv/kernel:0', 'block2a_project_bn/gamma:0', 'block2a_project_bn/beta:0', 'block2b_expand_conv/kernel:0', 'block2b_expand_bn/gamma:0', 'block2b_expand_bn/beta:0', 'block2b_dwconv/depthwise_kernel:0', 'block2b_bn/gamma:0', 'block2b_bn/beta:0', 'block2b_se_reduce/kernel:0', 'block2b_se_reduce/bias:0', 'block2b_se_expand/kernel:0', 'block2b_se_expand/bias:0', 'block2b_project_conv/kernel:0', 'block2b_project_bn/gamma:0', 'block2b_project_bn/beta:0', 'block2c_expand_conv/kernel:0', 'block2c_expand_bn/gamma:0', 'block2c_expand_bn/beta:0', 'block2c_dwconv/depthwise_kernel:0', 'block2c_bn/gamma:0', 'block2c_bn/beta:0', 'block2c_se_reduce/kernel:0', 'block2c_se_reduce/bias:0', 'block2c_se_expand/kernel:0', 'block2c_se_expand/bias:0', 'block2c_project_conv/kernel:0', 'block2c_project_bn/gamma:0', 'block2c_project_bn/beta:0', 'block3a_expand_conv/kernel:0', 'block3a_expand_bn/gamma:0', 'block3a_expand_bn/beta:0', 'block3a_dwconv/depthwise_kernel:0', 'block3a_bn/gamma:0', 'block3a_bn/beta:0', 'block3a_se_reduce/kernel:0', 'block3a_se_reduce/bias:0', 'block3a_se_expand/kernel:0', 'block3a_se_expand/bias:0', 'block3a_project_conv/kernel:0', 'block3a_project_bn/gamma:0', 'block3a_project_bn/beta:0', 'block3b_expand_conv/kernel:0', 'block3b_expand_bn/gamma:0', 'block3b_expand_bn/beta:0', 'block3b_dwconv/depthwise_kernel:0', 'block3b_bn/gamma:0', 'block3b_bn/beta:0', 'block3b_se_reduce/kernel:0', 'block3b_se_reduce/bias:0', 'block3b_se_expand/kernel:0', 'block3b_se_expand/bias:0', 'block3b_project_conv/kernel:0', 'block3b_project_bn/gamma:0', 'block3b_project_bn/beta:0', 'block3c_expand_conv/kernel:0', 'block3c_expand_bn/gamma:0', 'block3c_expand_bn/beta:0', 'block3c_dwconv/depthwise_kernel:0', 'block3c_bn/gamma:0', 'block3c_bn/beta:0', 'block3c_se_reduce/kernel:0', 'block3c_se_reduce/bias:0', 'block3c_se_expand/kernel:0', 'block3c_se_expand/bias:0', 'block3c_project_conv/kernel:0', 'block3c_project_bn/gamma:0', 'block3c_project_bn/beta:0', 'block4a_expand_conv/kernel:0', 'block4a_expand_bn/gamma:0', 'block4a_expand_bn/beta:0', 'block4a_dwconv/depthwise_kernel:0', 'block4a_bn/gamma:0', 'block4a_bn/beta:0', 'block4a_se_reduce/kernel:0', 'block4a_se_reduce/bias:0', 'block4a_se_expand/kernel:0', 'block4a_se_expand/bias:0', 'block4a_project_conv/kernel:0', 'block4a_project_bn/gamma:0', 'block4a_project_bn/beta:0', 'block4b_expand_conv/kernel:0', 'block4b_expand_bn/gamma:0', 'block4b_expand_bn/beta:0', 'block4b_dwconv/depthwise_kernel:0', 'block4b_bn/gamma:0', 'block4b_bn/beta:0', 'block4b_se_reduce/kernel:0', 'block4b_se_reduce/bias:0', 'block4b_se_expand/kernel:0', 'block4b_se_expand/bias:0', 'block4b_project_conv/kernel:0', 'block4b_project_bn/gamma:0', 'block4b_project_bn/beta:0', 'block4c_expand_conv/kernel:0', 'block4c_expand_bn/gamma:0', 'block4c_expand_bn/beta:0', 'block4c_dwconv/depthwise_kernel:0', 'block4c_bn/gamma:0', 'block4c_bn/beta:0', 'block4c_se_reduce/kernel:0', 'block4c_se_reduce/bias:0', 'block4c_se_expand/kernel:0', 'block4c_se_expand/bias:0', 'block4c_project_conv/kernel:0', 'block4c_project_bn/gamma:0', 'block4c_project_bn/beta:0', 'block4d_expand_conv/kernel:0', 'block4d_expand_bn/gamma:0', 'block4d_expand_bn/beta:0', 'block4d_dwconv/depthwise_kernel:0', 'block4d_bn/gamma:0', 'block4d_bn/beta:0', 'block4d_se_reduce/kernel:0', 'block4d_se_reduce/bias:0', 'block4d_se_expand/kernel:0', 'block4d_se_expand/bias:0', 'block4d_project_conv/kernel:0', 'block4d_project_bn/gamma:0', 'block4d_project_bn/beta:0', 'block5a_expand_conv/kernel:0', 'block5a_expand_bn/gamma:0', 'block5a_expand_bn/beta:0', 'block5a_dwconv/depthwise_kernel:0', 'block5a_bn/gamma:0', 'block5a_bn/beta:0', 'block5a_se_reduce/kernel:0', 'block5a_se_reduce/bias:0', 'block5a_se_expand/kernel:0', 'block5a_se_expand/bias:0', 'block5a_project_conv/kernel:0', 'block5a_project_bn/gamma:0', 'block5a_project_bn/beta:0', 'block5b_expand_conv/kernel:0', 'block5b_expand_bn/gamma:0', 'block5b_expand_bn/beta:0', 'block5b_dwconv/depthwise_kernel:0', 'block5b_bn/gamma:0', 'block5b_bn/beta:0', 'block5b_se_reduce/kernel:0', 'block5b_se_reduce/bias:0', 'block5b_se_expand/kernel:0', 'block5b_se_expand/bias:0', 'block5b_project_conv/kernel:0', 'block5b_project_bn/gamma:0', 'block5b_project_bn/beta:0', 'block5c_expand_conv/kernel:0', 'block5c_expand_bn/gamma:0', 'block5c_expand_bn/beta:0', 'block5c_dwconv/depthwise_kernel:0', 'block5c_bn/gamma:0', 'block5c_bn/beta:0', 'block5c_se_reduce/kernel:0', 'block5c_se_reduce/bias:0', 'block5c_se_expand/kernel:0', 'block5c_se_expand/bias:0', 'block5c_project_conv/kernel:0', 'block5c_project_bn/gamma:0', 'block5c_project_bn/beta:0', 'block5d_expand_conv/kernel:0', 'block5d_expand_bn/gamma:0', 'block5d_expand_bn/beta:0', 'block5d_dwconv/depthwise_kernel:0', 'block5d_bn/gamma:0', 'block5d_bn/beta:0', 'block5d_se_reduce/kernel:0', 'block5d_se_reduce/bias:0', 'block5d_se_expand/kernel:0', 'block5d_se_expand/bias:0', 'block5d_project_conv/kernel:0', 'block5d_project_bn/gamma:0', 'block5d_project_bn/beta:0', 'block6a_expand_conv/kernel:0', 'block6a_expand_bn/gamma:0', 'block6a_expand_bn/beta:0', 'block6a_dwconv/depthwise_kernel:0', 'block6a_bn/gamma:0', 'block6a_bn/beta:0', 'block6a_se_reduce/kernel:0', 'block6a_se_reduce/bias:0', 'block6a_se_expand/kernel:0', 'block6a_se_expand/bias:0', 'block6a_project_conv/kernel:0', 'block6a_project_bn/gamma:0', 'block6a_project_bn/beta:0', 'block6b_expand_conv/kernel:0', 'block6b_expand_bn/gamma:0', 'block6b_expand_bn/beta:0', 'block6b_dwconv/depthwise_kernel:0', 'block6b_bn/gamma:0', 'block6b_bn/beta:0', 'block6b_se_reduce/kernel:0', 'block6b_se_reduce/bias:0', 'block6b_se_expand/kernel:0', 'block6b_se_expand/bias:0', 'block6b_project_conv/kernel:0', 'block6b_project_bn/gamma:0', 'block6b_project_bn/beta:0', 'block6c_expand_conv/kernel:0', 'block6c_expand_bn/gamma:0', 'block6c_expand_bn/beta:0', 'block6c_dwconv/depthwise_kernel:0', 'block6c_bn/gamma:0', 'block6c_bn/beta:0', 'block6c_se_reduce/kernel:0', 'block6c_se_reduce/bias:0', 'block6c_se_expand/kernel:0', 'block6c_se_expand/bias:0', 'block6c_project_conv/kernel:0', 'block6c_project_bn/gamma:0', 'block6c_project_bn/beta:0', 'block6d_expand_conv/kernel:0', 'block6d_expand_bn/gamma:0', 'block6d_expand_bn/beta:0', 'block6d_dwconv/depthwise_kernel:0', 'block6d_bn/gamma:0', 'block6d_bn/beta:0', 'block6d_se_reduce/kernel:0', 'block6d_se_reduce/bias:0', 'block6d_se_expand/kernel:0', 'block6d_se_expand/bias:0', 'block6d_project_conv/kernel:0', 'block6d_project_bn/gamma:0', 'block6d_project_bn/beta:0', 'block6e_expand_conv/kernel:0', 'block6e_expand_bn/gamma:0', 'block6e_expand_bn/beta:0', 'block6e_dwconv/depthwise_kernel:0', 'block6e_bn/gamma:0', 'block6e_bn/beta:0', 'block6e_se_reduce/kernel:0', 'block6e_se_reduce/bias:0', 'block6e_se_expand/kernel:0', 'block6e_se_expand/bias:0', 'block6e_project_conv/kernel:0', 'block6e_project_bn/gamma:0', 'block6e_project_bn/beta:0', 'block7a_expand_conv/kernel:0', 'block7a_expand_bn/gamma:0', 'block7a_expand_bn/beta:0', 'block7a_dwconv/depthwise_kernel:0', 'block7a_bn/gamma:0', 'block7a_bn/beta:0', 'block7a_se_reduce/kernel:0', 'block7a_se_reduce/bias:0', 'block7a_se_expand/kernel:0', 'block7a_se_expand/bias:0', 'block7a_project_conv/kernel:0', 'block7a_project_bn/gamma:0', 'block7a_project_bn/beta:0', 'block7b_expand_conv/kernel:0', 'block7b_expand_bn/gamma:0', 'block7b_expand_bn/beta:0', 'block7b_dwconv/depthwise_kernel:0', 'block7b_bn/gamma:0', 'block7b_bn/beta:0', 'block7b_se_reduce/kernel:0', 'block7b_se_reduce/bias:0', 'block7b_se_expand/kernel:0', 'block7b_se_expand/bias:0', 'block7b_project_conv/kernel:0', 'block7b_project_bn/gamma:0', 'block7b_project_bn/beta:0', 'top_conv/kernel:0', 'top_bn/gamma:0', 'top_bn/beta:0', 'predictions/kernel:0', 'predictions/bias:0'].
+
+
+16.Jul 2020 18:50:59 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:806 train_function  *
+        return step_function(self, iterator)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:796 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1222 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2761 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3132 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:789 run_step  **
+        outputs = model.train_step(data)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        _minimize(self.distribute_strategy, tape, self.optimizer, loss,
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:2743 _minimize
+        gradients = optimizer._aggregate_gradients(zip(gradients,  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:562 _aggregate_gradients
+        filtered_grads_and_vars = _filter_grads(grads_and_vars)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:1273 _filter_grads
+        raise ValueError("No gradients provided for any variable: %s." %
+
+    ValueError: No gradients provided for any variable: ['stem_conv/kernel:0', 'stem_bn/gamma:0', 'stem_bn/beta:0', 'block1a_dwconv/depthwise_kernel:0', 'block1a_bn/gamma:0', 'block1a_bn/beta:0', 'block1a_se_reduce/kernel:0', 'block1a_se_reduce/bias:0', 'block1a_se_expand/kernel:0', 'block1a_se_expand/bias:0', 'block1a_project_conv/kernel:0', 'block1a_project_bn/gamma:0', 'block1a_project_bn/beta:0', 'block1b_dwconv/depthwise_kernel:0', 'block1b_bn/gamma:0', 'block1b_bn/beta:0', 'block1b_se_reduce/kernel:0', 'block1b_se_reduce/bias:0', 'block1b_se_expand/kernel:0', 'block1b_se_expand/bias:0', 'block1b_project_conv/kernel:0', 'block1b_project_bn/gamma:0', 'block1b_project_bn/beta:0', 'block2a_expand_conv/kernel:0', 'block2a_expand_bn/gamma:0', 'block2a_expand_bn/beta:0', 'block2a_dwconv/depthwise_kernel:0', 'block2a_bn/gamma:0', 'block2a_bn/beta:0', 'block2a_se_reduce/kernel:0', 'block2a_se_reduce/bias:0', 'block2a_se_expand/kernel:0', 'block2a_se_expand/bias:0', 'block2a_project_conv/kernel:0', 'block2a_project_bn/gamma:0', 'block2a_project_bn/beta:0', 'block2b_expand_conv/kernel:0', 'block2b_expand_bn/gamma:0', 'block2b_expand_bn/beta:0', 'block2b_dwconv/depthwise_kernel:0', 'block2b_bn/gamma:0', 'block2b_bn/beta:0', 'block2b_se_reduce/kernel:0', 'block2b_se_reduce/bias:0', 'block2b_se_expand/kernel:0', 'block2b_se_expand/bias:0', 'block2b_project_conv/kernel:0', 'block2b_project_bn/gamma:0', 'block2b_project_bn/beta:0', 'block2c_expand_conv/kernel:0', 'block2c_expand_bn/gamma:0', 'block2c_expand_bn/beta:0', 'block2c_dwconv/depthwise_kernel:0', 'block2c_bn/gamma:0', 'block2c_bn/beta:0', 'block2c_se_reduce/kernel:0', 'block2c_se_reduce/bias:0', 'block2c_se_expand/kernel:0', 'block2c_se_expand/bias:0', 'block2c_project_conv/kernel:0', 'block2c_project_bn/gamma:0', 'block2c_project_bn/beta:0', 'block3a_expand_conv/kernel:0', 'block3a_expand_bn/gamma:0', 'block3a_expand_bn/beta:0', 'block3a_dwconv/depthwise_kernel:0', 'block3a_bn/gamma:0', 'block3a_bn/beta:0', 'block3a_se_reduce/kernel:0', 'block3a_se_reduce/bias:0', 'block3a_se_expand/kernel:0', 'block3a_se_expand/bias:0', 'block3a_project_conv/kernel:0', 'block3a_project_bn/gamma:0', 'block3a_project_bn/beta:0', 'block3b_expand_conv/kernel:0', 'block3b_expand_bn/gamma:0', 'block3b_expand_bn/beta:0', 'block3b_dwconv/depthwise_kernel:0', 'block3b_bn/gamma:0', 'block3b_bn/beta:0', 'block3b_se_reduce/kernel:0', 'block3b_se_reduce/bias:0', 'block3b_se_expand/kernel:0', 'block3b_se_expand/bias:0', 'block3b_project_conv/kernel:0', 'block3b_project_bn/gamma:0', 'block3b_project_bn/beta:0', 'block3c_expand_conv/kernel:0', 'block3c_expand_bn/gamma:0', 'block3c_expand_bn/beta:0', 'block3c_dwconv/depthwise_kernel:0', 'block3c_bn/gamma:0', 'block3c_bn/beta:0', 'block3c_se_reduce/kernel:0', 'block3c_se_reduce/bias:0', 'block3c_se_expand/kernel:0', 'block3c_se_expand/bias:0', 'block3c_project_conv/kernel:0', 'block3c_project_bn/gamma:0', 'block3c_project_bn/beta:0', 'block4a_expand_conv/kernel:0', 'block4a_expand_bn/gamma:0', 'block4a_expand_bn/beta:0', 'block4a_dwconv/depthwise_kernel:0', 'block4a_bn/gamma:0', 'block4a_bn/beta:0', 'block4a_se_reduce/kernel:0', 'block4a_se_reduce/bias:0', 'block4a_se_expand/kernel:0', 'block4a_se_expand/bias:0', 'block4a_project_conv/kernel:0', 'block4a_project_bn/gamma:0', 'block4a_project_bn/beta:0', 'block4b_expand_conv/kernel:0', 'block4b_expand_bn/gamma:0', 'block4b_expand_bn/beta:0', 'block4b_dwconv/depthwise_kernel:0', 'block4b_bn/gamma:0', 'block4b_bn/beta:0', 'block4b_se_reduce/kernel:0', 'block4b_se_reduce/bias:0', 'block4b_se_expand/kernel:0', 'block4b_se_expand/bias:0', 'block4b_project_conv/kernel:0', 'block4b_project_bn/gamma:0', 'block4b_project_bn/beta:0', 'block4c_expand_conv/kernel:0', 'block4c_expand_bn/gamma:0', 'block4c_expand_bn/beta:0', 'block4c_dwconv/depthwise_kernel:0', 'block4c_bn/gamma:0', 'block4c_bn/beta:0', 'block4c_se_reduce/kernel:0', 'block4c_se_reduce/bias:0', 'block4c_se_expand/kernel:0', 'block4c_se_expand/bias:0', 'block4c_project_conv/kernel:0', 'block4c_project_bn/gamma:0', 'block4c_project_bn/beta:0', 'block4d_expand_conv/kernel:0', 'block4d_expand_bn/gamma:0', 'block4d_expand_bn/beta:0', 'block4d_dwconv/depthwise_kernel:0', 'block4d_bn/gamma:0', 'block4d_bn/beta:0', 'block4d_se_reduce/kernel:0', 'block4d_se_reduce/bias:0', 'block4d_se_expand/kernel:0', 'block4d_se_expand/bias:0', 'block4d_project_conv/kernel:0', 'block4d_project_bn/gamma:0', 'block4d_project_bn/beta:0', 'block5a_expand_conv/kernel:0', 'block5a_expand_bn/gamma:0', 'block5a_expand_bn/beta:0', 'block5a_dwconv/depthwise_kernel:0', 'block5a_bn/gamma:0', 'block5a_bn/beta:0', 'block5a_se_reduce/kernel:0', 'block5a_se_reduce/bias:0', 'block5a_se_expand/kernel:0', 'block5a_se_expand/bias:0', 'block5a_project_conv/kernel:0', 'block5a_project_bn/gamma:0', 'block5a_project_bn/beta:0', 'block5b_expand_conv/kernel:0', 'block5b_expand_bn/gamma:0', 'block5b_expand_bn/beta:0', 'block5b_dwconv/depthwise_kernel:0', 'block5b_bn/gamma:0', 'block5b_bn/beta:0', 'block5b_se_reduce/kernel:0', 'block5b_se_reduce/bias:0', 'block5b_se_expand/kernel:0', 'block5b_se_expand/bias:0', 'block5b_project_conv/kernel:0', 'block5b_project_bn/gamma:0', 'block5b_project_bn/beta:0', 'block5c_expand_conv/kernel:0', 'block5c_expand_bn/gamma:0', 'block5c_expand_bn/beta:0', 'block5c_dwconv/depthwise_kernel:0', 'block5c_bn/gamma:0', 'block5c_bn/beta:0', 'block5c_se_reduce/kernel:0', 'block5c_se_reduce/bias:0', 'block5c_se_expand/kernel:0', 'block5c_se_expand/bias:0', 'block5c_project_conv/kernel:0', 'block5c_project_bn/gamma:0', 'block5c_project_bn/beta:0', 'block5d_expand_conv/kernel:0', 'block5d_expand_bn/gamma:0', 'block5d_expand_bn/beta:0', 'block5d_dwconv/depthwise_kernel:0', 'block5d_bn/gamma:0', 'block5d_bn/beta:0', 'block5d_se_reduce/kernel:0', 'block5d_se_reduce/bias:0', 'block5d_se_expand/kernel:0', 'block5d_se_expand/bias:0', 'block5d_project_conv/kernel:0', 'block5d_project_bn/gamma:0', 'block5d_project_bn/beta:0', 'block6a_expand_conv/kernel:0', 'block6a_expand_bn/gamma:0', 'block6a_expand_bn/beta:0', 'block6a_dwconv/depthwise_kernel:0', 'block6a_bn/gamma:0', 'block6a_bn/beta:0', 'block6a_se_reduce/kernel:0', 'block6a_se_reduce/bias:0', 'block6a_se_expand/kernel:0', 'block6a_se_expand/bias:0', 'block6a_project_conv/kernel:0', 'block6a_project_bn/gamma:0', 'block6a_project_bn/beta:0', 'block6b_expand_conv/kernel:0', 'block6b_expand_bn/gamma:0', 'block6b_expand_bn/beta:0', 'block6b_dwconv/depthwise_kernel:0', 'block6b_bn/gamma:0', 'block6b_bn/beta:0', 'block6b_se_reduce/kernel:0', 'block6b_se_reduce/bias:0', 'block6b_se_expand/kernel:0', 'block6b_se_expand/bias:0', 'block6b_project_conv/kernel:0', 'block6b_project_bn/gamma:0', 'block6b_project_bn/beta:0', 'block6c_expand_conv/kernel:0', 'block6c_expand_bn/gamma:0', 'block6c_expand_bn/beta:0', 'block6c_dwconv/depthwise_kernel:0', 'block6c_bn/gamma:0', 'block6c_bn/beta:0', 'block6c_se_reduce/kernel:0', 'block6c_se_reduce/bias:0', 'block6c_se_expand/kernel:0', 'block6c_se_expand/bias:0', 'block6c_project_conv/kernel:0', 'block6c_project_bn/gamma:0', 'block6c_project_bn/beta:0', 'block6d_expand_conv/kernel:0', 'block6d_expand_bn/gamma:0', 'block6d_expand_bn/beta:0', 'block6d_dwconv/depthwise_kernel:0', 'block6d_bn/gamma:0', 'block6d_bn/beta:0', 'block6d_se_reduce/kernel:0', 'block6d_se_reduce/bias:0', 'block6d_se_expand/kernel:0', 'block6d_se_expand/bias:0', 'block6d_project_conv/kernel:0', 'block6d_project_bn/gamma:0', 'block6d_project_bn/beta:0', 'block6e_expand_conv/kernel:0', 'block6e_expand_bn/gamma:0', 'block6e_expand_bn/beta:0', 'block6e_dwconv/depthwise_kernel:0', 'block6e_bn/gamma:0', 'block6e_bn/beta:0', 'block6e_se_reduce/kernel:0', 'block6e_se_reduce/bias:0', 'block6e_se_expand/kernel:0', 'block6e_se_expand/bias:0', 'block6e_project_conv/kernel:0', 'block6e_project_bn/gamma:0', 'block6e_project_bn/beta:0', 'block7a_expand_conv/kernel:0', 'block7a_expand_bn/gamma:0', 'block7a_expand_bn/beta:0', 'block7a_dwconv/depthwise_kernel:0', 'block7a_bn/gamma:0', 'block7a_bn/beta:0', 'block7a_se_reduce/kernel:0', 'block7a_se_reduce/bias:0', 'block7a_se_expand/kernel:0', 'block7a_se_expand/bias:0', 'block7a_project_conv/kernel:0', 'block7a_project_bn/gamma:0', 'block7a_project_bn/beta:0', 'block7b_expand_conv/kernel:0', 'block7b_expand_bn/gamma:0', 'block7b_expand_bn/beta:0', 'block7b_dwconv/depthwise_kernel:0', 'block7b_bn/gamma:0', 'block7b_bn/beta:0', 'block7b_se_reduce/kernel:0', 'block7b_se_reduce/bias:0', 'block7b_se_expand/kernel:0', 'block7b_se_expand/bias:0', 'block7b_project_conv/kernel:0', 'block7b_project_bn/gamma:0', 'block7b_project_bn/beta:0', 'top_conv/kernel:0', 'top_bn/gamma:0', 'top_bn/beta:0', 'predictions/kernel:0', 'predictions/bias:0'].
+Traceback (most recent call last):
+  File ".\_2_train.py", line 192, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 829, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 702, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2883, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 3240, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 3092, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 986, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 606, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 973, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:806 train_function  *
+        return step_function(self, iterator)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:796 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1222 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2761 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3132 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:789 run_step  **
+        outputs = model.train_step(data)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        _minimize(self.distribute_strategy, tape, self.optimizer, loss,
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:2743 _minimize
+        gradients = optimizer._aggregate_gradients(zip(gradients,  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:562 _aggregate_gradients
+        filtered_grads_and_vars = _filter_grads(grads_and_vars)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:1273 _filter_grads
+        raise ValueError("No gradients provided for any variable: %s." %
+
+    ValueError: No gradients provided for any variable: ['stem_conv/kernel:0', 'stem_bn/gamma:0', 'stem_bn/beta:0', 'block1a_dwconv/depthwise_kernel:0', 'block1a_bn/gamma:0', 'block1a_bn/beta:0', 'block1a_se_reduce/kernel:0', 'block1a_se_reduce/bias:0', 'block1a_se_expand/kernel:0', 'block1a_se_expand/bias:0', 'block1a_project_conv/kernel:0', 'block1a_project_bn/gamma:0', 'block1a_project_bn/beta:0', 'block1b_dwconv/depthwise_kernel:0', 'block1b_bn/gamma:0', 'block1b_bn/beta:0', 'block1b_se_reduce/kernel:0', 'block1b_se_reduce/bias:0', 'block1b_se_expand/kernel:0', 'block1b_se_expand/bias:0', 'block1b_project_conv/kernel:0', 'block1b_project_bn/gamma:0', 'block1b_project_bn/beta:0', 'block2a_expand_conv/kernel:0', 'block2a_expand_bn/gamma:0', 'block2a_expand_bn/beta:0', 'block2a_dwconv/depthwise_kernel:0', 'block2a_bn/gamma:0', 'block2a_bn/beta:0', 'block2a_se_reduce/kernel:0', 'block2a_se_reduce/bias:0', 'block2a_se_expand/kernel:0', 'block2a_se_expand/bias:0', 'block2a_project_conv/kernel:0', 'block2a_project_bn/gamma:0', 'block2a_project_bn/beta:0', 'block2b_expand_conv/kernel:0', 'block2b_expand_bn/gamma:0', 'block2b_expand_bn/beta:0', 'block2b_dwconv/depthwise_kernel:0', 'block2b_bn/gamma:0', 'block2b_bn/beta:0', 'block2b_se_reduce/kernel:0', 'block2b_se_reduce/bias:0', 'block2b_se_expand/kernel:0', 'block2b_se_expand/bias:0', 'block2b_project_conv/kernel:0', 'block2b_project_bn/gamma:0', 'block2b_project_bn/beta:0', 'block2c_expand_conv/kernel:0', 'block2c_expand_bn/gamma:0', 'block2c_expand_bn/beta:0', 'block2c_dwconv/depthwise_kernel:0', 'block2c_bn/gamma:0', 'block2c_bn/beta:0', 'block2c_se_reduce/kernel:0', 'block2c_se_reduce/bias:0', 'block2c_se_expand/kernel:0', 'block2c_se_expand/bias:0', 'block2c_project_conv/kernel:0', 'block2c_project_bn/gamma:0', 'block2c_project_bn/beta:0', 'block3a_expand_conv/kernel:0', 'block3a_expand_bn/gamma:0', 'block3a_expand_bn/beta:0', 'block3a_dwconv/depthwise_kernel:0', 'block3a_bn/gamma:0', 'block3a_bn/beta:0', 'block3a_se_reduce/kernel:0', 'block3a_se_reduce/bias:0', 'block3a_se_expand/kernel:0', 'block3a_se_expand/bias:0', 'block3a_project_conv/kernel:0', 'block3a_project_bn/gamma:0', 'block3a_project_bn/beta:0', 'block3b_expand_conv/kernel:0', 'block3b_expand_bn/gamma:0', 'block3b_expand_bn/beta:0', 'block3b_dwconv/depthwise_kernel:0', 'block3b_bn/gamma:0', 'block3b_bn/beta:0', 'block3b_se_reduce/kernel:0', 'block3b_se_reduce/bias:0', 'block3b_se_expand/kernel:0', 'block3b_se_expand/bias:0', 'block3b_project_conv/kernel:0', 'block3b_project_bn/gamma:0', 'block3b_project_bn/beta:0', 'block3c_expand_conv/kernel:0', 'block3c_expand_bn/gamma:0', 'block3c_expand_bn/beta:0', 'block3c_dwconv/depthwise_kernel:0', 'block3c_bn/gamma:0', 'block3c_bn/beta:0', 'block3c_se_reduce/kernel:0', 'block3c_se_reduce/bias:0', 'block3c_se_expand/kernel:0', 'block3c_se_expand/bias:0', 'block3c_project_conv/kernel:0', 'block3c_project_bn/gamma:0', 'block3c_project_bn/beta:0', 'block4a_expand_conv/kernel:0', 'block4a_expand_bn/gamma:0', 'block4a_expand_bn/beta:0', 'block4a_dwconv/depthwise_kernel:0', 'block4a_bn/gamma:0', 'block4a_bn/beta:0', 'block4a_se_reduce/kernel:0', 'block4a_se_reduce/bias:0', 'block4a_se_expand/kernel:0', 'block4a_se_expand/bias:0', 'block4a_project_conv/kernel:0', 'block4a_project_bn/gamma:0', 'block4a_project_bn/beta:0', 'block4b_expand_conv/kernel:0', 'block4b_expand_bn/gamma:0', 'block4b_expand_bn/beta:0', 'block4b_dwconv/depthwise_kernel:0', 'block4b_bn/gamma:0', 'block4b_bn/beta:0', 'block4b_se_reduce/kernel:0', 'block4b_se_reduce/bias:0', 'block4b_se_expand/kernel:0', 'block4b_se_expand/bias:0', 'block4b_project_conv/kernel:0', 'block4b_project_bn/gamma:0', 'block4b_project_bn/beta:0', 'block4c_expand_conv/kernel:0', 'block4c_expand_bn/gamma:0', 'block4c_expand_bn/beta:0', 'block4c_dwconv/depthwise_kernel:0', 'block4c_bn/gamma:0', 'block4c_bn/beta:0', 'block4c_se_reduce/kernel:0', 'block4c_se_reduce/bias:0', 'block4c_se_expand/kernel:0', 'block4c_se_expand/bias:0', 'block4c_project_conv/kernel:0', 'block4c_project_bn/gamma:0', 'block4c_project_bn/beta:0', 'block4d_expand_conv/kernel:0', 'block4d_expand_bn/gamma:0', 'block4d_expand_bn/beta:0', 'block4d_dwconv/depthwise_kernel:0', 'block4d_bn/gamma:0', 'block4d_bn/beta:0', 'block4d_se_reduce/kernel:0', 'block4d_se_reduce/bias:0', 'block4d_se_expand/kernel:0', 'block4d_se_expand/bias:0', 'block4d_project_conv/kernel:0', 'block4d_project_bn/gamma:0', 'block4d_project_bn/beta:0', 'block5a_expand_conv/kernel:0', 'block5a_expand_bn/gamma:0', 'block5a_expand_bn/beta:0', 'block5a_dwconv/depthwise_kernel:0', 'block5a_bn/gamma:0', 'block5a_bn/beta:0', 'block5a_se_reduce/kernel:0', 'block5a_se_reduce/bias:0', 'block5a_se_expand/kernel:0', 'block5a_se_expand/bias:0', 'block5a_project_conv/kernel:0', 'block5a_project_bn/gamma:0', 'block5a_project_bn/beta:0', 'block5b_expand_conv/kernel:0', 'block5b_expand_bn/gamma:0', 'block5b_expand_bn/beta:0', 'block5b_dwconv/depthwise_kernel:0', 'block5b_bn/gamma:0', 'block5b_bn/beta:0', 'block5b_se_reduce/kernel:0', 'block5b_se_reduce/bias:0', 'block5b_se_expand/kernel:0', 'block5b_se_expand/bias:0', 'block5b_project_conv/kernel:0', 'block5b_project_bn/gamma:0', 'block5b_project_bn/beta:0', 'block5c_expand_conv/kernel:0', 'block5c_expand_bn/gamma:0', 'block5c_expand_bn/beta:0', 'block5c_dwconv/depthwise_kernel:0', 'block5c_bn/gamma:0', 'block5c_bn/beta:0', 'block5c_se_reduce/kernel:0', 'block5c_se_reduce/bias:0', 'block5c_se_expand/kernel:0', 'block5c_se_expand/bias:0', 'block5c_project_conv/kernel:0', 'block5c_project_bn/gamma:0', 'block5c_project_bn/beta:0', 'block5d_expand_conv/kernel:0', 'block5d_expand_bn/gamma:0', 'block5d_expand_bn/beta:0', 'block5d_dwconv/depthwise_kernel:0', 'block5d_bn/gamma:0', 'block5d_bn/beta:0', 'block5d_se_reduce/kernel:0', 'block5d_se_reduce/bias:0', 'block5d_se_expand/kernel:0', 'block5d_se_expand/bias:0', 'block5d_project_conv/kernel:0', 'block5d_project_bn/gamma:0', 'block5d_project_bn/beta:0', 'block6a_expand_conv/kernel:0', 'block6a_expand_bn/gamma:0', 'block6a_expand_bn/beta:0', 'block6a_dwconv/depthwise_kernel:0', 'block6a_bn/gamma:0', 'block6a_bn/beta:0', 'block6a_se_reduce/kernel:0', 'block6a_se_reduce/bias:0', 'block6a_se_expand/kernel:0', 'block6a_se_expand/bias:0', 'block6a_project_conv/kernel:0', 'block6a_project_bn/gamma:0', 'block6a_project_bn/beta:0', 'block6b_expand_conv/kernel:0', 'block6b_expand_bn/gamma:0', 'block6b_expand_bn/beta:0', 'block6b_dwconv/depthwise_kernel:0', 'block6b_bn/gamma:0', 'block6b_bn/beta:0', 'block6b_se_reduce/kernel:0', 'block6b_se_reduce/bias:0', 'block6b_se_expand/kernel:0', 'block6b_se_expand/bias:0', 'block6b_project_conv/kernel:0', 'block6b_project_bn/gamma:0', 'block6b_project_bn/beta:0', 'block6c_expand_conv/kernel:0', 'block6c_expand_bn/gamma:0', 'block6c_expand_bn/beta:0', 'block6c_dwconv/depthwise_kernel:0', 'block6c_bn/gamma:0', 'block6c_bn/beta:0', 'block6c_se_reduce/kernel:0', 'block6c_se_reduce/bias:0', 'block6c_se_expand/kernel:0', 'block6c_se_expand/bias:0', 'block6c_project_conv/kernel:0', 'block6c_project_bn/gamma:0', 'block6c_project_bn/beta:0', 'block6d_expand_conv/kernel:0', 'block6d_expand_bn/gamma:0', 'block6d_expand_bn/beta:0', 'block6d_dwconv/depthwise_kernel:0', 'block6d_bn/gamma:0', 'block6d_bn/beta:0', 'block6d_se_reduce/kernel:0', 'block6d_se_reduce/bias:0', 'block6d_se_expand/kernel:0', 'block6d_se_expand/bias:0', 'block6d_project_conv/kernel:0', 'block6d_project_bn/gamma:0', 'block6d_project_bn/beta:0', 'block6e_expand_conv/kernel:0', 'block6e_expand_bn/gamma:0', 'block6e_expand_bn/beta:0', 'block6e_dwconv/depthwise_kernel:0', 'block6e_bn/gamma:0', 'block6e_bn/beta:0', 'block6e_se_reduce/kernel:0', 'block6e_se_reduce/bias:0', 'block6e_se_expand/kernel:0', 'block6e_se_expand/bias:0', 'block6e_project_conv/kernel:0', 'block6e_project_bn/gamma:0', 'block6e_project_bn/beta:0', 'block7a_expand_conv/kernel:0', 'block7a_expand_bn/gamma:0', 'block7a_expand_bn/beta:0', 'block7a_dwconv/depthwise_kernel:0', 'block7a_bn/gamma:0', 'block7a_bn/beta:0', 'block7a_se_reduce/kernel:0', 'block7a_se_reduce/bias:0', 'block7a_se_expand/kernel:0', 'block7a_se_expand/bias:0', 'block7a_project_conv/kernel:0', 'block7a_project_bn/gamma:0', 'block7a_project_bn/beta:0', 'block7b_expand_conv/kernel:0', 'block7b_expand_bn/gamma:0', 'block7b_expand_bn/beta:0', 'block7b_dwconv/depthwise_kernel:0', 'block7b_bn/gamma:0', 'block7b_bn/beta:0', 'block7b_se_reduce/kernel:0', 'block7b_se_reduce/bias:0', 'block7b_se_expand/kernel:0', 'block7b_se_expand/bias:0', 'block7b_project_conv/kernel:0', 'block7b_project_bn/gamma:0', 'block7b_project_bn/beta:0', 'top_conv/kernel:0', 'top_bn/gamma:0', 'top_bn/beta:0', 'predictions/kernel:0', 'predictions/bias:0'].
+
+
+16.Jul 2020 19:20:41 model training error
+ OOM when allocating tensor with shape[16896] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node efficientnetb2/block4b_se_squeeze/Mean (defined at .\_2_train.py:192) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_86053]
+
+Function call stack:
+train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 192, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[16896] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node efficientnetb2/block4b_se_squeeze/Mean (defined at .\_2_train.py:192) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_86053]
+
+Function call stack:
+train_function
+
+
+16.Jul 2020 20:33:30 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 20:34:52 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 20:36:57 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 20:37:43 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 20:38:31 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 20:39:38 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 20:40:00 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 20:43:49 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 21:39:46 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 21:42:44 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 21:46:40 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 21:50:42 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 21:55:59 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 21:58:35 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 22:04:18 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 22:04:49 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 22:06:16 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 22:08:10 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 22:10:08 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+16.Jul 2020 22:10:55 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit(x=train_generator, batch_size=batch_size, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+17.Jul 2020 06:58:55 model training error
+fit_generator() got an unexpected keyword argument 'x'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit_generator(x=train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\deprecation.py", line 324, in new_func
+    return func(*args, **kwargs)
+TypeError: fit_generator() got an unexpected keyword argument 'x'
+
+17.Jul 2020 07:03:42 model training error
+fit_generator() got an unexpected keyword argument 'batch_size'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 196, in train
+    model_train_history = classifier.fit_generator(train_generator, batch_size=batch_size, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\deprecation.py", line 324, in new_func
+    return func(*args, **kwargs)
+TypeError: fit_generator() got an unexpected keyword argument 'batch_size'
+
+17.Jul 2020 16:23:26 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 188, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+18.Jul 2020 00:22:25 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 188, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+18.Jul 2020 03:45:12 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 186, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+18.Jul 2020 07:27:32 correct model training, correct saving of model and weights
+
+18.Jul 2020 07:27:32 settings modified and saved
+
+18.Jul 2020 10:36:05 model training error
+Asked to retrieve element 0, but the Sequence has length 0
+Traceback (most recent call last):
+  File ".\_2_train.py", line 186, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 54, in __getitem__
+    raise ValueError('Asked to retrieve element {idx}, '
+ValueError: Asked to retrieve element 0, but the Sequence has length 0
+
+18.Jul 2020 10:56:43 model training error
+If class_mode="categorical", y_col="['method', 'group']" column values must be type string, list or tuple.
+Traceback (most recent call last):
+  File ".\_2_train.py", line 150, in train
+    train_generator = train_datagen.flow_from_dataframe(dataframe=metadata_train_images,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 1081, in flow_from_dataframe
+    return DataFrameIterator(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 556, in __init__
+    super(DataFrameIterator, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 138, in __init__
+    self._check_params(df, x_col, y_col, weight_col, classes)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 214, in _check_params
+    raise TypeError('If class_mode="{}", y_col="{}" column '
+TypeError: If class_mode="categorical", y_col="['method', 'group']" column values must be type string, list or tuple.
+
+18.Jul 2020 10:59:26 model training error
+If class_mode="categorical", y_col="['method']" column values must be type string, list or tuple.
+Traceback (most recent call last):
+  File ".\_2_train.py", line 150, in train
+    train_generator = train_datagen.flow_from_dataframe(dataframe=metadata_train_images,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 1081, in flow_from_dataframe
+    return DataFrameIterator(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 556, in __init__
+    super(DataFrameIterator, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 138, in __init__
+    self._check_params(df, x_col, y_col, weight_col, classes)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 214, in _check_params
+    raise TypeError('If class_mode="{}", y_col="{}" column '
+TypeError: If class_mode="categorical", y_col="['method']" column values must be type string, list or tuple.
+
+18.Jul 2020 11:00:20 model training error
+If class_mode="categorical", y_col="['method']" column values must be type string, list or tuple.
+Traceback (most recent call last):
+  File ".\_2_train.py", line 151, in train
+    train_generator = train_datagen.flow_from_dataframe(dataframe=metadata_train_images,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 1081, in flow_from_dataframe
+    return DataFrameIterator(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 556, in __init__
+    super(DataFrameIterator, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 138, in __init__
+    self._check_params(df, x_col, y_col, weight_col, classes)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 214, in _check_params
+    raise TypeError('If class_mode="{}", y_col="{}" column '
+TypeError: If class_mode="categorical", y_col="['method']" column values must be type string, list or tuple.
+
+18.Jul 2020 11:02:59 model training error
+'DataFrameIterator' object has no attribute 'class_indices'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 162, in train
+    print(train_generator.class_indices)
+AttributeError: 'DataFrameIterator' object has no attribute 'class_indices'
+
+18.Jul 2020 11:06:21 model training error
+'DataFrameIterator' object has no attribute 'class_indices'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 162, in train
+    print(train_generator.class_indices)
+AttributeError: 'DataFrameIterator' object has no attribute 'class_indices'
+
+18.Jul 2020 11:09:52 model training error
+'DataFrameIterator' object has no attribute 'class_indices'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 163, in train
+    print(train_generator.class_indices)
+AttributeError: 'DataFrameIterator' object has no attribute 'class_indices'
+
+18.Jul 2020 13:50:56 model training error
+fit_generator() got an unexpected keyword argument 'batch_size'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 202, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\deprecation.py", line 324, in new_func
+    return func(*args, **kwargs)
+TypeError: fit_generator() got an unexpected keyword argument 'batch_size'
+
+18.Jul 2020 13:52:45 model training error
+'NoneType' object has no attribute 'fit_generator'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 202, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit_generator'
+
+18.Jul 2020 13:54:48 model training error
+'NoneType' object has no attribute 'fit_generator'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 202, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit_generator'

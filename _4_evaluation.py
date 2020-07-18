@@ -28,7 +28,7 @@ try:
     sys.path.insert(1, local_script_settings['custom_library_path'])
     from create_evaluation_folders import select_evaluation_images
     from custom_normalizer import custom_image_normalizer
-    from lsbyte_custom_normalizer import lsbyte_custom_image_normalizer
+    from lsbit_custom_normalizer import lsbit_custom_image_normalizer
     from alternative_evaluator import alternative_evaluation
 
     physical_devices = tf.config.list_physical_devices('GPU')
@@ -83,13 +83,14 @@ class customized_loss2(losses.Loss):
 
 
 def image_normalizer(local_image_rgb):
-    custom_image_normalizer_instance = lsbyte_custom_image_normalizer()
+    custom_image_normalizer_instance = lsbit_custom_image_normalizer()
     return custom_image_normalizer_instance.normalize(local_image_rgb)
 
 
 def evaluate():
-    # keras session/random seed reset/fix
+    # keras,tf session/random seed reset/fix
     kb.clear_session()
+    tf.compat.v1.reset_default_graph()
     np.random.seed(11)
     tf.random.set_seed(2)
 
@@ -121,8 +122,17 @@ def evaluate():
             #     local_file.close()
             # classifier = models.model_from_json(model_json)
             custom_obj = {'customized_loss': customized_loss}
-            classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
-                                                    '_custom_classifier_.h5']), custom_objects=custom_obj)
+            if local_script_settings['use_efficientNetB2'] == "False":
+                type_of_model = '_custom'
+                classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+                                                        type_of_model, '_classifier_.h5']), custom_objects=custom_obj)
+            elif local_script_settings['use_efficientNetB2'] == "True":
+                type_of_model = '_EfficientNetB2'
+                classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+                                                        type_of_model, '_classifier_.h5']), custom_objects=custom_obj)
+            else:
+                print('type of model not understood')
+                return False
 
             # custom_obj = {'customized_loss': customized_loss}
             # classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
@@ -144,17 +154,17 @@ def evaluate():
                     layer.trainable = False
                 print('current model loaded and layers were set to not_trainable')
 
-            # define from scratch random evaluation folder
-            model_evaluation_folder = ''.join([local_script_settings['models_evaluation_path'], 'images_for_evaluation/'])
-            create_evaluation_folder = select_evaluation_images()
-            create_evaluation_folder_review = create_evaluation_folder.select_images(local_script_settings,
-                                                                                     model_evaluation_folder)
-            if create_evaluation_folder_review:
-                print('new or maintained randomly selected images for evaluation subprocess ended successfully')
-            else:
-                print('error at generating folder with images for evaluation')
-                logger.info('error at folder_for_evaluation generation')
-                return False
+            # # define from scratch random evaluation folder
+            # model_evaluation_folder = ''.join([local_script_settings['models_evaluation_path'], 'images_for_evaluation/'])
+            # create_evaluation_folder = select_evaluation_images()
+            # create_evaluation_folder_review = create_evaluation_folder.select_images(local_script_settings,
+            #                                                                          model_evaluation_folder)
+            # if create_evaluation_folder_review:
+            #     print('new or maintained randomly selected images for evaluation subprocess ended successfully')
+            # else:
+            #     print('error at generating folder with images for evaluation')
+            #     logger.info('error at folder_for_evaluation generation')
+            #     return False
 
             # Outcomes: accuracy - confusion_matrix
             try:
@@ -164,22 +174,35 @@ def evaluate():
                 batch_size = model_hyperparameters['batch_size']
                 input_shape_y = model_hyperparameters['input_shape_y']
                 input_shape_x = model_hyperparameters['input_shape_x']
+                test_split = model_hyperparameters['test_split']
+                column_names = ['id_number', 'method', 'quality_factor', 'group', 'filename', 'filepath']
+                x_col = 'filepath'
+                y_col = 'method'
+                metadata_train_images = \
+                    pd.read_csv(''.join([local_script_settings['train_data_path'], 'training_metadata.csv']),
+                                dtype=str, names=column_names, header=None)
                 test_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
-                                                                      preprocessing_function=image_normalizer)
-                test_set = test_datagen.flow_from_directory(model_evaluation_folder,
-                                                            shuffle=True,
+                                                                      validation_split=test_split)
+                test_set = test_datagen.flow_from_dataframe(dataframe=metadata_train_images,
+                                                            directory=None,
+                                                            x_col=x_col,
+                                                            y_col=y_col,
+                                                            shuffle=False,
                                                             target_size=(input_shape_y, input_shape_x),
                                                             batch_size=batch_size,
                                                             color_mode='rgb',
-                                                            class_mode='categorical')
+                                                            class_mode=None,
+                                                            subset='validation')
                 y_predictions_raw = classifier.predict(test_set)
                 print(y_predictions_raw)
                 y_predictions = y_predictions_raw.argmax(axis=1)
+                print(test_set.class_indices)
+                print(type(test_set.class_indices))
 
                 print('Confusion Matrix for all categories')
                 print(confusion_matrix(test_set.classes, y_predictions))
                 print('Classification Report')
-                target_names = ['method_0_group_0', 'method_1_group_0']
+                target_names = ['0', '1']
                 print(classification_report(test_set.classes, y_predictions, target_names=target_names))
                 print('\nevaluation of classifier by tf.keras.models.evaluate:')
                 print(classifier.evaluate(x=test_set, verbose=1, return_dict=True))

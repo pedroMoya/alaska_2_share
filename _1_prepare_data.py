@@ -103,7 +103,7 @@ def prepare():
         if local_script_settings['disaggregation_done'] == "False":
             for image_path in images_loc:
                 filename = image_path.split('/')[-1]
-                train_data_path_template = local_script_settings['train_data_path']
+                # train_data_path_template = local_script_settings['raw_data_path']
 
                 # K fold disaggregation
                 k_fold_instance = k_fold_builder()
@@ -112,16 +112,16 @@ def prepare():
                 # detecting the steganographic-method by folder
                 if 'Cover' in image_path:
                     method = 0
-                    train_data_path = ''.join([train_data_path_template, 'method_0_'])
+                    # train_data_path = ''.join([train_data_path_template, 'method_0_'])
                 elif 'JMiPOD' in image_path:
                     method = 1
-                    train_data_path = ''.join([train_data_path_template, 'method_1_'])
+                    # train_data_path = ''.join([train_data_path_template, 'method_1_'])
                 elif 'JUNIWARD' in image_path:
-                    method = 2
-                    train_data_path = ''.join([train_data_path_template, 'method_2_'])
+                    method = 1
+                    # train_data_path = ''.join([train_data_path_template, 'method_2_'])
                 elif 'UERD' in image_path:
-                    method = 3
-                    train_data_path = ''.join([train_data_path_template, 'method_3_'])
+                    method = 1
+                    # train_data_path = ''.join([train_data_path_template, 'method_3_'])
                 else:
                     print('steganographic-method not understood')
                     return False
@@ -132,15 +132,17 @@ def prepare():
                 #     # this folders will need to be created (not currently in use)
                 #     train_data_path = ''.join([train_data_path, 'quality_f_', quality_factor_detected, '_'])
                 # storing the file in the correspondent folder
-                train_data_path_filename = ''.join([train_data_path, 'group_', str(group), '/', filename])
-                os.makedirs(os.path.dirname(train_data_path_filename), exist_ok=True)
-                shutil.copyfile(image_path, train_data_path_filename)
+                train_data_path_filename = image_path
+                # os.makedirs(os.path.dirname(train_data_path_filename), exist_ok=True)
+                # shutil.copyfile(image_path, train_data_path_filename)
                 training_metadata.append([id_number, method, quality_factor_detected, group, filename,
                                           train_data_path_filename])
                 id_number += 1
             # save clean metadata source for use in subsequent training
             training_metadata_df = pd.DataFrame(training_metadata)
             training_metadata_df.to_csv(''.join([local_script_settings['clean_data_path'],
+                                                 'training_metadata.csv']), index=False, header=None)
+            training_metadata_df.to_csv(''.join([local_script_settings['train_data_path'],
                                                  'training_metadata.csv']), index=False, header=None)
             np.save(''.join([local_script_settings['clean_data_path'], 'training_metadata_np']),
                     training_metadata)
@@ -167,18 +169,18 @@ def prepare():
         print('data normalization was also prepared as a pre-processing_function (on the fly)')
 
         # save clean metadata source for use in subsequent training
-        if local_script_settings['disaggregation_done'] == "False":
-            training_metadata_df = pd.DataFrame(training_metadata)
-            column_names = ['id_number', 'method', 'quality_factor', 'group', 'filename', 'filepath']
-            training_metadata_df.to_csv(''.join([local_script_settings['clean_data_path'],
-                                                 'training_metadata.csv']), index=False, header=column_names)
-            np.save(''.join([local_script_settings['clean_data_path'], 'training_metadata_np']),
-                    training_metadata)
-            np.savetxt(''.join([local_script_settings['clean_data_path'], 'training_metadata_np_to.csv']),
-                       training_metadata, fmt='%10.15f', delimiter=',', newline='\n')
-            print('train data -and their metadata- saved to file')
-            logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
-                                 ' successful saved training data and correspondent metadata']))
+        # if local_script_settings['disaggregation_done'] == "False":
+        #     training_metadata_df = pd.DataFrame(training_metadata)
+        #     column_names = ['id_number', 'method', 'quality_factor', 'group', 'filename', 'filepath']
+        #     training_metadata_df.to_csv(''.join([local_script_settings['clean_data_path'],
+        #                                          'training_metadata.csv']), index=False, header=column_names)
+        #     np.save(''.join([local_script_settings['clean_data_path'], 'training_metadata_np']),
+        #             training_metadata)
+        #     np.savetxt(''.join([local_script_settings['clean_data_path'], 'training_metadata_np_to.csv']),
+        #                training_metadata, fmt='%10.15f', delimiter=',', newline='\n')
+        #     print('train data -and their metadata- saved to file')
+        #     logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
+        #                          ' successful saved training data and correspondent metadata']))
     except Exception as e1:
         print('Error at pre-processing raw data')
         print(e1)

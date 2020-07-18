@@ -67,16 +67,16 @@ class select_evaluation_images:
                 # select randomly
                 local_src_subfolder = ''.join([local_settings['train_data_path'], 'method_',
                                                str(method),  '_group_', str(group), '/'])
-                nof_samples = 0
-                while nof_samples < nof_samples_by_group:
-                    file_selected = random.choice([image_file for image_file in os.listdir(local_src_subfolder)
-                                                   if os.path.isfile(os.path.join(local_src_subfolder, image_file))])
+                files_for_select = [image_file for image_file in os.listdir(local_src_subfolder)
+                                    if os.path.isfile(os.path.join(local_src_subfolder, image_file))]
+                range_for_samples = len(files_for_select)
+                indexes_selected = rng.choice(range_for_samples, size=nof_samples_by_group, replace=False)
+                for file_selected in [files_for_select[index] for index in indexes_selected]:
                     file_selected_path = ''.join([local_dest_subfolder, file_selected])
                     if not os.path.isfile(file_selected_path):
                         evaluation_data_path_filename = ''.join([local_dest_subfolder, file_selected])
                         os.makedirs(os.path.dirname(evaluation_data_path_filename), exist_ok=True)
                         shutil.copyfile(''.join([local_src_subfolder, file_selected]), evaluation_data_path_filename)
-                        nof_samples += 1
                 print(nof_samples_by_group, ' images for method, group ', method, group, ' were selected randomly')
             print('select_evaluation_images submodule had finished')
         except Exception as e1:

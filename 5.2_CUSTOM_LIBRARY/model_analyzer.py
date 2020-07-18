@@ -82,11 +82,12 @@ class model_structure:
                 json_file.write(local_model_json)
                 json_file.close()
             # changing for subclassing to functional model
-            local_model_json = json.loads(local_model_json)
+            model_json = json.loads(local_model_json)
             local_batch_size = None
             local_y_input = local_a_hyperparameters['input_shape_y']
             local_x_input = local_a_hyperparameters['input_shape_x']
             local_nof_channels = local_a_hyperparameters['nof_channels']
+            plot_path = ''.join([local_a_settings['models_path'], local_model_name, '_model.png'])
             if local_a_settings['use_efficientNetB2'] == 'False':
                 input_layer = layers.Input(batch_shape=(local_batch_size, local_y_input, local_x_input,
                                                         local_nof_channels))
@@ -95,7 +96,6 @@ class model_structure:
                     prev_layer = layer(prev_layer)
                 functional_model = models.Model([input_layer], [prev_layer])
                 # plotting (exporting to png) the model
-                plot_path = ''.join([local_a_settings['models_path'], local_model_name, '_model.png'])
                 # model_to_dot(functional_model, show_shapes=True, show_layer_names=True, rankdir='TB',
                 #     expand_nested=True, dpi=96, subgraph=True)
                 plot_model(functional_model, to_file=plot_path, show_shapes=True, show_layer_names=True,
@@ -105,6 +105,10 @@ class model_structure:
                            rankdir='TB', expand_nested=True)
                 print('model analyzer ended with success, model saved in json, pdf and png formats\n')
             elif local_a_settings['use_efficientNetB2'] == 'True':
+                # model_efficientNetB2 = models.load_model(local_a_settings['models_path'],
+                #                                          '_7_layers_CNN__EfficientNetB2')
+                # plot_model(model_efficientNetB2, to_file=''.join([plot_path, '.pdf']), show_shapes=True,
+                #            show_layer_names=True, rankdir='TB', expand_nested=True)
                 from contextlib import redirect_stdout
                 with open(''.join([local_a_settings['models_path'], 'EfficientNetB2_summary.txt']), 'w') as f:
                     with redirect_stdout(f):

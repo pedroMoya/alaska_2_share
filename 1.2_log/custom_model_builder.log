@@ -1405,3 +1405,346 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 778, in validate_kwargs
     raise TypeError(error_message, kwarg)
 TypeError: ('Keyword argument not understood:', 'pading')
+'Functional' object has no attribute 'add'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 311, in build_and_compile
+    classifier_.add(layers.GlobalMaxPooling2D())
+AttributeError: 'Functional' object has no attribute 'add'
+Attempt to convert a value (<tensorflow.python.keras.layers.pooling.GlobalMaxPooling2D object at 0x000001FEE53622E0>) with an unsupported type (<class 'tensorflow.python.keras.layers.pooling.GlobalMaxPooling2D'>) to a Tensor.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 311, in build_and_compile
+    classifier_(layers.GlobalMaxPooling2D())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 986, in __call__
+    outputs = call_fn(inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\functional.py", line 385, in call
+    return self._run_internal_graph(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\functional.py", line 508, in _run_internal_graph
+    outputs = node.layer(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 986, in __call__
+    outputs = call_fn(inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\preprocessing\image_preprocessing.py", line 329, in call
+    return math_ops.cast(inputs, dtype) * scale + offset
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\math_ops.py", line 923, in cast
+    x = ops.convert_to_tensor(x, name="x")
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1525, in convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 339, in _constant_tensor_conversion_function
+    return constant(v, dtype=dtype, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 264, in constant
+    return _constant_impl(value, dtype, shape, name, verify_shape=False,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 276, in _constant_impl
+    return _constant_eager_impl(ctx, value, dtype, shape, verify_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 301, in _constant_eager_impl
+    t = convert_to_eager_tensor(value, ctx, dtype)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 98, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+ValueError: Attempt to convert a value (<tensorflow.python.keras.layers.pooling.GlobalMaxPooling2D object at 0x000001FEE53622E0>) with an unsupported type (<class 'tensorflow.python.keras.layers.pooling.GlobalMaxPooling2D'>) to a Tensor.
+'Functional' object has no attribute 'build_model'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 311, in build_and_compile
+    classifier_.build_model()(layers.GlobalMaxPooling2D())
+AttributeError: 'Functional' object has no attribute 'build_model'
+build() missing 1 required positional argument: 'input_shape'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 311, in build_and_compile
+    classifier_.build()(layers.GlobalMaxPooling2D())
+TypeError: build() missing 1 required positional argument: 'input_shape'
+'NoneType' object is not callable
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 311, in build_and_compile
+    classifier_.build(input_shape=(input_shape_y, input_shape_x, nof_channels))(layers.GlobalMaxPooling2D())
+TypeError: 'NoneType' object is not callable
+'Functional' object has no attribute 'add'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 312, in build_and_compile
+    classifier_.add(layers.GlobalMaxPooling2D())
+AttributeError: 'Functional' object has no attribute 'add'
+Attempt to convert a value (<tensorflow.python.keras.layers.pooling.GlobalMaxPooling2D object at 0x000002DF066F3340>) with an unsupported type (<class 'tensorflow.python.keras.layers.pooling.GlobalMaxPooling2D'>) to a Tensor.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 312, in build_and_compile
+    classifier_(layers.GlobalMaxPooling2D())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 986, in __call__
+    outputs = call_fn(inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\functional.py", line 385, in call
+    return self._run_internal_graph(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\functional.py", line 508, in _run_internal_graph
+    outputs = node.layer(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 986, in __call__
+    outputs = call_fn(inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\preprocessing\image_preprocessing.py", line 329, in call
+    return math_ops.cast(inputs, dtype) * scale + offset
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\math_ops.py", line 923, in cast
+    x = ops.convert_to_tensor(x, name="x")
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1525, in convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 339, in _constant_tensor_conversion_function
+    return constant(v, dtype=dtype, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 264, in constant
+    return _constant_impl(value, dtype, shape, name, verify_shape=False,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 276, in _constant_impl
+    return _constant_eager_impl(ctx, value, dtype, shape, verify_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 301, in _constant_eager_impl
+    t = convert_to_eager_tensor(value, ctx, dtype)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 98, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+ValueError: Attempt to convert a value (<tensorflow.python.keras.layers.pooling.GlobalMaxPooling2D object at 0x000002DF066F3340>) with an unsupported type (<class 'tensorflow.python.keras.layers.pooling.GlobalMaxPooling2D'>) to a Tensor.
+add() got an unexpected keyword argument 'kernel_initializer'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 314, in build_and_compile
+    effnb2_model.add(layers.Dense(units_final_layer, activation=activation_final_layer),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+TypeError: add() got an unexpected keyword argument 'kernel_initializer'
+The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 313, in build_and_compile
+    effnb2_model.add(layers.Dense(units_final_layer, activation=activation_final_layer,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1168, in build
+    raise ValueError('The last dimension of the inputs to `Dense` '
+ValueError: The last dimension of the inputs to `Dense` should be defined. Found `None`.
+The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 314, in build_and_compile
+    effnb2_model.add(layers.Dense(units_final_layer, activation=activation_final_layer,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1168, in build
+    raise ValueError('The last dimension of the inputs to `Dense` '
+ValueError: The last dimension of the inputs to `Dense` should be defined. Found `None`.
+The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 313, in build_and_compile
+    effnb2_model.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1168, in build
+    raise ValueError('The last dimension of the inputs to `Dense` '
+ValueError: The last dimension of the inputs to `Dense` should be defined. Found `None`.
+The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 312, in build_and_compile
+    effnb2_model.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1168, in build
+    raise ValueError('The last dimension of the inputs to `Dense` '
+ValueError: The last dimension of the inputs to `Dense` should be defined. Found `None`.
+The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 312, in build_and_compile
+    effnb2_model.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1168, in build
+    raise ValueError('The last dimension of the inputs to `Dense` '
+ValueError: The last dimension of the inputs to `Dense` should be defined. Found `None`.
+The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 312, in build_and_compile
+    effnb2_model.add(layers.Dense(units_final_layer, activation=activation_final_layer,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1168, in build
+    raise ValueError('The last dimension of the inputs to `Dense` '
+ValueError: The last dimension of the inputs to `Dense` should be defined. Found `None`.
+'Functional' object has no attribute 'add'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 312, in build_and_compile
+    classifier_.add(layers.Dense(units=units_final_layer,
+AttributeError: 'Functional' object has no attribute 'add'
+The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 312, in build_and_compile
+    effnb2_model.add(layers.Dense(units=units_final_layer,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1168, in build
+    raise ValueError('The last dimension of the inputs to `Dense` '
+ValueError: The last dimension of the inputs to `Dense` should be defined. Found `None`.
+The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 313, in build_and_compile
+    effnb2_model.add(layers.Dense(units=units_final_layer, activation=activation_final_layer))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1168, in build
+    raise ValueError('The last dimension of the inputs to `Dense` '
+ValueError: The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Input 0 of layer global_max_pooling1d is incompatible with the layer: expected ndim=3, found ndim=4. Full shape received: [None, None, None, 1408]
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 311, in build_and_compile
+    effnb2_model.add(layers.GlobalMaxPool1D())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1093, in _functional_construction_call
+    input_spec.assert_input_compatibility(self.input_spec, inputs, self.name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\input_spec.py", line 183, in assert_input_compatibility
+    raise ValueError('Input ' + str(input_index) + ' of layer ' +
+ValueError: Input 0 of layer global_max_pooling1d is incompatible with the layer: expected ndim=3, found ndim=4. Full shape received: [None, None, None, 1408]
+The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 312, in build_and_compile
+    effnb2_model.add(layers.Dense(units=1408, activation=activation_final_layer))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1168, in build
+    raise ValueError('The last dimension of the inputs to `Dense` '
+ValueError: The last dimension of the inputs to `Dense` should be defined. Found `None`.
+Input 0 of layer global_max_pooling1d is incompatible with the layer: expected ndim=3, found ndim=4. Full shape received: [None, None, None, 1408]
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 311, in build_and_compile
+    effnb2_model.add(layers.GlobalMaxPool1D())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1093, in _functional_construction_call
+    input_spec.assert_input_compatibility(self.input_spec, inputs, self.name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\input_spec.py", line 183, in assert_input_compatibility
+    raise ValueError('Input ' + str(input_index) + ' of layer ' +
+ValueError: Input 0 of layer global_max_pooling1d is incompatible with the layer: expected ndim=3, found ndim=4. Full shape received: [None, None, None, 1408]
+You are trying to load a weight file containing 2 layers into a model with 185 layers.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 297, in build_and_compile
+    classifier_ = tf.keras.applications.EfficientNetB2(include_top=False, weights=pretrained_weights,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 579, in EfficientNetB2
+    return EfficientNet(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 409, in EfficientNet
+    model.load_weights(weights)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 185 layers.
+'Functional' object has no attribute 'add'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 302, in build_and_compile
+    classifier_.add(layers.Conv2D(units_layer_2, kernel_size=(kernel_size_y_2, kernel_size_x_2),
+AttributeError: 'Functional' object has no attribute 'add'
+Shapes (3,) and (3, 3, 3, 32) are incompatible
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 313, in build_and_compile
+    classifier_.load_weights(pretrained_weights)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (3,) and (3, 3, 3, 32) are incompatible
+You are trying to load a weight file containing 2 layers into a model with 185 layers.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 296, in build_and_compile
+    classifier_.load_weights(pretrained_weights)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 185 layers.
+Shapes (1, 1, 2112, 352) and (3, 3, 3, 32) are incompatible
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 315, in build_and_compile
+    classifier_.load_weights(pretrained_weights)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (1, 1, 2112, 352) and (3, 3, 3, 32) are incompatible

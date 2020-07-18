@@ -74,8 +74,9 @@ class model_classifier_:
 
     def build_and_compile(self, local_model_name, local_settings, local_hyperparameters):
         try:
-            # keras session/random seed reset/fix
+            # keras,tf session/random seed reset/fix
             kb.clear_session()
+            tf.compat.v1.reset_default_graph()
             np.random.seed(11)
             tf.random.set_seed(2)
 
@@ -84,13 +85,14 @@ class model_classifier_:
             units_layer_2 = local_hyperparameters['units_layer_2']
             units_layer_3 = local_hyperparameters['units_layer_3']
             units_layer_4 = local_hyperparameters['units_layer_4']
-            units_dense_layer_4 = local_hyperparameters['units_dense_layer_4']
+            units_last_layer_con2d_efficientnetb2 = local_hyperparameters['units_layer_last_conv2d_efficientnetb2']
             units_final_layer = local_hyperparameters['units_final_layer']
             activation_1 = local_hyperparameters['activation_1']
             activation_2 = local_hyperparameters['activation_2']
             activation_3 = local_hyperparameters['activation_3']
             activation_4 = local_hyperparameters['activation_4']
-            activation_dense_layer_4 = local_hyperparameters['activation_dense_layer_4']
+            activation_last_layer_con2d_efficientnetb2 = \
+                local_hyperparameters['activation_last_layer_con2d_efficientnetb2']
             activation_final_layer = local_hyperparameters['activation_final_layer']
             dropout_layer_1 = local_hyperparameters['dropout_layer_1']
             dropout_layer_2 = local_hyperparameters['dropout_layer_2']
@@ -127,6 +129,8 @@ class model_classifier_:
                 optimizer_function = optimizers.Ftrl(optimizer_learning_rate)
             elif optimizer_function == 'sgd':
                 optimizer_function = optimizers.SGD(optimizer_learning_rate)
+            elif optimizer_function == 'rmsp':
+                optimizer_function = optimizers.RMSprop(lr=2e-5)
             losses_list = []
             loss_1 = local_hyperparameters['loss_1']
             loss_2 = local_hyperparameters['loss_2']
@@ -134,6 +138,8 @@ class model_classifier_:
             union_settings_losses = [loss_1, loss_2, loss_3]
             if 'CategoricalCrossentropy' in union_settings_losses:
                 losses_list.append(losses.CategoricalCrossentropy())
+            if 'BinaryCrossentropy' in union_settings_losses:
+                losses_list.append(losses.BinaryCrossentropy())
             if 'CategoricalHinge' in union_settings_losses:
                 losses_list.append(losses.CategoricalHinge())
             if 'LogCosh' in union_settings_losses:
@@ -191,17 +197,17 @@ class model_classifier_:
                 classifier_ = tf.keras.models.Sequential()
                 # first layer
                 classifier_.add(layers.Input(shape=(input_shape_y, input_shape_x, nof_channels)))
-                classifier_.add(layers.ZeroPadding2D(padding=((0, 1), (0, 1))))
+                # classifier_.add(layers.ZeroPadding2D(padding=((0, 1), (0, 1))))
                 classifier_.add(layers.Conv2D(units_layer_1, kernel_size=(kernel_size_y_1, kernel_size_x_1),
                                               strides=(stride_y_1, stride_x_1),
                                               activity_regularizer=activation_regularizer_1,
                                               activation=activation_1,
-                                              padding='valid',
+                                              padding='same',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
-                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_1, pool_size_x_1)))
+                classifier_.add(layers.GlobalAveragePooling2D())
                 classifier_.add(layers.Dropout(dropout_layer_1))
                 # LAYER 1.5
                 classifier_.add(layers.Conv2D(units_layer_1, kernel_size=(kernel_size_y_1, kernel_size_x_1),
@@ -212,9 +218,9 @@ class model_classifier_:
                                               padding='same',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                # classifier_.add(layers.BatchNormalization(axis=-1))
-                # classifier_.add(layers.Activation(tf.keras.activations.swish))
-                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_1, pool_size_x_1)))
+                classifier_.add(layers.BatchNormalization(axis=-1))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
+                classifier_.add(layers.GlobalAveragePooling2D())
                 classifier_.add(layers.Dropout(dropout_layer_1))
                 # second layer
                 classifier_.add(layers.Conv2D(units_layer_2, kernel_size=(kernel_size_y_2, kernel_size_x_2),
@@ -225,19 +231,18 @@ class model_classifier_:
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
-                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_2, pool_size_x_2)))
+                classifier_.add(layers.GlobalAveragePooling2D())
                 classifier_.add(layers.Dropout(dropout_layer_2))
                 # LAYER 2.5
-                classifier_.add(layers.ZeroPadding2D(padding=((2, 2), (2, 2))))
                 classifier_.add(layers.Conv2D(units_layer_2, kernel_size=(kernel_size_y_2, kernel_size_x_2),
                                               activity_regularizer=activation_regularizer_2,
                                               activation=activation_2,
-                                              padding='valid',
+                                              padding='same',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                # classifier_.add(layers.BatchNormalization(axis=-1))
-                # classifier_.add(layers.Activation(tf.keras.activations.swish))
-                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_2, pool_size_x_2)))
+                classifier_.add(layers.BatchNormalization(axis=-1))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
+                classifier_.add(layers.GlobalAveragePooling2D())
                 classifier_.add(layers.Dropout(dropout_layer_2))
                 # third layer
                 classifier_.add(layers.Conv2D(units_layer_3,
@@ -249,20 +254,19 @@ class model_classifier_:
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
-                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_3, pool_size_x_3)))
+                classifier_.add(layers.GlobalAveragePooling2D())
                 classifier_.add(layers.Dropout(dropout_layer_3))
                 # LAYER 3.5
-                classifier_.add(layers.ZeroPadding2D(padding=((1, 1), (1, 1))))
                 classifier_.add(layers.Conv2D(units_layer_3,
                                               kernel_size=(kernel_size_y_3, kernel_size_x_3),
                                               activity_regularizer=activation_regularizer_3,
                                               activation=activation_3,
-                                              padding='valid',
+                                              padding='same',
                                               kernel_initializer=tf.keras.initializers.VarianceScaling(
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
-                # classifier_.add(layers.BatchNormalization(axis=-1))
-                # classifier_.add(layers.Activation(tf.keras.activations.swish))
-                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_3, pool_size_x_3)))
+                classifier_.add(layers.BatchNormalization(axis=-1))
+                classifier_.add(layers.Activation(tf.keras.activations.swish))
+                classifier_.add(layers.GlobalAveragePooling2D())
                 classifier_.add(layers.Dropout(dropout_layer_3))
                 # fourth layer
                 classifier_.add(layers.Conv2D(units_layer_4,
@@ -274,32 +278,41 @@ class model_classifier_:
                                                   scale=2., mode='fan_out', distribution='truncated_normal')))
                 classifier_.add(layers.BatchNormalization(axis=-1))
                 classifier_.add(layers.Activation(tf.keras.activations.swish))
-                classifier_.add(layers.MaxPooling2D(pool_size=(pool_size_y_4, pool_size_x_4)))
+                classifier_.add(layers.GlobalAveragePooling2D())
                 classifier_.add(layers.Dropout(dropout_layer_4))
-                # Flattening
-                classifier_.add(layers.Flatten())
                 # Full connection and final layer
-                classifier_.add(layers.Dense(units_dense_layer_4, activation=activation_dense_layer_4,
-                                             activity_regularizer=activation_regularizer_dense_layer_4,
-                                             kernel_initializer=tf.keras.initializers.VarianceScaling(
-                                                 scale=0.333333333, mode='fan_out', distribution='uniform')))
-                classifier_.add(layers.Dropout(dropout_dense_layer_4))
-                classifier_.add(layers.Dense(units_final_layer, activation=activation_final_layer,
-                                kernel_initializer=tf.keras.initializers.VarianceScaling(
-                                    scale=0.333333333, mode='fan_out', distribution='uniform')))
+                classifier_.add(layers.Dense(units=units_final_layer, activation=activation_final_layer))
                 # Compile model
                 classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
 
             elif local_settings['use_efficientNetB2'] == 'True':
                 type_of_model = '_EfficientNetB2'
-                classifier_ = tf.keras.applications.EfficientNetB2(include_top=True, weights='imagenet',
+                pretrained_weights = ''.join([local_settings['models_path'],
+                                              local_hyperparameters['weights_for_training_efficientnetb2']])
+                classifier_ = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
                                                                    input_tensor=None, input_shape=None,
-                                                                   pooling=None, classes=1000,
+                                                                   pooling=None,
                                                                    classifier_activation='softmax')
-                # classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
-                date = datetime.date.today()
-                classifier_.save_weights(''.join([local_settings['models_path'], type_of_model, '_imagenet_', str(date),
-                                                 '_weights.h5']))
+
+                for layer in classifier_.layers:
+                    layer.trainable = False
+                    if 'excite' in layer.name:
+                        layer.trainable = True
+                    if 'top_conv' in layer.name or 'block7b_project_conv' in layer.name:
+                        layer.trainable = True
+
+                effnb2_model = models.Sequential()
+                effnb2_model.add(classifier_)
+                effnb2_model.add(layers.GlobalMaxPool2D())
+                effnb2_model.add(layers.Dropout(dropout_dense_layer_4))
+                effnb2_model.add(layers.Dense(units_final_layer, activation=activation_final_layer,
+                                 kernel_initializer=tf.keras.initializers.VarianceScaling(scale=0.333333333,
+                                                                                          mode='fan_out',
+                                                                                          distribution='uniform')))
+                effnb2_model.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
+                effnb2_model.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
+                classifier_ = effnb2_model
+
                 if local_settings['alternative_training_generator'] == 'True':
                     alternative_training_instance = alternative_training()
                     alternative_training_review = alternative_training_instance.train_model(classifier_,
@@ -332,21 +345,21 @@ class model_classifier_:
 
             # save_model
             classifier_json = classifier_.to_json()
-            with open(''.join([local_settings['models_path'], local_model_name, str(type_of_model),
+            with open(''.join([local_settings['models_path'], local_model_name, type_of_model,
                                '_classifier_.json']), 'w') \
                     as json_file:
                 json_file.write(classifier_json)
                 json_file.close()
-            classifier_.save(''.join([local_settings['models_path'], local_model_name, str(type_of_model),
+            classifier_.save(''.join([local_settings['models_path'], local_model_name, type_of_model,
                                       '_classifier_.h5']))
-            classifier_.save(''.join([local_settings['models_path'], local_model_name, str(type_of_model),
+            classifier_.save(''.join([local_settings['models_path'], local_model_name, type_of_model,
                                       '/']), save_format='tf')
             print('model architecture saved')
 
             # output png and pdf with model, additionally saves a json file model_name_analyzed.json
             if local_settings['model_analyzer'] == 'True':
                 model_architecture = model_structure()
-                model_architecture_review = model_architecture.analize(''.join([local_model_name, str(type_of_model),
+                model_architecture_review = model_architecture.analize(''.join([local_model_name, type_of_model,
                                                                                 '_classifier_.h5']),
                                                                        local_settings, local_hyperparameters)
         except Exception as e:

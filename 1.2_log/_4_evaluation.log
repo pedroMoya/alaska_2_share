@@ -4863,3 +4863,162 @@ Traceback (most recent call last):
   File ".\_4_evaluation.py", line 177, in evaluate
     test_split = model_hyperparameters['test_split']
 KeyError: 'test_split'
+'DataFrameIterator' object has no attribute 'class_indices'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 199, in evaluate
+    print(test_set.class_indices)
+AttributeError: 'DataFrameIterator' object has no attribute 'class_indices'
+y_true contains only one label (0). Please provide the true labels explicitly through the labels argument.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 209, in evaluate
+    print("\nlog_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2198, in log_loss
+    raise ValueError('y_true contains only one label ({0}). Please '
+ValueError: y_true contains only one label (0). Please provide the true labels explicitly through the labels argument.
+y_true contains only one label (0). Please provide the true labels explicitly through the labels argument.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 210, in evaluate
+    print("\nlog_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2198, in log_loss
+    raise ValueError('y_true contains only one label ({0}). Please '
+ValueError: y_true contains only one label (0). Please provide the true labels explicitly through the labels argument.
+'DataFrameIterator' object has no attribute 'num_classes'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 214, in evaluate
+    print('number of classes:', test_set.num_classes, '\n')
+AttributeError: 'DataFrameIterator' object has no attribute 'num_classes'
+'DataFrameIterator' object has no attribute 'len'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 214, in evaluate
+    print('number of classes:', test_set.len(test_set.class_indices), '\n')
+AttributeError: 'DataFrameIterator' object has no attribute 'len'
+Number of classes, 1, does not match size of target_names, 2. Try specifying the labels parameter
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 209, in evaluate
+    print(classification_report(test_set.classes, y_predictions, target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1950, in classification_report
+    raise ValueError(
+ValueError: Number of classes, 1, does not match size of target_names, 2. Try specifying the labels parameter
+y contains previously unseen labels: [1]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 209, in evaluate
+    print(classification_report(test_set.classes, y_predictions, target_names=target_names, labels=labels))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1960, in classification_report
+    p, r, f1, s = precision_recall_fscore_support(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1438, in precision_recall_fscore_support
+    MCM = multilabel_confusion_matrix(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 462, in multilabel_confusion_matrix
+    y_true = le.transform(y_true)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 277, in transform
+    _, y = _encode(y, uniques=self.classes_, encode=True)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 121, in _encode
+    return _encode_numpy(values, uniques, encode,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 50, in _encode_numpy
+    raise ValueError("y contains previously unseen labels: %s"
+ValueError: y contains previously unseen labels: [1]
+Found input variables with inconsistent numbers of samples: [2, 3000]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 206, in evaluate
+    print(confusion_matrix(labels, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [2, 3000]
+At least one label specified must be in y_true
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 206, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions, labels=labels))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 290, in confusion_matrix
+    raise ValueError("At least one label specified must be in y_true")
+ValueError: At least one label specified must be in y_true
+At least one label specified must be in y_true
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 206, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions, labels=labels))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 290, in confusion_matrix
+    raise ValueError("At least one label specified must be in y_true")
+ValueError: At least one label specified must be in y_true
+At least one label specified must be in y_true
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 206, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions, labels=labels))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 290, in confusion_matrix
+    raise ValueError("At least one label specified must be in y_true")
+ValueError: At least one label specified must be in y_true
+At least one label specified must be in y_true
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 208, in evaluate
+    print(confusion_matrix(test_set.classes, y_predictions, labels=labels))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 290, in confusion_matrix
+    raise ValueError("At least one label specified must be in y_true")
+ValueError: At least one label specified must be in y_true
+Number of classes, 1, does not match size of target_names, 2. Try specifying the labels parameter
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 210, in evaluate
+    print(classification_report(test_set.classes, y_predictions, target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1950, in classification_report
+    raise ValueError(
+ValueError: Number of classes, 1, does not match size of target_names, 2. Try specifying the labels parameter
+y contains previously unseen labels: [1]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 210, in evaluate
+    print(classification_report(test_set.classes, y_predictions, target_names=target_names, labels=labels))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1960, in classification_report
+    p, r, f1, s = precision_recall_fscore_support(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1438, in precision_recall_fscore_support
+    MCM = multilabel_confusion_matrix(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 462, in multilabel_confusion_matrix
+    y_true = le.transform(y_true)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 277, in transform
+    _, y = _encode(y, uniques=self.classes_, encode=True)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 121, in _encode
+    return _encode_numpy(values, uniques, encode,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 50, in _encode_numpy
+    raise ValueError("y contains previously unseen labels: %s"
+ValueError: y contains previously unseen labels: [1]
+Only one class present in y_true. ROC AUC score is not defined in that case.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 226, in evaluate
+    print('\n AUC_ROC score:', roc_auc_score(labels,  y_predictions_raw[:, 1]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 390, in roc_auc_score
+    return _average_binary_score(partial(_binary_roc_auc_score,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_base.py", line 77, in _average_binary_score
+    return binary_metric(y_true, y_score, sample_weight=sample_weight)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 223, in _binary_roc_auc_score
+    raise ValueError("Only one class present in y_true. ROC AUC score "
+ValueError: Only one class present in y_true. ROC AUC score is not defined in that case.

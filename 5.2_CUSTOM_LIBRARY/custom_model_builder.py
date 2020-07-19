@@ -300,6 +300,8 @@ class model_classifier_:
                         layer.trainable = True
                     if 'top_conv' in layer.name or 'block7b_project_conv' in layer.name:
                         layer.trainable = True
+                    if 'dwconv' in layer.name:
+                        layer.trainable = True
 
                 effnb2_model = models.Sequential()
                 effnb2_model.add(classifier_)

@@ -9116,3 +9116,30 @@ Traceback (most recent call last):
   File ".\_2_train.py", line 202, in train
     model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
 AttributeError: 'NoneType' object has no attribute 'fit_generator'
+
+18.Jul 2020 19:16:01 correct model training, correct saving of model and weights
+
+18.Jul 2020 19:16:01 settings modified and saved
+
+18.Jul 2020 21:03:10 correct model training, correct saving of model and weights
+
+18.Jul 2020 21:03:10 settings modified and saved
+
+18.Jul 2020 21:53:28 model training error
+Expected `class_weight` to be a dict with keys from 0 to one less than the number of classes, found {'0': 0.75, '1': 0.25}
+Traceback (most recent call last):
+  File ".\_2_train.py", line 205, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\deprecation.py", line 324, in new_func
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1822, in fit_generator
+    return self.fit(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1115, in __init__
+    dataset = dataset.map(_make_class_weight_map_fn(class_weight))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1294, in _make_class_weight_map_fn
+    raise ValueError(error_msg)
+ValueError: Expected `class_weight` to be a dict with keys from 0 to one less than the number of classes, found {'0': 0.75, '1': 0.25}

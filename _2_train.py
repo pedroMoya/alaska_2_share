@@ -198,13 +198,21 @@ def train():
                                          min_lr=reduce_lr_on_plateau_min_lr)
         callbacks = [callback1, callback2, callback3]
 
+        # class weights as imbalanced dataset
+        if model_hyperparameters['class_weights'] != "None":
+            class_weight = {0: 0.666, 1: 0.333}
+        else:
+            class_weight = None
+
         # training model
         model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
                                                        steps_per_epoch=train_generator.samples // batch_size,
                                                        callbacks=callbacks, shuffle=True, workers=workers,
+                                                       class_weight=class_weight,
                                                        validation_data=validation_generator,
                                                        validation_freq=validation_freq,
-                                                       validation_steps=validation_generator.samples // batch_size)
+                                                       validation_steps=validation_generator.samples // batch_size,
+                                                       use_multiprocessing=False)
 
         # save weights (model was saved previously at model build and compile in h5 and json formats)
         if local_script_settings['use_efficientNetB2'] == "True":

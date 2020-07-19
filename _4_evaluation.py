@@ -174,30 +174,18 @@ def evaluate():
                 batch_size = model_hyperparameters['batch_size']
                 input_shape_y = model_hyperparameters['input_shape_y']
                 input_shape_x = model_hyperparameters['input_shape_x']
-                test_split = model_hyperparameters['test_split']
-                column_names = ['id_number', 'method', 'quality_factor', 'group', 'filename', 'filepath']
-                x_col = 'filepath'
-                y_col = 'method'
-                metadata_train_images = \
-                    pd.read_csv(''.join([local_script_settings['train_data_path'], 'training_metadata.csv']),
-                                dtype=str, names=column_names, header=None)
-                test_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
-                                                                      validation_split=test_split)
-                test_set = test_datagen.flow_from_dataframe(dataframe=metadata_train_images,
-                                                            directory=None,
-                                                            x_col=x_col,
-                                                            y_col=y_col,
+                test_datagen = preprocessing.image.ImageDataGenerator(rescale=None)
+                evaluation_dataset_folder = ''.join([local_script_settings['models_evaluation_path'],
+                                                     'images_for_evaluation/'])
+                test_set = test_datagen.flow_from_directory(evaluation_dataset_folder,
                                                             shuffle=False,
                                                             target_size=(input_shape_y, input_shape_x),
                                                             batch_size=batch_size,
                                                             color_mode='rgb',
-                                                            class_mode=None,
-                                                            subset='validation')
-                y_predictions_raw = classifier.predict(test_set)
+                                                            class_mode='categorical')
+                y_predictions_raw = classifier.predict(test_set, workers=8)
                 print(y_predictions_raw)
                 y_predictions = y_predictions_raw.argmax(axis=1)
-                print(test_set.class_indices)
-                print(type(test_set.class_indices))
 
                 print('Confusion Matrix for all categories')
                 print(confusion_matrix(test_set.classes, y_predictions))

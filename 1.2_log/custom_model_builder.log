@@ -1748,3 +1748,12 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
     raise ValueError("Shapes %s and %s are incompatible" % (self, other))
 ValueError: Shapes (1, 1, 2112, 352) and (3, 3, 3, 32) are incompatible
+Could not interpret initializer identifier: -0.477121254719
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 313, in build_and_compile
+    effnb2_model.add(layers.Dense(units_final_layer, activation=activation_final_layer,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\core.py", line 1150, in __init__
+    self.bias_initializer = initializers.get(bias_initializer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\initializers\__init__.py", line 161, in get
+    raise ValueError('Could not interpret initializer identifier: ' +
+ValueError: Could not interpret initializer identifier: -0.477121254719

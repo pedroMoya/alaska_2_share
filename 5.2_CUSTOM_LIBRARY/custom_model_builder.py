@@ -293,15 +293,18 @@ class model_classifier_:
                                                                    input_tensor=None, input_shape=None,
                                                                    pooling=None,
                                                                    classifier_activation='softmax')
-
+                # classifier_.trainable = True
                 for layer in classifier_.layers:
                     layer.trainable = False
                     if 'excite' in layer.name:
                         layer.trainable = True
-                    if 'top_conv' in layer.name or 'block7b_project_conv' in layer.name:
+                    if 'top_conv' in layer.name:
                         layer.trainable = True
-                    if 'dwconv' in layer.name:
-                        layer.trainable = True
+                    if 'block7b_project_conv' in layer.name:
+                        layer.trainable = False
+
+                # log(pos/neg) = -0.477121254719
+                bias_initializer = tf.keras.initializers.Constant(local_hyperparameters['bias_initializer'])
 
                 effnb2_model = models.Sequential()
                 effnb2_model.add(classifier_)
@@ -310,7 +313,8 @@ class model_classifier_:
                 effnb2_model.add(layers.Dense(units_final_layer, activation=activation_final_layer,
                                  kernel_initializer=tf.keras.initializers.VarianceScaling(scale=0.333333333,
                                                                                           mode='fan_out',
-                                                                                          distribution='uniform')))
+                                                                                          distribution='uniform'),
+                                              bias_initializer=bias_initializer))
                 effnb2_model.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
                 effnb2_model.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
                 classifier_ = effnb2_model

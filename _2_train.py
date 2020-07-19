@@ -224,7 +224,7 @@ def train():
             return False
         date = datetime.date.today()
         classifier.save_weights(''.join([local_script_settings['models_path'], model_name, '_', type_of_model,
-                                         str(date), '_weights.h5']))
+                                         '_', str(date), '_weights.h5']))
 
         # save in tf (saveModel) format
         classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),

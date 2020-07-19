@@ -17,7 +17,7 @@ try:
     import cv2
     import tensorflow as tf
     from tensorflow.keras import backend as kb
-    from tensorflow.keras import losses, models, metrics
+    from tensorflow.keras import losses, models, metrics, optimizers
     from tensorflow.keras import preprocessing
     from sklearn.metrics import confusion_matrix, classification_report, log_loss, roc_auc_score
     from sklearn.preprocessing import minmax_scale
@@ -144,7 +144,7 @@ def evaluate():
                 print('model loaded and by default the currents weights saved today will be loaded')
                 date = datetime.date.today()
                 classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
-                                                 str(date), '_weights.h5']))
+                                                 type_of_model, '_', str(date), '_weights.h5']))
             else:
                 print('model correctly loaded and by settings this weights will be loaded:', weights_file_name)
                 classifier.load_weights(''.join([local_script_settings['models_path'], weights_file_name]))
@@ -153,6 +153,7 @@ def evaluate():
                 for layer in classifier.layers:
                     layer.trainable = False
                 print('current model loaded and layers were set to not_trainable')
+
 
             # # define from scratch random evaluation folder
             # model_evaluation_folder = ''.join([local_script_settings['models_evaluation_path'], 'images_for_evaluation/'])
@@ -182,8 +183,8 @@ def evaluate():
                                                             target_size=(input_shape_y, input_shape_x),
                                                             batch_size=batch_size,
                                                             color_mode='rgb',
-                                                            class_mode='categorical')
-                y_predictions_raw = classifier.predict(test_set, workers=8)
+                                                            class_mode=None)
+                y_predictions_raw = classifier.predict(test_set, workers=8, )
                 print(y_predictions_raw)
                 y_predictions = y_predictions_raw.argmax(axis=1)
 

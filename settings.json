@@ -11,7 +11,7 @@
   "disaggregation_done": "True",
   "data_cleaning_done": "True",
   "repeat_training": "True",
-  "training_done": "True",
+  "training_done": "False",
   "root_path": "./",
   "metaheuristics_path": "./0.0_metaheuristics/",
   "hyperparameters_path": "./0.1_hyperparameters/",

@@ -83,7 +83,7 @@ class customized_loss2(losses.Loss):
 
 
 def image_normalizer(local_image_rgb):
-    custom_image_normalizer_instance = lsbit_custom_image_normalizer()
+    custom_image_normalizer_instance = custom_image_normalizer()
     return custom_image_normalizer_instance.normalize(local_image_rgb)
 
 
@@ -175,29 +175,40 @@ def evaluate():
                 batch_size = model_hyperparameters['batch_size']
                 input_shape_y = model_hyperparameters['input_shape_y']
                 input_shape_x = model_hyperparameters['input_shape_x']
-                test_datagen = preprocessing.image.ImageDataGenerator(rescale=None)
-                evaluation_dataset_folder = ''.join([local_script_settings['models_evaluation_path'],
-                                                     'images_for_evaluation/'])
-                test_set = test_datagen.flow_from_directory(evaluation_dataset_folder,
+                test_datagen = \
+                    preprocessing.image.ImageDataGenerator(rescale=None,
+                                                           preprocessing_function=image_normalizer,
+                                                           validation_split=0.0010)
+                column_names = ['id_number', 'method', 'quality_factor', 'group', 'filename', 'filepath']
+                x_col = 'filepath'
+                y_col = 'method'
+                metadata_train_images = \
+                    pd.read_csv(''.join([local_script_settings['train_data_path'], 'training_metadata.csv']),
+                                dtype=str, names=column_names, header=None)
+                test_set = test_datagen.flow_from_dataframe(dataframe=metadata_train_images,
+                                                            directory=None,
+                                                            x_col=x_col,
+                                                            y_col=y_col,
                                                             shuffle=False,
                                                             target_size=(input_shape_y, input_shape_x),
                                                             batch_size=batch_size,
                                                             color_mode='rgb',
-                                                            class_mode=None)
-                y_predictions_raw = classifier.predict(test_set, workers=8, )
+                                                            class_mode='categorical',
+                                                            subset='validation')
+                y_predictions_raw = classifier.predict(test_set, workers=8)
                 print(y_predictions_raw)
                 y_predictions = y_predictions_raw.argmax(axis=1)
 
                 print('Confusion Matrix for all categories')
                 print(confusion_matrix(test_set.classes, y_predictions))
                 print('Classification Report')
-                target_names = ['0', '1']
-                print(classification_report(test_set.classes, y_predictions, target_names=target_names))
+                target_names = ['0', '1', '2', '3']
+                # print(classification_report(test_set.classes, y_predictions, labels=target_names))
                 print('\nevaluation of classifier by tf.keras.models.evaluate:')
                 print(classifier.evaluate(x=test_set, verbose=1, return_dict=True))
                 print("\nlog_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
-                                                               y_predictions_raw, eps=1e-15))
-                print('number of classes:', test_set.num_classes, '\n')
+                                                               y_predictions_raw, labels=target_names, eps=1e-15))
+                print('number of classes:', len(test_set.class_indices), '\n')
                 confusion_matrix_tf = tf.math.confusion_matrix(labels=test_set.classes,
                                                                predictions=y_predictions)
                 print(confusion_matrix_tf)

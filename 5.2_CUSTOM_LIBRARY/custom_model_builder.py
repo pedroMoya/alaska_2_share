@@ -37,11 +37,19 @@ logger.addHandler(logHandler)
 
 # load custom libraries
 sys.path.insert(1, local_submodule_settings['custom_library_path'])
-from customized_metrics import customized_metrics_auc_roc
 from model_analyzer import model_structure
 from custom_alternative_training import alternative_training
 from core_alternative_training import core_alternative_training
+
+
 # class definitions
+
+
+class customized_metrics_bacc(metrics.Metric):
+    @tf.function
+    def call(self, y_true_local, y_pred_local, fp=metrics.FalsePositives(), fn=metrics.FalseNegatives(),
+             tp=metrics.TruePositives(), tn=metrics.TrueNegatives()):
+        return 0.5 * tn / (tn + fn) + (tp / (tp + fp))
 
 
 class customized_loss(losses.Loss):
@@ -148,6 +156,8 @@ class model_classifier_:
                 losses_list.append(customized_loss())
             if 'customized_loss_auc_roc' in union_settings_losses:
                 losses_list.append(customized_loss_auc_roc())
+            if "Huber" in union_settings_losses:
+                losses_list.append(losses.Huber())
             metrics_list = []
             metric1 = local_hyperparameters['metrics1']
             metric2 = local_hyperparameters['metrics2']
@@ -299,12 +309,15 @@ class model_classifier_:
                     if 'excite' in layer.name:
                         layer.trainable = True
                     if 'top_conv' in layer.name:
-                        layer.trainable = True
+                        layer.trainable = False
                     if 'block7b_project_conv' in layer.name:
                         layer.trainable = False
 
-                # log(pos/neg) = -0.477121254719
-                bias_initializer = tf.keras.initializers.Constant(local_hyperparameters['bias_initializer'])
+                if local_settings['nof_methods'] == 2:
+                    # if two classes, log(pos/neg) = -0.477121254719
+                    bias_initializer = tf.keras.initializers.Constant(local_hyperparameters['bias_initializer'])
+                else:
+                    bias_initializer = tf.keras.initializers.Constant(0)
 
                 effnb2_model = models.Sequential()
                 effnb2_model.add(classifier_)

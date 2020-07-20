@@ -58,7 +58,7 @@ logger.addHandler(logHandler)
 
 
 def image_normalizer(local_image_rgb):
-    custom_image_normalizer_instance = lsbit_custom_image_normalizer()
+    custom_image_normalizer_instance = custom_image_normalizer()
     return custom_image_normalizer_instance.normalize(local_image_rgb)
 
 
@@ -146,6 +146,7 @@ def train():
                         dtype=str, names=column_names, header=None)
 
         train_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
+                                                               preprocessing_function=image_normalizer,
                                                                validation_split=validation_split)
         train_generator = train_datagen.flow_from_dataframe(dataframe=metadata_train_images,
                                                             directory=None,
@@ -159,8 +160,10 @@ def train():
                                                             subset='training')
         print('labels and indices of train_generator')
         print(train_generator.class_indices)
-        validation_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
-                                                                    validation_split=validation_split)
+        validation_datagen = \
+            preprocessing.image.ImageDataGenerator(rescale=None,
+                                                   preprocessing_function=image_normalizer,
+                                                   validation_split=validation_split)
         validation_generator = validation_datagen.flow_from_dataframe(dataframe=metadata_train_images,
                                                                       directory=None,
                                                                       x_col=x_col,
@@ -205,14 +208,14 @@ def train():
             class_weight = None
 
         # training model
-        model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
-                                                       steps_per_epoch=train_generator.samples // batch_size,
-                                                       callbacks=callbacks, shuffle=True, workers=workers,
-                                                       class_weight=class_weight,
-                                                       validation_data=validation_generator,
-                                                       validation_freq=validation_freq,
-                                                       validation_steps=validation_generator.samples // batch_size,
-                                                       use_multiprocessing=False)
+        model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+                                             steps_per_epoch=train_generator.samples // batch_size,
+                                             callbacks=callbacks, shuffle=True, workers=workers,
+                                             class_weight=class_weight,
+                                             validation_data=validation_generator,
+                                             validation_freq=validation_freq,
+                                             validation_steps=validation_generator.samples // batch_size,
+                                             use_multiprocessing=False)
 
         # save weights (model was saved previously at model build and compile in h5 and json formats)
         if local_script_settings['use_efficientNetB2'] == "True":

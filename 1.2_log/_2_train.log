@@ -9348,3 +9348,267 @@ Traceback (most recent call last):
   File ".\_2_train.py", line 208, in train
     model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
 AttributeError: 'NoneType' object has no attribute 'fit_generator'
+
+19.Jul 2020 16:38:33 correct model training, correct saving of model and weights
+
+19.Jul 2020 16:38:33 settings modified and saved
+
+19.Jul 2020 16:40:09 model training error
+name 'model_classifier_' is not defined
+Traceback (most recent call last):
+  File ".\_2_train.py", line 179, in train
+    classifier_constructor = model_classifier_()
+NameError: name 'model_classifier_' is not defined
+
+19.Jul 2020 17:03:54 model training error
+'NoneType' object has no attribute 'fit_generator'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 208, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit_generator'
+
+19.Jul 2020 17:05:54 model training error
+'NoneType' object has no attribute 'fit_generator'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 208, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit_generator'
+
+19.Jul 2020 17:07:14 model training error
+'NoneType' object has no attribute 'fit_generator'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 208, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit_generator'
+
+19.Jul 2020 17:08:53 model training error
+'NoneType' object has no attribute 'fit_generator'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 208, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+AttributeError: 'NoneType' object has no attribute 'fit_generator'
+
+19.Jul 2020 17:12:12 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:806 train_function  *
+        return step_function(self, iterator)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:796 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1222 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2761 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3132 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:789 run_step  **
+        outputs = model.train_step(data)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        _minimize(self.distribute_strategy, tape, self.optimizer, loss,
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:2743 _minimize
+        gradients = optimizer._aggregate_gradients(zip(gradients,  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\mixed_precision\experimental\loss_scale_optimizer.py:486 _aggregate_gradients
+        return self._optimizer._aggregate_gradients(grads_and_vars)  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:562 _aggregate_gradients
+        filtered_grads_and_vars = _filter_grads(grads_and_vars)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:1273 _filter_grads
+        raise ValueError("No gradients provided for any variable: %s." %
+
+    ValueError: No gradients provided for any variable: ['top_conv/kernel:0', 'dense/kernel:0', 'dense/bias:0'].
+Traceback (most recent call last):
+  File ".\_2_train.py", line 208, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\deprecation.py", line 324, in new_func
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1822, in fit_generator
+    return self.fit(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 829, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 702, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2883, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 3240, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 3092, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 986, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 606, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 973, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:806 train_function  *
+        return step_function(self, iterator)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:796 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1222 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2761 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:3132 _call_for_each_replica
+        return fn(*args, **kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:789 run_step  **
+        outputs = model.train_step(data)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        _minimize(self.distribute_strategy, tape, self.optimizer, loss,
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:2743 _minimize
+        gradients = optimizer._aggregate_gradients(zip(gradients,  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\mixed_precision\experimental\loss_scale_optimizer.py:486 _aggregate_gradients
+        return self._optimizer._aggregate_gradients(grads_and_vars)  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:562 _aggregate_gradients
+        filtered_grads_and_vars = _filter_grads(grads_and_vars)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:1273 _filter_grads
+        raise ValueError("No gradients provided for any variable: %s." %
+
+    ValueError: No gradients provided for any variable: ['top_conv/kernel:0', 'dense/kernel:0', 'dense/bias:0'].
+
+
+19.Jul 2020 18:39:19 correct model training, correct saving of model and weights
+
+19.Jul 2020 18:39:19 settings modified and saved
+
+19.Jul 2020 20:14:30 correct model training, correct saving of model and weights
+
+19.Jul 2020 20:14:30 settings modified and saved
+
+19.Jul 2020 21:03:20 model training error
+ logits and labels must be broadcastable: logits_size=[64,2] labels_size=[64,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:208) ]] [Op:__inference_train_function_89082]
+
+Function call stack:
+train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 208, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\deprecation.py", line 324, in new_func
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1822, in fit_generator
+    return self.fit(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError:  logits and labels must be broadcastable: logits_size=[64,2] labels_size=[64,4]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:208) ]] [Op:__inference_train_function_89082]
+
+Function call stack:
+train_function
+
+
+19.Jul 2020 22:21:38 correct model training, correct saving of model and weights
+
+19.Jul 2020 22:21:38 settings modified and saved
+
+20.Jul 2020 06:06:23 correct model training, correct saving of model and weights
+
+20.Jul 2020 06:06:23 settings modified and saved
+
+20.Jul 2020 09:23:52 correct model training, correct saving of model and weights
+
+20.Jul 2020 09:23:52 settings modified and saved
+
+20.Jul 2020 15:27:00 model training error
+lsbit_custom_image_normalizer() takes no arguments
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\deprecation.py", line 324, in new_func
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1822, in fit_generator
+    return self.fit(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+TypeError: lsbit_custom_image_normalizer() takes no arguments
+
+20.Jul 2020 15:30:32 model training error
+'lsbit_custom_image_normalizer' object is not callable
+Traceback (most recent call last):
+  File ".\_2_train.py", line 211, in train
+    model_train_history = classifier.fit_generator(train_generator, epochs=epochs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\deprecation.py", line 324, in new_func
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1822, in fit_generator
+    return self.fit(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+TypeError: 'lsbit_custom_image_normalizer' object is not callable
+
+20.Jul 2020 15:33:13 model training error
+normalize() missing 1 required positional argument: 'local_image_rgb'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=lsbit_normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image_rgb'
+
+20.Jul 2020 15:33:30 model training error
+normalize() missing 1 required positional argument: 'local_image_rgb'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=lsbit_normalizer.normalize(),
+TypeError: normalize() missing 1 required positional argument: 'local_image_rgb'
+
+20.Jul 2020 15:36:27 model training error
+image_normalizer() missing 1 required positional argument: 'local_image_rgb'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 149, in train
+    preprocessing_function=image_normalizer(),
+TypeError: image_normalizer() missing 1 required positional argument: 'local_image_rgb'
+
+20.Jul 2020 17:48:42 correct model training, correct saving of model and weights
+
+20.Jul 2020 17:48:42 settings modified and saved

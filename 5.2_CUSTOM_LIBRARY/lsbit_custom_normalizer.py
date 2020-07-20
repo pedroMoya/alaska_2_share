@@ -15,6 +15,8 @@ class lsbit_custom_image_normalizer():
         # * 255 if using EfficientNetB2
         channel_y_lsbit = np.bitwise_and(channel_y.astype(np.int32), 1) * 255
         local_image_rgb[:, :, 2: 3] = channel_y_lsbit
+        local_image_rgb[:, :, 1: 2] = np.abs(np.add(local_image_rgb[:, :, 1: 2], channel_y_lsbit))
+        local_image_rgb[:, :, 0: 1] = np.abs(np.add(local_image_rgb[:, :, 0: 1], channel_y_lsbit))
         # local_max = np.amax(channel_y, axis=(0, 1))
         # local_min = np.amin(channel_y, axis=(0, 1))
         # local_denom_diff = np.add(local_max, -local_min)

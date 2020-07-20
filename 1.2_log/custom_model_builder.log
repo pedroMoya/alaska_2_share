@@ -1757,3 +1757,39 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\initializers\__init__.py", line 161, in get
     raise ValueError('Could not interpret initializer identifier: ' +
 ValueError: Could not interpret initializer identifier: -0.477121254719
+Can't instantiate abstract class customized_metrics_bacc with abstract methods result, update_state
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 165, in build_and_compile
+    metrics_list.append(customized_metrics_bacc())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py", line 163, in __new__
+    obj = super(Metric, cls).__new__(cls)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\version_utils.py", line 66, in __new__
+    return super(LayerVersionSelector, cls).__new__(cls)
+TypeError: Can't instantiate abstract class customized_metrics_bacc with abstract methods result, update_state
+'property' object is not iterable
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 322, in build_and_compile
+    effnb2_model.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 538, in compile
+    self._validate_compile(optimizer, metrics, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2525, in _validate_compile
+    for v in getattr(metric, 'variables', []):
+TypeError: 'property' object is not iterable
+Can't instantiate abstract class customized_metrics_bacc with abstract methods result, update_state
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 172, in build_and_compile
+    metrics_list.append(customized_metrics_bacc())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py", line 163, in __new__
+    obj = super(Metric, cls).__new__(cls)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\version_utils.py", line 66, in __new__
+    return super(LayerVersionSelector, cls).__new__(cls)
+TypeError: Can't instantiate abstract class customized_metrics_bacc with abstract methods result, update_state
+Can't instantiate abstract class customized_metrics_bacc with abstract methods result, update_state
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 172, in build_and_compile
+    metrics_list.append([customized_metrics_bacc()])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py", line 163, in __new__
+    obj = super(Metric, cls).__new__(cls)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\version_utils.py", line 66, in __new__
+    return super(LayerVersionSelector, cls).__new__(cls)
+TypeError: Can't instantiate abstract class customized_metrics_bacc with abstract methods result, update_state

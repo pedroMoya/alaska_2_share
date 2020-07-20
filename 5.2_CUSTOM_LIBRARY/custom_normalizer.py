@@ -7,9 +7,8 @@ import cv2
 class custom_image_normalizer():
 
     def normalize(self, local_image_rgb):
-        local_max = np.amax(local_image_rgb, axis=(0, 1))
-        local_min = np.amin(local_image_rgb, axis=(0, 1))
-        local_denom_diff = np.add(local_max, -local_min)
-        local_denom_diff[local_denom_diff == 0] = 1
-        local_num_diff = np.add(local_image_rgb, -local_min)
-        return np.divide(local_num_diff, local_denom_diff)
+        local_image_rgb = cv2.cvtColor(local_image_rgb, cv2.COLOR_RGB2YCR_CB)
+        channel_y = local_image_rgb[:, :, 0: 1]
+        local_image_rgb[:, :, 1: 2] = channel_y
+        local_image_rgb[:, :, 2: 3] = channel_y
+        return local_image_rgb

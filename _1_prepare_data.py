@@ -106,36 +106,38 @@ def prepare():
                 # train_data_path_template = local_script_settings['raw_data_path']
 
                 # K fold disaggregation
+                nof_training_samples_by_group = local_script_settings['nof_training_samples_by_group']
                 k_fold_instance = k_fold_builder()
-                group = np.int(k_fold_instance.assign(id_number, nof_groups))
+                group = np.int(k_fold_instance.assign(id_number, nof_groups,nof_training_samples_by_group))
 
                 # detecting the steganographic-method by folder
                 if 'Cover' in image_path:
-                    method = 0
+                    method = '0'
                     # train_data_path = ''.join([train_data_path_template, 'method_0_'])
                 elif 'JMiPOD' in image_path:
-                    method = 1
+                    method = '1'
                     # train_data_path = ''.join([train_data_path_template, 'method_1_'])
                 elif 'JUNIWARD' in image_path:
-                    method = 1
+                    method = '2'
                     # train_data_path = ''.join([train_data_path_template, 'method_2_'])
                 elif 'UERD' in image_path:
-                    method = 1
+                    method = '3'
                     # train_data_path = ''.join([train_data_path_template, 'method_3_'])
                 else:
                     print('steganographic-method not understood')
                     return False
                     # detecting the compression or quality_factor
-                quality_factor_instance = quality_factor()
-                quality_factor_detected = quality_factor_instance.detect(image_path)
+                # quality_factor_instance = quality_factor()
+                # quality_factor_detected = quality_factor_instance.detect(image_path)
                 # if local_script_settings('use_quality_factor_for_disaggregation') == 'True':
                 #     # this folders will need to be created (not currently in use)
                 #     train_data_path = ''.join([train_data_path, 'quality_f_', quality_factor_detected, '_'])
                 # storing the file in the correspondent folder
                 train_data_path_filename = image_path
+                method_group = ''.join([method, '_', str(group)])
                 # os.makedirs(os.path.dirname(train_data_path_filename), exist_ok=True)
                 # shutil.copyfile(image_path, train_data_path_filename)
-                training_metadata.append([id_number, method, quality_factor_detected, group, filename,
+                training_metadata.append([id_number, method_group, group, filename,
                                           train_data_path_filename])
                 id_number += 1
             # save clean metadata source for use in subsequent training

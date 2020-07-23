@@ -177,7 +177,6 @@ def evaluate():
                 input_shape_x = model_hyperparameters['input_shape_x']
                 test_datagen = \
                     preprocessing.image.ImageDataGenerator(rescale=None,
-                                                           preprocessing_function=image_normalizer,
                                                            validation_split=0.0010)
                 column_names = ['id_number', 'method', 'quality_factor', 'group', 'filename', 'filepath']
                 x_col = 'filepath'
@@ -202,7 +201,8 @@ def evaluate():
                 print('Confusion Matrix for all categories')
                 print(confusion_matrix(test_set.classes, y_predictions))
                 print('Classification Report')
-                target_names = ['0', '1', '2', '3']
+                target_names = ['0_0', '0_1', '0_2', '0_3', '1_0', '1_1', '1_2', '1_3',
+                                '2_0', '2_1', '2_2', '2_3', '3_0', '3_1', '3_2', '3_3']
                 # print(classification_report(test_set.classes, y_predictions, labels=target_names))
                 print('\nevaluation of classifier by tf.keras.models.evaluate:')
                 print(classifier.evaluate(x=test_set, verbose=1, return_dict=True))

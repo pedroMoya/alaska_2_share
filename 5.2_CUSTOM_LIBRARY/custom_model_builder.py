@@ -309,9 +309,9 @@ class model_classifier_:
                     if 'excite' in layer.name:
                         layer.trainable = True
                     if 'top_conv' in layer.name:
-                        layer.trainable = False
+                        layer.trainable = True
                     if 'block7b_project_conv' in layer.name:
-                        layer.trainable = False
+                        layer.trainable = True
 
                 if local_settings['nof_methods'] == 2:
                     # if two classes, log(pos/neg) = -0.477121254719

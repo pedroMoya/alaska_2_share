@@ -36,10 +36,14 @@ tf.random.set_seed(2)
 # classes definitions
 class k_fold_builder:
 
-    def assign(self, local_id, local_nof_groups):
+    def assign(self, local_id, local_nof_groups, local_nof_training_samples_by_group):
         try:
-            # if more complex disaggregation will be need, here there are the submodule
-            local_group = np.remainder(local_id, local_nof_groups)
+            # none base_image (original or with hidden message) is repeated (or not) in the same group
+            # if more complex disaggregation will be need, here there are the submodule..
+            # local_group = np.remainder(local_id, local_nof_groups)   # <- yields all base_image in same group
+            local_group = np.remainder(local_id + np.floor(np.divide(local_id, local_nof_training_samples_by_group)),
+                                       local_nof_groups)  # <- yields none base_image in same group
+
         except Exception as e1:
             print('Error at matched_images K_fold_group dataset creation submodule')
             print(e1)

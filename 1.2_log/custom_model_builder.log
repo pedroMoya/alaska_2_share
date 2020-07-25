@@ -1793,3 +1793,49 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\version_utils.py", line 66, in __new__
     return super(LayerVersionSelector, cls).__new__(cls)
 TypeError: Can't instantiate abstract class customized_metrics_bacc with abstract methods result, update_state
+LossScaleOptimizer does not support wrapping optimizers with a clipnorm. Optimizer <tensorflow.python.keras.optimizer_v2.adam.Adam object at 0x000002B0CEE815E0> has clipnorm 1.0
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 137, in build_and_compile
+    optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 205, in enable_mixed_precision_graph_rewrite
+    return _enable_mixed_precision_graph_rewrite_base(opt, loss_scale,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 345, in _enable_mixed_precision_graph_rewrite_base
+    opt = _wrap_optimizer(opt, loss_scale, use_v1_behavior=use_v1_behavior)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 54, in _wrap_optimizer
+    return wrapper_cls(opt, loss_scale)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\mixed_precision\experimental\loss_scale_optimizer.py", line 252, in __init__
+    raise ValueError('LossScaleOptimizer does not support wrapping '
+ValueError: LossScaleOptimizer does not support wrapping optimizers with a clipnorm. Optimizer <tensorflow.python.keras.optimizer_v2.adam.Adam object at 0x000002B0CEE815E0> has clipnorm 1.0
+LossScaleOptimizer does not support wrapping optimizers with a clipvalue. Optimizer <tensorflow.python.keras.optimizer_v2.adam.Adam object at 0x000001DA40F105E0> has clipvalue 5.0
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 137, in build_and_compile
+    optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 205, in enable_mixed_precision_graph_rewrite
+    return _enable_mixed_precision_graph_rewrite_base(opt, loss_scale,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 345, in _enable_mixed_precision_graph_rewrite_base
+    opt = _wrap_optimizer(opt, loss_scale, use_v1_behavior=use_v1_behavior)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 54, in _wrap_optimizer
+    return wrapper_cls(opt, loss_scale)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\mixed_precision\experimental\loss_scale_optimizer.py", line 257, in __init__
+    raise ValueError('LossScaleOptimizer does not support wrapping '
+ValueError: LossScaleOptimizer does not support wrapping optimizers with a clipvalue. Optimizer <tensorflow.python.keras.optimizer_v2.adam.Adam object at 0x000001DA40F105E0> has clipvalue 5.0
+Can't instantiate abstract class OptimizerV2 with abstract methods get_config
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 144, in build_and_compile
+    optimizer_function = customized_optimizer(optimizer_function, clipnorm)
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 49, in customized_optimizer
+    return optimizers.Optimizer(opt_func, clipnorm=clip_norm)
+TypeError: Can't instantiate abstract class OptimizerV2 with abstract methods get_config
+LossScaleOptimizer does not support wrapping optimizers with a clipnorm. Optimizer <tensorflow.python.keras.optimizer_v2.adam.Adam object at 0x0000012E7BBF05E0> has clipnorm 1.0
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 140, in build_and_compile
+    optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 205, in enable_mixed_precision_graph_rewrite
+    return _enable_mixed_precision_graph_rewrite_base(opt, loss_scale,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 345, in _enable_mixed_precision_graph_rewrite_base
+    opt = _wrap_optimizer(opt, loss_scale, use_v1_behavior=use_v1_behavior)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 54, in _wrap_optimizer
+    return wrapper_cls(opt, loss_scale)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\mixed_precision\experimental\loss_scale_optimizer.py", line 252, in __init__
+    raise ValueError('LossScaleOptimizer does not support wrapping '
+ValueError: LossScaleOptimizer does not support wrapping optimizers with a clipnorm. Optimizer <tensorflow.python.keras.optimizer_v2.adam.Adam object at 0x0000012E7BBF05E0> has clipnorm 1.0

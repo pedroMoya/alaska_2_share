@@ -42,6 +42,9 @@ from custom_alternative_training import alternative_training
 from core_alternative_training import core_alternative_training
 
 
+# function definitions
+
+
 # class definitions
 
 
@@ -93,14 +96,13 @@ class model_classifier_:
             units_layer_2 = local_hyperparameters['units_layer_2']
             units_layer_3 = local_hyperparameters['units_layer_3']
             units_layer_4 = local_hyperparameters['units_layer_4']
-            units_last_layer_con2d_efficientnetb2 = local_hyperparameters['units_layer_last_conv2d_efficientnetb2']
+            units_dense_layer_4 = local_hyperparameters['units_dense_layer_4']
             units_final_layer = local_hyperparameters['units_final_layer']
             activation_1 = local_hyperparameters['activation_1']
             activation_2 = local_hyperparameters['activation_2']
             activation_3 = local_hyperparameters['activation_3']
             activation_4 = local_hyperparameters['activation_4']
-            activation_last_layer_con2d_efficientnetb2 = \
-                local_hyperparameters['activation_last_layer_con2d_efficientnetb2']
+            activation_dense_layer_4 = local_hyperparameters['activation_dense_layer_4']
             activation_final_layer = local_hyperparameters['activation_final_layer']
             dropout_layer_1 = local_hyperparameters['dropout_layer_1']
             dropout_layer_2 = local_hyperparameters['dropout_layer_2']
@@ -131,7 +133,7 @@ class model_classifier_:
             optimizer_function = local_hyperparameters['optimizer']
             optimizer_learning_rate = local_hyperparameters['learning_rate']
             if optimizer_function == 'adam':
-                optimizer_function = optimizers.Adam(optimizer_learning_rate)
+                optimizer_function = optimizers.Adam(learning_rate=optimizer_learning_rate)
                 optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
             elif optimizer_function == 'ftrl':
                 optimizer_function = optimizers.Ftrl(optimizer_learning_rate)
@@ -139,10 +141,10 @@ class model_classifier_:
                 optimizer_function = optimizers.SGD(optimizer_learning_rate)
             elif optimizer_function == 'rmsp':
                 optimizer_function = optimizers.RMSprop(lr=2e-5)
-            losses_list = []
             loss_1 = local_hyperparameters['loss_1']
             loss_2 = local_hyperparameters['loss_2']
             loss_3 = local_hyperparameters['loss_3']
+            losses_list = []
             union_settings_losses = [loss_1, loss_2, loss_3]
             if 'CategoricalCrossentropy' in union_settings_losses:
                 losses_list.append(losses.CategoricalCrossentropy())
@@ -313,16 +315,22 @@ class model_classifier_:
                     if 'block7b_project_conv' in layer.name:
                         layer.trainable = True
 
-                if local_settings['nof_methods'] == 2:
+                if local_settings['nof_classes'] == 2:
                     # if two classes, log(pos/neg) = -0.477121254719
                     bias_initializer = tf.keras.initializers.Constant(local_hyperparameters['bias_initializer'])
                 else:
+                    # assuming balanced classes...
                     bias_initializer = tf.keras.initializers.Constant(0)
 
                 effnb2_model = models.Sequential()
                 effnb2_model.add(classifier_)
                 effnb2_model.add(layers.GlobalMaxPool2D())
                 effnb2_model.add(layers.Dropout(dropout_dense_layer_4))
+                # effnb2_model.add(layers.Dense(units=units_dense_layer_4, activation=activation_dense_layer_4,
+                #                  kernel_initializer=tf.keras.initializers.VarianceScaling(scale=0.333333333,
+                #                                                                           mode='fan_out',
+                #                                                                           distribution='uniform'),
+                #                               bias_initializer=bias_initializer))
                 effnb2_model.add(layers.Dense(units_final_layer, activation=activation_final_layer,
                                  kernel_initializer=tf.keras.initializers.VarianceScaling(scale=0.333333333,
                                                                                           mode='fan_out',

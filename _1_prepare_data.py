@@ -112,19 +112,19 @@ def prepare():
 
                 # detecting the steganographic-method by folder
                 if 'Cover' in image_path:
-                    method = '0'
+                    id_class = '0'
                     # train_data_path = ''.join([train_data_path_template, 'method_0_'])
                 elif 'JMiPOD' in image_path:
-                    method = '1'
+                    id_class = '1'
                     # train_data_path = ''.join([train_data_path_template, 'method_1_'])
                 elif 'JUNIWARD' in image_path:
-                    method = '2'
+                    id_class = '2'
                     # train_data_path = ''.join([train_data_path_template, 'method_2_'])
                 elif 'UERD' in image_path:
-                    method = '3'
+                    id_class = '3'
                     # train_data_path = ''.join([train_data_path_template, 'method_3_'])
                 else:
-                    print('steganographic-method not understood')
+                    print('class not understood')
                     return False
                     # detecting the compression or quality_factor
                 # quality_factor_instance = quality_factor()
@@ -134,10 +134,9 @@ def prepare():
                 #     train_data_path = ''.join([train_data_path, 'quality_f_', quality_factor_detected, '_'])
                 # storing the file in the correspondent folder
                 train_data_path_filename = image_path
-                method_group = ''.join([method, '_', str(group)])
                 # os.makedirs(os.path.dirname(train_data_path_filename), exist_ok=True)
                 # shutil.copyfile(image_path, train_data_path_filename)
-                training_metadata.append([id_number, method_group, group, filename,
+                training_metadata.append([id_number, id_class, group, filename,
                                           train_data_path_filename])
                 id_number += 1
             # save clean metadata source for use in subsequent training

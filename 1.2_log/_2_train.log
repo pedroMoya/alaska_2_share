@@ -9794,3 +9794,232 @@ tensorflow.python.framework.errors_impl.InvalidArgumentError:  logits and labels
 Function call stack:
 train_function
 
+
+23.Jul 2020 00:25:12 correct model training, correct saving of model and weights
+
+23.Jul 2020 00:25:12 settings modified and saved
+
+23.Jul 2020 10:57:13 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+23.Jul 2020 11:05:49 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+23.Jul 2020 11:16:30 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+23.Jul 2020 11:18:23 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+23.Jul 2020 11:21:47 model training error
+name 'model_classifier_' is not defined
+Traceback (most recent call last):
+  File ".\_2_train.py", line 181, in train
+    classifier_constructor = model_classifier_()
+NameError: name 'model_classifier_' is not defined
+
+24.Jul 2020 01:41:26 correct model training, correct saving of model and weights
+
+24.Jul 2020 01:41:26 settings modified and saved
+
+24.Jul 2020 15:56:38 correct model training, correct saving of model and weights
+
+24.Jul 2020 15:56:38 settings modified and saved
+
+24.Jul 2020 23:40:56 model training error
+zero-length FFT requested
+Traceback (most recent call last):
+  File ".\_2_train.py", line 214, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1049, in fit
+    data_handler = data_adapter.DataHandler(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 1098, in __init__
+    self._adapter = adapter_cls(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 902, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 779, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\data_adapter.py", line 913, in _peek_and_restore
+    return x[0], x
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\iterator.py", line 239, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.standardize(x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 708, in standardize
+    x = self.preprocessing_function(x)
+  File ".\_2_train.py", line 62, in image_normalizer
+    return custom_image_normalizer_instance.normalize(local_image_rgb)
+  File "./5.2_CUSTOM_LIBRARY\custom_normalizer.py", line 14, in normalize
+    local_image_rgb[:, :, 2: 3] = dct(channel_y, 1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\scipy\fftpack\realtransforms.py", line 373, in dct
+    return _pocketfft.dct(x, type, n, axis, norm, overwrite_x)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\scipy\fft\_pocketfft\realtransforms.py", line 46, in _r2r
+    return transform(tmp, type, (axis,), norm, out, workers)
+RuntimeError: zero-length FFT requested
+
+24.Jul 2020 23:46:36 model training error
+ logits and labels must be broadcastable: logits_size=[128,4] labels_size=[128,2]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:214) ]] [Op:__inference_train_function_89126]
+
+Function call stack:
+train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 214, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError:  logits and labels must be broadcastable: logits_size=[128,4] labels_size=[128,2]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:214) ]] [Op:__inference_train_function_89126]
+
+Function call stack:
+train_function
+
+
+24.Jul 2020 23:51:40 model training error
+ logits and labels must be broadcastable: logits_size=[128,4] labels_size=[128,2]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:214) ]] [Op:__inference_train_function_89126]
+
+Function call stack:
+train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 214, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError:  logits and labels must be broadcastable: logits_size=[128,4] labels_size=[128,2]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:214) ]] [Op:__inference_train_function_89126]
+
+Function call stack:
+train_function
+
+
+25.Jul 2020 03:13:17 correct model training, correct saving of model and weights
+
+25.Jul 2020 03:13:17 settings modified and saved
+
+25.Jul 2020 12:04:52 model training error
+ logits and labels must be broadcastable: logits_size=[128,8] labels_size=[128,2]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:214) ]] [Op:__inference_train_function_89126]
+
+Function call stack:
+train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 214, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError:  logits and labels must be broadcastable: logits_size=[128,8] labels_size=[128,2]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:214) ]] [Op:__inference_train_function_89126]
+
+Function call stack:
+train_function
+
+
+25.Jul 2020 12:39:47 model training error
+module 'numpy' has no attribute 'remanider'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 168, in train
+    other_group = np.remanider(group + 1, nof_groups)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\numpy\__init__.py", line 214, in __getattr__
+    raise AttributeError("module {!r} has no attribute "
+AttributeError: module 'numpy' has no attribute 'remanider'
+
+25.Jul 2020 18:09:19 model training error
+ logits and labels must be broadcastable: logits_size=[128,4] labels_size=[128,12]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:214) ]] [Op:__inference_train_function_89126]
+
+Function call stack:
+train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 214, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError:  logits and labels must be broadcastable: logits_size=[128,4] labels_size=[128,12]
+	 [[node categorical_crossentropy/softmax_cross_entropy_with_logits (defined at .\_2_train.py:214) ]] [Op:__inference_train_function_89126]
+
+Function call stack:
+train_function
+

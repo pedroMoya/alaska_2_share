@@ -50,7 +50,7 @@ class select_evaluation_images:
 
     def select_images(self, local_settings, local_model_evaluation_folder):
         try:
-            local_nof_methods = local_settings['nof_methods']
+            local_nof_classes = local_settings['nof_classes']
             local_nof_groups = local_settings['nof_K_fold_groups']
             nof_samples_by_group = local_settings['nof_evaluation_samples_by_group']
             if local_settings['repeat_select_images_for_evaluation'] == "False":
@@ -58,7 +58,7 @@ class select_evaluation_images:
                 return True
             # clean files previously selected
             rng = np.random.default_rng()
-            for method, group in it.product(range(local_nof_methods), range(local_nof_groups)):
+            for method, group in it.product(range(local_nof_classes), range(local_nof_groups)):
                 # clean files previously selected
                 local_dest_subfolder = ''.join([local_model_evaluation_folder, 'method_',
                                                 str(method), '_group_', str(group), '/'])

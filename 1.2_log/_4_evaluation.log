@@ -5526,3 +5526,246 @@ Traceback (most recent call last):
   File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
   File "h5py\h5f.pyx", line 88, in h5py.h5f.open
 OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-22_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+23.Jul 2020 00:25:15 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+23.Jul 2020 10:57:16 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+23.Jul 2020 11:05:52 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+23.Jul 2020 11:16:33 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+23.Jul 2020 11:18:26 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+23.Jul 2020 11:21:51 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-23_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+24.Jul 2020 01:41:29 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+24.Jul 2020 15:56:41 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+24.Jul 2020 23:40:59 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+24.Jul 2020 23:46:39 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+24.Jul 2020 23:51:43 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-24_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+25.Jul 2020 03:13:21 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-25_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-25_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+25.Jul 2020 12:04:55 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-25_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-25_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+25.Jul 2020 12:39:50 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-25_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN___EfficientNetB2_2020-07-25_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+25.Jul 2020 18:09:23 evaluator module error
+Shapes (1408, 4) and (1408, 2) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (1408, 4) and (1408, 2) are incompatible

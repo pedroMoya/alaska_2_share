@@ -113,8 +113,9 @@ def evaluate():
             else:
                 print('error at alternative evaluation')
         else:
+            group = 0
             # open model and weights
-            current_model_name = model_hyperparameters['current_model_name']
+            current_model_name = ''.join([model_hyperparameters['current_model_name'], '_group_', str(group)])
             # model_filepath = ''.join([local_script_settings['models_path'], current_model_name,
             #                          '_custom_classifier_.json'])
             # with open(model_filepath) as local_file:
@@ -169,7 +170,7 @@ def evaluate():
 
             # Outcomes: accuracy - confusion_matrix
             try:
-                nof_methods = local_script_settings['nof_methods']
+                nof_classes = local_script_settings['nof_classes']
                 nof_K_fold_groups = local_script_settings['nof_K_fold_groups']
                 nof_evaluation_samples_by_group = local_script_settings['nof_evaluation_samples_by_group']
                 batch_size = model_hyperparameters['batch_size']
@@ -178,9 +179,9 @@ def evaluate():
                 test_datagen = \
                     preprocessing.image.ImageDataGenerator(rescale=None,
                                                            validation_split=0.0010)
-                column_names = ['id_number', 'method', 'quality_factor', 'group', 'filename', 'filepath']
+                column_names = ['id_number', 'id_class', 'group', 'filename', 'filepath']
                 x_col = 'filepath'
-                y_col = 'method'
+                y_col = 'id_class'
                 metadata_train_images = \
                     pd.read_csv(''.join([local_script_settings['train_data_path'], 'training_metadata.csv']),
                                 dtype=str, names=column_names, header=None)
@@ -216,7 +217,7 @@ def evaluate():
                 # calculating if stenographic method was used or not 0: no_hidden_message 1: hidden_message
                 print('\nadjusting evaluation to ~no-hidden or hidden message in image~ binary classification')
                 print('Confusion Matrix for binary classification')
-                hidden_message_prob = np.sum(y_predictions_raw[:, nof_K_fold_groups: nof_methods * nof_K_fold_groups],
+                hidden_message_prob = np.sum(y_predictions_raw[:, nof_K_fold_groups: nof_classes * nof_K_fold_groups],
                                              axis=1)
                 # no_hidden_message_prob = np.round(np.add(1., -hidden_message_prob))
                 print('prob hidden_message:\n', hidden_message_prob, '\n')

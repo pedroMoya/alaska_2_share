@@ -304,7 +304,7 @@ class model_classifier_:
                 classifier_ = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
                                                                    input_tensor=None, input_shape=None,
                                                                    pooling=None,
-                                                                   classifier_activation='softmax')
+                                                                   classifier_activation=None)
                 # classifier_.trainable = True
                 for layer in classifier_.layers:
                     layer.trainable = False

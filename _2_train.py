@@ -148,8 +148,7 @@ def train():
         metadata_train_images_group = metadata_train_images.loc[metadata_train_images['group'] != str(group)]
         train_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
                                                                vertical_flip=True,
-                                                               horizontal_flip=True,
-                                                               preprocessing_function=image_normalizer)
+                                                               horizontal_flip=True)
         train_generator = train_datagen.flow_from_dataframe(dataframe=metadata_train_images_group,
                                                             directory=None,
                                                             x_col=x_col,
@@ -164,8 +163,7 @@ def train():
         validation_datagen = \
             preprocessing.image.ImageDataGenerator(rescale=None,
                                                    vertical_flip=True,
-                                                   horizontal_flip=True,
-                                                   preprocessing_function=image_normalizer)
+                                                   horizontal_flip=True)
         metadata_validation_images_group = \
             metadata_train_images.loc[metadata_train_images['group'] == str(group)]
         validation_generator = validation_datagen.flow_from_dataframe(dataframe=metadata_validation_images_group,

@@ -302,18 +302,20 @@ class model_classifier_:
                 pretrained_weights = ''.join([local_settings['models_path'],
                                               local_hyperparameters['weights_for_training_efficientnetb2']])
                 classifier_ = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
-                                                                   input_tensor=None, input_shape=None,
+                                                                   input_tensor=None,
+                                                                   input_shape=(input_shape_y,
+                                                                                input_shape_x, nof_channels),
                                                                    pooling=None,
                                                                    classifier_activation=None)
                 # classifier_.trainable = True
                 for layer in classifier_.layers:
-                    layer.trainable = False
-                    if 'excite' in layer.name:
-                        layer.trainable = True
-                    if 'top_conv' in layer.name:
-                        layer.trainable = True
-                    if 'block7b_project_conv' in layer.name:
-                        layer.trainable = True
+                    layer.trainable = True
+                    # if 'excite' in layer.name:
+                    #     layer.trainable = True
+                    # if 'top_conv' in layer.name:
+                    #     layer.trainable = True
+                    # if 'block7b_project_conv' in layer.name:
+                    #     layer.trainable = True
 
                 if local_settings['nof_classes'] == 2:
                     # if two classes, log(pos/neg) = -0.477121254719
@@ -324,19 +326,20 @@ class model_classifier_:
 
                 effnb2_model = models.Sequential()
                 effnb2_model.add(classifier_)
-                effnb2_model.add(layers.GlobalMaxPool2D())
+                effnb2_model.add(layers.GlobalAveragePooling2D())
                 effnb2_model.add(layers.Dropout(dropout_dense_layer_4))
                 # effnb2_model.add(layers.Dense(units=units_dense_layer_4, activation=activation_dense_layer_4,
                 #                  kernel_initializer=tf.keras.initializers.VarianceScaling(scale=0.333333333,
                 #                                                                           mode='fan_out',
                 #                                                                           distribution='uniform'),
                 #                               bias_initializer=bias_initializer))
+                # effnb2_model.add(layers.Dropout(dropout_dense_layer_4))
                 effnb2_model.add(layers.Dense(units_final_layer, activation=activation_final_layer,
                                  kernel_initializer=tf.keras.initializers.VarianceScaling(scale=0.333333333,
                                                                                           mode='fan_out',
                                                                                           distribution='uniform'),
                                               bias_initializer=bias_initializer))
-                effnb2_model.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
+                # effnb2_model.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
                 effnb2_model.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
                 classifier_ = effnb2_model
 

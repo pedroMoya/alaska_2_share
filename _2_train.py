@@ -161,9 +161,7 @@ def train():
         print('labels and indices of train_generator')
         print(train_generator.class_indices)
         validation_datagen = \
-            preprocessing.image.ImageDataGenerator(rescale=None,
-                                                   vertical_flip=True,
-                                                   horizontal_flip=True)
+            preprocessing.image.ImageDataGenerator(rescale=None)
         metadata_validation_images_group = \
             metadata_train_images.loc[metadata_train_images['group'] == str(group)]
         validation_generator = validation_datagen.flow_from_dataframe(dataframe=metadata_validation_images_group,

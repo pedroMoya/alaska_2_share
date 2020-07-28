@@ -339,9 +339,22 @@ class model_classifier_:
                                                                                           mode='fan_out',
                                                                                           distribution='uniform'),
                                               bias_initializer=bias_initializer))
-                # effnb2_model.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
-                effnb2_model.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
                 classifier_ = effnb2_model
+
+                if local_settings['use_local_pretrained_weights_for_retraining'] != 'False':
+                    classifier_.load_weights(''.join([local_settings['models_path'],
+                                                      local_settings['use_local_pretrained_weights_for_retraining']]))
+                    for layer in classifier_.layers[0].layers:
+                        layer.trainable = False
+                        if 'excite' in layer.name:
+                            layer.trainable = True
+                        if 'top_conv' in layer.name:
+                            layer.trainable = True
+                        if 'block7b_project_conv' in layer.name:
+                            layer.trainable = True
+
+                # effnb2_model.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
+                classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
 
                 if local_settings['alternative_training_generator'] == 'True':
                     alternative_training_instance = alternative_training()

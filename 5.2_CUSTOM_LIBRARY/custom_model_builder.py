@@ -350,7 +350,7 @@ class model_classifier_:
                             layer.trainable = True
                         if 'top_conv' in layer.name:
                             layer.trainable = True
-                        if 'project_conv' in layer.name:
+                        if 'block7b_project_conv' in layer.name:
                             layer.trainable = True
 
                 # classifier_.build(input_shape=(input_shape_y, input_shape_x, nof_channels))

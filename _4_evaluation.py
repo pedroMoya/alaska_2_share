@@ -171,7 +171,7 @@ def evaluate():
             # Outcomes: accuracy - confusion_matrix
             try:
                 nof_classes = local_script_settings['nof_classes']
-                nof_K_fold_groups = local_script_settings['nof_K_fold_groups']
+                nof_group_for_evaluation = local_script_settings['nof_group_for_evaluation']
                 nof_evaluation_samples_by_group = local_script_settings['nof_evaluation_samples_by_group']
                 batch_size = model_hyperparameters['batch_size']
                 input_shape_y = model_hyperparameters['input_shape_y']
@@ -216,12 +216,13 @@ def evaluate():
                 # calculating if stenographic method was used or not 0: no_hidden_message 1: hidden_message
                 print('\nadjusting evaluation to ~no-hidden or hidden message in image~ binary classification')
                 print('Confusion Matrix for binary classification')
-                hidden_message_prob = np.sum(y_predictions_raw[:, nof_K_fold_groups: nof_classes * nof_K_fold_groups],
+                hidden_message_prob = np.sum(y_predictions_raw[:,
+                                             nof_group_for_evaluation: nof_classes * nof_group_for_evaluation],
                                              axis=1)
                 # no_hidden_message_prob = np.round(np.add(1., -hidden_message_prob))
                 print('prob hidden_message:\n', hidden_message_prob, '\n')
                 labels = np.zeros(shape=hidden_message_prob.shape, dtype=np.dtype('int32'))
-                labels[nof_evaluation_samples_by_group * nof_K_fold_groups:] = 1
+                labels[nof_evaluation_samples_by_group * nof_group_for_evaluation:] = 1
                 binary_predictions = np.round(hidden_message_prob).astype('int')
                 print('\nground_truth:', labels)
                 print('\nconfusion_matrix_tf_binary')

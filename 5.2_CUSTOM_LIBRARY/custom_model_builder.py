@@ -350,10 +350,10 @@ class model_classifier_:
                             layer.trainable = True
                         if 'top_conv' in layer.name:
                             layer.trainable = True
-                        if 'block7b_project_conv' in layer.name:
+                        if 'project_conv' in layer.name:
                             layer.trainable = True
 
-                # effnb2_model.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
+                # classifier_.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
                 classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
 
                 if local_settings['alternative_training_generator'] == 'True':

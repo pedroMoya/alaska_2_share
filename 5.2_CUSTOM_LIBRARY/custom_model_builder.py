@@ -58,7 +58,7 @@ class customized_metrics_bacc(metrics.Metric):
 class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        softmax_diff = tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        softmax_diff = tf.math.reduce_sum(tf.math.abs(tf.math.add(local_true, -local_pred)))
         return softmax_diff
 
 
@@ -155,7 +155,7 @@ class model_classifier_:
             if 'LogCosh' in union_settings_losses:
                 losses_list.append(losses.LogCosh)
             if 'customized_loss_function' in union_settings_losses:
-                losses_list.append(customized_loss())
+                losses_list.append(customized_loss2())
             if 'customized_loss_auc_roc' in union_settings_losses:
                 losses_list.append(customized_loss_auc_roc())
             if "Huber" in union_settings_losses:
@@ -350,8 +350,8 @@ class model_classifier_:
                             layer.trainable = True
                         if 'top_conv' in layer.name:
                             layer.trainable = True
-                        if 'block7b_project_conv' in layer.name:
-                            layer.trainable = True
+                        # if 'block7b_project_conv' in layer.name:
+                        #     layer.trainable = True
 
                 # classifier_.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
                 classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)

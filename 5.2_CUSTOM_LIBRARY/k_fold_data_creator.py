@@ -36,7 +36,7 @@ tf.random.set_seed(2)
 # classes definitions
 class k_fold_builder:
 
-    def assign(self, local_id, local_nof_groups, local_nof_training_samples_by_group):
+    def assign(self, local_id, local_nof_groups):
         try:
             # none base_image (original or with hidden message) is repeated (or not) in the same group
             # if more complex disaggregation will be need, here there are the submodule..

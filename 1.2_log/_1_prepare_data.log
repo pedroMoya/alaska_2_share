@@ -11897,3 +11897,151 @@ _prepare_data module start
 30.Jul 2020 00:47:00 cleaning raw datasets
 
 30.Jul 2020 00:47:00 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 09:58:18 raw datasets already cleaned
+
+30.Jul 2020 09:58:18 cleaning raw datasets
+
+30.Jul 2020 09:58:18 data pre-processing error
+index 5 is out of bounds for axis 0 with size 5
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 113, in prepare
+    group = group_selected[index_image]
+IndexError: index 5 is out of bounds for axis 0 with size 5
+_prepare_data module start
+
+30.Jul 2020 09:59:25 raw datasets already cleaned
+
+30.Jul 2020 09:59:25 cleaning raw datasets
+
+30.Jul 2020 09:59:25 data pre-processing error
+Cannot take a larger sample than population when replace is False
+Traceback (most recent call last):
+  File ".\_1_prepare_data.py", line 104, in prepare
+    group_selected = rng.choice(nof_groups, size=nof_images, replace=False)
+  File "_generator.pyx", line 668, in numpy.random._generator.Generator.choice
+ValueError: Cannot take a larger sample than population when replace is False
+_prepare_data module start
+
+30.Jul 2020 10:00:29 raw datasets already cleaned
+
+30.Jul 2020 10:00:29 cleaning raw datasets
+
+30.Jul 2020 10:00:32 successful saved training data and correspondent metadata
+
+30.Jul 2020 10:00:32 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 10:10:09 raw datasets already cleaned
+
+30.Jul 2020 10:10:09 cleaning raw datasets
+
+30.Jul 2020 10:10:09 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 10:34:12 raw datasets already cleaned
+
+30.Jul 2020 10:34:12 cleaning raw datasets
+
+30.Jul 2020 10:34:12 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 10:39:36 raw datasets already cleaned
+
+30.Jul 2020 10:39:36 cleaning raw datasets
+
+30.Jul 2020 10:39:36 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 10:45:26 raw datasets already cleaned
+
+30.Jul 2020 10:45:26 cleaning raw datasets
+
+30.Jul 2020 10:45:26 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 10:48:23 raw datasets already cleaned
+
+30.Jul 2020 10:48:23 cleaning raw datasets
+
+30.Jul 2020 10:48:23 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 11:14:23 raw datasets already cleaned
+
+30.Jul 2020 11:14:23 cleaning raw datasets
+
+30.Jul 2020 11:14:23 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 11:26:55 raw datasets already cleaned
+
+30.Jul 2020 11:26:55 cleaning raw datasets
+
+30.Jul 2020 11:26:55 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 11:36:01 raw datasets already cleaned
+
+30.Jul 2020 11:36:01 cleaning raw datasets
+
+30.Jul 2020 11:36:01 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 14:45:00 raw datasets already cleaned
+
+30.Jul 2020 14:45:00 cleaning raw datasets
+
+30.Jul 2020 14:45:00 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 18:01:39 raw datasets already cleaned
+
+30.Jul 2020 18:01:39 cleaning raw datasets
+
+30.Jul 2020 18:01:39 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 18:01:52 raw datasets already cleaned
+
+30.Jul 2020 18:01:52 cleaning raw datasets
+
+30.Jul 2020 18:01:52 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 18:38:00 raw datasets already cleaned
+
+30.Jul 2020 18:38:00 cleaning raw datasets
+
+30.Jul 2020 18:38:00 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 22:46:02 raw datasets already cleaned
+
+30.Jul 2020 22:46:02 cleaning raw datasets
+
+30.Jul 2020 22:46:02 settings modified and saved
+_prepare_data module start
+
+30.Jul 2020 22:48:41 raw datasets already cleaned
+
+30.Jul 2020 22:48:41 cleaning raw datasets
+
+30.Jul 2020 22:48:41 settings modified and saved
+_prepare_data module start
+
+31.Jul 2020 00:03:59 raw datasets already cleaned
+
+31.Jul 2020 00:03:59 cleaning raw datasets
+
+31.Jul 2020 00:03:59 settings modified and saved
+_prepare_data module start
+
+31.Jul 2020 18:25:04 raw datasets already cleaned
+
+31.Jul 2020 18:25:04 cleaning raw datasets
+
+31.Jul 2020 18:25:07 successful saved training data and correspondent metadata
+
+31.Jul 2020 18:25:07 settings modified and saved

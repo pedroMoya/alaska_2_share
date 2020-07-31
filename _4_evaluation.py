@@ -54,8 +54,8 @@ logger.addHandler(logHandler)
 class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        softmax_diff = tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
-        return softmax_diff
+        log_softmax_diff = tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        return log_softmax_diff
 
 
 class customized_loss_auc_roc(losses.Loss):

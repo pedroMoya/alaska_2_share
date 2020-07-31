@@ -58,8 +58,8 @@ class customized_metrics_bacc(metrics.Metric):
 class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        softmax_diff = tf.math.reduce_sum(tf.math.abs(tf.math.add(local_true, -local_pred)))
-        return softmax_diff
+        log_softmax_diff = tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        return log_softmax_diff
 
 
 class customized_loss_auc_roc(losses.Loss):
@@ -301,7 +301,7 @@ class model_classifier_:
                 type_of_model = '_EfficientNetB2'
                 pretrained_weights = ''.join([local_settings['models_path'],
                                               local_hyperparameters['weights_for_training_efficientnetb2']])
-                classifier_ = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
+                classifier_ = tf.keras.applications.EfficientNetB2(include_top=False, weights=None,
                                                                    input_tensor=None,
                                                                    input_shape=(input_shape_y,
                                                                                 input_shape_x, nof_channels),
@@ -345,11 +345,9 @@ class model_classifier_:
                     classifier_.load_weights(''.join([local_settings['models_path'],
                                                       local_settings['use_local_pretrained_weights_for_retraining']]))
                     for layer in classifier_.layers[0].layers:
-                        layer.trainable = False
-                        if 'excite' in layer.name:
-                            layer.trainable = True
-                        if 'top_conv' in layer.name:
-                            layer.trainable = True
+                        layer.trainable = True
+                        # if 'top_conv' in layer.name:
+                        #     layer.trainable = True
                         # if 'block7b_project_conv' in layer.name:
                         #     layer.trainable = True
 

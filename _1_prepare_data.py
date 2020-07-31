@@ -98,17 +98,19 @@ def prepare():
         # format of training_metadata: [id_number, method, quality_factor, group, filename, filepath]
         id_number = 0
         nof_groups = local_script_settings['nof_K_fold_groups']
-        nof_training_samples_by_group = local_script_settings['nof_training_samples_by_group']
         training_metadata = []
         print('first pre-processing step: disaggregation')
+        rng = np.random.default_rng()
+        group_selected = rng.choice(nof_groups, size=nof_images)
         if local_script_settings['disaggregation_done'] == "False":
-            for image_path in images_loc:
+            for image_path, index_image in zip(images_loc, range(nof_images)):
                 filename = image_path.split('/')[-1]
                 # train_data_path_template = local_script_settings['raw_data_path']
 
                 # K fold disaggregation
-                k_fold_instance = k_fold_builder()
-                group = np.int(k_fold_instance.assign(id_number, nof_groups, nof_training_samples_by_group))
+                # k_fold_instance = k_fold_builder()
+                # group = np.int(k_fold_instance.assign(id_number, nof_groups))
+                group = group_selected[index_image]
 
                 # detecting the steganographic-method by folder
                 if 'Cover' in image_path:

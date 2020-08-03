@@ -120,10 +120,10 @@ def prepare():
                     id_class = '1'
                     # train_data_path = ''.join([train_data_path_template, 'method_1_'])
                 elif 'JUNIWARD' in image_path:
-                    id_class = '2'
+                    id_class = '1'
                     # train_data_path = ''.join([train_data_path_template, 'method_2_'])
                 elif 'UERD' in image_path:
-                    id_class = '3'
+                    id_class = '1'
                     # train_data_path = ''.join([train_data_path_template, 'method_3_'])
                 else:
                     print('class not understood')

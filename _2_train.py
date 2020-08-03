@@ -172,7 +172,7 @@ def train():
                                                                       batch_size=batch_size,
                                                                       class_mode='categorical',
                                                                       color_mode='rgb',
-                                                                      shuffle=True)
+                                                                      shuffle=False)
         print('labels and indices of validation_generator')
         print(validation_generator.class_indices)
 

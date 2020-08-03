@@ -132,8 +132,9 @@ class model_classifier_:
             pool_size_x_4 = local_hyperparameters['pool_size_x_4']
             optimizer_function = local_hyperparameters['optimizer']
             optimizer_learning_rate = local_hyperparameters['learning_rate']
+            epsilon_adam = local_hyperparameters['epsilon_adam']
             if optimizer_function == 'adam':
-                optimizer_function = optimizers.Adam(learning_rate=optimizer_learning_rate)
+                optimizer_function = optimizers.Adam(learning_rate=optimizer_learning_rate, epsilon=epsilon_adam)
                 optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
             elif optimizer_function == 'ftrl':
                 optimizer_function = optimizers.Ftrl(optimizer_learning_rate)
@@ -299,22 +300,21 @@ class model_classifier_:
 
             elif local_settings['use_efficientNetB2'] == 'True':
                 type_of_model = '_EfficientNetB2'
-                pretrained_weights = ''.join([local_settings['models_path'],
-                                              local_hyperparameters['weights_for_training_efficientnetb2']])
-                classifier_ = tf.keras.applications.EfficientNetB2(include_top=False, weights=None,
-                                                                   input_tensor=None,
-                                                                   input_shape=(input_shape_y,
-                                                                                input_shape_x, nof_channels),
-                                                                   pooling=None,
-                                                                   classifier_activation=None)
-                # classifier_.trainable = True
-                for layer in classifier_.layers:
+                # pretrained_weights = ''.join([local_settings['models_path'],
+                #                               local_hyperparameters['weights_for_training_efficientnetb2']])
+                classifier_pretrained = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
+                                                                             input_tensor=None,
+                                                                             input_shape=(input_shape_y,
+                                                                                          input_shape_x, nof_channels),
+                                                                             pooling=None,
+                                                                             classifier_activation=None)
+                for layer in classifier_pretrained.layers:
                     layer.trainable = True
                     # if 'excite' in layer.name:
                     #     layer.trainable = True
                     # if 'top_conv' in layer.name:
                     #     layer.trainable = True
-                    # if 'block7b_project_conv' in layer.name:
+                    # if 'project_conv' in layer.name:
                     #     layer.trainable = True
 
                 if local_settings['nof_classes'] == 2:
@@ -324,8 +324,7 @@ class model_classifier_:
                     # assuming balanced classes...
                     bias_initializer = tf.keras.initializers.Constant(0)
 
-                effnb2_model = models.Sequential()
-                effnb2_model.add(classifier_)
+                effnb2_model = models.Sequential(classifier_pretrained)
                 effnb2_model.add(layers.GlobalAveragePooling2D())
                 effnb2_model.add(layers.Dropout(dropout_dense_layer_4))
                 # effnb2_model.add(layers.Dense(units=units_dense_layer_4, activation=activation_dense_layer_4,
@@ -345,11 +344,13 @@ class model_classifier_:
                     classifier_.load_weights(''.join([local_settings['models_path'],
                                                       local_settings['use_local_pretrained_weights_for_retraining']]))
                     for layer in classifier_.layers[0].layers:
-                        layer.trainable = True
-                        # if 'top_conv' in layer.name:
-                        #     layer.trainable = True
-                        # if 'block7b_project_conv' in layer.name:
-                        #     layer.trainable = True
+                        layer.trainable = False
+                        if 'excite' in layer.name:
+                            layer.trainable = True
+                        if 'top_conv' in layer.name:
+                            layer.trainable = True
+                        if 'project_conv' in layer.name:
+                            layer.trainable = True
 
                 # classifier_.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
                 classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)

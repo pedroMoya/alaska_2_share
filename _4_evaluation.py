@@ -131,13 +131,12 @@ def evaluate():
                 type_of_model = '_EfficientNetB2'
                 classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
                                                         type_of_model, '_classifier_.h5']), custom_objects=custom_obj)
+                date = datetime.date.today()
+                # classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+                #                                         type_of_model, '_trained_/']))
             else:
                 print('type of model not understood')
                 return False
-
-            # custom_obj = {'customized_loss': customized_loss}
-            # classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
-            #                                         '_trained_']), custom_objects=custom_obj)
 
             classifier.summary()
             weights_file_name = local_script_settings['weights_loaded_in evaluation']
@@ -154,7 +153,7 @@ def evaluate():
                 for layer in classifier.layers:
                     layer.trainable = False
                 print('current model loaded and layers were set to not_trainable')
-
+            # classifier.compile(optimizer='adam', loss='categorical_crossentropy', metrics='categorical_accuracy')
 
             # # define from scratch random evaluation folder
             # model_evaluation_folder = ''.join([local_script_settings['models_evaluation_path'], 'images_for_evaluation/'])
@@ -170,22 +169,22 @@ def evaluate():
 
             # Outcomes: accuracy - confusion_matrix
             try:
-                nof_classes = local_script_settings['nof_classes']
                 nof_group_for_evaluation = local_script_settings['nof_group_for_evaluation']
-                nof_evaluation_samples_by_group = local_script_settings['nof_evaluation_samples_by_group']
+                nof_classes = local_script_settings['nof_classes']
                 batch_size = model_hyperparameters['batch_size']
                 input_shape_y = model_hyperparameters['input_shape_y']
                 input_shape_x = model_hyperparameters['input_shape_x']
                 test_datagen = \
-                    preprocessing.image.ImageDataGenerator(rescale=None,
-                                                           validation_split=0.0010)
+                    preprocessing.image.ImageDataGenerator(rescale=None)
                 column_names = ['id_number', 'id_class', 'group', 'filename', 'filepath']
                 x_col = 'filepath'
                 y_col = 'id_class'
+                group = '0'
                 metadata_train_images = \
                     pd.read_csv(''.join([local_script_settings['train_data_path'], 'training_metadata.csv']),
                                 dtype=str, names=column_names, header=None)
-                test_set = test_datagen.flow_from_dataframe(dataframe=metadata_train_images,
+                metadata_test_images = metadata_train_images.loc[metadata_train_images['group'] == group]
+                test_set = test_datagen.flow_from_dataframe(dataframe=metadata_test_images,
                                                             directory=None,
                                                             x_col=x_col,
                                                             y_col=y_col,
@@ -193,25 +192,24 @@ def evaluate():
                                                             target_size=(input_shape_y, input_shape_x),
                                                             batch_size=batch_size,
                                                             color_mode='rgb',
-                                                            class_mode='categorical',
-                                                            subset='validation')
-                y_predictions_raw = classifier.predict(test_set, workers=8)
+                                                            class_mode='categorical')
+                y_predictions_raw = classifier.predict(test_set, workers=1)
                 print(y_predictions_raw)
                 y_predictions = y_predictions_raw.argmax(axis=1)
 
                 print('Confusion Matrix for all categories')
-                print(confusion_matrix(test_set.classes, y_predictions))
+                test_set_labels = test_set.labels
+                print(test_set_labels)
+                test_set_classes = [id_class for name, id_class in test_set.class_indices.items()]
+                print(confusion_matrix(test_set_labels, y_predictions))
                 print('Classification Report')
-                target_names = ['0', '1', '2', '3']
-                # print(classification_report(test_set.classes, y_predictions, labels=target_names))
+                print(classification_report(test_set_labels, y_predictions, labels=test_set_classes))
                 print('\nevaluation of classifier by tf.keras.models.evaluate:')
-                print(classifier.evaluate(x=test_set, verbose=1, return_dict=True))
-                print("\nlog_loss(sklearn.metrics):", log_loss(np.asarray(test_set.classes),
-                                                               y_predictions_raw, labels=target_names, eps=1e-15))
-                print('number of classes:', len(test_set.class_indices), '\n')
-                confusion_matrix_tf = tf.math.confusion_matrix(labels=test_set.classes,
+                print('number of classes:', len(test_set_classes), '\n')
+                confusion_matrix_tf = tf.math.confusion_matrix(labels=test_set_labels,
                                                                predictions=y_predictions)
                 print(confusion_matrix_tf)
+                print(classifier.evaluate(x=test_set, verbose=1, steps=1, return_dict=True))
 
                 # calculating if stenographic method was used or not 0: no_hidden_message 1: hidden_message
                 print('\nadjusting evaluation to ~no-hidden or hidden message in image~ binary classification')
@@ -221,8 +219,7 @@ def evaluate():
                                              axis=1)
                 # no_hidden_message_prob = np.round(np.add(1., -hidden_message_prob))
                 print('prob hidden_message:\n', hidden_message_prob, '\n')
-                labels = np.zeros(shape=hidden_message_prob.shape, dtype=np.dtype('int32'))
-                labels[nof_evaluation_samples_by_group * nof_group_for_evaluation:] = 1
+                labels = [label if label < 1 else 1 for label in test_set_labels]
                 binary_predictions = np.round(hidden_message_prob).astype('int')
                 print('\nground_truth:', labels)
                 print('\nconfusion_matrix_tf_binary')
@@ -233,7 +230,7 @@ def evaluate():
                 print(confusion_matrix(labels, binary_predictions), '\n')
                 target_names = ['no_hidden_message', 'hidden_message']
                 print(classification_report(labels, binary_predictions, target_names=target_names))
-                print('\n AUC_ROC score:', roc_auc_score(labels,  y_predictions_raw[:, 1]))
+                print('\n AUC_ROC score:', roc_auc_score(labels,  y_predictions_raw[:, 1:].sum(axis=1)))
             except Exception as e:
                 print('Error at making predictions or with model evaluation from sci-kit learn or tf confusion_matrix')
                 print(e)

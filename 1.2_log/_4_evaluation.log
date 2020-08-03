@@ -6102,3 +6102,571 @@ Traceback (most recent call last):
   File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
   File "h5py\h5f.pyx", line 88, in h5py.h5f.open
 OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-07-30_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+01.Aug 2020 08:19:26 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:33:32 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:36:07 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:38:40 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:39:52 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:41:16 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:42:55 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:46:44 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:49:31 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:50:26 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:51:20 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:54:21 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:55:16 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 08:59:13 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+01.Aug 2020 09:00:10 evaluator module error
+You are trying to load a weight file containing 2 layers into a model with 1 layers.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 684, in load_weights_from_hdf5_group
+    raise ValueError('You are trying to load a weight file '
+ValueError: You are trying to load a weight file containing 2 layers into a model with 1 layers.
+
+02.Aug 2020 13:04:01 evaluator module error
+No model found in config file.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 135, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 176, in load_model_from_hdf5
+    raise ValueError('No model found in config file.')
+ValueError: No model found in config file.
+
+02.Aug 2020 13:04:51 evaluator module error
+No model found in config file.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 135, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 176, in load_model_from_hdf5
+    raise ValueError('No model found in config file.')
+ValueError: No model found in config file.
+y contains previously unseen labels: [0]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 205, in evaluate
+    print(classification_report(test_set.classes, y_predictions, labels=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1960, in classification_report
+    p, r, f1, s = precision_recall_fscore_support(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1438, in precision_recall_fscore_support
+    MCM = multilabel_confusion_matrix(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 462, in multilabel_confusion_matrix
+    y_true = le.transform(y_true)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 277, in transform
+    _, y = _encode(y, uniques=self.classes_, encode=True)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 121, in _encode
+    return _encode_numpy(values, uniques, encode,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 50, in _encode_numpy
+    raise ValueError("y contains previously unseen labels: %s"
+ValueError: y contains previously unseen labels: [0]
+y contains previously unseen labels: [0]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 205, in evaluate
+    print(classification_report(test_set.classes, y_predictions, labels=target_names,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1960, in classification_report
+    p, r, f1, s = precision_recall_fscore_support(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1438, in precision_recall_fscore_support
+    MCM = multilabel_confusion_matrix(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 462, in multilabel_confusion_matrix
+    y_true = le.transform(y_true)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 277, in transform
+    _, y = _encode(y, uniques=self.classes_, encode=True)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 121, in _encode
+    return _encode_numpy(values, uniques, encode,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 50, in _encode_numpy
+    raise ValueError("y contains previously unseen labels: %s"
+ValueError: y contains previously unseen labels: [0]
+not enough values to unpack (expected 2, got 1)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 202, in evaluate
+    test_set_classes = [id_class for name, id_class in test_set.class_indices]
+  File ".\_4_evaluation.py", line 202, in <listcomp>
+    test_set_classes = [id_class for name, id_class in test_set.class_indices]
+ValueError: not enough values to unpack (expected 2, got 1)
+Found input variables with inconsistent numbers of samples: [4, 300]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 205, in evaluate
+    print(confusion_matrix(test_set_classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [4, 300]
+Found input variables with inconsistent numbers of samples: [4, 300]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 205, in evaluate
+    print(confusion_matrix(test_set_classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [4, 300]
+Found input variables with inconsistent numbers of samples: [300, 4]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 212, in evaluate
+    print("\nlog_loss(sklearn.metrics):", log_loss(np.asarray(test_set_classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2187, in log_loss
+    check_consistent_length(y_pred, y_true, sample_weight)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [300, 4]
+Found input variables with inconsistent numbers of samples: [300, 4]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 212, in evaluate
+    print("\nlog_loss(sklearn.metrics):", log_loss(np.asarray(test_set_classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2187, in log_loss
+    check_consistent_length(y_pred, y_true, sample_weight)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [300, 4]
+Found input variables with inconsistent numbers of samples: [300, 4]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 212, in evaluate
+    print("\nlog_loss(sklearn.metrics):", log_loss(np.asarray(test_set_classes),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 2187, in log_loss
+    check_consistent_length(y_pred, y_true, sample_weight)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [300, 4]
+Shapes of all inputs must match: values[0].shape = [4] != values[1].shape = [300] [Op:Pack] name: stack
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 213, in evaluate
+    confusion_matrix_tf = tf.math.confusion_matrix(labels=test_set_classes,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\confusion_matrix.py", line 194, in confusion_matrix
+    indices = array_ops.stack([labels, predictions], axis=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\array_ops.py", line 1405, in stack
+    return gen_array_ops.pack(values, axis=axis, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\gen_array_ops.py", line 6460, in pack
+    _ops.raise_from_not_ok_status(e, name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 6879, in raise_from_not_ok_status
+    six.raise_from(core._status_to_exception(e.code, message), None)
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [4] != values[1].shape = [300] [Op:Pack] name: stack
+Found input variables with inconsistent numbers of samples: [4, 300]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 204, in evaluate
+    print(confusion_matrix(test_set_classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [4, 300]
+Found input variables with inconsistent numbers of samples: [4, 300]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 204, in evaluate
+    print(confusion_matrix(test_set_classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [4, 300]
+Found input variables with inconsistent numbers of samples: [4, 300]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 204, in evaluate
+    print(confusion_matrix(test_set_classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [4, 300]
+Found input variables with inconsistent numbers of samples: [4, 300]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 204, in evaluate
+    print(confusion_matrix(test_set_classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [4, 300]
+Found input variables with inconsistent numbers of samples: [4, 300]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 204, in evaluate
+    print(confusion_matrix(test_set_classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [4, 300]
+None
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: None
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 187, in evaluate
+    test_set = test_datagen.flow_from_dataframe(dataframe=metadata_train_images,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 1081, in flow_from_dataframe
+    return DataFrameIterator(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 556, in __init__
+    super(DataFrameIterator, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 138, in __init__
+    self._check_params(df, x_col, y_col, weight_col, classes)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 213, in _check_params
+    if not all(df[y_col].apply(lambda x: isinstance(x, types))):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: None
+Found input variables with inconsistent numbers of samples: [4, 300]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 204, in evaluate
+    print(confusion_matrix(test_set_classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [4, 300]
+'id_class'
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'id_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 189, in evaluate
+    test_set = test_datagen.flow_from_dataframe(dataframe=metadata_test_images,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 1081, in flow_from_dataframe
+    return DataFrameIterator(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 556, in __init__
+    super(DataFrameIterator, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 142, in __init__
+    df, classes = self._filter_classes(df, y_col, classes)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 256, in _filter_classes
+    for v in df[y_col]:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'id_class'
+'id_class'
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\pandas\core\indexes\base.py", line 2646, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'id_class'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 190, in evaluate
+    test_set = test_datagen.flow_from_dataframe(dataframe=metadata_test_images,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 1081, in flow_from_dataframe
+    return DataFrameIterator(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\preprocessing\image.py", line 556, in __init__
+    super(DataFrameIterator, self).__init__(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 142, in __init__
+    df, classes = self._filter_classes(df, y_col, classes)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\keras_preprocessing\image\dataframe_iterator.py", line 256, in _filter_classes
+    for v in df[y_col]:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\pandas\core\frame.py", line 2800, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\pandas\core\indexes\base.py", line 2648, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas\_libs\index.pyx", line 111, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1619, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 1627, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'id_class'
+Found input variables with inconsistent numbers of samples: [4, 30059]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 206, in evaluate
+    print(confusion_matrix(test_set_classes, y_predictions))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 276, in confusion_matrix
+    y_type, y_true, y_pred = _check_targets(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 81, in _check_targets
+    check_consistent_length(y_true, y_pred)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 256, in check_consistent_length
+    raise ValueError("Found input variables with inconsistent numbers of"
+ValueError: Found input variables with inconsistent numbers of samples: [4, 30059]
+Only one class present in y_true. ROC AUC score is not defined in that case.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 238, in evaluate
+    print('\n AUC_ROC score:', roc_auc_score(labels,  y_predictions_raw[:, 1]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 390, in roc_auc_score
+    return _average_binary_score(partial(_binary_roc_auc_score,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_base.py", line 77, in _average_binary_score
+    return binary_metric(y_true, y_score, sample_weight=sample_weight)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 223, in _binary_roc_auc_score
+    raise ValueError("Only one class present in y_true. ROC AUC score "
+ValueError: Only one class present in y_true. ROC AUC score is not defined in that case.
+Number of classes, 4, does not match size of target_names, 2. Try specifying the labels parameter
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 236, in evaluate
+    print(classification_report(labels, binary_predictions, target_names=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1950, in classification_report
+    raise ValueError(
+ValueError: Number of classes, 4, does not match size of target_names, 2. Try specifying the labels parameter
+'<' not supported between instances of 'list' and 'int'
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 226, in evaluate
+    labels = test_set_labels if test_set_labels < 1 else 1
+TypeError: '<' not supported between instances of 'list' and 'int'
+multi_class must be in ('ovo', 'ovr')
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 237, in evaluate
+    print('\n AUC_ROC score:', roc_auc_score(labels,  y_predictions_raw[:, 1:]))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_ranking.py", line 384, in roc_auc_score
+    raise ValueError("multi_class must be in ('ovo', 'ovr')")
+ValueError: multi_class must be in ('ovo', 'ovr')
+y contains previously unseen labels: [0, 1, 2, 3]
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 210, in evaluate
+    print(classification_report(test_set_labels, y_predictions, labels=target_names))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1960, in classification_report
+    p, r, f1, s = precision_recall_fscore_support(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 1438, in precision_recall_fscore_support
+    MCM = multilabel_confusion_matrix(y_true, y_pred,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\utils\validation.py", line 73, in inner_f
+    return f(**kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\metrics\_classification.py", line 462, in multilabel_confusion_matrix
+    y_true = le.transform(y_true)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 277, in transform
+    _, y = _encode(y, uniques=self.classes_, encode=True)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 121, in _encode
+    return _encode_numpy(values, uniques, encode,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\sklearn\preprocessing\_label.py", line 50, in _encode_numpy
+    raise ValueError("y contains previously unseen labels: %s"
+ValueError: y contains previously unseen labels: [0, 1, 2, 3]
+name 'nof_group_for_evaluation' is not defined
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 227, in evaluate
+    nof_group_for_evaluation: nof_classes * nof_group_for_evaluation],
+NameError: name 'nof_group_for_evaluation' is not defined

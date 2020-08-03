@@ -34,7 +34,7 @@
   "method_1_folder": "JMiPOD/",
   "method_2_folder": "JUNIWARD/",
   "method_3_folder": "UERD/",
-  "use_local_pretrained_weights_for_retraining": "_7_layers_CNN__group_0__EfficientNetB2_2020-08-02_weights.h5",
+  "use_local_pretrained_weights_for_retraining": "check_point__7_layers_CNN__group_0_loss_-0.5399-.hdf5",
   "weights_loaded_in evaluation": "from_today",
   "repeat_select_images_for_evaluation": "True",
   "nof_classes": 2,

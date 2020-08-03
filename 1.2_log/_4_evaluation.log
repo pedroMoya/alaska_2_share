@@ -6670,3 +6670,22 @@ Traceback (most recent call last):
   File ".\_4_evaluation.py", line 227, in evaluate
     nof_group_for_evaluation: nof_classes * nof_group_for_evaluation],
 NameError: name 'nof_group_for_evaluation' is not defined
+
+02.Aug 2020 20:47:22 evaluator module error
+Shapes (1, 1, 32, 16) and (3, 3, 3, 32) are incompatible
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (1, 1, 32, 16) and (3, 3, 3, 32) are incompatible

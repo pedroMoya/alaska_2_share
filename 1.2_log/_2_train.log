@@ -10908,3 +10908,14 @@ Traceback (most recent call last):
   File ".\_2_train.py", line 210, in train
     model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
 AttributeError: 'NoneType' object has no attribute 'fit'
+
+02.Aug 2020 20:47:19 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+03.Aug 2020 06:59:01 correct model training, correct saving of model and weights
+
+03.Aug 2020 06:59:01 settings modified and saved

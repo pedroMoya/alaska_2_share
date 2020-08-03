@@ -202,7 +202,7 @@ def train():
 
         # class weights if imbalanced dataset
         if model_hyperparameters['class_weights'] != "None":
-            class_weight = {0: 0.666, 1: 0.333}
+            class_weight = {0: 0.75, 1: 0.25}
         else:
             class_weight = None
 

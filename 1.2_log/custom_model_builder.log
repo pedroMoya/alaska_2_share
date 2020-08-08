@@ -2352,3 +2352,113 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
     raise ValueError("Shapes %s and %s are incompatible" % (self, other))
 ValueError: Shapes (1408, 2) and (1408, 4) are incompatible
+Mixing different tf.distribute.Strategy objects: <tensorflow.python.distribute.mirrored_strategy.MirroredStrategy object at 0x000001A10FCD8EB0> is not <tensorflow.python.distribute.mirrored_strategy.MirroredStrategy object at 0x000001A10FCFFBE0>
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 89, in build_and_compile
+    with local_strategy.scope():
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 387, in __enter__
+    _require_cross_replica_or_default_context_extended(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 309, in _require_cross_replica_or_default_context_extended
+    _wrong_strategy_scope(strategy, context)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 322, in _wrong_strategy_scope
+    raise RuntimeError(
+RuntimeError: Mixing different tf.distribute.Strategy objects: <tensorflow.python.distribute.mirrored_strategy.MirroredStrategy object at 0x000001A10FCD8EB0> is not <tensorflow.python.distribute.mirrored_strategy.MirroredStrategy object at 0x000001A10FCFFBE0>
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 407, in build_and_compile
+    model_architecture_review = model_architecture.analize(''.join([local_model_name, type_of_model,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 407, in build_and_compile
+    model_architecture_review = model_architecture.analize(''.join([local_model_name, type_of_model,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 402, in build_and_compile
+    print('model architecture saved')
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 402, in build_and_compile
+    print('model architecture saved')
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 402, in build_and_compile
+    print('model architecture saved')
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 386, in build_and_compile
+    return False
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 407, in build_and_compile
+    model_architecture_review = model_architecture.analize(''.join([local_model_name, type_of_model,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 410, in build_and_compile
+    return classifier_
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 378, in build_and_compile
+    model_architecture_review = model_architecture.analize(''.join([local_model_name, type_of_model,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 360, in build_and_compile
+    classifier_.summary()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+pop from empty list
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 357, in build_and_compile
+    classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list

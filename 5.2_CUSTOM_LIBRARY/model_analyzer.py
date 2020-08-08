@@ -5,20 +5,12 @@ import logging.handlers as handlers
 import json
 import numpy as np
 import tensorflow as tf
-physical_devices = tf.config.list_physical_devices('GPU')
-tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
+# physical_devices = tf.config.list_physical_devices('GPU')
+# tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
 tf.keras.backend.set_floatx('float32')
 from tensorflow.keras import layers
-from tensorflow.keras.experimental import PeepholeLSTMCell
-from tensorflow.keras.layers import TimeDistributed
-from tensorflow.keras.layers import RepeatVector
-from tensorflow.keras import regularizers
-from tensorflow.keras import optimizers
 from tensorflow.keras import losses, models
 from tensorflow.keras import metrics
-from tensorflow.keras import callbacks as cb
-from tensorflow.keras import backend as kb
-from sklearn.metrics import mean_squared_error
 from tensorflow.keras.utils import plot_model, model_to_dot
 
 # open local settings

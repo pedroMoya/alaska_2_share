@@ -10919,3 +10919,738 @@ AttributeError: 'NoneType' object has no attribute 'fit'
 03.Aug 2020 06:59:01 correct model training, correct saving of model and weights
 
 03.Aug 2020 06:59:01 settings modified and saved
+
+07.Aug 2020 12:15:57 model training error
+Memory growth cannot differ between GPU devices
+Traceback (most recent call last):
+  File ".\_2_train.py", line 112, in train
+    strategy = tf.distribute.MirroredStrategy()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 271, in __init__
+    extended = MirroredExtended(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 309, in __init__
+    devices = devices or all_local_devices()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 172, in all_local_devices
+    devices = config.list_logical_devices("GPU")
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\config.py", line 403, in list_logical_devices
+    return context.context().list_logical_devices(device_type=device_type)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\context.py", line 1354, in list_logical_devices
+    self.ensure_initialized()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\context.py", line 534, in ensure_initialized
+    config_str = self.config.SerializeToString()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\context.py", line 996, in config
+    gpu_options = self._compute_gpu_options()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\context.py", line 1055, in _compute_gpu_options
+    raise ValueError("Memory growth cannot differ between GPU devices")
+ValueError: Memory growth cannot differ between GPU devices
+
+07.Aug 2020 12:18:10 model training error
+Memory growth cannot differ between GPU devices
+Traceback (most recent call last):
+  File ".\_2_train.py", line 112, in train
+    strategy = tf.distribute.MirroredStrategy()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 271, in __init__
+    extended = MirroredExtended(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 309, in __init__
+    devices = devices or all_local_devices()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 172, in all_local_devices
+    devices = config.list_logical_devices("GPU")
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\config.py", line 403, in list_logical_devices
+    return context.context().list_logical_devices(device_type=device_type)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\context.py", line 1354, in list_logical_devices
+    self.ensure_initialized()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\context.py", line 534, in ensure_initialized
+    config_str = self.config.SerializeToString()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\context.py", line 996, in config
+    gpu_options = self._compute_gpu_options()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\context.py", line 1055, in _compute_gpu_options
+    raise ValueError("Memory growth cannot differ between GPU devices")
+ValueError: Memory growth cannot differ between GPU devices
+
+07.Aug 2020 12:27:44 model training error
+pop from empty list
+Traceback (most recent call last):
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variable_scope.py", line 2808, in variable_creator_scope
+    yield
+  File ".\_2_train.py", line 212, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[64,528,17,17] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node sequential/efficientnetb2/block4b_bn/FusedBatchNormV3 (defined at .\_2_train.py:212) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_116421]
+
+Function call stack:
+train_function
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_2_train.py", line 234, in train
+    classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+
+07.Aug 2020 12:30:47 model training error
+pop from empty list
+Traceback (most recent call last):
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variable_scope.py", line 2808, in variable_creator_scope
+    yield
+  File ".\_2_train.py", line 212, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[32,144,128,128] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node sequential/efficientnetb2/block2b_bn/FusedBatchNormV3 (defined at .\_2_train.py:212) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_116421]
+
+Function call stack:
+train_function
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_2_train.py", line 234, in train
+    classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+
+07.Aug 2020 12:33:40 model training error
+pop from empty list
+Traceback (most recent call last):
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variable_scope.py", line 2808, in variable_creator_scope
+    yield
+  File ".\_2_train.py", line 212, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[48,1248,9,9] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node sequential/efficientnetb2/block6c_bn/FusedBatchNormV3 (defined at .\_2_train.py:212) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_116421]
+
+Function call stack:
+train_function
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_2_train.py", line 234, in train
+    classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+
+07.Aug 2020 12:40:16 model training error
+pop from empty list
+Traceback (most recent call last):
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variable_scope.py", line 2808, in variable_creator_scope
+    yield
+  File ".\_2_train.py", line 212, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[40,9,9,2112] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node sequential/efficientnetb2/block7b_expand_activation/Sigmoid (defined at .\_2_train.py:212) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_116421]
+
+Function call stack:
+train_function
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_2_train.py", line 234, in train
+    classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+
+07.Aug 2020 12:43:36 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 212, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 17:13:08 model training error
+pop from empty list
+Traceback (most recent call last):
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variable_scope.py", line 2808, in variable_creator_scope
+    yield
+  File ".\_2_train.py", line 212, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[40,2112,9,9] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node sequential/efficientnetb2/block7b_bn/FusedBatchNormV3 (defined at .\_2_train.py:212) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_116420]
+
+Function call stack:
+train_function
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_2_train.py", line 234, in train
+    classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+
+07.Aug 2020 17:24:30 model training error
+pop from empty list
+Traceback (most recent call last):
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variable_scope.py", line 2808, in variable_creator_scope
+    yield
+  File ".\_2_train.py", line 212, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[40,2112,9,9] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node gradient_tape/sequential/efficientnetb2/block7b_bn/FusedBatchNormGradV3 (defined at .\_2_train.py:212) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_116420]
+
+Function call stack:
+train_function
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_2_train.py", line 234, in train
+    classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+
+07.Aug 2020 17:42:43 model training error
+pop from empty list
+Traceback (most recent call last):
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variable_scope.py", line 2808, in variable_creator_scope
+    yield
+  File ".\_2_train.py", line 213, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[40,9,9,1408] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node sequential/efficientnetb2/top_activation/Sigmoid (defined at .\_2_train.py:213) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_116420]
+
+Function call stack:
+train_function
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_2_train.py", line 235, in train
+    classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+
+07.Aug 2020 18:01:17 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 18:07:40 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 18:26:37 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 18:28:29 model training error
+name 'model_classifier_' is not defined
+Traceback (most recent call last):
+  File ".\_2_train.py", line 181, in train
+    classifier_constructor = model_classifier_()
+NameError: name 'model_classifier_' is not defined
+
+07.Aug 2020 18:30:38 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 18:33:46 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 19:00:44 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 19:03:27 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 19:06:20 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 19:13:58 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 19:15:34 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 19:17:43 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 210, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+07.Aug 2020 19:27:59 model training error
+pop from empty list
+Traceback (most recent call last):
+  File ".\_2_train.py", line 182, in train
+    classifier = classifier_constructor.build_and_compile(model_name, local_script_settings,
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 385, in build_and_compile
+    logger.error(str(e), exc_info=True)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+
+07.Aug 2020 19:33:37 model training error
+pop from empty list
+Traceback (most recent call last):
+  File "C:\Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\variable_scope.py", line 2808, in variable_creator_scope
+    yield
+  File ".\_2_train.py", line 213, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError:  OOM when allocating tensor with shape[40,1408,9,9] and type half on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[node sequential/efficientnetb2/top_bn/FusedBatchNormV3 (defined at .\_2_train.py:213) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+ [Op:__inference_train_function_116419]
+
+Function call stack:
+train_function
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ".\_2_train.py", line 254, in train
+    logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 429, in __exit__
+    _pop_per_thread_mode()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
+    ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
+IndexError: pop from empty list
+
+07.Aug 2020 19:37:05 model training error
+No OpKernel was registered to support Op 'NcclAllReduce' used by {{node NcclAllReduce}} with these attrs: [reduction="sum", shared_name="c1", T=DT_FLOAT, num_devices=2]
+Registered devices: [CPU, GPU, XLA_CPU, XLA_GPU]
+Registered kernels:
+  <no registered kernels>
+
+	 [[NcclAllReduce]] [Op:__inference_train_function_234782]
+Traceback (most recent call last):
+  File ".\_2_train.py", line 213, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: No OpKernel was registered to support Op 'NcclAllReduce' used by {{node NcclAllReduce}} with these attrs: [reduction="sum", shared_name="c1", T=DT_FLOAT, num_devices=2]
+Registered devices: [CPU, GPU, XLA_CPU, XLA_GPU]
+Registered kernels:
+  <no registered kernels>
+
+	 [[NcclAllReduce]] [Op:__inference_train_function_234782]
+
+08.Aug 2020 09:22:24 model training error
+No OpKernel was registered to support Op 'NcclAllReduce' used by {{node NcclAllReduce}} with these attrs: [reduction="sum", shared_name="c1", T=DT_FLOAT, num_devices=2]
+Registered devices: [CPU, GPU, XLA_CPU, XLA_GPU]
+Registered kernels:
+  <no registered kernels>
+
+	 [[NcclAllReduce]] [Op:__inference_train_function_234782]
+Traceback (most recent call last):
+  File ".\_2_train.py", line 213, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: No OpKernel was registered to support Op 'NcclAllReduce' used by {{node NcclAllReduce}} with these attrs: [reduction="sum", shared_name="c1", T=DT_FLOAT, num_devices=2]
+Registered devices: [CPU, GPU, XLA_CPU, XLA_GPU]
+Registered kernels:
+  <no registered kernels>
+
+	 [[NcclAllReduce]] [Op:__inference_train_function_234782]
+
+08.Aug 2020 09:49:01 model training error
+module 'tensorflow' has no attribute 'contrib'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 113, in train
+    tf.contrib.distribute.AllReduceCrossTowerOps('hierarchical_copy', num_packs=2))
+AttributeError: module 'tensorflow' has no attribute 'contrib'
+
+08.Aug 2020 10:14:25 model training error
+2 root error(s) found.
+  (0) Resource exhausted:  OOM when allocating tensor with shape[32,9,9,2112] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node gradient_tape/replica_1/sequential/efficientnetb2/block7b_se_excite/mul/Mul (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[gradient_tape/replica_1/sequential/efficientnetb2/block4a_se_expand/BiasAdd/BiasAddGrad/_1430]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted:  OOM when allocating tensor with shape[32,9,9,2112] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node gradient_tape/replica_1/sequential/efficientnetb2/block7b_se_excite/mul/Mul (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_229324]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 215, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 846, in _call
+    return self._stateless_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted:  OOM when allocating tensor with shape[32,9,9,2112] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node gradient_tape/replica_1/sequential/efficientnetb2/block7b_se_excite/mul/Mul (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[gradient_tape/replica_1/sequential/efficientnetb2/block4a_se_expand/BiasAdd/BiasAddGrad/_1430]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted:  OOM when allocating tensor with shape[32,9,9,2112] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node gradient_tape/replica_1/sequential/efficientnetb2/block7b_se_excite/mul/Mul (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_229324]
+
+Function call stack:
+train_function -> train_function
+
+
+08.Aug 2020 13:05:49 model training error
+2 root error(s) found.
+  (0) Resource exhausted:  OOM when allocating tensor with shape[8,16,16,1408] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node replica_1/sequential/efficientnetb2/top_activation/Sigmoid (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[gradient_tape/replica_1/sequential/efficientnetb2/block5a_expand_bn/cond/StatelessIf/output/_4475/_1238]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted:  OOM when allocating tensor with shape[8,16,16,1408] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node replica_1/sequential/efficientnetb2/top_activation/Sigmoid (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_229324]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 215, in train
+    model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted:  OOM when allocating tensor with shape[8,16,16,1408] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node replica_1/sequential/efficientnetb2/top_activation/Sigmoid (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[gradient_tape/replica_1/sequential/efficientnetb2/block5a_expand_bn/cond/StatelessIf/output/_4475/_1238]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted:  OOM when allocating tensor with shape[8,16,16,1408] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node replica_1/sequential/efficientnetb2/top_activation/Sigmoid (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_229324]
+
+Function call stack:
+train_function -> train_function
+
+
+08.Aug 2020 17:11:31 model training error
+`generator` must be callable.
+Traceback (most recent call last):
+  File ".\_2_train.py", line 215, in train
+    train_tf_generator = tf.data.Dataset.from_generator(train_generator,(tf.float32, tf.float32, tf.float32))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\data\ops\dataset_ops.py", line 776, in from_generator
+    raise TypeError("`generator` must be callable.")
+TypeError: `generator` must be callable.
+
+08.Aug 2020 17:22:01 model training error
+'function' object has no attribute 'samples'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 228, in train
+    steps_per_epoch=train_generator.samples // batch_size,
+AttributeError: 'function' object has no attribute 'samples'

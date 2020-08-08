@@ -7,8 +7,8 @@ import logging.handlers as handlers
 import json
 import numpy as np
 import tensorflow as tf
-physical_devices = tf.config.list_physical_devices('GPU')
-tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
+# physical_devices = tf.config.list_physical_devices('GPU')
+# tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
 tf.keras.backend.set_floatx('float32')
 from tensorflow.keras import layers
 from tensorflow.keras import regularizers
@@ -38,8 +38,6 @@ logger.addHandler(logHandler)
 # load custom libraries
 sys.path.insert(1, local_submodule_settings['custom_library_path'])
 from model_analyzer import model_structure
-from custom_alternative_training import alternative_training
-from core_alternative_training import core_alternative_training
 
 
 # function definitions
@@ -86,8 +84,8 @@ class model_classifier_:
     def build_and_compile(self, local_model_name, local_settings, local_hyperparameters):
         try:
             # keras,tf session/random seed reset/fix
-            kb.clear_session()
-            tf.compat.v1.reset_default_graph()
+            # kb.clear_session()
+            # tf.compat.v1.reset_default_graph()
             np.random.seed(11)
             tf.random.set_seed(2)
 
@@ -318,7 +316,7 @@ class model_classifier_:
                     #     layer.trainable = True
 
                 if local_settings['nof_classes'] == 2:
-                    # if two classes, log(pos/neg) = -0.477121254719
+                    # if two classes, log(pos/neg) = log(0.25/0.75) = -0.477121254719
                     bias_initializer = tf.keras.initializers.Constant(local_hyperparameters['bias_initializer'])
                 else:
                     # assuming balanced classes...
@@ -354,33 +352,6 @@ class model_classifier_:
 
                 # classifier_.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
                 classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
-
-                if local_settings['alternative_training_generator'] == 'True':
-                    alternative_training_instance = alternative_training()
-                    alternative_training_review = alternative_training_instance.train_model(classifier_,
-                                                                                            local_hyperparameters,
-                                                                                            local_settings)
-                    if alternative_training_review:
-                        print('success in alternative training (obtain data predictions)')
-                        return True
-                    else:
-                        print('error at alternative training')
-                        return False
-                if local_settings['alternative_training'] == 'True':
-                    my_question = 'meaning_of_existence'
-                    core_alternative_training_computation_instance = core_alternative_training()
-                    core_alternative_training_computation_instance_review = \
-                        core_alternative_training_computation_instance.imagine(my_question, local_settings)
-                    if core_alternative_training_computation_instance_review:
-                        print('success in core brain alternative training (smart processing of data)')
-                        return True
-                    else:
-                        print('error at core brain alternative training')
-                        return False
-
-            else:
-                print('model to use is not defined')
-                return False
 
             # Summary of model
             classifier_.summary()

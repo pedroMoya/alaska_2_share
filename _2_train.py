@@ -14,8 +14,8 @@ try:
     import numpy as np
     import pandas as pd
     import tensorflow as tf
-    physical_devices = tf.config.list_physical_devices('GPU')
-    tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
+    # physical_devices = tf.config.list_physical_devices('GPU')
+    # tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
     tf.keras.backend.set_floatx('float32')
     from tensorflow.keras import layers, models
     from tensorflow.keras import backend as kb
@@ -62,12 +62,19 @@ def image_normalizer(local_image_rgb):
     return custom_image_normalizer_instance.normalize(local_image_rgb)
 
 
+def make_gen_callable(_gen):
+    def gen():
+        for x, y in _gen:
+            yield x, y
+    return gen
+
+
 def train():
     print('\n~train_model module~')
 
     # keras,tf session/random seed reset/fix
     kb.clear_session()
-    tf.compat.v1.reset_default_graph()
+    # tf.compat.v1.reset_default_graph()
     np.random.seed(11)
     tf.random.set_seed(2)
     # tf.compat.v1.disable_eager_execution()
@@ -109,147 +116,157 @@ def train():
 
     # starting training
     try:
-        print('\n~train_model module~')
-        # check settings for previous training and then repeat or not this phase
-        if local_script_settings['training_done'] == "True":
-            print('training of neural_network previously done')
-            if local_script_settings['repeat_training'] == "True":
-                print('repeating training')
+        local_strategy = \
+            tf.distribute.MirroredStrategy(
+                cross_device_ops=tf.distribute.ReductionToOneDevice(reduce_to_device="/device:GPU:0"))
+        with local_strategy.scope():
+            print('Number of devices: {}'.format(local_strategy.num_replicas_in_sync))
+            print('\n~train_model module~')
+            # check settings for previous training and then repeat or not this phase
+            if local_script_settings['training_done'] == "True":
+                print('training of neural_network previously done')
+                if local_script_settings['repeat_training'] == "True":
+                    print('repeating training')
+                else:
+                    print("settings indicates don't repeat training")
+                    return True
             else:
-                print("settings indicates don't repeat training")
-                return True
-        else:
-            print('model training start')
+                print('model training start')
 
-        # model training hyperparameters
-        nof_groups = local_script_settings['nof_K_fold_groups']
-        input_shape_y = model_hyperparameters['input_shape_y']
-        input_shape_x = model_hyperparameters['input_shape_x']
-        epochs = model_hyperparameters['epochs']
-        batch_size = model_hyperparameters['batch_size']
-        workers = model_hyperparameters['workers']
-        validation_split = model_hyperparameters['validation_split']
-        early_stopping_patience = model_hyperparameters['early_stopping_patience']
-        reduce_lr_on_plateau_factor = model_hyperparameters['ReduceLROnPlateau_factor']
-        reduce_lr_on_plateau_patience = model_hyperparameters['ReduceLROnPlateau_patience']
-        reduce_lr_on_plateau_min_lr = model_hyperparameters['ReduceLROnPlateau_min_lr']
-        validation_freq = model_hyperparameters['validation_freq']
-        training_set_folder = model_hyperparameters['training_set_folder']
-        validation_set_folder = model_hyperparameters['validation_set_folder']
+            # model training hyperparameters
+            nof_groups = local_script_settings['nof_K_fold_groups']
+            input_shape_y = model_hyperparameters['input_shape_y']
+            input_shape_x = model_hyperparameters['input_shape_x']
+            epochs = model_hyperparameters['epochs']
+            batch_size = model_hyperparameters['batch_size']
+            workers = model_hyperparameters['workers']
+            validation_split = model_hyperparameters['validation_split']
+            early_stopping_patience = model_hyperparameters['early_stopping_patience']
+            reduce_lr_on_plateau_factor = model_hyperparameters['ReduceLROnPlateau_factor']
+            reduce_lr_on_plateau_patience = model_hyperparameters['ReduceLROnPlateau_patience']
+            reduce_lr_on_plateau_min_lr = model_hyperparameters['ReduceLROnPlateau_min_lr']
+            validation_freq = model_hyperparameters['validation_freq']
+            training_set_folder = model_hyperparameters['training_set_folder']
+            validation_set_folder = model_hyperparameters['validation_set_folder']
 
-        # load raw_data and cleaned_data
-        group = 0
-        column_names = ['id_number', 'id_class', 'group', 'filename', 'filepath']
-        x_col = 'filepath'
-        y_col = 'id_class'
-        metadata_train_images = \
-            pd.read_csv(''.join([local_script_settings['train_data_path'], 'training_metadata.csv']),
-                        dtype=str, names=column_names, header=None)
-        metadata_train_images_group = metadata_train_images.loc[metadata_train_images['group'] != str(group)]
-        train_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
-                                                               vertical_flip=True,
-                                                               horizontal_flip=True)
-        train_generator = train_datagen.flow_from_dataframe(dataframe=metadata_train_images_group,
-                                                            directory=None,
-                                                            x_col=x_col,
-                                                            y_col=y_col,
-                                                            target_size=(input_shape_y, input_shape_x),
-                                                            batch_size=batch_size,
-                                                            class_mode='categorical',
-                                                            color_mode='rgb',
-                                                            shuffle=True)
-        print('labels and indices of train_generator')
-        print(train_generator.class_indices)
-        validation_datagen = \
-            preprocessing.image.ImageDataGenerator(rescale=None)
-        metadata_validation_images_group = \
-            metadata_train_images.loc[metadata_train_images['group'] == str(group)]
-        validation_generator = validation_datagen.flow_from_dataframe(dataframe=metadata_validation_images_group,
-                                                                      directory=None,
-                                                                      x_col=x_col,
-                                                                      y_col=y_col,
-                                                                      target_size=(input_shape_y, input_shape_x),
-                                                                      batch_size=batch_size,
-                                                                      class_mode='categorical',
-                                                                      color_mode='rgb',
-                                                                      shuffle=False)
-        print('labels and indices of validation_generator')
-        print(validation_generator.class_indices)
+            # load raw_data and cleaned_data
+            group = 0
+            column_names = ['id_number', 'id_class', 'group', 'filename', 'filepath']
+            x_col = 'filepath'
+            y_col = 'id_class'
+            metadata_train_images = \
+                pd.read_csv(''.join([local_script_settings['train_data_path'], 'training_metadata.csv']),
+                            dtype=str, names=column_names, header=None)
+            metadata_train_images_group = metadata_train_images.loc[metadata_train_images['group'] != str(group)]
+            train_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
+                                                                   vertical_flip=True,
+                                                                   horizontal_flip=True)
+            train_generator = train_datagen.flow_from_dataframe(dataframe=metadata_train_images_group,
+                                                                directory=None,
+                                                                x_col=x_col,
+                                                                y_col=y_col,
+                                                                target_size=(input_shape_y, input_shape_x),
+                                                                batch_size=batch_size,
+                                                                class_mode='categorical',
+                                                                color_mode='rgb',
+                                                                shuffle=True)
+            print('labels and indices of train_generator')
+            print(train_generator.class_indices)
+            validation_datagen = \
+                preprocessing.image.ImageDataGenerator(rescale=None)
+            metadata_validation_images_group = \
+                metadata_train_images.loc[metadata_train_images['group'] == str(group)]
+            validation_generator = validation_datagen.flow_from_dataframe(dataframe=metadata_validation_images_group,
+                                                                          directory=None,
+                                                                          x_col=x_col,
+                                                                          y_col=y_col,
+                                                                          target_size=(input_shape_y, input_shape_x),
+                                                                          batch_size=batch_size,
+                                                                          class_mode='categorical',
+                                                                          color_mode='rgb',
+                                                                          shuffle=False)
+            print('labels and indices of validation_generator')
+            print(validation_generator.class_indices)
 
-        # build, compile and save model
-        model_name = ''.join([model_hyperparameters['current_model_name'], '_group_', str(group)])
-        classifier_constructor = model_classifier_()
-        classifier = classifier_constructor.build_and_compile(model_name, local_script_settings,
-                                                              model_hyperparameters)
-        if isinstance(classifier, int):
-            print('build and compile not return a model (may be a correct behavior if alternative training is set)')
-            if local_script_settings['alternative_training'] == 'True':
-                return True
+            # build, compile and save model
+            model_name = ''.join([model_hyperparameters['current_model_name'], '_group_', str(group)])
+            classifier_constructor = model_classifier_()
+            classifier = classifier_constructor.build_and_compile(model_name, local_script_settings,
+                                                                  model_hyperparameters)
+            if isinstance(classifier, int):
+                print('build and compile not return a model (may be a correct behavior if alternative training is set)')
+                if local_script_settings['alternative_training'] == 'True':
+                    return True
+                else:
+                    print('error, please review consistency of settings and code if necessary')
+                    return False
+
+            # define callbacks, checkpoints namepaths
+            model_weights = ''.join([local_settings['checkpoints_path'],
+                                     'check_point_', model_name, "_loss_-{loss:.4f}-.hdf5"])
+            callback1 = cb.EarlyStopping(monitor='loss', patience=early_stopping_patience)
+            callback2 = [cb.ModelCheckpoint(model_weights, monitor='loss', verbose=1,
+                                            save_best_only=True, mode='min')]
+            callback3 = cb.ReduceLROnPlateau(monitor='loss', factor=reduce_lr_on_plateau_factor,
+                                             patience=reduce_lr_on_plateau_patience,
+                                             min_lr=reduce_lr_on_plateau_min_lr)
+            callbacks = [callback1, callback2, callback3]
+
+            # class weights if imbalanced dataset
+            if model_hyperparameters['class_weights'] != "None":
+                class_weight = {0: 0.75, 1: 0.25}
             else:
-                print('error, please review consistency of settings and code if necessary')
+                class_weight = None
+
+            # training model
+            train_generator = make_gen_callable(train_generator)
+            validation_generator = make_gen_callable(validation_generator)
+            train_tf_generator = tf.data.Dataset.from_generator(train_generator,(tf.float32, tf.float32, tf.float32))
+            validation_tf_generator = tf.data.Dataset.from_generator(validation_generator,
+                                                                     (tf.float32, tf.float32, tf.float32))
+            model_train_history = classifier.fit(train_tf_generator, epochs=epochs, batch_size=batch_size,
+                                                 steps_per_epoch=train_generator.samples // batch_size,
+                                                 callbacks=callbacks, shuffle=True, workers=workers,
+                                                 class_weight=class_weight,
+                                                 validation_data=validation_tf_generator,
+                                                 validation_freq=validation_freq,
+                                                 validation_steps=validation_generator.samples // batch_size,
+                                                 use_multiprocessing=False)
+
+            # save weights (model was saved previously at model build and compile in h5 and json formats)
+            if local_script_settings['use_efficientNetB2'] == "True":
+                type_of_model = '_EfficientNetB2'
+            elif local_script_settings['use_efficientNetB2'] == "True":
+                type_of_model = '_custom'
+            else:
+                print('type of model not understood')
                 return False
+            date = datetime.date.today()
+            classifier.save_weights(''.join([local_script_settings['models_path'], model_name, '_', type_of_model,
+                                             '_', str(date), '_weights.h5']))
 
-        # define callbacks, checkpoints namepaths
-        model_weights = ''.join([local_settings['checkpoints_path'],
-                                 'check_point_', model_name, "_loss_-{loss:.4f}-.hdf5"])
-        callback1 = cb.EarlyStopping(monitor='loss', patience=early_stopping_patience)
-        callback2 = [cb.ModelCheckpoint(model_weights, monitor='loss', verbose=1,
-                                        save_best_only=True, mode='min')]
-        callback3 = cb.ReduceLROnPlateau(monitor='loss', factor=reduce_lr_on_plateau_factor,
-                                         patience=reduce_lr_on_plateau_patience,
-                                         min_lr=reduce_lr_on_plateau_min_lr)
-        callbacks = [callback1, callback2, callback3]
+            # save in tf (saveModel) format
+            classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),
+                            save_format='tf')
 
-        # class weights if imbalanced dataset
-        if model_hyperparameters['class_weights'] != "None":
-            class_weight = {0: 0.75, 1: 0.25}
-        else:
-            class_weight = None
-
-        # training model
-        model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
-                                             steps_per_epoch=train_generator.samples // batch_size,
-                                             callbacks=callbacks, shuffle=True, workers=workers,
-                                             class_weight=class_weight,
-                                             validation_data=validation_generator,
-                                             validation_freq=validation_freq,
-                                             validation_steps=validation_generator.samples // batch_size,
-                                             use_multiprocessing=False)
-
-        # save weights (model was saved previously at model build and compile in h5 and json formats)
-        if local_script_settings['use_efficientNetB2'] == "True":
-            type_of_model = '_EfficientNetB2'
-        elif local_script_settings['use_efficientNetB2'] == "True":
-            type_of_model = '_custom'
-        else:
-            print('type of model not understood')
-            return False
-        date = datetime.date.today()
-        classifier.save_weights(''.join([local_script_settings['models_path'], model_name, '_', type_of_model,
-                                         '_', str(date), '_weights.h5']))
-
-        # save in tf (saveModel) format
-        classifier.save(''.join([local_settings['models_path'], model_name, type_of_model, '_trained_/']),
-                        save_format='tf')
-
-        # closing train module
-        print('full training of each group module ended')
-        logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
-                             ' correct model training, correct saving of model and weights']))
-        local_script_settings['training_done'] = "True"
-        if local_script_settings['metaheuristic_optimization'] == "False":
-            with open('./settings.json', 'w', encoding='utf-8') as local_wr_json_file:
-                json.dump(local_script_settings, local_wr_json_file, ensure_ascii=False, indent=2)
-                local_wr_json_file.close()
-        elif local_script_settings['metaheuristic_optimization'] == "True":
-            with open(''.join([local_script_settings['metaheuristics_path'],
-                               'organic_settings.json']), 'w', encoding='utf-8') as local_wr_json_file:
-                json.dump(local_script_settings, local_wr_json_file, ensure_ascii=False, indent=2)
-                local_wr_json_file.close()
-                # metaheuristic_train = tuning_metaheuristic()
-                # metaheuristic_hyperparameters = metaheuristic_train.stochastic_brain(local_script_settings)
-        logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
-                             ' settings modified and saved']))
+            # closing train module
+            print('full training of each group module ended')
+            logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
+                                 ' correct model training, correct saving of model and weights']))
+            local_script_settings['training_done'] = "True"
+            if local_script_settings['metaheuristic_optimization'] == "False":
+                with open('./settings.json', 'w', encoding='utf-8') as local_wr_json_file:
+                    json.dump(local_script_settings, local_wr_json_file, ensure_ascii=False, indent=2)
+                    local_wr_json_file.close()
+            elif local_script_settings['metaheuristic_optimization'] == "True":
+                with open(''.join([local_script_settings['metaheuristics_path'],
+                                   'organic_settings.json']), 'w', encoding='utf-8') as local_wr_json_file:
+                    json.dump(local_script_settings, local_wr_json_file, ensure_ascii=False, indent=2)
+                    local_wr_json_file.close()
+                    # metaheuristic_train = tuning_metaheuristic()
+                    # metaheuristic_hyperparameters = metaheuristic_train.stochastic_brain(local_script_settings)
+            logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
+                                 ' settings modified and saved']))
     except Exception as e1:
         print('Error training model')
         print(e1)

@@ -16,8 +16,8 @@ try:
     from tensorflow.keras import losses, models
     from tensorflow.keras.metrics import mean_absolute_percentage_error
     from sklearn.metrics import mean_squared_error, mean_absolute_error
-    physical_devices = tf.config.list_physical_devices('GPU')
-    tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
+    # physical_devices = tf.config.list_physical_devices('GPU')
+    # tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
     tf.keras.backend.set_floatx('float32')
 
     with open('./settings.json') as local_json_file:

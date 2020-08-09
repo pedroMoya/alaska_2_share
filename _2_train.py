@@ -62,13 +62,6 @@ def image_normalizer(local_image_rgb):
     return custom_image_normalizer_instance.normalize(local_image_rgb)
 
 
-def make_gen_callable(_gen):
-    def gen():
-        for x, y in _gen:
-            yield x, y
-    return gen
-
-
 def train():
     print('\n~train_model module~')
 
@@ -84,7 +77,7 @@ def train():
         with open('./settings.json') as local_r_json_file:
             local_script_settings = json.loads(local_r_json_file.read())
             local_r_json_file.close()
-        if local_script_settings['metaheuristic_optimization'] == "True":
+        if local_script_settings['metaheuristic_optimization'] == 'True':
             print('changing settings control to metaheuristic optimization')
             with open(''.join(
                     [local_script_settings['metaheuristics_path'], 'organic_settings.json'])) as local_r_json_file:
@@ -118,14 +111,17 @@ def train():
     try:
         local_strategy = \
             tf.distribute.MirroredStrategy(
-                cross_device_ops=tf.distribute.ReductionToOneDevice(reduce_to_device="/device:GPU:0"))
+                cross_device_ops=tf.distribute.ReductionToOneDevice(reduce_to_device='/device:GPU:0'))
+        # local_strategy = \
+        #     tf.distribute.MirroredStrategy(devices=['/gpu:0', '/gpu:1'],
+        #                                    cross_device_ops=tf.distribute.HierarchicalCopyAllReduce(num_packs=2))
         with local_strategy.scope():
             print('Number of devices: {}'.format(local_strategy.num_replicas_in_sync))
             print('\n~train_model module~')
             # check settings for previous training and then repeat or not this phase
-            if local_script_settings['training_done'] == "True":
+            if local_script_settings['training_done'] == 'True':
                 print('training of neural_network previously done')
-                if local_script_settings['repeat_training'] == "True":
+                if local_script_settings['repeat_training'] == 'True':
                     print('repeating training')
                 else:
                     print("settings indicates don't repeat training")
@@ -213,30 +209,25 @@ def train():
             callbacks = [callback1, callback2, callback3]
 
             # class weights if imbalanced dataset
-            if model_hyperparameters['class_weights'] != "None":
+            if model_hyperparameters['class_weights'] != 'None':
                 class_weight = {0: 0.75, 1: 0.25}
             else:
                 class_weight = None
 
             # training model
-            train_generator = make_gen_callable(train_generator)
-            validation_generator = make_gen_callable(validation_generator)
-            train_tf_generator = tf.data.Dataset.from_generator(train_generator,(tf.float32, tf.float32, tf.float32))
-            validation_tf_generator = tf.data.Dataset.from_generator(validation_generator,
-                                                                     (tf.float32, tf.float32, tf.float32))
-            model_train_history = classifier.fit(train_tf_generator, epochs=epochs, batch_size=batch_size,
+            model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
                                                  steps_per_epoch=train_generator.samples // batch_size,
                                                  callbacks=callbacks, shuffle=True, workers=workers,
                                                  class_weight=class_weight,
-                                                 validation_data=validation_tf_generator,
+                                                 validation_data=validation_generator,
                                                  validation_freq=validation_freq,
                                                  validation_steps=validation_generator.samples // batch_size,
                                                  use_multiprocessing=False)
 
             # save weights (model was saved previously at model build and compile in h5 and json formats)
-            if local_script_settings['use_efficientNetB2'] == "True":
+            if local_script_settings['use_efficientNetB2'] == 'True':
                 type_of_model = '_EfficientNetB2'
-            elif local_script_settings['use_efficientNetB2'] == "True":
+            elif local_script_settings['use_efficientNetB2'] == 'True':
                 type_of_model = '_custom'
             else:
                 print('type of model not understood')
@@ -254,11 +245,11 @@ def train():
             logger.info(''.join(['\n', datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S"),
                                  ' correct model training, correct saving of model and weights']))
             local_script_settings['training_done'] = "True"
-            if local_script_settings['metaheuristic_optimization'] == "False":
+            if local_script_settings['metaheuristic_optimization'] == 'False':
                 with open('./settings.json', 'w', encoding='utf-8') as local_wr_json_file:
                     json.dump(local_script_settings, local_wr_json_file, ensure_ascii=False, indent=2)
                     local_wr_json_file.close()
-            elif local_script_settings['metaheuristic_optimization'] == "True":
+            elif local_script_settings['metaheuristic_optimization'] == 'True':
                 with open(''.join([local_script_settings['metaheuristics_path'],
                                    'organic_settings.json']), 'w', encoding='utf-8') as local_wr_json_file:
                     json.dump(local_script_settings, local_wr_json_file, ensure_ascii=False, indent=2)

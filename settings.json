@@ -38,7 +38,7 @@
   "use_local_pretrained_weights_for_retraining": "False",
   "weights_loaded_in evaluation": "from_today",
   "repeat_select_images_for_evaluation": "True",
-  "nof_classes": 2,
+  "nof_classes": 4,
   "nof_quality_factors": 3,
   "nof_K_fold_groups": 100,
   "nof_group_for_evaluation": 1,

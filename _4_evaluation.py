@@ -30,9 +30,6 @@ try:
     from custom_normalizer import custom_image_normalizer
     from lsbit_custom_normalizer import lsbit_custom_image_normalizer
     from alternative_evaluator import alternative_evaluation
-
-    physical_devices = tf.config.list_physical_devices('GPU')
-    tf.config.experimental.set_memory_growth(physical_devices[0], enable=True)
     tf.keras.backend.set_floatx('float32')
 except Exception as ee1:
     print('Error importing libraries or opening settings (evaluation module)')
@@ -82,15 +79,16 @@ class customized_loss2(losses.Loss):
 # functions definitions
 
 
-def image_normalizer(local_image_rgb):
+def image_normalizer(image_rgb):
     custom_image_normalizer_instance = custom_image_normalizer()
-    return custom_image_normalizer_instance.normalize(local_image_rgb)
+    channel_y = custom_image_normalizer_instance.normalize(image_rgb)
+    return channel_y
 
 
 def evaluate():
     # keras,tf session/random seed reset/fix
-    kb.clear_session()
-    tf.compat.v1.reset_default_graph()
+    # kb.clear_session()
+    # tf.compat.v1.reset_default_graph()
     np.random.seed(11)
     tf.random.set_seed(2)
 
@@ -175,7 +173,8 @@ def evaluate():
                 input_shape_y = model_hyperparameters['input_shape_y']
                 input_shape_x = model_hyperparameters['input_shape_x']
                 test_datagen = \
-                    preprocessing.image.ImageDataGenerator(rescale=None)
+                    preprocessing.image.ImageDataGenerator(rescale=None,
+                                                           preprocessing_function=image_normalizer)
                 column_names = ['id_number', 'id_class', 'group', 'filename', 'filepath']
                 x_col = 'filepath'
                 y_col = 'id_class'

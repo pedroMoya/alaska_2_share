@@ -56,7 +56,7 @@ class customized_metrics_bacc(metrics.Metric):
 class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
-        log_softmax_diff = tf.math.abs(tf.math.add(tf.nn.log_softmax(local_true), -tf.nn.log_softmax(local_pred)))
+        log_softmax_diff = tf.reduce_sum(tf.math.abs(tf.math.add(local_true, -local_pred)))
         return log_softmax_diff
 
 
@@ -143,18 +143,19 @@ class model_classifier_:
             loss_1 = local_hyperparameters['loss_1']
             loss_2 = local_hyperparameters['loss_2']
             loss_3 = local_hyperparameters['loss_3']
+            label_smoothing = local_hyperparameters['label_smoothing']
             losses_list = []
             union_settings_losses = [loss_1, loss_2, loss_3]
             if 'CategoricalCrossentropy' in union_settings_losses:
-                losses_list.append(losses.CategoricalCrossentropy())
+                losses_list.append(losses.CategoricalCrossentropy(label_smoothing=label_smoothing))
             if 'BinaryCrossentropy' in union_settings_losses:
                 losses_list.append(losses.BinaryCrossentropy())
             if 'CategoricalHinge' in union_settings_losses:
                 losses_list.append(losses.CategoricalHinge())
-            if 'LogCosh' in union_settings_losses:
-                losses_list.append(losses.LogCosh)
+            if 'KLD' in union_settings_losses:
+                losses_list.append(losses.KLDivergence())
             if 'customized_loss_function' in union_settings_losses:
-                losses_list.append(customized_loss2())
+                losses_list.append(customized_loss())
             if 'customized_loss_auc_roc' in union_settings_losses:
                 losses_list.append(customized_loss_auc_roc())
             if "Huber" in union_settings_losses:
@@ -303,20 +304,26 @@ class model_classifier_:
                 classifier_pretrained = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
                                                                              input_tensor=None,
                                                                              input_shape=(input_shape_y,
-                                                                                          input_shape_x, nof_channels),
+                                                                                          input_shape_x, 3),
                                                                              pooling=None,
                                                                              classifier_activation=None)
-                for layer in classifier_pretrained.layers:
-                    layer.trainable = True
-                    # if 'excite' in layer.name:
-                    #     layer.trainable = True
-                    # if 'top_conv' in layer.name:
-                    #     layer.trainable = True
-                    # if 'project_conv' in layer.name:
-                    #     layer.trainable = True
+                # classifier_pretrained.save_weights(''.join([local_settings['models_path'],
+                #                                             'pretrained_efficientnetb2_weights.h5']))
+                #
+                # classifier_receptor = tf.keras.applications.EfficientNetB2(include_top=False, weights=None,
+                #                                                              input_tensor=None,
+                #                                                              input_shape=(input_shape_y,
+                #                                                                           input_shape_x, 1),
+                #                                                              pooling=None,
+                #                                                              classifier_activation=None)
+                #
+                # classifier_receptor.load_weights(''.join([local_settings['models_path'],
+                #                                             'pretrained_efficientnetb2_weights.h5']), by_name=True)
+                #
+                # classifier_pretrained = classifier_receptor
 
-                if local_settings['nof_classes'] == 2:
-                    # if two classes, log(pos/neg) = log(0.25/0.75) = -0.477121254719
+                if local_settings['nof_classes'] == 2 or local_hyperparameters['use_bias_always'] == 'True':
+                    # if two classes, log(pos/neg) = log(0.75/0.25) = 0.477121254719
                     bias_initializer = tf.keras.initializers.Constant(local_hyperparameters['bias_initializer'])
                 else:
                     # assuming balanced classes...
@@ -342,15 +349,15 @@ class model_classifier_:
                     classifier_.load_weights(''.join([local_settings['models_path'],
                                                       local_settings['use_local_pretrained_weights_for_retraining']]))
                     for layer in classifier_.layers[0].layers:
-                        layer.trainable = False
-                        if 'excite' in layer.name:
-                            layer.trainable = True
-                        if 'top_conv' in layer.name:
-                            layer.trainable = True
-                        if 'project_conv' in layer.name:
-                            layer.trainable = True
+                        layer.trainable = True
+                        # if 'excite' in layer.name:
+                        #     layer.trainable = True
+                        # if 'top_conv' in layer.name:
+                        #     layer.trainable = True
+                        # if 'project_conv' in layer.name:
+                        #     layer.trainable = True
 
-                # classifier_.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
+                classifier_.build(input_shape=(input_shape_y, input_shape_x, nof_channels))
                 classifier_.compile(optimizer=optimizer_function, loss=losses_list, metrics=metrics_list)
 
             # Summary of model

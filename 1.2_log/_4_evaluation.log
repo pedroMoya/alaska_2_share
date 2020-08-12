@@ -7454,3 +7454,1104 @@ Traceback (most recent call last):
   File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
   File "h5py\h5f.pyx", line 88, in h5py.h5f.open
 OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-08_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 14:53:57 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 14:54:56 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 14:55:41 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 14:57:16 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 15:00:29 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 15:37:34 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 15:41:59 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 16:25:58 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 17:24:01 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 17:43:41 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 17:46:29 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 146, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 17:50:23 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+09.Aug 2020 20:28:29 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-09_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+ Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node sequential_1/efficientnetb2/stem_conv/Conv2D (defined at .\_4_evaluation.py:193) ]] [Op:__inference_predict_function_15862]
+
+Function call stack:
+predict_function
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 193, in evaluate
+    y_predictions_raw = classifier.predict(test_set, workers=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 130, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1604, in predict
+    tmp_batch_outputs = predict_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 852, in _call
+    return self._concrete_stateful_fn._filtered_call(canon_args, canon_kwds)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.UnknownError:  Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node sequential_1/efficientnetb2/stem_conv/Conv2D (defined at .\_4_evaluation.py:193) ]] [Op:__inference_predict_function_15862]
+
+Function call stack:
+predict_function
+
+ Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node sequential_1/efficientnetb2/stem_conv/Conv2D (defined at .\_4_evaluation.py:193) ]] [Op:__inference_predict_function_15862]
+
+Function call stack:
+predict_function
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 193, in evaluate
+    y_predictions_raw = classifier.predict(test_set, workers=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 130, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1604, in predict
+    tmp_batch_outputs = predict_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 852, in _call
+    return self._concrete_stateful_fn._filtered_call(canon_args, canon_kwds)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.UnknownError:  Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node sequential_1/efficientnetb2/stem_conv/Conv2D (defined at .\_4_evaluation.py:193) ]] [Op:__inference_predict_function_15862]
+
+Function call stack:
+predict_function
+
+ Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node sequential_1/efficientnetb2/stem_conv/Conv2D (defined at .\_4_evaluation.py:193) ]] [Op:__inference_predict_function_41081]
+
+Function call stack:
+predict_function
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 193, in evaluate
+    y_predictions_raw = classifier.predict(test_set, workers=1)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 130, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1604, in predict
+    tmp_batch_outputs = predict_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 852, in _call
+    return self._concrete_stateful_fn._filtered_call(canon_args, canon_kwds)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.UnknownError:  Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node sequential_1/efficientnetb2/stem_conv/Conv2D (defined at .\_4_evaluation.py:193) ]] [Op:__inference_predict_function_41081]
+
+Function call stack:
+predict_function
+
+
+11.Aug 2020 14:28:49 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+11.Aug 2020 14:30:45 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 00:19:49 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 00:20:50 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 00:22:33 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 00:29:40 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 00:48:39 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 00:50:42 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 143, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 00:53:26 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 01:00:51 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 01:02:15 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 01:07:44 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 01:14:07 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 01:15:48 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 01:19:55 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 01:26:21 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 01:40:52 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 01:58:06 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 129, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 02:26:53 evaluator module error
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 130, in evaluate
+    classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+
+12.Aug 2020 02:43:38 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 04:13:52 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 07:18:08 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 07:32:28 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 07:49:11 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 07:53:54 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 08:10:18 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 08:13:56 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 08:20:24 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 08:22:42 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 08:25:23 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 08:28:34 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 08:31:49 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+12.Aug 2020 08:34:04 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 144, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-12_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)

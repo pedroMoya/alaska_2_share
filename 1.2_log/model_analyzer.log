@@ -930,3 +930,315 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 296, in class_and_config_for_serialized_keras_object
     raise ValueError('Unknown ' + printable_module_name + ': ' + class_name)
 ValueError: Unknown loss function: customized_loss2
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 68, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 68, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 68, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 68, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 68, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 68, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 68, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\model_analyzer.py", line 68, in analize
+    local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\save.py", line 182, in load_model
+    return hdf5_format.load_model_from_hdf5(filepath, custom_objects, compile)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 178, in load_model_from_hdf5
+    model = model_config_lib.model_from_config(model_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\model_config.py", line 55, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 486, in from_config
+    layer = layer_module.deserialize(layer_config,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\serialization.py", line 171, in deserialize
+    return generic_utils.deserialize_keras_object(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\generic_utils.py", line 354, in deserialize_keras_object
+    return cls.from_config(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 488, in from_config
+    model.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1099, in _functional_construction_call
+    self._maybe_build(inputs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2648, in _maybe_build
+    self.build(input_shapes)  # pylint:disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\wrappers.py", line 58, in build
+    self.layer.build(input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\tf_utils.py", line 323, in wrapper
+    output_shape = fn(instance, input_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 93, in build
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.

@@ -57,9 +57,31 @@ logger.addHandler(logHandler)
 # functions definitions
 
 
-def image_normalizer(local_image_rgb):
+def image_normalizer(image_rgb):
     custom_image_normalizer_instance = custom_image_normalizer()
-    return custom_image_normalizer_instance.normalize(local_image_rgb)
+    channel_y = custom_image_normalizer_instance.normalize(image_rgb)
+    return channel_y
+
+
+@tf.function
+def extract_channel(image_rgb):
+    output_list = []
+    channel_y = tf.math.add(16., tf.math.multiply(65.738 / 256, image_rgb[:, :, :, 0]))
+    channel_y = tf.math.add(tf.math.multiply(129.057 / 256, image_rgb[:, :, :, 1]), channel_y)
+    channel_y = tf.math.add(tf.math.multiply(25.054 / 256, image_rgb[:, :, :, 2]), channel_y)
+    output_list.append(channel_y)
+    output_list.append(channel_y)
+    output_list.append(channel_y)
+    image_channel_y_output = tf.stack(output_list, axis=3)
+    return image_channel_y_output
+
+
+def configure_for_performance(dset, bsize, atune):
+    # dset = dset.cache()
+    # dset = dset.shuffle(buffer_size=256)
+    # dset = dset.batch(bsize)
+    dset = dset.prefetch(buffer_size=atune)
+    return dset
 
 
 def train():
@@ -109,25 +131,28 @@ def train():
 
     # starting training
     try:
+        print('\n~train_model module~')
+        # check settings for previous training and then repeat or not this phase
+        if local_script_settings['training_done'] == 'True':
+            print('training of neural_network previously done')
+            if local_script_settings['repeat_training'] == 'True':
+                print('repeating training')
+            else:
+                print("settings indicates don't repeat training")
+                return True
+        else:
+            print('model training start')
+
+        # multiple GPU strategy under Windows environment
         local_strategy = \
-            tf.distribute.MirroredStrategy(
+            tf.distribute.MirroredStrategy(devices=['/gpu:0', '/gpu:1'],
                 cross_device_ops=tf.distribute.ReductionToOneDevice(reduce_to_device='/device:GPU:0'))
         # local_strategy = \
         #     tf.distribute.MirroredStrategy(devices=['/gpu:0', '/gpu:1'],
-        #                                    cross_device_ops=tf.distribute.HierarchicalCopyAllReduce(num_packs=2))
+        #                                    cross_device_ops=tf.distribute.HierarchicalCopyAllReduce(num_packs=2)
+
         with local_strategy.scope():
             print('Number of devices: {}'.format(local_strategy.num_replicas_in_sync))
-            print('\n~train_model module~')
-            # check settings for previous training and then repeat or not this phase
-            if local_script_settings['training_done'] == 'True':
-                print('training of neural_network previously done')
-                if local_script_settings['repeat_training'] == 'True':
-                    print('repeating training')
-                else:
-                    print("settings indicates don't repeat training")
-                    return True
-            else:
-                print('model training start')
 
             # model training hyperparameters
             nof_groups = local_script_settings['nof_K_fold_groups']
@@ -144,45 +169,81 @@ def train():
             validation_freq = model_hyperparameters['validation_freq']
             training_set_folder = model_hyperparameters['training_set_folder']
             validation_set_folder = model_hyperparameters['validation_set_folder']
-
-            # load raw_data and cleaned_data
             group = 0
-            column_names = ['id_number', 'id_class', 'group', 'filename', 'filepath']
-            x_col = 'filepath'
-            y_col = 'id_class'
-            metadata_train_images = \
-                pd.read_csv(''.join([local_script_settings['train_data_path'], 'training_metadata.csv']),
-                            dtype=str, names=column_names, header=None)
-            metadata_train_images_group = metadata_train_images.loc[metadata_train_images['group'] != str(group)]
-            train_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
-                                                                   vertical_flip=True,
-                                                                   horizontal_flip=True)
-            train_generator = train_datagen.flow_from_dataframe(dataframe=metadata_train_images_group,
-                                                                directory=None,
-                                                                x_col=x_col,
-                                                                y_col=y_col,
-                                                                target_size=(input_shape_y, input_shape_x),
-                                                                batch_size=batch_size,
-                                                                class_mode='categorical',
-                                                                color_mode='rgb',
-                                                                shuffle=True)
-            print('labels and indices of train_generator')
-            print(train_generator.class_indices)
-            validation_datagen = \
-                preprocessing.image.ImageDataGenerator(rescale=None)
-            metadata_validation_images_group = \
-                metadata_train_images.loc[metadata_train_images['group'] == str(group)]
-            validation_generator = validation_datagen.flow_from_dataframe(dataframe=metadata_validation_images_group,
-                                                                          directory=None,
-                                                                          x_col=x_col,
-                                                                          y_col=y_col,
-                                                                          target_size=(input_shape_y, input_shape_x),
-                                                                          batch_size=batch_size,
-                                                                          class_mode='categorical',
-                                                                          color_mode='rgb',
-                                                                          shuffle=False)
-            print('labels and indices of validation_generator')
-            print(validation_generator.class_indices)
+
+            # # load raw_data and cleaned_data
+            # column_names = ['id_number', 'id_class', 'group', 'filename', 'filepath']
+            # x_col = 'filepath'
+            # y_col = 'id_class'
+            # metadata_train_images = \
+            #     pd.read_csv(''.join([local_script_settings['train_data_path'], 'training_metadata.csv']),
+            #                 dtype=str, names=column_names, header=None)
+            # metadata_train_images_group = metadata_train_images.loc[metadata_train_images['group'] != str(group)]
+            # train_datagen = preprocessing.image.ImageDataGenerator(rescale=None,
+            #                                                        vertical_flip=True,
+            #                                                        horizontal_flip=True)
+            # train_generator = train_datagen.flow_from_dataframe(dataframe=metadata_train_images_group,
+            #                                                     directory=None,
+            #                                                     x_col=x_col,
+            #                                                     y_col=y_col,
+            #                                                     target_size=(input_shape_y, input_shape_x),
+            #                                                     batch_size=batch_size,
+            #                                                     class_mode='categorical',
+            #                                                     color_mode='rgb',
+            #                                                     shuffle=True)
+            # print('labels and indices of train_generator')
+            # print(train_generator.class_indices)
+            # validation_datagen = \
+            #     preprocessing.image.ImageDataGenerator(rescale=None,
+            #                                            preprocessing_function=image_normalizer)
+            # metadata_validation_images_group = \
+            #     metadata_train_images.loc[metadata_train_images['group'] == str(group)]
+            # validation_generator = validation_datagen.flow_from_dataframe(dataframe=metadata_validation_images_group,
+            #                                                               directory=None,
+            #                                                               x_col=x_col,
+            #                                                               y_col=y_col,
+            #                                                               target_size=(input_shape_y, input_shape_x),
+            #                                                               batch_size=batch_size,
+            #                                                               class_mode='categorical',
+            #                                                               color_mode='rgb',
+            #                                                               shuffle=False)
+            # print('labels and indices of validation_generator')
+            # print(validation_generator.class_indices)
+
+            train_dataset = \
+                tf.keras.preprocessing.image_dataset_from_directory(training_set_folder, labels='inferred',
+                                                                    label_mode='categorical', class_names=None,
+                                                                    color_mode='rgb', batch_size=batch_size,
+                                                                    image_size=(input_shape_y, input_shape_x),
+                                                                    shuffle=True, seed=42,
+                                                                    validation_split=validation_split,
+                                                                    subset='training',interpolation='bilinear',
+                                                                    follow_links=False)
+
+            validation_dataset = \
+                tf.keras.preprocessing.image_dataset_from_directory(training_set_folder, labels='inferred',
+                                                                    label_mode='categorical', class_names=None,
+                                                                    color_mode='rgb', batch_size=batch_size,
+                                                                    image_size=(input_shape_y, input_shape_x),
+                                                                    shuffle=True, seed=42,
+                                                                    validation_split=validation_split,
+                                                                    subset='validation',interpolation='bilinear',
+                                                                    follow_links=False)
+
+            # image RGB to YCbCr to channel y
+            extract_channel_y_layer = tf.function(extract_channel)
+            validation_dataset = validation_dataset.map(lambda x, y: (extract_channel_y_layer(x), y))
+
+            # image augmentation
+            data_augmentation = tf.keras.Sequential([
+                layers.experimental.preprocessing.RandomFlip("horizontal_and_vertical")])
+            train_dataset = train_dataset.map(lambda x, y: (data_augmentation(extract_channel_y_layer(x),
+                                                                              training=True), y))
+
+            # performance setup
+            autotune = tf.data.experimental.AUTOTUNE
+            train_dataset = configure_for_performance(train_dataset, batch_size, autotune)
+            validation_dataset = configure_for_performance(validation_dataset, batch_size, autotune)
 
             # build, compile and save model
             model_name = ''.join([model_hyperparameters['current_model_name'], '_group_', str(group)])
@@ -215,13 +276,11 @@ def train():
                 class_weight = None
 
             # training model
-            model_train_history = classifier.fit(train_generator, epochs=epochs, batch_size=batch_size,
-                                                 steps_per_epoch=train_generator.samples // batch_size,
+            model_train_history = classifier.fit(train_dataset, epochs=epochs, batch_size=batch_size,
                                                  callbacks=callbacks, shuffle=True, workers=workers,
                                                  class_weight=class_weight,
-                                                 validation_data=validation_generator,
+                                                 validation_data=validation_dataset,
                                                  validation_freq=validation_freq,
-                                                 validation_steps=validation_generator.samples // batch_size,
                                                  use_multiprocessing=False)
 
             # save weights (model was saved previously at model build and compile in h5 and json formats)

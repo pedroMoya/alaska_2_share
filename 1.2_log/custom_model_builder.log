@@ -2462,3 +2462,707 @@ Traceback (most recent call last):
   File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribution_strategy_context.py", line 65, in _pop_per_thread_mode
     ops.get_default_graph()._distribution_strategy_stack.pop(-1)  # pylint: disable=protected-access
 IndexError: pop from empty list
+kl_divergence() missing 2 required positional arguments: 'y_true' and 'y_pred'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 156, in build_and_compile
+    losses_list.append(losses.KLD())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+TypeError: kl_divergence() missing 2 required positional arguments: 'y_true' and 'y_pred'
+kl_divergence() missing 2 required positional arguments: 'y_true' and 'y_pred'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 156, in build_and_compile
+    losses_list.append(losses.KLD())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+TypeError: kl_divergence() missing 2 required positional arguments: 'y_true' and 'y_pred'
+Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 343, in build_and_compile
+    classifier_.load_weights(''.join([local_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 699, in assign
+    return values_util.on_write_assign(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 33, in on_write_assign
+    return var._update(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 837, in _update
+    return self._update_cross_replica(update_fn, value, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 792, in _update_cross_replica
+    return self.distribute_strategy.extended.update(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 2476, in update
+    return self._update(var, fn, args, kwargs, group)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 671, in _update
+    fn(v, *distribute_utils.select_replica_mirrored(i, args),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\autograph\impl\api.py", line 565, in wrapper
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 32, in <lambda>
+    assign_fn = lambda var, *a, **kw: var.assign(*a, **kw)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 343, in build_and_compile
+    classifier_.load_weights(''.join([local_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 699, in assign
+    return values_util.on_write_assign(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 33, in on_write_assign
+    return var._update(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 837, in _update
+    return self._update_cross_replica(update_fn, value, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 792, in _update_cross_replica
+    return self.distribute_strategy.extended.update(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 2476, in update
+    return self._update(var, fn, args, kwargs, group)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 671, in _update
+    fn(v, *distribute_utils.select_replica_mirrored(i, args),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\autograph\impl\api.py", line 565, in wrapper
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 32, in <lambda>
+    assign_fn = lambda var, *a, **kw: var.assign(*a, **kw)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 343, in build_and_compile
+    classifier_.load_weights(''.join([local_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 699, in assign
+    return values_util.on_write_assign(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 33, in on_write_assign
+    return var._update(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 837, in _update
+    return self._update_cross_replica(update_fn, value, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 792, in _update_cross_replica
+    return self.distribute_strategy.extended.update(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 2476, in update
+    return self._update(var, fn, args, kwargs, group)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 671, in _update
+    fn(v, *distribute_utils.select_replica_mirrored(i, args),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\autograph\impl\api.py", line 565, in wrapper
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 32, in <lambda>
+    assign_fn = lambda var, *a, **kw: var.assign(*a, **kw)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 343, in build_and_compile
+    classifier_.load_weights(''.join([local_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 699, in assign
+    return values_util.on_write_assign(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 33, in on_write_assign
+    return var._update(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 837, in _update
+    return self._update_cross_replica(update_fn, value, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 792, in _update_cross_replica
+    return self.distribute_strategy.extended.update(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 2476, in update
+    return self._update(var, fn, args, kwargs, group)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 671, in _update
+    fn(v, *distribute_utils.select_replica_mirrored(i, args),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\autograph\impl\api.py", line 565, in wrapper
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 32, in <lambda>
+    assign_fn = lambda var, *a, **kw: var.assign(*a, **kw)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Loss scaling is not supported with the tf.distribute.Strategy: CentralStorageStrategy. Try using a different Strategy, e.g. a MirroredStrategy
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 136, in build_and_compile
+    optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 205, in enable_mixed_precision_graph_rewrite
+    return _enable_mixed_precision_graph_rewrite_base(opt, loss_scale,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 345, in _enable_mixed_precision_graph_rewrite_base
+    opt = _wrap_optimizer(opt, loss_scale, use_v1_behavior=use_v1_behavior)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\experimental\mixed_precision.py", line 54, in _wrap_optimizer
+    return wrapper_cls(opt, loss_scale)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\mixed_precision\experimental\loss_scale_optimizer.py", line 260, in __init__
+    self._raise_if_strategy_unsupported()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\mixed_precision\experimental\loss_scale_optimizer.py", line 453, in _raise_if_strategy_unsupported
+    raise ValueError('Loss scaling is not supported with the '
+ValueError: Loss scaling is not supported with the tf.distribute.Strategy: CentralStorageStrategy. Try using a different Strategy, e.g. a MirroredStrategy
+'use_bias_always'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 319, in build_and_compile
+    if local_settings['nof_classes'] == 2 or local_settings['use_bias_always'] == 'True':
+KeyError: 'use_bias_always'
+Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 343, in build_and_compile
+    classifier_.load_weights(''.join([local_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2218, in load_weights
+    hdf5_format.load_weights_from_hdf5_group(f, self.layers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 709, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\backend.py", line 3580, in batch_set_value
+    x.assign(np.asarray(value, dtype=dtype(x)))
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 699, in assign
+    return values_util.on_write_assign(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 33, in on_write_assign
+    return var._update(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 837, in _update
+    return self._update_cross_replica(update_fn, value, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values.py", line 792, in _update_cross_replica
+    return self.distribute_strategy.extended.update(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py", line 2476, in update
+    return self._update(var, fn, args, kwargs, group)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py", line 671, in _update
+    fn(v, *distribute_utils.select_replica_mirrored(i, args),
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\autograph\impl\api.py", line 565, in wrapper
+    return func(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\values_util.py", line 32, in <lambda>
+    assign_fn = lambda var, *a, **kw: var.assign(*a, **kw)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py", line 860, in assign
+    self._shape.assert_is_compatible_with(value_tensor.shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\tensor_shape.py", line 1134, in assert_is_compatible_with
+    raise ValueError("Shapes %s and %s are incompatible" % (self, other))
+ValueError: Shapes (3, 3, 3, 32) and (1, 1, 32, 16) are incompatible
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/old2_7_layers_CNN__group_0__EfficientNetB2_2020-08-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 343, in build_and_compile
+    classifier_.load_weights(''.join([local_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/old2_7_layers_CNN__group_0__EfficientNetB2_2020-08-11_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+The input must have 3 channels; got `input_shape=(260, 260, 1)`
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 304, in build_and_compile
+    classifier_pretrained = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 579, in EfficientNetB2
+    return EfficientNet(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 283, in EfficientNet
+    input_shape = imagenet_utils.obtain_input_shape(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\imagenet_utils.py", line 365, in obtain_input_shape
+    raise ValueError('The input must have 3 channels; got '
+ValueError: The input must have 3 channels; got `input_shape=(260, 260, 1)`
+The input must have 3 channels; got `input_shape=(260, 260, 1)`
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 304, in build_and_compile
+    classifier_pretrained = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 579, in EfficientNetB2
+    return EfficientNet(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 283, in EfficientNet
+    input_shape = imagenet_utils.obtain_input_shape(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\imagenet_utils.py", line 365, in obtain_input_shape
+    raise ValueError('The input must have 3 channels; got '
+ValueError: The input must have 3 channels; got `input_shape=(260, 260, 1)`
+The input must have 3 channels; got `input_shape=(260, 260, 1)`
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 304, in build_and_compile
+    classifier_pretrained = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 579, in EfficientNetB2
+    return EfficientNet(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 283, in EfficientNet
+    input_shape = imagenet_utils.obtain_input_shape(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\imagenet_utils.py", line 365, in obtain_input_shape
+    raise ValueError('The input must have 3 channels; got '
+ValueError: The input must have 3 channels; got `input_shape=(260, 260, 1)`
+The input must have 3 channels; got `input_shape=(260, 260, 1)`
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 304, in build_and_compile
+    classifier_pretrained = tf.keras.applications.EfficientNetB2(include_top=False, weights='imagenet',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 579, in EfficientNetB2
+    return EfficientNet(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\efficientnet.py", line 283, in EfficientNet
+    input_shape = imagenet_utils.obtain_input_shape(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\applications\imagenet_utils.py", line 365, in obtain_input_shape
+    raise ValueError('The input must have 3 channels; got '
+ValueError: The input must have 3 channels; got `input_shape=(260, 260, 1)`
+name 'null' is not defined
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 313, in build_and_compile
+    layer.batch_input_shape = [null, null, null, 1]
+NameError: name 'null' is not defined
+'InputLayer' object has no attribute 'batch_input_shape'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 313, in build_and_compile
+    print(layer.batch_input_shape)
+AttributeError: 'InputLayer' object has no attribute 'batch_input_shape'
+'InputLayer' object has no attribute 'config'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 313, in build_and_compile
+    print(layer.config.batch_input_shape)
+AttributeError: 'InputLayer' object has no attribute 'config'
+'InputLayer' object has no attribute 'config'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 314, in build_and_compile
+    layer.config.batch_input_shape = [None, input_shape_y, input_shape_x, 1]
+AttributeError: 'InputLayer' object has no attribute 'config'
+Attempt to convert a value (<tensorflow.python.keras.layers.preprocessing.normalization.Normalization object at 0x000001B57B52CCD0>) with an unsupported type (<class 'tensorflow.python.keras.layers.preprocessing.normalization.Normalization'>) to a Tensor.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 316, in build_and_compile
+    classifier_receptor = classifier_receptor(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 986, in __call__
+    outputs = call_fn(inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\preprocessing\image_preprocessing.py", line 329, in call
+    return math_ops.cast(inputs, dtype) * scale + offset
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\util\dispatch.py", line 201, in wrapper
+    return target(*args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\ops\math_ops.py", line 923, in cast
+    x = ops.convert_to_tensor(x, name="x")
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\ops.py", line 1525, in convert_to_tensor
+    ret = conversion_func(value, dtype=dtype, name=name, as_ref=as_ref)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 339, in _constant_tensor_conversion_function
+    return constant(v, dtype=dtype, name=name)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 264, in constant
+    return _constant_impl(value, dtype, shape, name, verify_shape=False,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 276, in _constant_impl
+    return _constant_eager_impl(ctx, value, dtype, shape, verify_shape)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 301, in _constant_eager_impl
+    t = convert_to_eager_tensor(value, ctx, dtype)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\constant_op.py", line 98, in convert_to_eager_tensor
+    return ops.EagerTensor(value, ctx.device_name, dtype)
+ValueError: Attempt to convert a value (<tensorflow.python.keras.layers.preprocessing.normalization.Normalization object at 0x000001B57B52CCD0>) with an unsupported type (<class 'tensorflow.python.keras.layers.preprocessing.normalization.Normalization'>) to a Tensor.
+'NoneType' object has no attribute 'add'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 316, in build_and_compile
+    classifier_receptor = classifier_receptor.add(layer)
+AttributeError: 'NoneType' object has no attribute 'add'
+A merge layer should be called on a list of inputs.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 316, in build_and_compile
+    classifier_receptor.add(layer)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\tracking\base.py", line 459, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\sequential.py", line 221, in add
+    output_tensor = layer(self.outputs[0])
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 926, in __call__
+    return self._functional_construction_call(inputs, args, kwargs,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 1118, in _functional_construction_call
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\layers\merge.py", line 122, in call
+    raise ValueError('A merge layer should be called on a list of inputs.')
+ValueError: A merge layer should be called on a list of inputs.
+Unable to load weights saved in HDF5 format into a subclassed Model which has not created its variables yet. Call the Model first, then load the weights.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 349, in build_and_compile
+    classifier_.load_weights(''.join([local_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2206, in load_weights
+    raise ValueError(
+ValueError: Unable to load weights saved in HDF5 format into a subclassed Model which has not created its variables yet. Call the Model first, then load the weights.
+Unable to load weights saved in HDF5 format into a subclassed Model which has not created its variables yet. Call the Model first, then load the weights.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 350, in build_and_compile
+    classifier_.load_weights(''.join([local_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2206, in load_weights
+    raise ValueError(
+ValueError: Unable to load weights saved in HDF5 format into a subclassed Model which has not created its variables yet. Call the Model first, then load the weights.
+This model has not yet been built. Build the model first by calling `build()` or calling `fit()` with some data, or specify an `input_shape` argument in the first layer(s) for automatic build.
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 365, in build_and_compile
+    classifier_.summary()
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2358, in summary
+    raise ValueError('This model has not yet been built. '
+ValueError: This model has not yet been built. Build the model first by calling `build()` or calling `fit()` with some data, or specify an `input_shape` argument in the first layer(s) for automatic build.
+Can't set the attribute "input", likely because it conflicts with an existing read-only @property of the object. Please choose a different name.
+Traceback (most recent call last):
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2767, in __setattr__
+    super(tracking.AutoTrackable, self).__setattr__(name, value)
+AttributeError: can't set attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 316, in build_and_compile
+    layer.input = [None, input_shape_y, input_shape_x, nof_channels]
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\base_layer.py", line 2769, in __setattr__
+    raise AttributeError(
+AttributeError: Can't set the attribute "input", likely because it conflicts with an existing read-only @property of the object. Please choose a different name.
+Layer #4 (named "stem_conv"), weight MirroredVariable:{
+  0: <tf.Variable 'stem_conv/kernel:0' shape=(3, 3, 1, 32) dtype=float32, numpy=
+array([[[[-0.15908475, -0.08071179,  0.07409947, -0.06247768,
+           0.04011817, -0.09125746, -0.15161334, -0.03586618,
+          -0.0657851 ,  0.16479218, -0.13055883, -0.1460049 ,
+          -0.09677344,  0.10869554, -0.061917  , -0.03712202,
+           0.03420996, -0.06713159, -0.02004733,  0.10771288,
+          -0.16052873,  0.130093  , -0.02695997,  0.05720127,
+           0.03078581, -0.08266558, -0.13624308, -0.00268792,
+           0.0080975 ,  0.04726624, -0.06604604, -0.10394514]],
+
+        [[ 0.03117656,  0.0119303 , -0.04300012,  0.01471129,
+           0.13153483, -0.03209322, -0.10868961,  0.06750296,
+           0.02445257, -0.01425091,  0.01968663,  0.17789891,
+           0.06112015,  0.03245781,  0.02919878,  0.1525267 ,
+          -0.11003619, -0.09903945, -0.02056165, -0.11709912,
+          -0.02845524,  0.02097982,  0.12417495,  0.02055771,
+           0.12214914,  0.04126379,  0.04275472,  0.03619433,
+          -0.11000339, -0.10830637,  0.09524043,  0.13907394]],
+
+        [[ 0.03422992, -0.08264093, -0.12241272, -0.02789521,
+          -0.01229551, -0.05568821, -0.10168324, -0.0012175 ,
+          -0.02140321, -0.07739627,  0.01749389,  0.14966555,
+          -0.11225665, -0.03467224, -0.06149288,  0.04519638,
+          -0.06111501,  0.01464749, -0.05781964, -0.0473991 ,
+          -0.0772455 , -0.1275977 , -0.04503163, -0.04028821,
+           0.1749694 ,  0.02864096, -0.05264106, -0.09474841,
+          -0.01546138, -0.00345561, -0.08736887, -0.04951323]]],
+
+
+       [[[-0.0394113 , -0.02001446, -0.02347835, -0.01302849,
+          -0.01927429, -0.05919275, -0.08674175, -0.03446845,
+           0.00407795, -0.0758987 , -0.01017859,  0.06276064,
+          -0.06358708,  0.03993477, -0.03774687, -0.02055199,
+           0.03158735,  0.087054  ,  0.16648121, -0.00536158,
+          -0.05386068, -0.15756555,  0.08762542, -0.01779886,
+          -0.10052773,  0.03063828, -0.01148973,  0.00649657,
+           0.05995976,  0.02418776, -0.01093092,  0.16470197]],
+
+        [[-0.08045219, -0.00809984, -0.01971079, -0.07882412,
+          -0.01739538, -0.11050083,  0.003766  ,  0.13953428,
+          -0.09044169,  0.02885578, -0.06786563, -0.09661706,
+          -0.03912279, -0.01578107, -0.05635451, -0.02637432,
+          -0.03530358, -0.10722693,  0.07660702,  0.08047156,
+          -0.0867371 , -0.10080294, -0.08149062, -0.02770432,
+           0.06689166,  0.08158533,  0.08474493,  0.00500868,
+           0.07111192, -0.14800231, -0.03663539,  0.00198596]],
+
+        [[-0.0424748 ,  0.07361127, -0.06475154, -0.06221928,
+          -0.03076765, -0.14067112,  0.08423981,  0.07819743,
+          -0.08882995,  0.09867649, -0.12639302, -0.04166646,
+          -0.05626656, -0.13688871, -0.07505874,  0.06116931,
+           0.03361221,  0.08974266,  0.06206489, -0.03181355,
+           0.0570679 ,  0.08838714, -0.03661262,  0.01113139,
+           0.08155442,  0.15928562, -0.07381677, -0.05720161,
+           0.13991529,  0.0980944 ,  0.05122304,  0.08026548]]],
+
+
+       [[[ 0.12636104,  0.05750145, -0.01005538, -0.03071745,
+           0.01698976,  0.08106054, -0.06224626, -0.17386228,
+           0.03712535, -0.06023448,  0.07933293,  0.10796501,
+          -0.13929498,  0.06153239, -0.10310709,  0.01980263,
+          -0.01943127, -0.10706807,  0.05017132, -0.04067387,
+          -0.01992529, -0.00660479, -0.03451211, -0.12434142,
+          -0.05164358,  0.0051224 ,  0.02080335,  0.06750087,
+          -0.00498214,  0.10255123, -0.15143251,  0.0645102 ]],
+
+        [[ 0.01453486,  0.00491085,  0.06862168,  0.03416253,
+           0.01605247, -0.07562157, -0.07180563, -0.13716915,
+           0.15307476, -0.09023835, -0.09106499, -0.04794006,
+          -0.00719273, -0.06249175, -0.00966874,  0.05676702,
+          -0.18064468, -0.13021828, -0.0438131 , -0.00816091,
+           0.10699803,  0.00413825, -0.06262738, -0.06361753,
+          -0.05947974,  0.1467095 ,  0.11275721,  0.02784064,
+           0.0676106 ,  0.18729524,  0.09203591,  0.04050779]],
+
+        [[-0.14375879, -0.03840523, -0.1093002 ,  0.04625173,
+           0.02782219,  0.04954538, -0.02278101, -0.12086181,
+          -0.17240652,  0.07648339,  0.06790696, -0.05019384,
+           0.12434982, -0.12096336, -0.07425793,  0.01444912,
+          -0.00098893,  0.05244982, -0.14870255, -0.13755363,
+           0.1272023 , -0.11545613, -0.1303058 , -0.07788929,
+           0.18327443, -0.10473828,  0.04105451,  0.08357695,
+          -0.13720049,  0.0901923 ,  0.02446061, -0.07074978]]]],
+      dtype=float32)>,
+  1: <tf.Variable 'stem_conv/kernel/replica_1:0' shape=(3, 3, 1, 32) dtype=float32, numpy=
+array([[[[-0.15908475, -0.08071179,  0.07409947, -0.06247768,
+           0.04011817, -0.09125746, -0.15161334, -0.03586618,
+          -0.0657851 ,  0.16479218, -0.13055883, -0.1460049 ,
+          -0.09677344,  0.10869554, -0.061917  , -0.03712202,
+           0.03420996, -0.06713159, -0.02004733,  0.10771288,
+          -0.16052873,  0.130093  , -0.02695997,  0.05720127,
+           0.03078581, -0.08266558, -0.13624308, -0.00268792,
+           0.0080975 ,  0.04726624, -0.06604604, -0.10394514]],
+
+        [[ 0.03117656,  0.0119303 , -0.04300012,  0.01471129,
+           0.13153483, -0.03209322, -0.10868961,  0.06750296,
+           0.02445257, -0.01425091,  0.01968663,  0.17789891,
+           0.06112015,  0.03245781,  0.02919878,  0.1525267 ,
+          -0.11003619, -0.09903945, -0.02056165, -0.11709912,
+          -0.02845524,  0.02097982,  0.12417495,  0.02055771,
+           0.12214914,  0.04126379,  0.04275472,  0.03619433,
+          -0.11000339, -0.10830637,  0.09524043,  0.13907394]],
+
+        [[ 0.03422992, -0.08264093, -0.12241272, -0.02789521,
+          -0.01229551, -0.05568821, -0.10168324, -0.0012175 ,
+          -0.02140321, -0.07739627,  0.01749389,  0.14966555,
+          -0.11225665, -0.03467224, -0.06149288,  0.04519638,
+          -0.06111501,  0.01464749, -0.05781964, -0.0473991 ,
+          -0.0772455 , -0.1275977 , -0.04503163, -0.04028821,
+           0.1749694 ,  0.02864096, -0.05264106, -0.09474841,
+          -0.01546138, -0.00345561, -0.08736887, -0.04951323]]],
+
+
+       [[[-0.0394113 , -0.02001446, -0.02347835, -0.01302849,
+          -0.01927429, -0.05919275, -0.08674175, -0.03446845,
+           0.00407795, -0.0758987 , -0.01017859,  0.06276064,
+          -0.06358708,  0.03993477, -0.03774687, -0.02055199,
+           0.03158735,  0.087054  ,  0.16648121, -0.00536158,
+          -0.05386068, -0.15756555,  0.08762542, -0.01779886,
+          -0.10052773,  0.03063828, -0.01148973,  0.00649657,
+           0.05995976,  0.02418776, -0.01093092,  0.16470197]],
+
+        [[-0.08045219, -0.00809984, -0.01971079, -0.07882412,
+          -0.01739538, -0.11050083,  0.003766  ,  0.13953428,
+          -0.09044169,  0.02885578, -0.06786563, -0.09661706,
+          -0.03912279, -0.01578107, -0.05635451, -0.02637432,
+          -0.03530358, -0.10722693,  0.07660702,  0.08047156,
+          -0.0867371 , -0.10080294, -0.08149062, -0.02770432,
+           0.06689166,  0.08158533,  0.08474493,  0.00500868,
+           0.07111192, -0.14800231, -0.03663539,  0.00198596]],
+
+        [[-0.0424748 ,  0.07361127, -0.06475154, -0.06221928,
+          -0.03076765, -0.14067112,  0.08423981,  0.07819743,
+          -0.08882995,  0.09867649, -0.12639302, -0.04166646,
+          -0.05626656, -0.13688871, -0.07505874,  0.06116931,
+           0.03361221,  0.08974266,  0.06206489, -0.03181355,
+           0.0570679 ,  0.08838714, -0.03661262,  0.01113139,
+           0.08155442,  0.15928562, -0.07381677, -0.05720161,
+           0.13991529,  0.0980944 ,  0.05122304,  0.08026548]]],
+
+
+       [[[ 0.12636104,  0.05750145, -0.01005538, -0.03071745,
+           0.01698976,  0.08106054, -0.06224626, -0.17386228,
+           0.03712535, -0.06023448,  0.07933293,  0.10796501,
+          -0.13929498,  0.06153239, -0.10310709,  0.01980263,
+          -0.01943127, -0.10706807,  0.05017132, -0.04067387,
+          -0.01992529, -0.00660479, -0.03451211, -0.12434142,
+          -0.05164358,  0.0051224 ,  0.02080335,  0.06750087,
+          -0.00498214,  0.10255123, -0.15143251,  0.0645102 ]],
+
+        [[ 0.01453486,  0.00491085,  0.06862168,  0.03416253,
+           0.01605247, -0.07562157, -0.07180563, -0.13716915,
+           0.15307476, -0.09023835, -0.09106499, -0.04794006,
+          -0.00719273, -0.06249175, -0.00966874,  0.05676702,
+          -0.18064468, -0.13021828, -0.0438131 , -0.00816091,
+           0.10699803,  0.00413825, -0.06262738, -0.06361753,
+          -0.05947974,  0.1467095 ,  0.11275721,  0.02784064,
+           0.0676106 ,  0.18729524,  0.09203591,  0.04050779]],
+
+        [[-0.14375879, -0.03840523, -0.1093002 ,  0.04625173,
+           0.02782219,  0.04954538, -0.02278101, -0.12086181,
+          -0.17240652,  0.07648339,  0.06790696, -0.05019384,
+           0.12434982, -0.12096336, -0.07425793,  0.01444912,
+          -0.00098893,  0.05244982, -0.14870255, -0.13755363,
+           0.1272023 , -0.11545613, -0.1303058 , -0.07788929,
+           0.18327443, -0.10473828,  0.04105451,  0.08357695,
+          -0.13720049,  0.0901923 ,  0.02446061, -0.07074978]]]],
+      dtype=float32)>
+} has shape (3, 3, 1, 32), but the saved weight has shape (32, 3, 3, 3).
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 320, in build_and_compile
+    classifier_receptor.load_weights(''.join([local_settings['models_path'],
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2215, in load_weights
+    hdf5_format.load_weights_from_hdf5_group_by_name(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\saving\hdf5_format.py", line 782, in load_weights_from_hdf5_group_by_name
+    raise ValueError('Layer #' + str(k) +' (named "' + layer.name +
+ValueError: Layer #4 (named "stem_conv"), weight MirroredVariable:{
+  0: <tf.Variable 'stem_conv/kernel:0' shape=(3, 3, 1, 32) dtype=float32, numpy=
+array([[[[-0.15908475, -0.08071179,  0.07409947, -0.06247768,
+           0.04011817, -0.09125746, -0.15161334, -0.03586618,
+          -0.0657851 ,  0.16479218, -0.13055883, -0.1460049 ,
+          -0.09677344,  0.10869554, -0.061917  , -0.03712202,
+           0.03420996, -0.06713159, -0.02004733,  0.10771288,
+          -0.16052873,  0.130093  , -0.02695997,  0.05720127,
+           0.03078581, -0.08266558, -0.13624308, -0.00268792,
+           0.0080975 ,  0.04726624, -0.06604604, -0.10394514]],
+
+        [[ 0.03117656,  0.0119303 , -0.04300012,  0.01471129,
+           0.13153483, -0.03209322, -0.10868961,  0.06750296,
+           0.02445257, -0.01425091,  0.01968663,  0.17789891,
+           0.06112015,  0.03245781,  0.02919878,  0.1525267 ,
+          -0.11003619, -0.09903945, -0.02056165, -0.11709912,
+          -0.02845524,  0.02097982,  0.12417495,  0.02055771,
+           0.12214914,  0.04126379,  0.04275472,  0.03619433,
+          -0.11000339, -0.10830637,  0.09524043,  0.13907394]],
+
+        [[ 0.03422992, -0.08264093, -0.12241272, -0.02789521,
+          -0.01229551, -0.05568821, -0.10168324, -0.0012175 ,
+          -0.02140321, -0.07739627,  0.01749389,  0.14966555,
+          -0.11225665, -0.03467224, -0.06149288,  0.04519638,
+          -0.06111501,  0.01464749, -0.05781964, -0.0473991 ,
+          -0.0772455 , -0.1275977 , -0.04503163, -0.04028821,
+           0.1749694 ,  0.02864096, -0.05264106, -0.09474841,
+          -0.01546138, -0.00345561, -0.08736887, -0.04951323]]],
+
+
+       [[[-0.0394113 , -0.02001446, -0.02347835, -0.01302849,
+          -0.01927429, -0.05919275, -0.08674175, -0.03446845,
+           0.00407795, -0.0758987 , -0.01017859,  0.06276064,
+          -0.06358708,  0.03993477, -0.03774687, -0.02055199,
+           0.03158735,  0.087054  ,  0.16648121, -0.00536158,
+          -0.05386068, -0.15756555,  0.08762542, -0.01779886,
+          -0.10052773,  0.03063828, -0.01148973,  0.00649657,
+           0.05995976,  0.02418776, -0.01093092,  0.16470197]],
+
+        [[-0.08045219, -0.00809984, -0.01971079, -0.07882412,
+          -0.01739538, -0.11050083,  0.003766  ,  0.13953428,
+          -0.09044169,  0.02885578, -0.06786563, -0.09661706,
+          -0.03912279, -0.01578107, -0.05635451, -0.02637432,
+          -0.03530358, -0.10722693,  0.07660702,  0.08047156,
+          -0.0867371 , -0.10080294, -0.08149062, -0.02770432,
+           0.06689166,  0.08158533,  0.08474493,  0.00500868,
+           0.07111192, -0.14800231, -0.03663539,  0.00198596]],
+
+        [[-0.0424748 ,  0.07361127, -0.06475154, -0.06221928,
+          -0.03076765, -0.14067112,  0.08423981,  0.07819743,
+          -0.08882995,  0.09867649, -0.12639302, -0.04166646,
+          -0.05626656, -0.13688871, -0.07505874,  0.06116931,
+           0.03361221,  0.08974266,  0.06206489, -0.03181355,
+           0.0570679 ,  0.08838714, -0.03661262,  0.01113139,
+           0.08155442,  0.15928562, -0.07381677, -0.05720161,
+           0.13991529,  0.0980944 ,  0.05122304,  0.08026548]]],
+
+
+       [[[ 0.12636104,  0.05750145, -0.01005538, -0.03071745,
+           0.01698976,  0.08106054, -0.06224626, -0.17386228,
+           0.03712535, -0.06023448,  0.07933293,  0.10796501,
+          -0.13929498,  0.06153239, -0.10310709,  0.01980263,
+          -0.01943127, -0.10706807,  0.05017132, -0.04067387,
+          -0.01992529, -0.00660479, -0.03451211, -0.12434142,
+          -0.05164358,  0.0051224 ,  0.02080335,  0.06750087,
+          -0.00498214,  0.10255123, -0.15143251,  0.0645102 ]],
+
+        [[ 0.01453486,  0.00491085,  0.06862168,  0.03416253,
+           0.01605247, -0.07562157, -0.07180563, -0.13716915,
+           0.15307476, -0.09023835, -0.09106499, -0.04794006,
+          -0.00719273, -0.06249175, -0.00966874,  0.05676702,
+          -0.18064468, -0.13021828, -0.0438131 , -0.00816091,
+           0.10699803,  0.00413825, -0.06262738, -0.06361753,
+          -0.05947974,  0.1467095 ,  0.11275721,  0.02784064,
+           0.0676106 ,  0.18729524,  0.09203591,  0.04050779]],
+
+        [[-0.14375879, -0.03840523, -0.1093002 ,  0.04625173,
+           0.02782219,  0.04954538, -0.02278101, -0.12086181,
+          -0.17240652,  0.07648339,  0.06790696, -0.05019384,
+           0.12434982, -0.12096336, -0.07425793,  0.01444912,
+          -0.00098893,  0.05244982, -0.14870255, -0.13755363,
+           0.1272023 , -0.11545613, -0.1303058 , -0.07788929,
+           0.18327443, -0.10473828,  0.04105451,  0.08357695,
+          -0.13720049,  0.0901923 ,  0.02446061, -0.07074978]]]],
+      dtype=float32)>,
+  1: <tf.Variable 'stem_conv/kernel/replica_1:0' shape=(3, 3, 1, 32) dtype=float32, numpy=
+array([[[[-0.15908475, -0.08071179,  0.07409947, -0.06247768,
+           0.04011817, -0.09125746, -0.15161334, -0.03586618,
+          -0.0657851 ,  0.16479218, -0.13055883, -0.1460049 ,
+          -0.09677344,  0.10869554, -0.061917  , -0.03712202,
+           0.03420996, -0.06713159, -0.02004733,  0.10771288,
+          -0.16052873,  0.130093  , -0.02695997,  0.05720127,
+           0.03078581, -0.08266558, -0.13624308, -0.00268792,
+           0.0080975 ,  0.04726624, -0.06604604, -0.10394514]],
+
+        [[ 0.03117656,  0.0119303 , -0.04300012,  0.01471129,
+           0.13153483, -0.03209322, -0.10868961,  0.06750296,
+           0.02445257, -0.01425091,  0.01968663,  0.17789891,
+           0.06112015,  0.03245781,  0.02919878,  0.1525267 ,
+          -0.11003619, -0.09903945, -0.02056165, -0.11709912,
+          -0.02845524,  0.02097982,  0.12417495,  0.02055771,
+           0.12214914,  0.04126379,  0.04275472,  0.03619433,
+          -0.11000339, -0.10830637,  0.09524043,  0.13907394]],
+
+        [[ 0.03422992, -0.08264093, -0.12241272, -0.02789521,
+          -0.01229551, -0.05568821, -0.10168324, -0.0012175 ,
+          -0.02140321, -0.07739627,  0.01749389,  0.14966555,
+          -0.11225665, -0.03467224, -0.06149288,  0.04519638,
+          -0.06111501,  0.01464749, -0.05781964, -0.0473991 ,
+          -0.0772455 , -0.1275977 , -0.04503163, -0.04028821,
+           0.1749694 ,  0.02864096, -0.05264106, -0.09474841,
+          -0.01546138, -0.00345561, -0.08736887, -0.04951323]]],
+
+
+       [[[-0.0394113 , -0.02001446, -0.02347835, -0.01302849,
+          -0.01927429, -0.05919275, -0.08674175, -0.03446845,
+           0.00407795, -0.0758987 , -0.01017859,  0.06276064,
+          -0.06358708,  0.03993477, -0.03774687, -0.02055199,
+           0.03158735,  0.087054  ,  0.16648121, -0.00536158,
+          -0.05386068, -0.15756555,  0.08762542, -0.01779886,
+          -0.10052773,  0.03063828, -0.01148973,  0.00649657,
+           0.05995976,  0.02418776, -0.01093092,  0.16470197]],
+
+        [[-0.08045219, -0.00809984, -0.01971079, -0.07882412,
+          -0.01739538, -0.11050083,  0.003766  ,  0.13953428,
+          -0.09044169,  0.02885578, -0.06786563, -0.09661706,
+          -0.03912279, -0.01578107, -0.05635451, -0.02637432,
+          -0.03530358, -0.10722693,  0.07660702,  0.08047156,
+          -0.0867371 , -0.10080294, -0.08149062, -0.02770432,
+           0.06689166,  0.08158533,  0.08474493,  0.00500868,
+           0.07111192, -0.14800231, -0.03663539,  0.00198596]],
+
+        [[-0.0424748 ,  0.07361127, -0.06475154, -0.06221928,
+          -0.03076765, -0.14067112,  0.08423981,  0.07819743,
+          -0.08882995,  0.09867649, -0.12639302, -0.04166646,
+          -0.05626656, -0.13688871, -0.07505874,  0.06116931,
+           0.03361221,  0.08974266,  0.06206489, -0.03181355,
+           0.0570679 ,  0.08838714, -0.03661262,  0.01113139,
+           0.08155442,  0.15928562, -0.07381677, -0.05720161,
+           0.13991529,  0.0980944 ,  0.05122304,  0.08026548]]],
+
+
+       [[[ 0.12636104,  0.05750145, -0.01005538, -0.03071745,
+           0.01698976,  0.08106054, -0.06224626, -0.17386228,
+           0.03712535, -0.06023448,  0.07933293,  0.10796501,
+          -0.13929498,  0.06153239, -0.10310709,  0.01980263,
+          -0.01943127, -0.10706807,  0.05017132, -0.04067387,
+          -0.01992529, -0.00660479, -0.03451211, -0.12434142,
+          -0.05164358,  0.0051224 ,  0.02080335,  0.06750087,
+          -0.00498214,  0.10255123, -0.15143251,  0.0645102 ]],
+
+        [[ 0.01453486,  0.00491085,  0.06862168,  0.03416253,
+           0.01605247, -0.07562157, -0.07180563, -0.13716915,
+           0.15307476, -0.09023835, -0.09106499, -0.04794006,
+          -0.00719273, -0.06249175, -0.00966874,  0.05676702,
+          -0.18064468, -0.13021828, -0.0438131 , -0.00816091,
+           0.10699803,  0.00413825, -0.06262738, -0.06361753,
+          -0.05947974,  0.1467095 ,  0.11275721,  0.02784064,
+           0.0676106 ,  0.18729524,  0.09203591,  0.04050779]],
+
+        [[-0.14375879, -0.03840523, -0.1093002 ,  0.04625173,
+           0.02782219,  0.04954538, -0.02278101, -0.12086181,
+          -0.17240652,  0.07648339,  0.06790696, -0.05019384,
+           0.12434982, -0.12096336, -0.07425793,  0.01444912,
+          -0.00098893,  0.05244982, -0.14870255, -0.13755363,
+           0.1272023 , -0.11545613, -0.1303058 , -0.07788929,
+           0.18327443, -0.10473828,  0.04105451,  0.08357695,
+          -0.13720049,  0.0901923 ,  0.02446061, -0.07074978]]]],
+      dtype=float32)>
+} has shape (3, 3, 1, 32), but the saved weight has shape (32, 3, 3, 3).

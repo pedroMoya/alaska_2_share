@@ -231,14 +231,14 @@ def train():
                                                                     follow_links=False)
 
             # image RGB to YCbCr to channel y
-            extract_channel_y_layer = tf.function(extract_channel)
-            validation_dataset = validation_dataset.map(lambda x, y: (extract_channel_y_layer(x), y))
+            # extract_channel_y_layer = tf.function(extract_channel)
+            # train_dataset = train_dataset.map(lambda x, y: (extract_channel_y_layer(x), y))
+            # validation_dataset = validation_dataset.map(lambda x, y: (extract_channel_y_layer(x), y))
 
             # image augmentation
             data_augmentation = tf.keras.Sequential([
                 layers.experimental.preprocessing.RandomFlip("horizontal_and_vertical")])
-            train_dataset = train_dataset.map(lambda x, y: (data_augmentation(extract_channel_y_layer(x),
-                                                                              training=True), y))
+            train_dataset = train_dataset.map(lambda x, y: (data_augmentation(x,training=True), y))
 
             # performance setup
             autotune = tf.data.experimental.AUTOTUNE

@@ -3166,3 +3166,40 @@ array([[[[-0.15908475, -0.08071179,  0.07409947, -0.06247768,
           -0.13720049,  0.0901923 ,  0.02446061, -0.07074978]]]],
       dtype=float32)>
 } has shape (3, 3, 1, 32), but the saved weight has shape (32, 3, 3, 3).
+Can't instantiate abstract class customized_metrics_bacc with abstract methods result, update_state
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 160, in build_and_compile
+    losses_list.append(customized_metrics_bacc())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py", line 163, in __new__
+    obj = super(Metric, cls).__new__(cls)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\version_utils.py", line 66, in __new__
+    return super(LayerVersionSelector, cls).__new__(cls)
+TypeError: Can't instantiate abstract class customized_metrics_bacc with abstract methods result, update_state
+__init__() got an unexpected keyword argument 'local_label_smoothing'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 168, in build_and_compile
+    losses_list.append(customized_loss_t2(local_label_smoothing=label_smoothing))
+TypeError: __init__() got an unexpected keyword argument 'local_label_smoothing'
+__init__() got an unexpected keyword argument 'local_label_smoothing'
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 168, in build_and_compile
+    losses_list.append(customized_loss_t2(local_label_smoothing=label_smoothing))
+TypeError: __init__() got an unexpected keyword argument 'local_label_smoothing'
+Can't instantiate abstract class customized_metric_auc_roc with abstract methods result, update_state
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 179, in build_and_compile
+    metrics_list.append(customized_metric_auc_roc())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py", line 163, in __new__
+    obj = super(Metric, cls).__new__(cls)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\version_utils.py", line 66, in __new__
+    return super(LayerVersionSelector, cls).__new__(cls)
+TypeError: Can't instantiate abstract class customized_metric_auc_roc with abstract methods result, update_state
+Can't instantiate abstract class customized_metric_auc_roc with abstract methods result, update_state
+Traceback (most recent call last):
+  File "./5.2_CUSTOM_LIBRARY\custom_model_builder.py", line 178, in build_and_compile
+    metrics_list.append(customized_metric_auc_roc())
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\metrics.py", line 163, in __new__
+    obj = super(Metric, cls).__new__(cls)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\utils\version_utils.py", line 66, in __new__
+    return super(LayerVersionSelector, cls).__new__(cls)
+TypeError: Can't instantiate abstract class customized_metric_auc_roc with abstract methods result, update_state

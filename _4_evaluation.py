@@ -48,6 +48,7 @@ logger.addHandler(logHandler)
 # classes definitions
 
 
+
 class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
@@ -66,14 +67,13 @@ class customized_loss_auc_roc(losses.Loss):
         return local_auc_roc
 
 
-class customized_loss2(losses.Loss):
+class customized_loss_t2(losses.Loss):
     @tf.function
-    def call(self, local_true, local_pred):
-        local_true = tf.convert_to_tensor(local_true, dtype=tf.float32)
-        local_pred = tf.convert_to_tensor(local_pred, dtype=tf.float32)
-        factor_difference = tf.reduce_mean(tf.abs(tf.add(local_pred, -local_true)))
-        factor_true = tf.reduce_mean(tf.add(tf.convert_to_tensor(1., dtype=tf.float32), local_true))
-        return tf.math.multiply_no_nan(factor_difference, factor_true)
+    def call(self, y_true_local, y_pred_local):
+        y_true_idx = tf.clip_by_value(tf.math.argmax(y_true_local, axis=1), 0, 1)
+        # y_true = tf.one_hot(y_true_idx, depth=2)
+        y_pred = tf.concat(y_true_local[:, 0: 1], tf.reduce_sum(y_pred_local[:, 1: 4], axis=1), axis=1)
+        return losses.categorical_crossentropy(y_true_idx, y_pred, label_smoothing=0.05)
 
 
 # functions definitions
@@ -120,7 +120,7 @@ def evaluate():
             #     model_json = local_file.read()
             #     local_file.close()
             # classifier = models.model_from_json(model_json)
-            custom_obj = {'customized_loss': customized_loss}
+            custom_obj = {'customized_loss_t2': customized_loss_t2}
             if local_script_settings['use_efficientNetB2'] == "False":
                 type_of_model = '_custom'
                 classifier = models.load_model(''.join([local_script_settings['models_path'], current_model_name,

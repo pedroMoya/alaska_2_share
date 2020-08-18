@@ -29,6 +29,15 @@ logger.addHandler(logHandler)
 
 # function definitions
 
+
+class customized_loss_t2(losses.Loss):
+    @tf.function
+    def call(self, y_true_local, y_pred_local):
+        y_true_idx = tf.clip_by_value(tf.math.argmax(y_true_local, axis=1), 0, 1)
+        y_true = tf.one_hot(y_true_idx, depth=2)
+        y_pred = tf.reduce_sum(y_pred_local[:, 1:4], axis=1)
+        return losses.categorical_crossentropy(y_true, y_pred, label_smoothing=0.05)
+
 class customized_loss(losses.Loss):
     @tf.function
     def call(self, local_true, local_pred):
@@ -55,6 +64,15 @@ class customized_loss2(losses.Loss):
         return tf.math.multiply_no_nan(factor_difference, factor_true)
 
 
+class customized_metric_auc_roc(metrics.AUC):
+    @tf.function
+    def call(self, local_true, local_pred):
+        y_true = tf.clip_by_value(tf.math.argmax(local_true, axis=1), 0, 1)
+        y_pred = tf.reduce_sum(local_pred[:, 1:4], axis=1)
+        self.update_state(y_true, y_pred)
+        return self.result()
+
+
 # classes definitions
 
 
@@ -64,7 +82,8 @@ class model_structure:
         try:
             # loading model (h5 format)
             print('trying to open model file (assuming h5 format)')
-            custom_obj = {'customized_loss': customized_loss, 'customized_loss_auc_roc': customized_loss_auc_roc}
+            custom_obj = {'customized_loss': customized_loss, 'customized_loss_t2': customized_loss_t2,
+                          'customized_metric_auc_roc': customized_metric_auc_roc}
             local_model = models.load_model(''.join([local_a_settings['models_path'], local_model_name]),
                                             custom_objects=custom_obj)
             # saving architecture in JSON format

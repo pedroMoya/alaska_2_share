@@ -7,7 +7,7 @@
   "machine": "local",
   "control": "handler",
   "model_analyzer": "True",
-  "use_horovod": "True",
+  "use_horovod": "False",
   "repeat_data_cleaning": "True",
   "disaggregation_done": "True",
   "data_cleaning_done": "True",

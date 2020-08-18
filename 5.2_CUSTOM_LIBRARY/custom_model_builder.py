@@ -46,11 +46,23 @@ from model_analyzer import model_structure
 # class definitions
 
 
-class customized_metrics_bacc(metrics.Metric):
+class customized_loss_t2(losses.Loss):
     @tf.function
-    def call(self, y_true_local, y_pred_local, fp=metrics.FalsePositives(), fn=metrics.FalseNegatives(),
-             tp=metrics.TruePositives(), tn=metrics.TrueNegatives()):
-        return 0.5 * tn / (tn + fn) + (tp / (tp + fp))
+    def call(self, y_true_local, y_pred_local):
+        y_true_idx = tf.clip_by_value(tf.math.argmax(y_true_local, axis=1), 0, 1)
+        y_true = tf.one_hot(y_true_idx, depth=2)
+        y_pred = tf.concat([y_true_local[:, 0: 1],
+                            tf.expand_dims(tf.reduce_sum(y_pred_local[:, 1: 4], axis=1), axis=1)], axis=1)
+        cat_crossent = losses.CategoricalCrossentropy(label_smoothing = 0.05, reduction = losses.Reduction.SUM)
+        return cat_crossent(y_true, y_pred) + losses.categorical_crossentropy(y_true_local, y_pred_local,
+                                                                              label_smoothing=0.05)
+
+
+class customized_loss_t(losses.Loss):
+    @tf.function
+    def call(self, y_true_local, y_pred_local):
+        return tf.reduce_max(tf.nn.softmax_cross_entropy_with_logits(labels=y_true_local, logits=y_pred_local))
+
 
 
 class customized_loss(losses.Loss):
@@ -60,13 +72,13 @@ class customized_loss(losses.Loss):
         return log_softmax_diff
 
 
-class customized_loss_auc_roc(losses.Loss):
+class customized_metric_auc_roc(metrics.AUC):
     @tf.function
     def call(self, local_true, local_pred):
-        local_true = tf.convert_to_tensor(local_true, dtype=tf.float32)
-        local_pred = tf.convert_to_tensor(local_pred, dtype=tf.float32)
-        local_auc_roc = tf.math.add(tf.math.add(1., metrics.AUC(local_true, local_pred)))
-        return local_auc_roc
+        y_true = tf.clip_by_value(tf.math.argmax(local_true, axis=1), 0, 1)
+        y_pred = tf.reduce_sum(local_pred[:, 1:4], axis=1)
+        self.update_state(y_true, y_pred)
+        return self.result()
 
 
 class customized_loss2(losses.Loss):
@@ -133,13 +145,13 @@ class model_classifier_:
             epsilon_adam = local_hyperparameters['epsilon_adam']
             if optimizer_function == 'adam':
                 optimizer_function = optimizers.Adam(learning_rate=optimizer_learning_rate, epsilon=epsilon_adam)
-                optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
             elif optimizer_function == 'ftrl':
                 optimizer_function = optimizers.Ftrl(optimizer_learning_rate)
             elif optimizer_function == 'sgd':
                 optimizer_function = optimizers.SGD(optimizer_learning_rate)
             elif optimizer_function == 'rmsp':
-                optimizer_function = optimizers.RMSprop(lr=2e-5)
+                optimizer_function = optimizers.RMSprop(optimizer_learning_rate)
+            optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
             loss_1 = local_hyperparameters['loss_1']
             loss_2 = local_hyperparameters['loss_2']
             loss_3 = local_hyperparameters['loss_3']
@@ -156,8 +168,8 @@ class model_classifier_:
                 losses_list.append(losses.KLDivergence())
             if 'customized_loss_function' in union_settings_losses:
                 losses_list.append(customized_loss())
-            if 'customized_loss_auc_roc' in union_settings_losses:
-                losses_list.append(customized_loss_auc_roc())
+            if 'customized_loss_t2' in union_settings_losses:
+                losses_list.append(customized_loss_t2())
             if "Huber" in union_settings_losses:
                 losses_list.append(losses.Huber())
             metrics_list = []
@@ -166,6 +178,8 @@ class model_classifier_:
             union_settings_metrics = [metric1, metric2]
             if 'auc_roc' in union_settings_metrics:
                 metrics_list.append(metrics.AUC())
+            if 'customized_metric_auc_roc' in union_settings_metrics:
+                metrics_list.append(customized_metric_auc_roc())
             if 'CategoricalAccuracy' in union_settings_metrics:
                 metrics_list.append(metrics.CategoricalAccuracy())
             if 'CategoricalHinge' in union_settings_metrics:

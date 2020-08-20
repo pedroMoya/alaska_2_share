@@ -19953,3 +19953,348 @@ ValueError: in user code:
     ```
     Please see https://www.tensorflow.org/tutorials/distribute/custom_training for more details.
 
+
+18.Aug 2020 11:22:57 model training error
+'NoneType' object has no attribute 'fit'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 279, in train
+    model_train_history = classifier.fit(train_dataset, epochs=epochs, batch_size=batch_size,
+AttributeError: 'NoneType' object has no attribute 'fit'
+
+18.Aug 2020 20:22:51 correct model training, correct saving of model and weights
+
+18.Aug 2020 20:22:51 settings modified and saved
+
+19.Aug 2020 05:09:29 model training error
+3 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[nan nan nan...]...] [y (Cast_5/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_7681/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[replica_1/assert_greater_equal/Assert/AssertGuard/pivot_f/_7711/_677]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[nan nan nan...]...] [y (Cast_5/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_7681/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[AddN_317/_824]]
+  (2) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[nan nan nan...]...] [y (Cast_5/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_7681/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_233682]
+
+Function call stack:
+train_function -> train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 279, in train
+    model_train_history = classifier.fit(train_dataset, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 3 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[nan nan nan...]...] [y (Cast_5/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_7681/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[replica_1/assert_greater_equal/Assert/AssertGuard/pivot_f/_7711/_677]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[nan nan nan...]...] [y (Cast_5/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_7681/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[AddN_317/_824]]
+  (2) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[nan nan nan...]...] [y (Cast_5/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_7681/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_233682]
+
+Function call stack:
+train_function -> train_function -> train_function
+
+
+19.Aug 2020 09:18:12 model training error
+3 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (replica_1/sequential_1/dense/Softmax:0) = ] [[0.337939113 0.428120524 0.184740707...]...] [y (replica_1/Cast_2/x:0) = ] [0]
+	 [[{{node replica_1/assert_greater_equal/Assert/AssertGuard/else/_77/replica_1/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[replica_1/assert_less_equal/Assert/AssertGuard/pivot_f/_89/_125]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (replica_1/sequential_1/dense/Softmax:0) = ] [[0.337939113 0.428120524 0.184740707...]...] [y (replica_1/Cast_2/x:0) = ] [0]
+	 [[{{node replica_1/assert_greater_equal/Assert/AssertGuard/else/_77/replica_1/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[GroupCrossDeviceControlEdges_0/Identity_8/_147]]
+  (2) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (replica_1/sequential_1/dense/Softmax:0) = ] [[0.337939113 0.428120524 0.184740707...]...] [y (replica_1/Cast_2/x:0) = ] [0]
+	 [[{{node replica_1/assert_greater_equal/Assert/AssertGuard/else/_77/replica_1/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_test_function_251127]
+
+Function call stack:
+test_function -> test_function -> test_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 279, in train
+    model_train_history = classifier.fit(train_dataset, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1127, in fit
+    val_logs = self.evaluate(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1383, in evaluate
+    tmp_logs = test_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 820, in _call
+    results = self._stateful_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 3 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (replica_1/sequential_1/dense/Softmax:0) = ] [[0.337939113 0.428120524 0.184740707...]...] [y (replica_1/Cast_2/x:0) = ] [0]
+	 [[{{node replica_1/assert_greater_equal/Assert/AssertGuard/else/_77/replica_1/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[replica_1/assert_less_equal/Assert/AssertGuard/pivot_f/_89/_125]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (replica_1/sequential_1/dense/Softmax:0) = ] [[0.337939113 0.428120524 0.184740707...]...] [y (replica_1/Cast_2/x:0) = ] [0]
+	 [[{{node replica_1/assert_greater_equal/Assert/AssertGuard/else/_77/replica_1/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[GroupCrossDeviceControlEdges_0/Identity_8/_147]]
+  (2) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (replica_1/sequential_1/dense/Softmax:0) = ] [[0.337939113 0.428120524 0.184740707...]...] [y (replica_1/Cast_2/x:0) = ] [0]
+	 [[{{node replica_1/assert_greater_equal/Assert/AssertGuard/else/_77/replica_1/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_test_function_251127]
+
+Function call stack:
+test_function -> test_function -> test_function
+
+
+19.Aug 2020 09:25:46 model training error
+in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:806 train_function  *
+        return step_function(self, iterator)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:796 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1222 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2761 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py:600 _call_for_each_replica
+        return mirrored_run.call_for_each_replica(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_run.py:96 call_for_each_replica
+        return _call_for_each_replica(strategy, fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_run.py:237 _call_for_each_replica
+        coord.join(threads)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\coordinator.py:389 join
+        six.reraise(*self._exc_info_to_raise)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\six.py:703 reraise
+        raise value
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\coordinator.py:297 stop_on_exception
+        yield
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_run.py:323 run
+        self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:789 run_step  **
+        outputs = model.train_step(data)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        _minimize(self.distribute_strategy, tape, self.optimizer, loss,
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:2743 _minimize
+        gradients = optimizer._aggregate_gradients(zip(gradients,  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\mixed_precision\experimental\loss_scale_optimizer.py:486 _aggregate_gradients
+        return self._optimizer._aggregate_gradients(grads_and_vars)  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:562 _aggregate_gradients
+        filtered_grads_and_vars = _filter_grads(grads_and_vars)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:1273 _filter_grads
+        raise ValueError("No gradients provided for any variable: %s." %
+
+    ValueError: No gradients provided for any variable: ['stem_conv/kernel:0', 'stem_bn/gamma:0', 'stem_bn/beta:0', 'block1a_dwconv/depthwise_kernel:0', 'block1a_bn/gamma:0', 'block1a_bn/beta:0', 'block1a_se_reduce/kernel:0', 'block1a_se_reduce/bias:0', 'block1a_se_expand/kernel:0', 'block1a_se_expand/bias:0', 'block1a_project_conv/kernel:0', 'block1a_project_bn/gamma:0', 'block1a_project_bn/beta:0', 'block1b_dwconv/depthwise_kernel:0', 'block1b_bn/gamma:0', 'block1b_bn/beta:0', 'block1b_se_reduce/kernel:0', 'block1b_se_reduce/bias:0', 'block1b_se_expand/kernel:0', 'block1b_se_expand/bias:0', 'block1b_project_conv/kernel:0', 'block1b_project_bn/gamma:0', 'block1b_project_bn/beta:0', 'block2a_expand_conv/kernel:0', 'block2a_expand_bn/gamma:0', 'block2a_expand_bn/beta:0', 'block2a_dwconv/depthwise_kernel:0', 'block2a_bn/gamma:0', 'block2a_bn/beta:0', 'block2a_se_reduce/kernel:0', 'block2a_se_reduce/bias:0', 'block2a_se_expand/kernel:0', 'block2a_se_expand/bias:0', 'block2a_project_conv/kernel:0', 'block2a_project_bn/gamma:0', 'block2a_project_bn/beta:0', 'block2b_expand_conv/kernel:0', 'block2b_expand_bn/gamma:0', 'block2b_expand_bn/beta:0', 'block2b_dwconv/depthwise_kernel:0', 'block2b_bn/gamma:0', 'block2b_bn/beta:0', 'block2b_se_reduce/kernel:0', 'block2b_se_reduce/bias:0', 'block2b_se_expand/kernel:0', 'block2b_se_expand/bias:0', 'block2b_project_conv/kernel:0', 'block2b_project_bn/gamma:0', 'block2b_project_bn/beta:0', 'block2c_expand_conv/kernel:0', 'block2c_expand_bn/gamma:0', 'block2c_expand_bn/beta:0', 'block2c_dwconv/depthwise_kernel:0', 'block2c_bn/gamma:0', 'block2c_bn/beta:0', 'block2c_se_reduce/kernel:0', 'block2c_se_reduce/bias:0', 'block2c_se_expand/kernel:0', 'block2c_se_expand/bias:0', 'block2c_project_conv/kernel:0', 'block2c_project_bn/gamma:0', 'block2c_project_bn/beta:0', 'block3a_expand_conv/kernel:0', 'block3a_expand_bn/gamma:0', 'block3a_expand_bn/beta:0', 'block3a_dwconv/depthwise_kernel:0', 'block3a_bn/gamma:0', 'block3a_bn/beta:0', 'block3a_se_reduce/kernel:0', 'block3a_se_reduce/bias:0', 'block3a_se_expand/kernel:0', 'block3a_se_expand/bias:0', 'block3a_project_conv/kernel:0', 'block3a_project_bn/gamma:0', 'block3a_project_bn/beta:0', 'block3b_expand_conv/kernel:0', 'block3b_expand_bn/gamma:0', 'block3b_expand_bn/beta:0', 'block3b_dwconv/depthwise_kernel:0', 'block3b_bn/gamma:0', 'block3b_bn/beta:0', 'block3b_se_reduce/kernel:0', 'block3b_se_reduce/bias:0', 'block3b_se_expand/kernel:0', 'block3b_se_expand/bias:0', 'block3b_project_conv/kernel:0', 'block3b_project_bn/gamma:0', 'block3b_project_bn/beta:0', 'block3c_expand_conv/kernel:0', 'block3c_expand_bn/gamma:0', 'block3c_expand_bn/beta:0', 'block3c_dwconv/depthwise_kernel:0', 'block3c_bn/gamma:0', 'block3c_bn/beta:0', 'block3c_se_reduce/kernel:0', 'block3c_se_reduce/bias:0', 'block3c_se_expand/kernel:0', 'block3c_se_expand/bias:0', 'block3c_project_conv/kernel:0', 'block3c_project_bn/gamma:0', 'block3c_project_bn/beta:0', 'block4a_expand_conv/kernel:0', 'block4a_expand_bn/gamma:0', 'block4a_expand_bn/beta:0', 'block4a_dwconv/depthwise_kernel:0', 'block4a_bn/gamma:0', 'block4a_bn/beta:0', 'block4a_se_reduce/kernel:0', 'block4a_se_reduce/bias:0', 'block4a_se_expand/kernel:0', 'block4a_se_expand/bias:0', 'block4a_project_conv/kernel:0', 'block4a_project_bn/gamma:0', 'block4a_project_bn/beta:0', 'block4b_expand_conv/kernel:0', 'block4b_expand_bn/gamma:0', 'block4b_expand_bn/beta:0', 'block4b_dwconv/depthwise_kernel:0', 'block4b_bn/gamma:0', 'block4b_bn/beta:0', 'block4b_se_reduce/kernel:0', 'block4b_se_reduce/bias:0', 'block4b_se_expand/kernel:0', 'block4b_se_expand/bias:0', 'block4b_project_conv/kernel:0', 'block4b_project_bn/gamma:0', 'block4b_project_bn/beta:0', 'block4c_expand_conv/kernel:0', 'block4c_expand_bn/gamma:0', 'block4c_expand_bn/beta:0', 'block4c_dwconv/depthwise_kernel:0', 'block4c_bn/gamma:0', 'block4c_bn/beta:0', 'block4c_se_reduce/kernel:0', 'block4c_se_reduce/bias:0', 'block4c_se_expand/kernel:0', 'block4c_se_expand/bias:0', 'block4c_project_conv/kernel:0', 'block4c_project_bn/gamma:0', 'block4c_project_bn/beta:0', 'block4d_expand_conv/kernel:0', 'block4d_expand_bn/gamma:0', 'block4d_expand_bn/beta:0', 'block4d_dwconv/depthwise_kernel:0', 'block4d_bn/gamma:0', 'block4d_bn/beta:0', 'block4d_se_reduce/kernel:0', 'block4d_se_reduce/bias:0', 'block4d_se_expand/kernel:0', 'block4d_se_expand/bias:0', 'block4d_project_conv/kernel:0', 'block4d_project_bn/gamma:0', 'block4d_project_bn/beta:0', 'block5a_expand_conv/kernel:0', 'block5a_expand_bn/gamma:0', 'block5a_expand_bn/beta:0', 'block5a_dwconv/depthwise_kernel:0', 'block5a_bn/gamma:0', 'block5a_bn/beta:0', 'block5a_se_reduce/kernel:0', 'block5a_se_reduce/bias:0', 'block5a_se_expand/kernel:0', 'block5a_se_expand/bias:0', 'block5a_project_conv/kernel:0', 'block5a_project_bn/gamma:0', 'block5a_project_bn/beta:0', 'block5b_expand_conv/kernel:0', 'block5b_expand_bn/gamma:0', 'block5b_expand_bn/beta:0', 'block5b_dwconv/depthwise_kernel:0', 'block5b_bn/gamma:0', 'block5b_bn/beta:0', 'block5b_se_reduce/kernel:0', 'block5b_se_reduce/bias:0', 'block5b_se_expand/kernel:0', 'block5b_se_expand/bias:0', 'block5b_project_conv/kernel:0', 'block5b_project_bn/gamma:0', 'block5b_project_bn/beta:0', 'block5c_expand_conv/kernel:0', 'block5c_expand_bn/gamma:0', 'block5c_expand_bn/beta:0', 'block5c_dwconv/depthwise_kernel:0', 'block5c_bn/gamma:0', 'block5c_bn/beta:0', 'block5c_se_reduce/kernel:0', 'block5c_se_reduce/bias:0', 'block5c_se_expand/kernel:0', 'block5c_se_expand/bias:0', 'block5c_project_conv/kernel:0', 'block5c_project_bn/gamma:0', 'block5c_project_bn/beta:0', 'block5d_expand_conv/kernel:0', 'block5d_expand_bn/gamma:0', 'block5d_expand_bn/beta:0', 'block5d_dwconv/depthwise_kernel:0', 'block5d_bn/gamma:0', 'block5d_bn/beta:0', 'block5d_se_reduce/kernel:0', 'block5d_se_reduce/bias:0', 'block5d_se_expand/kernel:0', 'block5d_se_expand/bias:0', 'block5d_project_conv/kernel:0', 'block5d_project_bn/gamma:0', 'block5d_project_bn/beta:0', 'block6a_expand_conv/kernel:0', 'block6a_expand_bn/gamma:0', 'block6a_expand_bn/beta:0', 'block6a_dwconv/depthwise_kernel:0', 'block6a_bn/gamma:0', 'block6a_bn/beta:0', 'block6a_se_reduce/kernel:0', 'block6a_se_reduce/bias:0', 'block6a_se_expand/kernel:0', 'block6a_se_expand/bias:0', 'block6a_project_conv/kernel:0', 'block6a_project_bn/gamma:0', 'block6a_project_bn/beta:0', 'block6b_expand_conv/kernel:0', 'block6b_expand_bn/gamma:0', 'block6b_expand_bn/beta:0', 'block6b_dwconv/depthwise_kernel:0', 'block6b_bn/gamma:0', 'block6b_bn/beta:0', 'block6b_se_reduce/kernel:0', 'block6b_se_reduce/bias:0', 'block6b_se_expand/kernel:0', 'block6b_se_expand/bias:0', 'block6b_project_conv/kernel:0', 'block6b_project_bn/gamma:0', 'block6b_project_bn/beta:0', 'block6c_expand_conv/kernel:0', 'block6c_expand_bn/gamma:0', 'block6c_expand_bn/beta:0', 'block6c_dwconv/depthwise_kernel:0', 'block6c_bn/gamma:0', 'block6c_bn/beta:0', 'block6c_se_reduce/kernel:0', 'block6c_se_reduce/bias:0', 'block6c_se_expand/kernel:0', 'block6c_se_expand/bias:0', 'block6c_project_conv/kernel:0', 'block6c_project_bn/gamma:0', 'block6c_project_bn/beta:0', 'block6d_expand_conv/kernel:0', 'block6d_expand_bn/gamma:0', 'block6d_expand_bn/beta:0', 'block6d_dwconv/depthwise_kernel:0', 'block6d_bn/gamma:0', 'block6d_bn/beta:0', 'block6d_se_reduce/kernel:0', 'block6d_se_reduce/bias:0', 'block6d_se_expand/kernel:0', 'block6d_se_expand/bias:0', 'block6d_project_conv/kernel:0', 'block6d_project_bn/gamma:0', 'block6d_project_bn/beta:0', 'block6e_expand_conv/kernel:0', 'block6e_expand_bn/gamma:0', 'block6e_expand_bn/beta:0', 'block6e_dwconv/depthwise_kernel:0', 'block6e_bn/gamma:0', 'block6e_bn/beta:0', 'block6e_se_reduce/kernel:0', 'block6e_se_reduce/bias:0', 'block6e_se_expand/kernel:0', 'block6e_se_expand/bias:0', 'block6e_project_conv/kernel:0', 'block6e_project_bn/gamma:0', 'block6e_project_bn/beta:0', 'block7a_expand_conv/kernel:0', 'block7a_expand_bn/gamma:0', 'block7a_expand_bn/beta:0', 'block7a_dwconv/depthwise_kernel:0', 'block7a_bn/gamma:0', 'block7a_bn/beta:0', 'block7a_se_reduce/kernel:0', 'block7a_se_reduce/bias:0', 'block7a_se_expand/kernel:0', 'block7a_se_expand/bias:0', 'block7a_project_conv/kernel:0', 'block7a_project_bn/gamma:0', 'block7a_project_bn/beta:0', 'block7b_expand_conv/kernel:0', 'block7b_expand_bn/gamma:0', 'block7b_expand_bn/beta:0', 'block7b_dwconv/depthwise_kernel:0', 'block7b_bn/gamma:0', 'block7b_bn/beta:0', 'block7b_se_reduce/kernel:0', 'block7b_se_reduce/bias:0', 'block7b_se_expand/kernel:0', 'block7b_se_expand/bias:0', 'block7b_project_conv/kernel:0', 'block7b_project_bn/gamma:0', 'block7b_project_bn/beta:0', 'top_conv/kernel:0', 'top_bn/gamma:0', 'top_bn/beta:0', 'dense/kernel:0', 'dense/bias:0'].
+Traceback (most recent call last):
+  File ".\_2_train.py", line 279, in train
+    model_train_history = classifier.fit(train_dataset, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 829, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 702, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2883, in _get_concrete_function_internal_garbage_collected
+    graph_function, _, _ = self._maybe_define_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 3240, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 3092, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 986, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 606, in wrapped_fn
+    return weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\framework\func_graph.py", line 973, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:806 train_function  *
+        return step_function(self, iterator)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:796 step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:1222 run
+        return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\distribute_lib.py:2761 call_for_each_replica
+        return self._call_for_each_replica(fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_strategy.py:600 _call_for_each_replica
+        return mirrored_run.call_for_each_replica(
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_run.py:96 call_for_each_replica
+        return _call_for_each_replica(strategy, fn, args, kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_run.py:237 _call_for_each_replica
+        coord.join(threads)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\coordinator.py:389 join
+        six.reraise(*self._exc_info_to_raise)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\six.py:703 reraise
+        raise value
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\training\coordinator.py:297 stop_on_exception
+        yield
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\distribute\mirrored_run.py:323 run
+        self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:789 run_step  **
+        outputs = model.train_step(data)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:756 train_step
+        _minimize(self.distribute_strategy, tape, self.optimizer, loss,
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py:2743 _minimize
+        gradients = optimizer._aggregate_gradients(zip(gradients,  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\mixed_precision\experimental\loss_scale_optimizer.py:486 _aggregate_gradients
+        return self._optimizer._aggregate_gradients(grads_and_vars)  # pylint: disable=protected-access
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:562 _aggregate_gradients
+        filtered_grads_and_vars = _filter_grads(grads_and_vars)
+    C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\optimizer_v2\optimizer_v2.py:1273 _filter_grads
+        raise ValueError("No gradients provided for any variable: %s." %
+
+    ValueError: No gradients provided for any variable: ['stem_conv/kernel:0', 'stem_bn/gamma:0', 'stem_bn/beta:0', 'block1a_dwconv/depthwise_kernel:0', 'block1a_bn/gamma:0', 'block1a_bn/beta:0', 'block1a_se_reduce/kernel:0', 'block1a_se_reduce/bias:0', 'block1a_se_expand/kernel:0', 'block1a_se_expand/bias:0', 'block1a_project_conv/kernel:0', 'block1a_project_bn/gamma:0', 'block1a_project_bn/beta:0', 'block1b_dwconv/depthwise_kernel:0', 'block1b_bn/gamma:0', 'block1b_bn/beta:0', 'block1b_se_reduce/kernel:0', 'block1b_se_reduce/bias:0', 'block1b_se_expand/kernel:0', 'block1b_se_expand/bias:0', 'block1b_project_conv/kernel:0', 'block1b_project_bn/gamma:0', 'block1b_project_bn/beta:0', 'block2a_expand_conv/kernel:0', 'block2a_expand_bn/gamma:0', 'block2a_expand_bn/beta:0', 'block2a_dwconv/depthwise_kernel:0', 'block2a_bn/gamma:0', 'block2a_bn/beta:0', 'block2a_se_reduce/kernel:0', 'block2a_se_reduce/bias:0', 'block2a_se_expand/kernel:0', 'block2a_se_expand/bias:0', 'block2a_project_conv/kernel:0', 'block2a_project_bn/gamma:0', 'block2a_project_bn/beta:0', 'block2b_expand_conv/kernel:0', 'block2b_expand_bn/gamma:0', 'block2b_expand_bn/beta:0', 'block2b_dwconv/depthwise_kernel:0', 'block2b_bn/gamma:0', 'block2b_bn/beta:0', 'block2b_se_reduce/kernel:0', 'block2b_se_reduce/bias:0', 'block2b_se_expand/kernel:0', 'block2b_se_expand/bias:0', 'block2b_project_conv/kernel:0', 'block2b_project_bn/gamma:0', 'block2b_project_bn/beta:0', 'block2c_expand_conv/kernel:0', 'block2c_expand_bn/gamma:0', 'block2c_expand_bn/beta:0', 'block2c_dwconv/depthwise_kernel:0', 'block2c_bn/gamma:0', 'block2c_bn/beta:0', 'block2c_se_reduce/kernel:0', 'block2c_se_reduce/bias:0', 'block2c_se_expand/kernel:0', 'block2c_se_expand/bias:0', 'block2c_project_conv/kernel:0', 'block2c_project_bn/gamma:0', 'block2c_project_bn/beta:0', 'block3a_expand_conv/kernel:0', 'block3a_expand_bn/gamma:0', 'block3a_expand_bn/beta:0', 'block3a_dwconv/depthwise_kernel:0', 'block3a_bn/gamma:0', 'block3a_bn/beta:0', 'block3a_se_reduce/kernel:0', 'block3a_se_reduce/bias:0', 'block3a_se_expand/kernel:0', 'block3a_se_expand/bias:0', 'block3a_project_conv/kernel:0', 'block3a_project_bn/gamma:0', 'block3a_project_bn/beta:0', 'block3b_expand_conv/kernel:0', 'block3b_expand_bn/gamma:0', 'block3b_expand_bn/beta:0', 'block3b_dwconv/depthwise_kernel:0', 'block3b_bn/gamma:0', 'block3b_bn/beta:0', 'block3b_se_reduce/kernel:0', 'block3b_se_reduce/bias:0', 'block3b_se_expand/kernel:0', 'block3b_se_expand/bias:0', 'block3b_project_conv/kernel:0', 'block3b_project_bn/gamma:0', 'block3b_project_bn/beta:0', 'block3c_expand_conv/kernel:0', 'block3c_expand_bn/gamma:0', 'block3c_expand_bn/beta:0', 'block3c_dwconv/depthwise_kernel:0', 'block3c_bn/gamma:0', 'block3c_bn/beta:0', 'block3c_se_reduce/kernel:0', 'block3c_se_reduce/bias:0', 'block3c_se_expand/kernel:0', 'block3c_se_expand/bias:0', 'block3c_project_conv/kernel:0', 'block3c_project_bn/gamma:0', 'block3c_project_bn/beta:0', 'block4a_expand_conv/kernel:0', 'block4a_expand_bn/gamma:0', 'block4a_expand_bn/beta:0', 'block4a_dwconv/depthwise_kernel:0', 'block4a_bn/gamma:0', 'block4a_bn/beta:0', 'block4a_se_reduce/kernel:0', 'block4a_se_reduce/bias:0', 'block4a_se_expand/kernel:0', 'block4a_se_expand/bias:0', 'block4a_project_conv/kernel:0', 'block4a_project_bn/gamma:0', 'block4a_project_bn/beta:0', 'block4b_expand_conv/kernel:0', 'block4b_expand_bn/gamma:0', 'block4b_expand_bn/beta:0', 'block4b_dwconv/depthwise_kernel:0', 'block4b_bn/gamma:0', 'block4b_bn/beta:0', 'block4b_se_reduce/kernel:0', 'block4b_se_reduce/bias:0', 'block4b_se_expand/kernel:0', 'block4b_se_expand/bias:0', 'block4b_project_conv/kernel:0', 'block4b_project_bn/gamma:0', 'block4b_project_bn/beta:0', 'block4c_expand_conv/kernel:0', 'block4c_expand_bn/gamma:0', 'block4c_expand_bn/beta:0', 'block4c_dwconv/depthwise_kernel:0', 'block4c_bn/gamma:0', 'block4c_bn/beta:0', 'block4c_se_reduce/kernel:0', 'block4c_se_reduce/bias:0', 'block4c_se_expand/kernel:0', 'block4c_se_expand/bias:0', 'block4c_project_conv/kernel:0', 'block4c_project_bn/gamma:0', 'block4c_project_bn/beta:0', 'block4d_expand_conv/kernel:0', 'block4d_expand_bn/gamma:0', 'block4d_expand_bn/beta:0', 'block4d_dwconv/depthwise_kernel:0', 'block4d_bn/gamma:0', 'block4d_bn/beta:0', 'block4d_se_reduce/kernel:0', 'block4d_se_reduce/bias:0', 'block4d_se_expand/kernel:0', 'block4d_se_expand/bias:0', 'block4d_project_conv/kernel:0', 'block4d_project_bn/gamma:0', 'block4d_project_bn/beta:0', 'block5a_expand_conv/kernel:0', 'block5a_expand_bn/gamma:0', 'block5a_expand_bn/beta:0', 'block5a_dwconv/depthwise_kernel:0', 'block5a_bn/gamma:0', 'block5a_bn/beta:0', 'block5a_se_reduce/kernel:0', 'block5a_se_reduce/bias:0', 'block5a_se_expand/kernel:0', 'block5a_se_expand/bias:0', 'block5a_project_conv/kernel:0', 'block5a_project_bn/gamma:0', 'block5a_project_bn/beta:0', 'block5b_expand_conv/kernel:0', 'block5b_expand_bn/gamma:0', 'block5b_expand_bn/beta:0', 'block5b_dwconv/depthwise_kernel:0', 'block5b_bn/gamma:0', 'block5b_bn/beta:0', 'block5b_se_reduce/kernel:0', 'block5b_se_reduce/bias:0', 'block5b_se_expand/kernel:0', 'block5b_se_expand/bias:0', 'block5b_project_conv/kernel:0', 'block5b_project_bn/gamma:0', 'block5b_project_bn/beta:0', 'block5c_expand_conv/kernel:0', 'block5c_expand_bn/gamma:0', 'block5c_expand_bn/beta:0', 'block5c_dwconv/depthwise_kernel:0', 'block5c_bn/gamma:0', 'block5c_bn/beta:0', 'block5c_se_reduce/kernel:0', 'block5c_se_reduce/bias:0', 'block5c_se_expand/kernel:0', 'block5c_se_expand/bias:0', 'block5c_project_conv/kernel:0', 'block5c_project_bn/gamma:0', 'block5c_project_bn/beta:0', 'block5d_expand_conv/kernel:0', 'block5d_expand_bn/gamma:0', 'block5d_expand_bn/beta:0', 'block5d_dwconv/depthwise_kernel:0', 'block5d_bn/gamma:0', 'block5d_bn/beta:0', 'block5d_se_reduce/kernel:0', 'block5d_se_reduce/bias:0', 'block5d_se_expand/kernel:0', 'block5d_se_expand/bias:0', 'block5d_project_conv/kernel:0', 'block5d_project_bn/gamma:0', 'block5d_project_bn/beta:0', 'block6a_expand_conv/kernel:0', 'block6a_expand_bn/gamma:0', 'block6a_expand_bn/beta:0', 'block6a_dwconv/depthwise_kernel:0', 'block6a_bn/gamma:0', 'block6a_bn/beta:0', 'block6a_se_reduce/kernel:0', 'block6a_se_reduce/bias:0', 'block6a_se_expand/kernel:0', 'block6a_se_expand/bias:0', 'block6a_project_conv/kernel:0', 'block6a_project_bn/gamma:0', 'block6a_project_bn/beta:0', 'block6b_expand_conv/kernel:0', 'block6b_expand_bn/gamma:0', 'block6b_expand_bn/beta:0', 'block6b_dwconv/depthwise_kernel:0', 'block6b_bn/gamma:0', 'block6b_bn/beta:0', 'block6b_se_reduce/kernel:0', 'block6b_se_reduce/bias:0', 'block6b_se_expand/kernel:0', 'block6b_se_expand/bias:0', 'block6b_project_conv/kernel:0', 'block6b_project_bn/gamma:0', 'block6b_project_bn/beta:0', 'block6c_expand_conv/kernel:0', 'block6c_expand_bn/gamma:0', 'block6c_expand_bn/beta:0', 'block6c_dwconv/depthwise_kernel:0', 'block6c_bn/gamma:0', 'block6c_bn/beta:0', 'block6c_se_reduce/kernel:0', 'block6c_se_reduce/bias:0', 'block6c_se_expand/kernel:0', 'block6c_se_expand/bias:0', 'block6c_project_conv/kernel:0', 'block6c_project_bn/gamma:0', 'block6c_project_bn/beta:0', 'block6d_expand_conv/kernel:0', 'block6d_expand_bn/gamma:0', 'block6d_expand_bn/beta:0', 'block6d_dwconv/depthwise_kernel:0', 'block6d_bn/gamma:0', 'block6d_bn/beta:0', 'block6d_se_reduce/kernel:0', 'block6d_se_reduce/bias:0', 'block6d_se_expand/kernel:0', 'block6d_se_expand/bias:0', 'block6d_project_conv/kernel:0', 'block6d_project_bn/gamma:0', 'block6d_project_bn/beta:0', 'block6e_expand_conv/kernel:0', 'block6e_expand_bn/gamma:0', 'block6e_expand_bn/beta:0', 'block6e_dwconv/depthwise_kernel:0', 'block6e_bn/gamma:0', 'block6e_bn/beta:0', 'block6e_se_reduce/kernel:0', 'block6e_se_reduce/bias:0', 'block6e_se_expand/kernel:0', 'block6e_se_expand/bias:0', 'block6e_project_conv/kernel:0', 'block6e_project_bn/gamma:0', 'block6e_project_bn/beta:0', 'block7a_expand_conv/kernel:0', 'block7a_expand_bn/gamma:0', 'block7a_expand_bn/beta:0', 'block7a_dwconv/depthwise_kernel:0', 'block7a_bn/gamma:0', 'block7a_bn/beta:0', 'block7a_se_reduce/kernel:0', 'block7a_se_reduce/bias:0', 'block7a_se_expand/kernel:0', 'block7a_se_expand/bias:0', 'block7a_project_conv/kernel:0', 'block7a_project_bn/gamma:0', 'block7a_project_bn/beta:0', 'block7b_expand_conv/kernel:0', 'block7b_expand_bn/gamma:0', 'block7b_expand_bn/beta:0', 'block7b_dwconv/depthwise_kernel:0', 'block7b_bn/gamma:0', 'block7b_bn/beta:0', 'block7b_se_reduce/kernel:0', 'block7b_se_reduce/bias:0', 'block7b_se_expand/kernel:0', 'block7b_se_expand/bias:0', 'block7b_project_conv/kernel:0', 'block7b_project_bn/gamma:0', 'block7b_project_bn/beta:0', 'top_conv/kernel:0', 'top_bn/gamma:0', 'top_bn/beta:0', 'dense/kernel:0', 'dense/bias:0'].
+
+
+19.Aug 2020 12:58:20 model training error
+3 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[0.268497556 0.268466741 0.242500037...]...] [y (Cast_4/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_45/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[replica_1/assert_greater_equal/Assert/AssertGuard/pivot_f/_79/_99]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[0.268497556 0.268466741 0.242500037...]...] [y (Cast_4/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_45/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[replica_1/assert_greater_equal/Assert/AssertGuard/else/_77/replica_1/assert_greater_equal/Assert/AssertGuard/Assert/data_2/_108]]
+  (2) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[0.268497556 0.268466741 0.242500037...]...] [y (Cast_4/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_45/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_test_function_251215]
+
+Function call stack:
+test_function -> test_function -> test_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 279, in train
+    model_train_history = classifier.fit(train_dataset, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1127, in fit
+    val_logs = self.evaluate(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1383, in evaluate
+    tmp_logs = test_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 820, in _call
+    results = self._stateful_fn(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 3 root error(s) found.
+  (0) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[0.268497556 0.268466741 0.242500037...]...] [y (Cast_4/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_45/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[replica_1/assert_greater_equal/Assert/AssertGuard/pivot_f/_79/_99]]
+  (1) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[0.268497556 0.268466741 0.242500037...]...] [y (Cast_4/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_45/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+	 [[replica_1/assert_greater_equal/Assert/AssertGuard/else/_77/replica_1/assert_greater_equal/Assert/AssertGuard/Assert/data_2/_108]]
+  (2) Invalid argument:  assertion failed: [predictions must be >= 0] [Condition x >= y did not hold element-wise:] [x (sequential_1/dense/Softmax:0) = ] [[0.268497556 0.268466741 0.242500037...]...] [y (Cast_4/x:0) = ] [0]
+	 [[{{node assert_greater_equal/Assert/AssertGuard/else/_45/assert_greater_equal/Assert/AssertGuard/Assert}}]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_test_function_251215]
+
+Function call stack:
+test_function -> test_function -> test_function
+
+
+19.Aug 2020 22:53:10 correct model training, correct saving of model and weights
+
+19.Aug 2020 22:53:10 settings modified and saved
+
+20.Aug 2020 13:07:07 correct model training, correct saving of model and weights
+
+20.Aug 2020 13:07:07 settings modified and saved
+
+20.Aug 2020 14:48:59 model training error
+2 root error(s) found.
+  (0) Resource exhausted:  OOM when allocating tensor with shape[25,131,131,96] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node gradient_tape/replica_1/sequential_1/efficientnetb2/block2a_dwconv/depthwise/DepthwiseConv2dNativeBackpropInput (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[gradient_tape/replica_1/sequential_1/efficientnetb2/block2a_expand_bn/cond/StatelessIf/output/_5143/_1914]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted:  OOM when allocating tensor with shape[25,131,131,96] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node gradient_tape/replica_1/sequential_1/efficientnetb2/block2a_dwconv/depthwise/DepthwiseConv2dNativeBackpropInput (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_240543]
+
+Function call stack:
+train_function -> train_function
+Traceback (most recent call last):
+  File ".\_2_train.py", line 279, in train
+    model_train_history = classifier.fit(train_dataset, epochs=epochs, batch_size=batch_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 108, in _method_wrapper
+    return method(self, *args, **kwargs)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 1099, in fit
+    tmp_logs = train_function(iterator)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 786, in __call__
+    result = self._call(*args, **kwds)
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\def_function.py", line 813, in _call
+    return self._stateless_fn(*args, **kwds)  # pylint: disable=not-callable
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 2857, in __call__
+    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1850, in _filtered_call
+    return self._call_flat(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 1930, in _call_flat
+    return self._build_call_outputs(self._inference_function.call(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\function.py", line 549, in call
+    outputs = execute.execute(
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\eager\execute.py", line 59, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: 2 root error(s) found.
+  (0) Resource exhausted:  OOM when allocating tensor with shape[25,131,131,96] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node gradient_tape/replica_1/sequential_1/efficientnetb2/block2a_dwconv/depthwise/DepthwiseConv2dNativeBackpropInput (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+	 [[gradient_tape/replica_1/sequential_1/efficientnetb2/block2a_expand_bn/cond/StatelessIf/output/_5143/_1914]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+  (1) Resource exhausted:  OOM when allocating tensor with shape[25,131,131,96] and type float on /job:localhost/replica:0/task:0/device:GPU:1 by allocator GPU_1_bfc
+	 [[node gradient_tape/replica_1/sequential_1/efficientnetb2/block2a_dwconv/depthwise/DepthwiseConv2dNativeBackpropInput (defined at Users\Demo Windows 10\AppData\Local\Programs\Python\Python38\lib\threading.py:932) ]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_function_240543]
+
+Function call stack:
+train_function -> train_function
+

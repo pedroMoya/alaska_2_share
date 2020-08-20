@@ -43,19 +43,29 @@ from model_analyzer import model_structure
 # function definitions
 
 
+@tf.function
+def customized_loss_t2(y_true_local, y_pred_local):
+    # y_pred_local = tf.clip_by_value(y_pred_local, 0., 1.)
+    y_true_idx = tf.clip_by_value(tf.math.argmax(y_true_local, axis=1), 0, 1)
+    y_true = tf.one_hot(y_true_idx, depth=2)
+    y_pred = tf.expand_dims(tf.reduce_sum(y_pred_local[:, 1: 4], axis=1), axis=1)
+    y_pred = tf.concat([y_pred_local[:, 0: 1], y_pred], axis=1)
+    cat_crossent = losses.CategoricalCrossentropy(label_smoothing=0.05, reduction=losses.Reduction.SUM)
+    return cat_crossent(y_true, y_pred)
+
+
 # class definitions
 
 
-class customized_loss_t2(losses.Loss):
-    @tf.function
-    def call(self, y_true_local, y_pred_local):
-        y_true_idx = tf.clip_by_value(tf.math.argmax(y_true_local, axis=1), 0, 1)
-        y_true = tf.one_hot(y_true_idx, depth=2)
-        y_pred = tf.concat([y_true_local[:, 0: 1],
-                            tf.expand_dims(tf.reduce_sum(y_pred_local[:, 1: 4], axis=1), axis=1)], axis=1)
-        cat_crossent = losses.CategoricalCrossentropy(label_smoothing = 0.05, reduction = losses.Reduction.SUM)
-        return cat_crossent(y_true, y_pred) + losses.categorical_crossentropy(y_true_local, y_pred_local,
-                                                                              label_smoothing=0.05)
+# class customized_loss_t2(losses.Loss):
+#     @tf.function
+#     def call(self, y_true_local, y_pred_local):
+#         y_true_idx = tf.clip_by_value(tf.math.argmax(y_true_local, axis=1), 0, 1)
+#         y_true = tf.one_hot(y_true_idx, depth=2)
+#         y_pred = tf.concat([y_pred_local[:, 0: 1],
+#                             tf.expand_dims(tf.reduce_sum(y_pred_local[:, 1: 4], axis=1), axis=1)], axis=1)
+#         cat_crossent = losses.CategoricalCrossentropy(label_smoothing=0.05, reduction=losses.Reduction.SUM)
+#         return cat_crossent(y_true, y_pred)
 
 
 class customized_loss_t(losses.Loss):
@@ -75,8 +85,10 @@ class customized_loss(losses.Loss):
 class customized_metric_auc_roc(metrics.AUC):
     @tf.function
     def call(self, local_true, local_pred):
-        y_true = tf.clip_by_value(tf.math.argmax(local_true, axis=1), 0, 1)
-        y_pred = tf.reduce_sum(local_pred[:, 1:4], axis=1)
+        y_true_idx = tf.clip_by_value(tf.math.argmax(local_true, axis=1), 0, 1)
+        y_true = tf.one_hot(y_true_idx, depth=2)
+        y_pred = tf.expand_dims(tf.reduce_sum(local_pred[:, 1: 4], axis=1), axis=1)
+        y_pred = tf.concat([local_pred[:, 0: 1], y_pred], axis=1)
         self.update_state(y_true, y_pred)
         return self.result()
 
@@ -150,7 +162,7 @@ class model_classifier_:
             elif optimizer_function == 'sgd':
                 optimizer_function = optimizers.SGD(optimizer_learning_rate)
             elif optimizer_function == 'rmsp':
-                optimizer_function = optimizers.RMSprop(optimizer_learning_rate)
+                optimizer_function = optimizers.RMSprop(optimizer_learning_rate, epsilon=epsilon_adam)
             optimizer_function = tf.train.experimental.enable_mixed_precision_graph_rewrite(optimizer_function)
             loss_1 = local_hyperparameters['loss_1']
             loss_2 = local_hyperparameters['loss_2']
@@ -169,7 +181,7 @@ class model_classifier_:
             if 'customized_loss_function' in union_settings_losses:
                 losses_list.append(customized_loss())
             if 'customized_loss_t2' in union_settings_losses:
-                losses_list.append(customized_loss_t2())
+                losses_list.append(customized_loss_t2)
             if "Huber" in union_settings_losses:
                 losses_list.append(losses.Huber())
             metrics_list = []

@@ -270,10 +270,12 @@ def train():
             callbacks = [callback1, callback2, callback3]
 
             # class weights if imbalanced dataset
-            if model_hyperparameters['class_weights'] != 'None':
-                class_weight = {0: 0.75, 1: 0.25}
-            else:
-                class_weight = None
+            if model_hyperparameters['class_weights'] == 'True':
+                # (1/neg)*total/2 = (1/0.25)*1/2 = 2
+                weight_classs_0 = model_hyperparameters['weight_classs_0']
+                # (1/pos)*total/2 = (1/0.75)*1/2 = 0.66666
+                weight_classs_1 = model_hyperparameters['weight_classs_1']
+                class_weight = {0:weight_classs_0, 1:weight_classs_1}
 
             # training model
             model_train_history = classifier.fit(train_dataset, epochs=epochs, batch_size=batch_size,

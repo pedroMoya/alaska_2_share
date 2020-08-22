@@ -9850,3 +9850,19 @@ Traceback (most recent call last):
     six.raise_from(core._status_to_exception(e.code, message), None)
   File "<string>", line 3, in raise_from
 tensorflow.python.framework.errors_impl.InvalidArgumentError: Shapes of all inputs must match: values[0].shape = [2949] != values[1].shape = [2949,2949] [Op:Pack] name: stack
+
+21.Aug 2020 00:25:50 evaluator module error
+Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-21_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+Traceback (most recent call last):
+  File ".\_4_evaluation.py", line 147, in evaluate
+    classifier.load_weights(''.join([local_script_settings['models_path'], current_model_name, '_',
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\tensorflow\python\keras\engine\training.py", line 2211, in load_weights
+    with h5py.File(filepath, 'r') as f:
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 406, in __init__
+    fid = make_fid(name, mode, userblock_size,
+  File "C:\carpeta_p_pycharm\M5_kaggle_accuracy\venv\lib\site-packages\h5py\_hl\files.py", line 173, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\h5f.pyx", line 88, in h5py.h5f.open
+OSError: Unable to open file (unable to open file: name = './5.0_MODELS_DIR/_7_layers_CNN__group_0__EfficientNetB2_2020-08-21_weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)

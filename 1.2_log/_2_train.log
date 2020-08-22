@@ -20298,3 +20298,14 @@ Hint: If you want to see a list of allocated tensors when OOM happens, add repor
 Function call stack:
 train_function -> train_function
 
+
+20.Aug 2020 23:55:35 correct model training, correct saving of model and weights
+
+20.Aug 2020 23:55:35 settings modified and saved
+
+21.Aug 2020 22:35:17 model training error
+'weight_classs_1'
+Traceback (most recent call last):
+  File ".\_2_train.py", line 277, in train
+    weight_classs_1 = model_hyperparameters['weight_classs_1']
+KeyError: 'weight_classs_1'
